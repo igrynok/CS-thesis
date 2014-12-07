@@ -1,0 +1,51 @@
+ \documentclass[oneside,a4paper]{book}
+%\pagestyle{headings}
+
+\input{preamble}
+
+% A B S T R A C T
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\chapter*{\centering Abstract}
+\begin{quotation}
+\noindent 
+Nowadays the amount of documents in World Wide Web grows exponentially. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument or refutation of the initial assumption. \\
+This paper describes implementation of Citation Search Engine, a system that makes an attempt to automatically extract, index and aggregate citations. Besides it analyses the results of the deployment of the system on the set of scientific papers provided by SCG research group.
+
+\end{quotation}
+\clearpage
+
+
+% C O N T E N T S 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% NEW CHAPTER %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{cha:introduction}
+
+\chapter {Related Work}
+In which we learn what have other done to address similar problems. For example, the work of Star \cite{Star89}
+
+\chapter{The Problem}
+In which we understand what the problem is in detail.
+
+\chapter {The Solution}
+In which you describe your solution.
+
+\chapter {The Validation}
+In which you show how well the solution works.
+
+\chapter {Conclusion and Future Work}
+In which we step back, have a critical look at the entire work, then conclude, and learn what lays beyond this thesis.
+
+
+
+%END Doc
+%-------------------------------------------------------
+
+\bibliography{thesis}
+\bibliographystyle{plain}
+
+\end{document}
