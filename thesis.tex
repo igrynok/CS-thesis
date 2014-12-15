@@ -1,5 +1,5 @@
- \documentclass[oneside,a4paper]{book}
-%\pagestyle{headings}
+ \documentclass[11pt, oneside,a4paper]{book}
+\pagestyle{headings}
 
 \input{preamble}
 
@@ -8,8 +8,9 @@
 \chapter*{\centering Abstract}
 \begin{quotation}
 \noindent 
-Nowadays the amount of documents in World Wide Web grows exponentially. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument or refutation of the initial assumption. \\
-This paper describes implementation of Citation Search Engine, a system that makes an attempt to automatically extract, index and aggregate citations. Besides it analyses the results of the deployment of the system on the set of scientific papers provided by SCG research group.
+Nowadays the amount of documents in World Wide Web grows exponentially. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine that search
+for information in World Wide Web is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument. \\
+This paper describes implementation of Citation Search Engine, a system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. Besides it analyses the results of the deployment of the system on the collection of scientific papers provided by Software Composition Group.
 
 \end{quotation}
 \clearpage
@@ -25,20 +26,52 @@ This paper describes implementation of Citation Search Engine, a system that mak
 \chapter{Introduction}
 \label{cha:introduction}
 
+\section{Thesis statement}
+We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific papers. We consider citations as important text blocks summarising or judging previous scientific findings assisting in creating a new scientific work. We propose Citation Search Engine a software system that extracts citations from scientific papers, aggregates citations based on the referred source, then indexes extracted content. It provides a practical web interface that allows users to search for citations. 
+
+\section{Goals}
+We set following goals:
+\begin{itemize}
+	\item Introduce the state of the art techniques in information search.
+	\item Explore the structure of scientific articles, reveal common patterns
+	\item Design and implement the academic search engine.
+	\item Deploy the system on the given collection of scientific papers
+	\item Analyse results, define future work
+\end{itemize}
+
+\section{Outline}
+The rest of the paper structured as follows:
+\begin{description}
+	\item[Chapter 1] The chapter gives an overview of a typical web search engine and describes the possible ways of its enhancements. It describes one of the most popular search platform Solr, that will be used for building Citation Search Engine.
+	\item[Chapter 2] Devoted to the exploring the structure of scientific papers and identifying future challenges.
+	\item[Chapter 3] Describes the desig and implementation of Citation Search Engine. 
+	\item[Chapter 4] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
+	\item[Chapter 5] Contains conclusion and possible future work. 
+\end{description}
+
 \chapter {Related Work}
 In which we learn what have other done to address similar problems. For example, the work of Star \cite{Star89}
+\section{A typical web search engine}
+\section{Indexator - Solr}
 
 \chapter{The Problem}
 In which we understand what the problem is in detail.
 
-\chapter {The Solution}
+\chapter {Citation Search Engine}
 In which you describe your solution.
+
+\section{Overview of Architecture}
+\section{Components}
+\section{Parser -Challenges}
 
 \chapter {The Validation}
 In which you show how well the solution works.
 
 \chapter {Conclusion and Future Work}
 In which we step back, have a critical look at the entire work, then conclude, and learn what lays beyond this thesis.
+
+%%CS can be used as a search engine for the repository of scientific papers in research institutes, in universities, or in any
+%%organization that deals with collection of scientific papers. /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex
 
 
 

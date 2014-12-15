@@ -1,6 +1,14 @@
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{2 Related Work}{}% 2
-\BOOKMARK [0][-]{chapter.3}{3 The Problem}{}% 3
-\BOOKMARK [0][-]{chapter.4}{4 The Solution}{}% 4
-\BOOKMARK [0][-]{chapter.5}{5 The Validation}{}% 5
-\BOOKMARK [0][-]{chapter.6}{6 Conclusion and Future Work}{}% 6
+\BOOKMARK [1][-]{section.1.1}{1.1 Thesis statement}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{1.2 Goals}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{1.3 Outline}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{2 Related Work}{}% 5
+\BOOKMARK [1][-]{section.2.1}{2.1 A typical web search engine}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{2.2 Indexator - Solr}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{3 The Problem}{}% 8
+\BOOKMARK [0][-]{chapter.4}{4 Citation Search Engine}{}% 9
+\BOOKMARK [1][-]{section.4.1}{4.1 Overview of Architecture}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.2}{4.2 Components}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.3}{4.3 Parser -Challenges}{chapter.4}% 12
+\BOOKMARK [0][-]{chapter.5}{5 The Validation}{}% 13
+\BOOKMARK [0][-]{chapter.6}{6 Conclusion and Future Work}{}% 14
