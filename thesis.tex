@@ -42,17 +42,36 @@ We set following goals:
 \section{Outline}
 The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter 1] The chapter gives an overview of a typical web search engine and describes the possible ways of its enhancements. It describes one of the most popular search platform Solr, that will be used for building Citation Search Engine.
-	\item[Chapter 2] Devoted to the exploring the structure of scientific papers and identifying future challenges.
+	\item[Chapter 1] The chapter gives an overview of a typical web search engine and shortly reviews popular academic search engines. 
+	\item[Chapter 2] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
 	\item[Chapter 3] Describes the desig and implementation of Citation Search Engine. 
 	\item[Chapter 4] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
 	\item[Chapter 5] Contains conclusion and possible future work. 
 \end{description}
 
 \chapter {Related Work}
-In which we learn what have other done to address similar problems. For example, the work of Star \cite{Star89}
-\section{A typical web search engine}
-\section{Indexator - Solr}
+\section{Typical web search engine}
+Figure \ref{fig:web-search} illustrates a high level architecture of a standard web engine. It consist of three main components:
+\begin{itemize}
+\item Web Crawler
+\item Data indexer
+\item Search interface
+\end{itemize} 
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics{web-search-engine}
+    \caption{A high-level architecture of a typical web search engine}
+    \label{fig:web-search}
+  \end{figure}
+
+\textbf{Web Crawler} is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to \textbf{Data Indexer}. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through \textbf{Search Interface}. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. \\
+Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews most popular academical search engines.  
+
+\section{Popular academic search engines}
+\textbf{CiteSeer} \\
+\textbf{Google Scholar} \\
+\textbf{Microsoft Academic Search}
 
 \chapter{The Problem}
 In which we understand what the problem is in detail.
