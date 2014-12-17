@@ -65,11 +65,16 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-\textbf{Web Crawler} is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to \textbf{Data Indexer}. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through \textbf{Search Interface}. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. \\
-Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews most popular academical search engines.  
+Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. \\
+Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews some of popular academical search engines.  
 
 \section{Popular academic search engines}
-\textbf{CiteSeer} \\
+\paragraph{CiteSeer\textsuperscript{x}}
+CiteSeer\textsuperscript{x} is an autonomous citation search engine \cite{citeseer, Giles:1998:CAC:276675.276685}. It automatically parses and index publicly available scientific articles found on the World Wide Web. It uses the impact of citations to rank documents.
+CiteSeer\textsuperscript{x} is built on the open source infrastructure SeerSuite \cite{seersuite} and uses Apache Solr \cite{solr} search platform for indexing documents. CiteSeer\textsuperscript{x} can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such ParseCit \cite{Councill08parscit:an}. 
+CiteSeer\textsuperscript{x}  one of the world's top repositories and was rated number 1 in July 2010 \cite{web-repos}. It currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. \\
+At first glance it may seem that both CiteSeer\textsuperscript{x} and Citation Search Engine index citations in the same manner, however the approaches are different. By indexing citations in CiteSeer on should imply indexing bibliography links, while in Citation Search Engine we intend to index text of the citation in the body of the document. 
+\\ \\
 \textbf{Google Scholar} \\
 \textbf{Microsoft Academic Search}
 
@@ -97,7 +102,8 @@ In which we step back, have a critical look at the entire work, then conclude, a
 %END Doc
 %-------------------------------------------------------
 
-\bibliography{thesis}
 \bibliographystyle{plain}
+\bibliography{thesis}
+
 
 \end{document}

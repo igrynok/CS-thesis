@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{Councill08parscit:an}
+Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
+\newblock Parscit: An open-source crf reference string parsing package.
+\newblock In {\em INTERNATIONAL LANGUAGE RESOURCES AND EVALUATION}. European
+  Language Resources Association, 2008.
+
+\bibitem{solr}
+The Apache~Software Foundation.
+\newblock {Apache Solr}.
+\newblock http://lucene.apache.org/solr/.
+
+\bibitem{Giles:1998:CAC:276675.276685}
+C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
+\newblock Citeseer: An automatic citation indexing system.
+\newblock In {\em Proceedings of the Third ACM Conference on Digital
+  Libraries}, DL '98, pages 89--98, New York, NY, USA, 1998. ACM.
+
+\bibitem{web-repos}
+Cybermetrics Lab.
+\newblock {Ranking Web of Repositories}.
+\newblock http://repositories.webometrics.info/.
+
+\bibitem{citeseer}
+The Pennsylvania~State University.
+\newblock {Citeseer}.
+\newblock http://citeseerx.ist.psu.edu/.
+
+\bibitem{seersuite}
+The Pennsylvania~State University.
+\newblock {SeerSuite}.
+\newblock http://citeseerx.sourceforge.net/.
+
+\end{thebibliography}
