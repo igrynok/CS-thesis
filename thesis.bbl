@@ -17,10 +17,26 @@ C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
 \newblock In {\em Proceedings of the Third ACM Conference on Digital
   Libraries}, DL '98, pages 89--98, New York, NY, USA, 1998. ACM.
 
+\bibitem{google.scholar}
+Google.
+\newblock {Google Scholar}.
+\newblock http://scholar.google.ch/.
+
 \bibitem{web-repos}
 Cybermetrics Lab.
 \newblock {Ranking Web of Repositories}.
 \newblock http://repositories.webometrics.info/.
+
+\bibitem{orduna2014size}
+Enrique Ordu\~{n}a Malea, Juan~M. Ayll\'{o}n, Alberto Mart\'{\i}n-Mart\'{\i}n,
+  and Emilio Delgado L\'{o}pez-C\'{o}zar.
+\newblock About the size of google scholar: playing the numbers, July 2014.
+
+\bibitem{Porter:1997:ASS:275537.275705}
+M.~F. Porter.
+\newblock Readings in information retrieval.
+\newblock chapter An Algorithm for Suffix Stripping, pages 313--316. Morgan
+  Kaufmann Publishers Inc., San Francisco, CA, USA, 1997.
 
 \bibitem{citeseer}
 The Pennsylvania~State University.

@@ -9,7 +9,7 @@
 \begin{quotation}
 \noindent 
 Nowadays the amount of documents in World Wide Web grows exponentially. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine that search
-for information in World Wide Web is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument. \\
+for information in World Wide Web is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument.
 This paper describes implementation of Citation Search Engine, a system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. Besides it analyses the results of the deployment of the system on the collection of scientific papers provided by Software Composition Group.
 
 \end{quotation}
@@ -42,20 +42,21 @@ We set following goals:
 \section{Outline}
 The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter 1] The chapter gives an overview of a typical web search engine and shortly reviews popular academic search engines. 
-	\item[Chapter 2] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
-	\item[Chapter 3] Describes the desig and implementation of Citation Search Engine. 
-	\item[Chapter 4] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
-	\item[Chapter 5] Contains conclusion and possible future work. 
+	\item[Chapter 2] The chapter first gives a high overview of the architecture of a typical web search engine and shortly reviews popular academic search engines. Then It describes the main steps for inverted index construction.
+	\item[Chapter 3] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
+	\item[Chapter 4] Describes the design and implementation of Citation Search Engine. 
+	\item[Chapter 5] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
+	\item[Chapter 6] Contains conclusion and possible future work. 
 \end{description}
 
 \chapter {Related Work}
-\section{Typical web search engine}
+\section{Typical web search engine} 
+
 Figure \ref{fig:web-search} illustrates a high level architecture of a standard web engine. It consist of three main components:
 \begin{itemize}
-\item Web Crawler
-\item Data indexer
-\item Search interface
+	\item Web Crawler
+	\item Data indexer
+	\item Search interface
 \end{itemize} 
 
   \begin{figure}[htp]
@@ -65,18 +66,98 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. \\
+Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. 
+
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews some of popular academical search engines.  
 
 \section{Popular academic search engines}
 \paragraph{CiteSeer\textsuperscript{x}}
-CiteSeer\textsuperscript{x} is an autonomous citation search engine \cite{citeseer, Giles:1998:CAC:276675.276685}. It automatically parses and index publicly available scientific articles found on the World Wide Web. It uses the impact of citations to rank documents.
-CiteSeer\textsuperscript{x} is built on the open source infrastructure SeerSuite \cite{seersuite} and uses Apache Solr \cite{solr} search platform for indexing documents. CiteSeer\textsuperscript{x} can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such ParseCit \cite{Councill08parscit:an}. 
-CiteSeer\textsuperscript{x}  one of the world's top repositories and was rated number 1 in July 2010 \cite{web-repos}. It currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. \\
-At first glance it may seem that both CiteSeer\textsuperscript{x} and Citation Search Engine index citations in the same manner, however the approaches are different. By indexing citations in CiteSeer on should imply indexing bibliography links, while in Citation Search Engine we intend to index text of the citation in the body of the document. 
+CiteSeer\textsuperscript{x} is an autonomous citation search engine \cite{citeseer, Giles:1998:CAC:276675.276685}. CiteSeer\textsuperscript{x} automatically parses and index publicly available scientific articles found on the World Wide Web. It uses the impact of citations to rank documents.
+CiteSeer\textsuperscript{x} is built on the open source infrastructure SeerSuite \cite{seersuite} and uses Apache Solr \cite{solr} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such ParseCit \cite{Councill08parscit:an}. 
+CiteSeer\textsuperscript{x}  one of the world's top repositories and was rated number 1 in July 2010 \cite{web-repos}. It currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. 
+CiteSeer\textsuperscript{x} focuses on indexing citations more precisely bibliographic links while in Citation Search Engine we intend to index text of the citations in a body of a document.
 \\ \\
-\textbf{Google Scholar} \\
-\textbf{Microsoft Academic Search}
+\textbf{Google Scholar} 
+Google Scholar is a freely accessible web search engine that makes full-text indexing of scientific literature \cite{google.scholar}. Among features of Google Scholar engine are unique ranking algorithm, "cited by" feature, allowing to view abstracts of the articles citied the given article, "related articles" feature, showing the list of closely related articles.
+Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}. 
+
+\section{Inverted index}
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user make a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary in Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.55]{inverted-index}
+    \caption{Inverted index example}
+    \label{fig:inverted-index}
+  \end{figure}
+  
+ The construction of the inverted index has following steps:
+ 
+\begin{enumerate}
+	\item Documents collection
+	\item Breaking each document into tokens, turning a document into a list of tokens
+  	\item Linguistic preprocessing of a list of tokens into normalised list of tokens
+	\item Index documents by creating  an inverted index, consisting of a dictionary and postings
+\end{enumerate}
+
+First step of the index construction is documents collection that aims to obtain a set of documents containing sequence of characters. Usually the input to the indexing process is digital documents that are bytes in a file or a web server. While for the plain English text in ASCII encoding solution is straightforward there might be trickier cases. Consider for example a collection of PDF files, we need to correctly decode out characters of some binary representation. Finally, the textual part of the document may need to be extracted out of other parts that will not be processed. Next we should determine a document unit, for example it might be a chapter in a book, or a paragraph in a scientific article. 
+
+After getting the sequence of characters in document units next step is to breaking up documents into \emph{tokens}. Token can be think of a semantical unit for processing, for example, it might be a word or a number. At the same time during tokenisation some characters like punctuations can be thrown out. 
+
+Here is a tokenisation example:
+
+\hspace{50pt}\textcolor[rgb]{0,0,1}{ Input: Friends, Romans, Countrymen, lend me your ears; }
+
+\hspace{50pt}\textcolor[rgb]{0,0,1}{Output: \framebox{Friends} \framebox{Romans} \framebox{Countrymen} \framebox{lend} \framebox{me} \framebox{your} \framebox{ears}} \\
+
+The third step is normalisation. It's good when tokens in a user query match tokens in the token list of documents. Consider an example of querying the word \emph{co-operation}, a user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite superficial differences in the character sequences. One way of token normalisation is keeping relations between unnormalised tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalisation however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are the equivalence classes. Consider some common normalisation rules that are often used:
+
+\begin{description}
+	\item[Stemming and lemmatisation] Words can be used in different grammatical forms, for instance, \emph{organize}, \emph{organizes}, \emph{organizing}, however in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatisation is reduce a form of the word to a common base form. 
+	
+Here is an example: 
+	
+\hspace{100pt} \textcolor[rgb]{0,0,1}{ am, are, is = \textgreater be }
+
+\hspace{100pt} \textcolor[rgb]{0,0,1}{car, cars, car's, cars'  =\textgreater car}
+
+The result of applying the rule to the sentense:
+
+\hspace{50pt} \textcolor[rgb]{0,0,1}{the boy’s cars are different colors   =\textgreater the boy car be differ color}
+
+Stemming and lemmatisation are closely related concepts however there is a difference. \emph{Lemmatisation} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing it context and thereby can't distinguish the same words having different meanings depending on the context. 
+
+Here is an example:
+
+\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatisation since requires dictionary look-up
+
+\hspace{10pt} \textcolor[rgb]{0,0,1}{writing  =\textgreater write}, can be matched by both lemmatisation and stemming
+
+\hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatisation since requires the word context 
+
+In general stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
+	  
+	\item[Capitalization/case-folding] A simple strategy is to reduce all letters to a lower case, so that sentences with \emph{Automobile} will match to queries with \emph{automobile}., however this approach would not be appropriate for example to identifying company names, such as \emph{General Motors}. The better strategy for English language would be to lowercase words only in the beginning of the sentences and to lowercase all words in titles. Case-folding can be be done more accurately by a machine learning model using more features to identify weather a words should be lowercased.
+	\item[Accents and diacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds.  However in many cases users can enter queries for words without diacritics, whether for reasons of speed, laziness or limited software 
+\end{description}
+
+The last step is the core part of the building inverted index. The input to indexing is a list of normalised tokens for each document, which is a list of pairs of
+term and document ID, as in Figure \ref{fig:input-indexing}. The indexing algorithm is sorting the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown in Figure \ref{fig:inverted-index}.
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5]{input-indexing}
+    \caption{Input to the indexing algorithm}
+    \label{fig:input-indexing}
+  \end{figure}
+
+%%Since a term generally occurs in a number of documents, this data organization already reduces the storage requirements of the index. 
+
+\section{Dynamic indexing}
+So far we assumed that document collection is static however there are many cases when collection can be updated, for example, by adding new documents, deleting or updating existing documents. One simple way dealing with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if changes made in collection are small over time and delay in making new documents searchable is not critical. However if there is one of a requirement mentioned above, for example, making new documents searchable quickly then one might be interested in another solution: keeping auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both of the indexes and results are merged. When auxiliary index becomes too large it can be merged with the main index.
+
+\section{Retrieving search results}
+
+\section{Summing up internals of a web search engine} 
 
 \chapter{The Problem}
 In which we understand what the problem is in detail.

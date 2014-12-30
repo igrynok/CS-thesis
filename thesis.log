@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  17 DEC 2014 12:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 DEC 2014 20:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,7 +933,7 @@ LaTeX Info: Redefining \nameref on input line 221.
 
 LaTeX Info: Redefining \Ref on input line 221.
 
-<images/logos/MSc_quer.png, id=60, 737.6358pt x 194.1654pt>
+<images/logos/MSc_quer.png, id=76, 737.6358pt x 194.1654pt>
 File: images/logos/MSc_quer.png Graphic file (type png)
 
 <use images/logos/MSc_quer.png>
@@ -948,14 +948,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 240.
 
-<images/logos/UNI_Bern.png, id=61, 258.2448pt x 199.4652pt>
+<images/logos/UNI_Bern.png, id=77, 258.2448pt x 199.4652pt>
 File: images/logos/UNI_Bern.png Graphic file (type png)
 
 <use images/logos/UNI_Bern.png>
 Package pdftex.def Info: images/logos/UNI_Bern.png used on input line 263.
 (pdftex.def)             Requested size: 77.47403pt x 59.84001pt.
 
-<images/logos/UNI_Neuenburg.png, id=62, 267.8808pt x 170.5572pt>
+<images/logos/UNI_Neuenburg.png, id=78, 267.8808pt x 170.5572pt>
 File: images/logos/UNI_Neuenburg.png Graphic file (type png)
 
 <use images/logos/UNI_Neuenburg.png>
@@ -963,7 +963,7 @@ Package pdftex.def Info: images/logos/UNI_Neuenburg.png used on input line 264.
 
 (pdftex.def)             Requested size: 80.36485pt x 51.16754pt.
 
-<images/logos/UNI_Fribourg.png, id=63, 80.2197pt x 53.7207pt>
+<images/logos/UNI_Fribourg.png, id=79, 80.2197pt x 53.7207pt>
 File: images/logos/UNI_Fribourg.png Graphic file (type png)
 
 <use images/logos/UNI_Fribourg.png>
@@ -1031,6 +1031,10 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 12.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 13.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 14.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 15.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 16.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 17.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 18.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 19.
 )
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
@@ -1051,15 +1055,15 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 Chapter 2.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 52.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 54.
-<images/web-search-engine.png, id=107, 446.6286pt x 144.54pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 55.
+<images/web-search-engine.png, id=127, 446.6286pt x 144.54pt>
 File: images/web-search-engine.png Graphic file (type png)
 
 <use images/web-search-engine.png>
-Package pdftex.def Info: images/web-search-engine.png used on input line 63.
+Package pdftex.def Info: images/web-search-engine.png used on input line 64.
 (pdftex.def)             Requested size: 446.6275pt x 144.53963pt.
 
-Overfull \hbox (28.37383pt too wide) in paragraph at lines 63--64
+Overfull \hbox (28.37383pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
@@ -1067,76 +1071,137 @@ Overfull \hbox (28.37383pt too wide) in paragraph at lines 63--64
 
  <./images/web-search-engine.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 73.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 73.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 74.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 74.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 77.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 81.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 82.
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--80
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
 
  []
 
-[6]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 85.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 85.
+<images/inverted-index.png, id=144, 664.4825pt x 273.02pt>
+File: images/inverted-index.png Graphic file (type png)
+
+<use images/inverted-index.png>
+Package pdftex.def Info: images/inverted-index.png used on input line 88.
+(pdftex.def)             Requested size: 365.46649pt x 150.16145pt.
+ [6]
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 108.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 110.
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+[7 <./images/inverted-index.png>]
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 119.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 119.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 119.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 121.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 125.
+Missing character: There is no Õ in font ptmr7t!
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 131.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 133.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 135.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 137.
+ [8]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 144.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 144.
+
+<images/input-indexing.png, id=180, 367.3725pt x 359.3425pt>
+File: images/input-indexing.png Graphic file (type png)
+
+<use images/input-indexing.png>
+Package pdftex.def Info: images/input-indexing.png used on input line 148.
+(pdftex.def)             Requested size: 183.68579pt x 179.6708pt.
+ [9 <./images/input-indexing.png>]
 Chapter 3.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 81.
-[7
+0.6,0.6}' on input line 162.
+[10
 
 ]
 Chapter 4.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 84.
-[8
+0.6,0.6}' on input line 165.
+[11
 
 ]
 Chapter 5.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 91.
-[9
+0.6,0.6}' on input line 172.
+[12
 
 ]
 Chapter 6.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 94.
-(./thesis.bbl [10
+0.6,0.6}' on input line 175.
+(./thesis.bbl [13
 
 ]
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 1.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
- [11
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
+ [14
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C0F9088EBD36B76AA6ABDACDCA7D4F72;860.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 486429D2A13E57FC18AA825960F8D92A;1163
+(rerunfilecheck)             After:  A65D1477EA042532D5159FC0FB86F3C6;1162.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
  ) 
 Here is how much of TeX's memory you used:
- 16937 strings out of 493488
- 273783 string characters out of 3141326
- 386795 words of memory out of 3000000
- 19802 multiletter control sequences out of 15000+200000
- 41271 words of font info for 106 fonts, out of 3000000 for 9000
+ 17074 strings out of 493488
+ 275584 string characters out of 3141326
+ 389947 words of memory out of 3000000
+ 19842 multiletter control sequences out of 15000+200000
+ 44936 words of font info for 157 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 40i,7n,35p,617b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,8n,35p,1254b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2012/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/
-2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/font
-s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on thesis.pdf (12 pages, 324699 bytes).
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on thesis.pdf (15 pages, 375301 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 20106 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 20148 words of extra memory for PDF output out of 20736 (max. 10000000)
 
