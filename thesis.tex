@@ -156,10 +156,20 @@ term and document ID, as in Figure \ref{fig:input-indexing}. The indexing algori
 So far we assumed that document collection is static however there are many cases when collection can be updated, for example, by adding new documents, deleting or updating existing documents. One simple way dealing with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if changes made in collection are small over time and delay in making new documents searchable is not critical. However if there is one of a requirement mentioned above, for example, making new documents searchable quickly then one might be interested in another solution: keeping auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both of the indexes and results are merged. When auxiliary index becomes too large it can be merged with the main index.
 
 \section{Retrieving search results}
+When a user makes a query she would be interested in getting a result document containing all terms in the query so that terms are close to each other. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in a number of words. For instance a smallest  window for 4-terms query will be 4. Intuitively, smaller windows represent better results for users. Such window can become one of the indicators scoring a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hides the complexity of searching a result from user introducing \emph{free text query parsers} so a user can make only one query.     
 
-\section{Summing up internals of a web search engine} 
+\section{Conclusion} 
+Figure \ref{fig:search-full-diagram} summarises approaches described above in a more detailed picture of a basic search system. 
+Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenisation and lemmatisation) in order to built indexes with the help of a indexer. The middle stream in Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream in Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
 
-\chapter{The Problem}
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6]{search-full-diagram}
+    \caption{Search Engine internals}
+    \label{fig:search-full-diagram}
+  \end{figure}
+
+\chapter{Problem}
 In which we understand what the problem is in detail.
 
 \chapter {Citation Search Engine}
@@ -169,7 +179,7 @@ In which you describe your solution.
 \section{Components}
 \section{Parser -Challenges}
 
-\chapter {The Validation}
+\chapter {Validation}
 In which you show how well the solution works.
 
 \chapter {Conclusion and Future Work}

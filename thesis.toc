@@ -9,11 +9,11 @@
 \contentsline {section}{\numberline {2.3}Inverted index}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Dynamic indexing}{9}{section.2.4}
 \contentsline {section}{\numberline {2.5}Retrieving search results}{9}{section.2.5}
-\contentsline {section}{\numberline {2.6}Summing up internals of a web search engine}{9}{section.2.6}
-\contentsline {chapter}{\numberline {3}The Problem}{10}{chapter.3}
-\contentsline {chapter}{\numberline {4}Citation Search Engine}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Overview of Architecture}{11}{section.4.1}
-\contentsline {section}{\numberline {4.2}Components}{11}{section.4.2}
-\contentsline {section}{\numberline {4.3}Parser -Challenges}{11}{section.4.3}
-\contentsline {chapter}{\numberline {5}The Validation}{12}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{13}{chapter.6}
+\contentsline {section}{\numberline {2.6}Conclusion}{10}{section.2.6}
+\contentsline {chapter}{\numberline {3}Problem}{11}{chapter.3}
+\contentsline {chapter}{\numberline {4}Citation Search Engine}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Overview of Architecture}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Components}{12}{section.4.2}
+\contentsline {section}{\numberline {4.3}Parser -Challenges}{12}{section.4.3}
+\contentsline {chapter}{\numberline {5}Validation}{13}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{14}{chapter.6}

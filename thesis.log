@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 DEC 2014 20:11
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 JAN 2015 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1137,58 +1137,69 @@ File: images/input-indexing.png Graphic file (type png)
 Package pdftex.def Info: images/input-indexing.png used on input line 148.
 (pdftex.def)             Requested size: 183.68579pt x 179.6708pt.
  [9 <./images/input-indexing.png>]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 162.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
+
+<images/search-full-diagram.png, id=191, 711.65875pt x 363.3575pt>
+File: images/search-full-diagram.png Graphic file (type png)
+
+<use images/search-full-diagram.png>
+Package pdftex.def Info: images/search-full-diagram.png used on input line 167.
+
+(pdftex.def)             Requested size: 426.99855pt x 218.01617pt.
+
+Overfull \hbox (8.74487pt too wide) in paragraph at lines 167--168
+ [][] 
+ []
+
+[10 <./images/search-full-diagram.png>]
 Chapter 3.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 162.
-[10
+0.6,0.6}' on input line 172.
+[11
 
 ]
 Chapter 4.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 165.
-[11
+0.6,0.6}' on input line 175.
+[12
 
 ]
 Chapter 5.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 172.
-[12
+0.6,0.6}' on input line 182.
+[13
 
 ]
 Chapter 6.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 175.
-(./thesis.bbl [13
+0.6,0.6}' on input line 185.
+(./thesis.bbl [14
 
 ]
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 1.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
- [14
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+ [15
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 486429D2A13E57FC18AA825960F8D92A;1163
-(rerunfilecheck)             After:  A65D1477EA042532D5159FC0FB86F3C6;1162.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: E82C171209F6D495F31B74FCA56DA2F6;1121.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 17074 strings out of 493488
- 275584 string characters out of 3141326
- 389947 words of memory out of 3000000
- 19842 multiletter control sequences out of 15000+200000
- 44936 words of font info for 157 fonts, out of 3000000 for 9000
+ 17091 strings out of 493488
+ 275869 string characters out of 3141326
+ 389998 words of memory out of 3000000
+ 19847 multiletter control sequences out of 15000+200000
+ 45375 words of font info for 163 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,8n,35p,1254b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1198,10 +1209,10 @@ xlive/2012/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on thesis.pdf (15 pages, 375301 bytes).
+Output written on thesis.pdf (16 pages, 397579 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 20148 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 20153 words of extra memory for PDF output out of 20736 (max. 10000000)
 
