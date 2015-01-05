@@ -10,10 +10,17 @@
 \contentsline {section}{\numberline {2.4}Dynamic indexing}{9}{section.2.4}
 \contentsline {section}{\numberline {2.5}Retrieving search results}{9}{section.2.5}
 \contentsline {section}{\numberline {2.6}Conclusion}{10}{section.2.6}
-\contentsline {chapter}{\numberline {3}Problem}{11}{chapter.3}
-\contentsline {chapter}{\numberline {4}Citation Search Engine}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}Overview of Architecture}{12}{section.4.1}
-\contentsline {section}{\numberline {4.2}Components}{12}{section.4.2}
-\contentsline {section}{\numberline {4.3}Parser -Challenges}{12}{section.4.3}
-\contentsline {chapter}{\numberline {5}Validation}{13}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{14}{chapter.6}
+\contentsline {chapter}{\numberline {3}Citation Search Engine}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}System overview}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Parser}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Preprocessing}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Text Indexing}{12}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Indexator}{12}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Configuration}{12}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{12}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Meta Information storage}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Web search interface}{12}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Citation search page}{12}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Details page}{12}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Validation}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{14}{chapter.5}

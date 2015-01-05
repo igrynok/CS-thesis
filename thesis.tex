@@ -43,9 +43,10 @@ We set following goals:
 The rest of the paper structured as follows:
 \begin{description}
 	\item[Chapter 2] The chapter first gives a high overview of the architecture of a typical web search engine and shortly reviews popular academic search engines. Then It describes the main steps for inverted index construction.
-	\item[Chapter 3] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
-	\item[Chapter 4] Describes the design and implementation of Citation Search Engine. 
-	\item[Chapter 5] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
+	%\item[Chapter 3] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
+	\item[Chapter 3] Describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then describes details of implementation of each component. 
+	\item[Chapter 4] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
+	\item[Chapter 5] Evaluation
 	\item[Chapter 6] Contains conclusion and possible future work. 
 \end{description}
 
@@ -82,7 +83,7 @@ Google Scholar is a freely accessible web search engine that makes full-text ind
 Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}. 
 
 \section{Inverted index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user make a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary in Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user make a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.55]{inverted-index}
@@ -141,7 +142,7 @@ In general stemmers are easier to implement and run faster. The most common algo
 \end{description}
 
 The last step is the core part of the building inverted index. The input to indexing is a list of normalised tokens for each document, which is a list of pairs of
-term and document ID, as in Figure \ref{fig:input-indexing}. The indexing algorithm is sorting the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown in Figure \ref{fig:inverted-index}.
+term and document ID, as on Figure \ref{fig:input-indexing}. The indexing algorithm is sorting the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown on Figure \ref{fig:inverted-index}.
 
   \begin{figure}[htp]
     \centering
@@ -160,7 +161,7 @@ When a user makes a query she would be interested in getting a result document c
 
 \section{Conclusion} 
 Figure \ref{fig:search-full-diagram} summarises approaches described above in a more detailed picture of a basic search system. 
-Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenisation and lemmatisation) in order to built indexes with the help of a indexer. The middle stream in Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream in Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
+Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenisation and lemmatisation) in order to built indexes with the help of a indexer. The middle stream on Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream on Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
 
   \begin{figure}[htp]
     \centering
@@ -169,15 +170,37 @@ Left stream in the Figure \ref{fig:search-full-diagram} describes the process of
     \label{fig:search-full-diagram}
   \end{figure}
 
-\chapter{Problem}
-In which we understand what the problem is in detail.
+%\chapter{Problem}
+%In which we understand what the problem is in detail.
 
 \chapter {Citation Search Engine}
-In which you describe your solution.
 
-\section{Overview of Architecture}
-\section{Components}
-\section{Parser -Challenges}
+\section{System overview}
+The overall architecture of Citation Search Engine is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying on resulted indexes. Correspondingly there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer Solution} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} for storing indexes and \emph{Meta Information Storage} for storing meta information. For the convenience, the workflow of the system is numbered and will be explained below.
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6]{cs}
+    \caption{Search Engine high level architecture}
+    \label{fig:cs}
+  \end{figure}
+
+First operation performed by the system is indexing. In the indexing process collection of PDF files is provided to \emph{Parser} (1). \emph{Parser} parses PDF files into text and extract meta information from text. It then packs data about citations into documents and publishes obtained documents to \emph{Indexer Solution} (2) which indexes and stores indexes in \emph{Indexes Storage} (2'). Meta information extracted from textual representation of PDF files that doesn't require indexing is stored in \emph{Meta Information Storage} (3). 
+
+In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analysed by \emph{Indexer Solution}. \emph{Indexer Solution} finds documents matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If user is interested in getting details regarding the specific reference the information will be looked up in \emph{Meta Information Storage} (5). Finally, the result is shown to the user as a an html page (6). 
+
+Next sections of the chapter describe implementation of each component in detail and show the reasons of choosing a particular solution.       
+
+\section{Parser}
+\subsection{Preprocessing}
+\subsection{Text Indexing}
+\section{Indexator}
+\subsection{Configuration}
+\subsection{Enhanced search features}
+\section{Meta Information storage}
+\section{Web search interface}
+\subsection{Citation search page}
+\subsection{Details page}
 
 \chapter {Validation}
 In which you show how well the solution works.
