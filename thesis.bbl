@@ -1,10 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
 \newblock Parscit: An open-source crf reference string parsing package.
 \newblock In {\em INTERNATIONAL LANGUAGE RESOURCES AND EVALUATION}. European
   Language Resources Association, 2008.
+
+\bibitem{pdfbox}
+The Apache~Software Foundation.
+\newblock {Apache PDFBox}.
+\newblock https://pdfbox.apache.org/.
 
 \bibitem{solr}
 The Apache~Software Foundation.

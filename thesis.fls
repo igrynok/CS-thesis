@@ -1,0 +1,359 @@
+PWD /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis
+INPUT /usr/local/texlive/2012/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf/web2c/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.tex
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.log
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/book.cls
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/book.cls
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/bk11.clo
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/bk11.clo
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/preprint/balance.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/preprint/balance.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/rotating/rotating.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/rotating/rotating.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/needspace/needspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/needspace/needspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/bold-extra/bold-extra.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/bold-extra/bold-extra.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/tools/varioref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/tools/varioref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/textcomp.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/textcomp.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1enc.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1enc.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucs.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/data/uni-global.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/times.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/times.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/alltt.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/alltt.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xfrac/xfrac.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xfrac/xfrac.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3names.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3names.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3bootstrap.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3bootstrap.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/etex-pkg/etex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/etex-pkg/etex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3basics.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3basics.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3expan.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3expan.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3tl.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3tl.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3seq.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3seq.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3int.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3int.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3quark.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3quark.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3prg.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3prg.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3clist.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3clist.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3token.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3token.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3prop.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3prop.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3msg.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3msg.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3file.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3file.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3skip.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3skip.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3keys.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3keys.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3fp.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3fp.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3box.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3box.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3coffins.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3coffins.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3color.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3color.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3luatex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3kernel/l3luatex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/appendix/appendix.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/appendix/appendix.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/quotchap/quotchap.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/quotchap/quotchap.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mdwtools/mdwlist.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mdwtools/mdwlist.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/changepage/chngpage.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/changepage/chngpage.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1cmr.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1cmr.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+INPUT /usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ucs/ucsencs.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/MSc_quer.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/MSc_quer.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/MSc_quer.png
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Bern.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Bern.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Bern.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Neuenburg.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Neuenburg.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Neuenburg.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1put.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1put.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/utopia/putb8t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/utopia/putb8t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/Ustmry.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/Ustmry.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/utopia/putb8t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/utopia/putb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/web-search-engine.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/web-search-engine.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/web-search-engine.png
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.png
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/input-indexing.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/input-indexing.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/input-indexing.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/search-full-diagram.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/search-full-diagram.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/search-full-diagram.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.png
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb

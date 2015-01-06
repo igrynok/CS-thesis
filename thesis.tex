@@ -67,7 +67,7 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criterias. 
+Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criteria. 
 
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews some of popular academical search engines.  
 
@@ -176,6 +176,7 @@ Left stream in the Figure \ref{fig:search-full-diagram} describes the process of
 \chapter {Citation Search Engine}
 
 \section{System overview}
+
 The overall architecture of Citation Search Engine is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying on resulted indexes. Correspondingly there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer Solution} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} for storing indexes and \emph{Meta Information Storage} for storing meta information. For the convenience, the workflow of the system is numbered and will be explained below.
 
   \begin{figure}[htp]
@@ -192,8 +193,52 @@ In the querying process user searches for some phrase using \emph{Search Web App
 Next sections of the chapter describe implementation of each component in detail and show the reasons of choosing a particular solution.       
 
 \section{Parser}
-\subsection{Preprocessing}
-\subsection{Text Indexing}
+
+It is practical to divide the work of \emph{Parser} into two phases: \emph{Processing} and \emph{Publishing}, as on Figure \ref{fig:parser}. The output of \emph{Processing} phase is input to \emph{Publishing} phase. \emph{Processing} phase aims to parse PDF-files and prepare documents with extracted information for publishing. Next parts of this section describes \emph{Processing} and \emph{Publishing} phases in detail. 
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6]{parser}
+    \caption{Parser workflow}
+    \label{fig:parser}
+  \end{figure}
+
+\subsection{Processing}
+The main role of \emph{Processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
+In common case parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that there exist scientific articles written decades ago which can use different encoding algorithms than articles created recently. Thereby building a universal parser is practically impossible. In our case we try to identify common patterns covering majority of scientific article formats or at least formats found in our collection of articles.  
+
+\emph{Processing} phase starts with recursively walking though directory tree of the collection library. While walking though directory \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We used Apache PDFBox library \cite{pdfbox} to parse PDF-files into text. The library extracts full text from PDF-file but without any hints on the initial structure of the article. In our case to find citations and bibliographic references in text we need to look them up in different parts of the article, so it was designed an algorithm to break PDF-text into sections.
+
+Generally we are interested in identifying a body of the document where we can find citations and references block where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some section. Based on keywords on can extract different sections of a document. Figure \ref{fig:parser} shows a sample text of a parsed pdf-document with keywords. 
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6]{template}
+    \caption{Example of a text of the parsed scientific article. Keywords help to break the document into sections.}
+    \label{fig:template}
+  \end{figure}
+  
+One can notice following characteristics of a document:
+\begin{itemize}
+	\item Body of a document comes before references section
+	\item Appendix or Author's biography sections can come after references section 
+	\item Each document contains an Abstract and References words and might contain Appendix word. We call these words keywords. 
+\end{itemize}  
+
+In common case keywords can be written in different formats, for example using upper or lower case. Table  summarises the beginning of document sections.
+
+\begin{center}
+\begin{tabular}{ | l | l | l | } 
+ \hline
+ body & references & appendix \\  \hline
+ Abstract & References & Appendix \\ 
+ ABSTRACT & References: & APPENDIX \\
+ & REFERENCES & \\  
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Publishing}
 \section{Indexator}
 \subsection{Configuration}
 \subsection{Enhanced search features}
