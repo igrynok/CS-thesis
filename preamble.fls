@@ -1,0 +1,14 @@
+PWD /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis
+INPUT /usr/local/texlive/2012/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf/web2c/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.log
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.aux
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.aux
+OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.aux
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm

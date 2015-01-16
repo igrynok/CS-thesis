@@ -67,7 +67,7 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When a user makes a query a search engine analysis its index and returns best matched web pages according to specific to indexer criteria. 
+Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When user makes a query the search engine analysis its index and returns best matched web pages according to specific to indexer criteria. 
 
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews some of popular academical search engines.  
 
@@ -83,7 +83,7 @@ Google Scholar is a freely accessible web search engine that makes full-text ind
 Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}. 
 
 \section{Inverted index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user make a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user makes a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.55]{inverted-index}
@@ -123,7 +123,7 @@ Here is an example:
 
 The result of applying the rule to the sentense:
 
-\hspace{50pt} \textcolor[rgb]{0,0,1}{the boy’s cars are different colors   =\textgreater the boy car be differ color}
+\hspace{50pt} \textcolor[rgb]{0,0,1}{the boy√ïs cars are different colors   =\textgreater the boy car be differ color}
 
 Stemming and lemmatisation are closely related concepts however there is a difference. \emph{Lemmatisation} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing it context and thereby can't distinguish the same words having different meanings depending on the context. 
 
@@ -214,19 +214,20 @@ Generally we are interested in identifying a body of the document where we can f
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6]{template}
-    \caption{Example of a text of the parsed scientific article. Keywords help to break the document into sections.}
+    \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.}
     \label{fig:template}
   \end{figure}
   
-One can notice following characteristics of a document:
+One can notice following characteristics of scientific articles:
 \begin{itemize}
 	\item Body of a document comes before references section
 	\item Appendix or Author's biography sections can come after references section 
 	\item Each document contains an Abstract and References words and might contain Appendix word. We call these words keywords. 
 \end{itemize}  
 
-In common case keywords can be written in different formats, for example using upper or lower case. Table  summarises the beginning of document sections.
+In common case keywords can be written in different formats, for example, using upper or lower case. Table \ref{tab:keywords} illustrates variations of keywords in the beginning of document sections.
 
+\begin{table}[ht]
 \begin{center}
 \begin{tabular}{ | l | l | l | } 
  \hline
@@ -236,9 +237,89 @@ In common case keywords can be written in different formats, for example using u
  & REFERENCES & \\  
  \hline
 \end{tabular}
+\caption{Keywords identifying different sections in a document}
+\label{tab:keywords}
 \end{center}
+\end{table}
+
+After breaking down a document into sections as show on Figure \ref{fig:template}, text in sections are presented in one-column format. There are two aspects regarding this format. First, sentences can be splitted by new line symbol in the end of a line. Secondly, words can be splitted by dash symbol in the end of a line. It was introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain continues text.
+
+As a result of normalization step we have a document divided into body and references section. Before searching citations in the body of a document it is reasonable to break body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can encounter in a sentence itself, for example, an item of a numbered list or a name of a scientist. Besides, not all sentences end by period, for example, title of a section or an item of a list. It was used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
+
+Next, we search for citations in a body of a document and bibliography links in a references section. When an author makes a citation it puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations. After analyzing some set of articles it was revealed frequent patterns in using square brackets for citing showed in Table \ref{tab:citations}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{7cm} | } 
+ \hline
+ Patterns of using [ ] & Example in text \\  \hline
+ {[}21{]} & Our conclusion is that, contrary to prior pessimism \textbf{[21]}, [22], data mining static code attributes to learn defect predictors is useful. \\ 
+ {[}20, 3, 11, 17{]} & In the nineties, researchers focused on specialized multivariate models, i.e., models based on sets of metrics selected for specific application areas and particular development environments \textbf{[20, 3, 11, 17]}. \\
+ {[}24, Sections 6.3 and 6.4 {]}& Details on the life-cycle of a bug can be found in the BUGZILLA documentation \textbf{[24, Sections 6.3 and 6.4]}. \\
+ {[}PJe02{]} & In a lazy language like Haskell \textbf{[PJe02]} this is not an issue - which is one key reason Haskell is very good at defining domain specific languages.  \\
+ \hline
+\end{tabular}
+\caption{Frequent patterns in using square brackets ([ and ])for citing}
+\label{tab:citations}
+\end{center}
+\end{table}
+
+Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | p{12cm} | } 
+ \hline
+ References section templates\\  \hline
+ \textbf{[1]} J. Bach. Useful features of a test automation system (partiii) \ldots \newline
+ \textbf{[2]} B. Beizer. Black-Box Testing. John Wiley and Sons, \ldots \newline
+ \ldots \\ \hline 
+ \textbf{1.}  J. R. Hobbs,  Granularity, Ninth International Joint Conference \ldots \newline
+  \textbf{2.}  W. Woods, What's in a Link:  Foundations for Semantic Networks, \ldots \newline
+  \ldots \\ \hline
+  \textbf{[1].}   Arnold, R.S., Software Reengineering, ed. \ldots \newline
+  \textbf{[2].}   Larman, C., Applying  UML and Patterns. 1998, \ldots \newline  
+  \ldots \\ \hline
+  \textbf{[ASU86]} A. V. Aho, R. Sethi, and J. D. Ullman. Compilers: \ldots \newline
+  \textbf{[AU73]} A.V. Aho and J.D. Ullman. The theory of parsing, translation \ldots \newline 
+  \ldots \\
+ \hline
+\end{tabular}
+\caption{Frequent patterns of writing references block}
+\label{tab:references}
+\end{center}
+\end{table}
+
+Extracting bibliographic links allow us to match citations with bibliographic links and prepare documents for publishing. 
 
 \subsection{Publishing}
+
+There are two systems where documents will be published: Solr and MongoDB. As already explained above Solr is used for indexing citations and MongoDB for storing meta-data. Some reasonings in favor of using MongoDB additionally to Solr storage will be given below.
+
+\subsection{Publishing to Solr}
+The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.7]{doc}
+    \caption{Document structure publishing to Solr}
+    \label{fig:doc}
+  \end{figure} 
+
+Every document representing one citation consist of following fields:
+\begin{itemize}[noitemsep]
+  \item id: document unique id, mandatory field for publishing to Solr
+  \item text: text of the citation that we want to index
+  \item context: citation with a text framing it, we take 1 sentence before and 1 after the citation 
+  \item path: URL of a document where citation was found
+  \item references: list of bibliographic links from references section matching this citation
+\end{itemize}
+
+Lets have a look on how Solr stores documents. Solr uses NoSql like data storage, but actually it is even more limited than traditional NoSql databases. Indeed the data stored in Solr is very flat, which means that Solr doesn't allow to store hierarchical data as well as relational date. In our case along with the reference we are interested in storing a title of the scientific article parsed from the reference, so later we can aggregate citations referred to the same scientific article.  
+
+\subsection{Publishing to MongoDB}   
+
+\subsection{Challenges}
 \section{Indexator}
 \subsection{Configuration}
 \subsection{Enhanced search features}

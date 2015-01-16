@@ -27,6 +27,11 @@ Google.
 \newblock {Google Scholar}.
 \newblock http://scholar.google.ch/.
 
+\bibitem{stanford.nlp}
+The Stanford Natural Language~Processing Group.
+\newblock {Stanford CoreNLP API}.
+\newblock http://nlp.stanford.edu/software/corenlp.shtml.
+
 \bibitem{web-repos}
 Cybermetrics Lab.
 \newblock {Ranking Web of Repositories}.

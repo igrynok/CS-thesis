@@ -178,6 +178,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mdwtools/mdwlist.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mdwtools/mdwlist.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/changepage/chngpage.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/changepage/chngpage.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -345,6 +347,9 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.png
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.png
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
