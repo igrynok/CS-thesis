@@ -264,7 +264,7 @@ Next, we search for citations in a body of a document and bibliography links in 
 \end{center}
 \end{table}
 
-Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings.
+Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings. To extract bibliographic links we make regular epressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow us to match citations with bibliographic links.
 
 \begin{table}[h]
 \begin{center}
@@ -290,7 +290,14 @@ Further we need to extract bibliographic links from a references section. For th
 \end{center}
 \end{table}
 
-Extracting bibliographic links allow us to match citations with bibliographic links and prepare documents for publishing. 
+The pipline of processing stage described above depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links.
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5]{processing}
+    \caption{Pipeline of processing stage}
+    \label{fig:proc}
+  \end{figure}   
 
 \subsection{Publishing}
 
@@ -315,9 +322,48 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-Lets have a look on how Solr stores documents. Solr uses NoSql like data storage, but actually it is even more limited than traditional NoSql databases. Indeed the data stored in Solr is very flat, which means that Solr doesn't allow to store hierarchical data as well as relational date. In our case along with the reference we are interested in storing a title of the scientific article parsed from the reference, so later we can aggregate citations referred to the same scientific article.  
+Lets have a look at how Solr stores documents. Solr uses NoSQL like data storage, but actually it is even more limited than traditional NoSQL databases. Indeed, the data stored in Solr storage is very `flat', which means that Solr doesn't allow to store even hierarchical data. In our case along with the references we intent to store a title of the scientific article parsed from the reference string, so later we can aggregate citations referred to the same scientific article. /*It's worth to say that citation itself can refer to multiple scientific articles*/ We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease quality of user experience. Thus we are coming to the external storage solution that will keep titles of scientific articles and all citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution it was decided to use MongoDB as an external storage.     
 
-\subsection{Publishing to MongoDB}   
+\subsection{Publishing to MongoDB} 
+MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema. To connect to database we used Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to JSON structure of a document showed on Listing \ref{lst:json}. 
+The json document consist of following fields:
+\begin{itemize}[noitemsep]
+	\item id: document id, field automatically assigned by MongoDB
+	\item title: title of a scientific article
+	\item cittations: citations with its references of the scientific article identifying by title field 
+\end{itemize} 
+
+Every time while sending a new citation with paper title to MongoDB we check if document with the same title already exist. If so we add a new citaion to this document otherwise create a new document. \\
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[label={lst:json}, caption={Sample document stored in MongoDB}]
+{ 
+	"_id" : ObjectId("547ef1b219795f049d6a0ad0"), 
+	"title" : "Re-examining the Fault Density-Component Size  Connection", 
+	"citations" : [ 
+	{ 
+		"citation" : "Hatton, [19], claims that there is “compelling empirical 
+					  evidence from disparate sources to suggest that in any 
+					  software system, larger components are proportionally more 
+					  reliable than smaller components.”", 
+		"references" : [ 
+		"[19] L. Hatton, “Re-examining the Fault Density-Component Size ..." 
+		] 
+	}, 
+	{ 
+		"citation" : "Hatton examined a number of data sets, [15], [18] and 
+					  concluded that  there was evidence of “macroscopic behavior” 
+					  common to  all data sets despite the massive internal 
+					  complexity of each  system studied, [19].", 
+		"references" : [ 
+		"[15] K.H. Moeller and D. Paulish, “An Empirical Investigation of ...", 
+		"[18] T. Keller, “Measurements Role in Providing Error-Free Onboard ...", 
+		"[19] L. Hatton, “Re-examining the Fault Density-Component Size  ..." 
+		] 
+	}] 
+}
+\end{lstlisting}
+\end{minipage}
 
 \subsection{Challenges}
 \section{Indexator}
