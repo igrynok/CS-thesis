@@ -290,14 +290,45 @@ Further we need to extract bibliographic links from a references section. For th
 \end{center}
 \end{table}
 
-The pipline of processing stage described above depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links.
+The pipeline of processing stage described above depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
 
   \begin{figure}[htp]
     \centering
-    \includegraphics[scale=0.5]{processing}
+    \includegraphics[scale=0.55]{processing}
     \caption{Pipeline of processing stage}
     \label{fig:proc}
-  \end{figure}   
+  \end{figure} 
+
+\paragraph{Processing bibliographic links}
+As usual we try to recognize common patterns belonging to majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First, it was noticed that if bibliographic link contains some sort of quotes, for example, double quotes ``'' or single quotes `', then highly probably that a title is enclosed by these quotes. Then, some observations were made for bibliographic links without quotes. Very often, a bibliographic link structured as follows: it begins by listing paper's authors, then paper's title goes and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it's enough to take the second part of the bibliographic link to be a title.   
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | p{12cm} | } 
+ \hline
+ Conradi, R., Dyba, T., Sjoberg, D.I.K., and Ulsund, T., "Lessons learned and recommendations from two large norwegian SPI programmes." Lecture notes in computer science, 2003, pp. 32-45."
+ \\ \hline 
+ P. Molin, L. Ohlsson, `Points \& Deviations - A pattern language for fire alarm systems,' to be published in Pattern Languages of Program Design 3, Addison-Wesley.
+ \\ \hline
+  R. P. Wilson and M. S. Lam. Effective context sensitive pointer analysis for C programs. In PLDI, pages 1–12, June 1995. 289 
+  \\ \hline
+  Allen, Thomas B. Vanishing Wildlife of North America. Washington, D.C.: National Geographic Society, 1974.
+  \\ \hline
+  I. Herraiz, J. M. Gonzalez-Barahona, and G. Robles. Towards a Theoretical Model for Software Growth. In Proceedings of the 4th International Workshop on Mining Software Repositories, Minnesotta, USA, May 2007.
+  \\
+ \hline
+\end{tabular}
+\caption{Some examples of bibliographic links}
+\label{tab:bibl.links}
+\end{center}
+\end{table}
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5]{link}
+    \caption{Structure of a bibliographic link}
+    \label{fig:link}
+  \end{figure}     
 
 \subsection{Publishing}
 
@@ -322,10 +353,10 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-Lets have a look at how Solr stores documents. Solr uses NoSQL like data storage, but actually it is even more limited than traditional NoSQL databases. Indeed, the data stored in Solr storage is very `flat', which means that Solr doesn't allow to store even hierarchical data. In our case along with the references we intent to store a title of the scientific article parsed from the reference string, so later we can aggregate citations referred to the same scientific article. /*It's worth to say that citation itself can refer to multiple scientific articles*/ We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease quality of user experience. Thus we are coming to the external storage solution that will keep titles of scientific articles and all citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution it was decided to use MongoDB as an external storage.     
+Lets have a look at how Solr stores documents. Solr uses NoSQL like data storage, but actually it is even more limited than traditional NoSQL databases. Indeed, the data stored in Solr storage is very `flat', which means that Solr doesn't allow to store even hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case along with the references we intent to store a title of the scientific article parsed from the reference string, so later we can aggregate citations referred to the same scientific article. /*It's worth to say that citation itself can refer to multiple scientific articles*/ We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease quality of user experience. Thus we are coming to the external storage solution that will keep titles of scientific articles and all citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution it was decided to use MongoDB as an external storage.     
 
 \subsection{Publishing to MongoDB} 
-MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema. To connect to database we used Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to JSON structure of a document showed on Listing \ref{lst:json}. 
+MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \cite{mongo}. To connect to database we used Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to JSON structure of a document showed on Listing \ref{lst:json}. 
 The json document consist of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
@@ -368,6 +399,7 @@ Every time while sending a new citation with paper title to MongoDB we check if 
 \subsection{Challenges}
 \section{Indexator}
 \subsection{Configuration}
+bla \cite{solr.config}
 \subsection{Enhanced search features}
 \section{Meta Information storage}
 \section{Web search interface}

@@ -14,16 +14,17 @@
 \contentsline {section}{\numberline {3.1}System overview}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Parser}{12}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Processing}{12}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Publishing}{14}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Publishing to Solr}{15}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Publishing to MongoDB}{16}{subsection.3.2.4}
+\contentsline {paragraph}{Processing bibliographic links}{15}{section*.4}
+\contentsline {subsection}{\numberline {3.2.2}Publishing}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Publishing to Solr}{16}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Publishing to MongoDB}{17}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Challenges}{18}{subsection.3.2.5}
 \contentsline {section}{\numberline {3.3}Indexator}{18}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Configuration}{18}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{18}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Meta Information storage}{18}{section.3.4}
-\contentsline {section}{\numberline {3.5}Web search interface}{18}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Citation search page}{18}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Details page}{18}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Validation}{19}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{20}{chapter.5}
+\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{19}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Meta Information storage}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}Web search interface}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Citation search page}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Details page}{19}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Validation}{20}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{21}{chapter.5}
