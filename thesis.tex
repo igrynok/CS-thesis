@@ -252,14 +252,6 @@ After breaking down a document into sections as show on Figure \ref{fig:template
 As a result of normalization step we have a document divided into body and references section. Before searching citations in the body of a document it is reasonable to break body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can encounter in a sentence itself, for example, an item of a numbered list or a name of a scientist. Besides, not all sentences end by period, for example, title of a section or an item of a list. It was used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
 Next, we search for citations in a body of a document and bibliography links in a references section. When an author makes a citation it puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations. After analyzing some set of articles it was revealed frequent patterns in using square brackets for citing showed in Table \ref{tab:citations}. 
-%Bertin and Atanassova \cite{marc1} designed FSA (finite state automata) to describe different types of bibliographic references. Example of FSA for alpha-numeric bibliographic reference is shown on Figure \ref{fig:fsa}. They then use FSA to build regular expressions matching bibliographic links. We use similar approach.
-
- % \begin{figure}[htp]
- %   \centering
- %   \includegraphics[scale=0.6]{fsa}
- %   \caption{Example of FSA for matching alpha-numeric bibliographic references}
- %   \label{fig:fsa}
- % \end{figure}
 
 \begin{table}[ht]
 \begin{center}
