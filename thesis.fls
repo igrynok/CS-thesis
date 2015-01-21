@@ -365,6 +365,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out

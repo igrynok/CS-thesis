@@ -110,10 +110,10 @@ Here is a tokenisation example:
 
 \hspace{50pt}\textcolor[rgb]{0,0,1}{Output: \framebox{Friends} \framebox{Romans} \framebox{Countrymen} \framebox{lend} \framebox{me} \framebox{your} \framebox{ears}} \\
 
-The third step is normalisation. It's good when tokens in a user query match tokens in the token list of documents. Consider an example of querying the word \emph{co-operation}, a user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite superficial differences in the character sequences. One way of token normalisation is keeping relations between unnormalised tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalisation however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are the equivalence classes. Consider some common normalisation rules that are often used:
+The third step is normalization. It's good when tokens in a user query match tokens in the token list of documents. Consider an example of querying the word \emph{co-operation}, a user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite superficial differences in the character sequences. One way of token normalisation is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are the equivalence classes. Consider some common normalization rules that are often used:
 
 \begin{description}
-	\item[Stemming and lemmatisation] Words can be used in different grammatical forms, for instance, \emph{organize}, \emph{organizes}, \emph{organizing}, however in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatisation is reduce a form of the word to a common base form. 
+	\item[Stemming and lemmatization] Words can be used in different grammatical forms, for instance, \emph{organize}, \emph{organizes}, \emph{organizing}, however in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatization is reduce a form of the word to a common base form. 
 	
 Here is an example: 
 	
@@ -121,19 +121,19 @@ Here is an example:
 
 \hspace{100pt} \textcolor[rgb]{0,0,1}{car, cars, car's, cars'  =\textgreater car}
 
-The result of applying the rule to the sentense:
+The result of applying the rule to the sentence:
 
-\hspace{50pt} \textcolor[rgb]{0,0,1}{the boyÕs cars are different colors   =\textgreater the boy car be differ color}
+\hspace{50pt} \textcolor[rgb]{0,0,1}{the boys cars are different colors   =\textgreater the boy car be differ color}
 
-Stemming and lemmatisation are closely related concepts however there is a difference. \emph{Lemmatisation} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing it context and thereby can't distinguish the same words having different meanings depending on the context. 
+Stemming and lemmatization are closely related concepts however there is a difference. \emph{Lemmatization} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing it context and thereby can't distinguish the same words having different meanings depending on the context. 
 
 Here is an example:
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatisation since requires dictionary look-up
+\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatization since requires dictionary look-up
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{writing  =\textgreater write}, can be matched by both lemmatisation and stemming
+\hspace{10pt} \textcolor[rgb]{0,0,1}{writing  =\textgreater write}, can be matched by both lemmatization and stemming
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatisation since requires the word context 
+\hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatization since requires the word context 
 
 In general stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
 	  
@@ -141,7 +141,7 @@ In general stemmers are easier to implement and run faster. The most common algo
 	\item[Accents and diacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds.  However in many cases users can enter queries for words without diacritics, whether for reasons of speed, laziness or limited software 
 \end{description}
 
-The last step is the core part of the building inverted index. The input to indexing is a list of normalised tokens for each document, which is a list of pairs of
+The last step is the core part of the building inverted index. The input to indexing is a list of normalized tokens for each document, which is a list of pairs of
 term and document ID, as on Figure \ref{fig:input-indexing}. The indexing algorithm is sorting the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown on Figure \ref{fig:inverted-index}.
 
   \begin{figure}[htp]
@@ -159,9 +159,9 @@ So far we assumed that document collection is static however there are many case
 \section{Retrieving search results}
 When a user makes a query she would be interested in getting a result document containing all terms in the query so that terms are close to each other. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in a number of words. For instance a smallest  window for 4-terms query will be 4. Intuitively, smaller windows represent better results for users. Such window can become one of the indicators scoring a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hides the complexity of searching a result from user introducing \emph{free text query parsers} so a user can make only one query.     
 
-\section{Conclusion} 
-Figure \ref{fig:search-full-diagram} summarises approaches described above in a more detailed picture of a basic search system. 
-Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenisation and lemmatisation) in order to built indexes with the help of a indexer. The middle stream on Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream on Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
+\section{Search Engine - entire picture} 
+Figure \ref{fig:search-full-diagram} summarizes approaches described above in a more detailed picture of a basic search system. 
+Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenization and lemmatization) in order to built indexes with the help of a indexer. The middle stream on Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream on Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
 
   \begin{figure}[htp]
     \centering
@@ -170,7 +170,12 @@ Left stream in the Figure \ref{fig:search-full-diagram} describes the process of
     \label{fig:search-full-diagram}
   \end{figure}
 
-%\chapter{Problem}
+\section{Citations in scientific publications}
+Citations remain interesting basic units for analysis in many scientific studies. Bertin and Atanassova \cite{marc1}, \cite{M_automaticannotation} made an attempt to automatically extract citations and annotate them using set of semantic categories. There are several studies that used citations to evaluate science by introducing map of science, which graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1}, \cite{Klavans:2009:TCM:1527090.1527095}, \cite{DBLP:journals/corr/abs-1202-1914}, \cite{Small:1999:VSC:308915.308932}. An interesting approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. An expert literature survey on citation analysis was made by Smith \cite{smith}, she reviewed hundred of scientific articles on this topic.      
+ 
+
+%\chapter {Related Work}
+
 %In which we understand what the problem is in detail.
 
 \chapter {Citation Search Engine}
@@ -188,7 +193,7 @@ The overall architecture of Citation Search Engine is shown on Figure \ref{fig:c
 
 First operation performed by the system is indexing. In the indexing process collection of PDF files is provided to \emph{Parser} (1). \emph{Parser} parses PDF files into text and extract meta information from text. It then packs data about citations into documents and publishes obtained documents to \emph{Indexer Solution} (2) which indexes and stores indexes in \emph{Indexes Storage} (2'). Meta information extracted from textual representation of PDF files that doesn't require indexing is stored in \emph{Meta Information Storage} (3). 
 
-In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analysed by \emph{Indexer Solution}. \emph{Indexer Solution} finds documents matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If user is interested in getting details regarding the specific reference the information will be looked up in \emph{Meta Information Storage} (5). Finally, the result is shown to the user as a an html page (6). 
+In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analyzed by \emph{Indexer Solution}. \emph{Indexer Solution} finds documents matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If user is interested in getting details regarding the specific reference the information will be looked up in \emph{Meta Information Storage} (5). Finally, the result is shown to the user as a an html page (6). 
 
 Next sections of the chapter describe implementation of each component in detail and show the reasons of choosing a particular solution.       
 
@@ -246,7 +251,15 @@ After breaking down a document into sections as show on Figure \ref{fig:template
 
 As a result of normalization step we have a document divided into body and references section. Before searching citations in the body of a document it is reasonable to break body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can encounter in a sentence itself, for example, an item of a numbered list or a name of a scientist. Besides, not all sentences end by period, for example, title of a section or an item of a list. It was used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
-Next, we search for citations in a body of a document and bibliography links in a references section. When an author makes a citation it puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations. After analyzing some set of articles it was revealed frequent patterns in using square brackets for citing showed in Table \ref{tab:citations}.
+Next, we search for citations in a body of a document and bibliography links in a references section. When an author makes a citation it puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations. After analyzing some set of articles it was revealed frequent patterns in using square brackets for citing showed in Table \ref{tab:citations}. 
+%Bertin and Atanassova \cite{marc1} designed FSA (finite state automata) to describe different types of bibliographic references. Example of FSA for alpha-numeric bibliographic reference is shown on Figure \ref{fig:fsa}. They then use FSA to build regular expressions matching bibliographic links. We use similar approach.
+
+ % \begin{figure}[htp]
+ %   \centering
+ %   \includegraphics[scale=0.6]{fsa}
+ %   \caption{Example of FSA for matching alpha-numeric bibliographic references}
+ %   \label{fig:fsa}
+ % \end{figure}
 
 \begin{table}[ht]
 \begin{center}
@@ -264,7 +277,8 @@ Next, we search for citations in a body of a document and bibliography links in 
 \end{center}
 \end{table}
 
-Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings. To extract bibliographic links we make regular epressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow us to match citations with bibliographic links.
+
+Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings. To extract bibliographic links we make list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow us to match citations with bibliographic links.
 
 \begin{table}[h]
 \begin{center}
@@ -397,6 +411,9 @@ Every time while sending a new citation with paper title to MongoDB we check if 
 \end{minipage}
 
 \subsection{Challenges}
+
+%We want to establish the link between sentences containing citations (and therefore reference keys) in the text and the corresponding bibliographic references in the bibliography of the publication. This task is straightforward if the reference keys are in numerical or alphanumerical form (e.g. '[75]', '[BER08]') because in this case they are also present at the beginning of the corresponding reference in the bibliography. The difficulty arises when the bibliography style does not include the reference keys themselves and the keys present in the text are formed from the authors' names and the year using a specific syntax that may vary from one publication to another. This type of reference keys is more often used in human and social sciences. A classification of the different types of reference keys in scientific texts has been proposed by 
+
 \section{Indexator}
 \subsection{Configuration}
 bla \cite{solr.config}

@@ -4,6 +4,12 @@
 Mongodb.
 \newblock http://www.mongodb.org/.
 
+\bibitem{marc1}
+Marc Bertin and Iana Atanassova.
+\newblock Semantic enrichment of scientific publications and metadata :
+  Citation analysis through contextual and cognitive analysis.
+\newblock {\em D-Lib Magazine}, 18:8, 2012.
+
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
 \newblock Parscit: An open-source crf reference string parsing package.
@@ -19,6 +25,13 @@ The Apache~Software Foundation.
 The Apache~Software Foundation.
 \newblock {Apache Solr}.
 \newblock http://lucene.apache.org/solr/.
+
+\bibitem{map1}
+Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
+\newblock Visualizing the scientific landscape using maps of science.
+\newblock In Suresh~P. Sethi, Marija Bogataj, and Lorenzo Ros-McDonnell,
+  editors, {\em Industrial Engineering: Innovative Networks}, pages 103--112.
+  Springer London, 2012.
 
 \bibitem{Giles:1998:CAC:276675.276685}
 C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
@@ -42,10 +55,37 @@ Grant Ingersoll.
   solr schema.
 \newblock http://public.dhe.ibm.com/software/dw/java/j-solr1-pdf.pdf, 2007.
 
+\bibitem{Klavans:2009:TCM:1527090.1527095}
+Richard Klavans and Kevin~W. Boyack.
+\newblock Toward a consensus map of science.
+\newblock {\em J. Am. Soc. Inf. Sci. Technol.}, 60(3):455--476, March 2009.
+
 \bibitem{web-repos}
 Cybermetrics Lab.
 \newblock {Ranking Web of Repositories}.
 \newblock http://repositories.webometrics.info/.
+
+\bibitem{DBLP:journals/corr/abs-1202-1914}
+Loet Leydesdorff, Stephen Carley, and Ismael Rafols.
+\newblock Global maps of science based on the new web-of-science categories.
+\newblock {\em CoRR}, abs/1202.1914, 2012.
+
+\bibitem{M_automaticannotation}
+Bertin M, Desclés~J. P, Djioua B, Krushkov Y, and Lalicc Umr.
+\newblock Automatic annotation in text for bibliometrics use.
+
+\bibitem{mei-zhai:2008:ACLMain}
+Qiaozhu Mei and ChengXiang Zhai.
+\newblock Generating impact-based summaries for scientific literature.
+\newblock In {\em Proceedings of ACL-08: HLT}, pages 816--824, Columbus, Ohio,
+  June 2008. Association for Computational Linguistics.
+
+\bibitem{Nanba:1999:TMS:1624312.1624351}
+Hidetsugu Nanba and Manabu Okumura.
+\newblock Towards multi-paper summarization reference information.
+\newblock In {\em Proceedings of the 16th International Joint Conference on
+  Artificial Intelligence - Volume 2}, IJCAI'99, pages 926--931, San Francisco,
+  CA, USA, 1999. Morgan Kaufmann Publishers Inc.
 
 \bibitem{orduna2014size}
 Enrique Ordu\~{n}a Malea, Juan~M. Ayll\'{o}n, Alberto Mart\'{\i}n-Mart\'{\i}n,
@@ -58,11 +98,30 @@ M.~F. Porter.
 \newblock chapter An Algorithm for Suffix Stripping, pages 313--316. Morgan
   Kaufmann Publishers Inc., San Francisco, CA, USA, 1997.
 
+\bibitem{Qazvinian:2008:SPS:1599081.1599168}
+Vahed Qazvinian and Dragomir~R. Radev.
+\newblock Scientific paper summarization using citation summary networks.
+\newblock In {\em Proceedings of the 22Nd International Conference on
+  Computational Linguistics - Volume 1}, COLING '08, pages 689--696,
+  Stroudsburg, PA, USA, 2008. Association for Computational Linguistics.
+
 \bibitem{use.solr.2}
 Jonathan Rochkind.
 \newblock Thinking like solr — it’s not an rdbms.
 \newblock
   https://bibwild.wordpress.com/2011/01/24/thinking-like-solr-its-not-an-rdbms/.
+
+\bibitem{Small:1999:VSC:308915.308932}
+Henry Small.
+\newblock Visualizing science by citation mapping.
+\newblock {\em J. Am. Soc. Inf. Sci.}, 50(9):799--813, July 1999.
+
+\bibitem{smith}
+Linda~C. Smith.
+\newblock Citation analysis.
+\newblock
+  \url{https://www.ideals.illinois.edu/bitstream/handle/2142/7190/librarytrendsv30i1i_%20opt.pdf?sequence=1},
+  1981.
 
 \bibitem{citeseer}
 The Pennsylvania~State University.
