@@ -1,20 +1,29 @@
 \begin{thebibliography}{10}
 
-\bibitem{mongo}
-Mongodb.
-\newblock http://www.mongodb.org/.
-
 \bibitem{marc1}
 Marc Bertin and Iana Atanassova.
 \newblock Semantic enrichment of scientific publications and metadata :
   Citation analysis through contextual and cognitive analysis.
 \newblock {\em D-Lib Magazine}, 18:8, 2012.
 
+\bibitem{bradshaw}
+Shannon Bradshaw.
+\newblock Reference directed indexing: Redeeming relevance for subject search
+  in citation indexes.
+\newblock In Traugott Koch and IngeborgTorvik Sølvberg, editors, {\em Research
+  and Advanced Technology for Digital Libraries}, volume 2769 of {\em Lecture
+  Notes in Computer Science}, pages 499--510. Springer Berlin Heidelberg, 2003.
+
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
 \newblock Parscit: An open-source crf reference string parsing package.
-\newblock In {\em INTERNATIONAL LANGUAGE RESOURCES AND EVALUATION}. European
+\newblock In {\em International Language Resources and Evaluation}. European
   Language Resources Association, 2008.
+
+\bibitem{lucene}
+The Apache~Software Foundation.
+\newblock {Apache Lucene}.
+\newblock http://lucene.apache.org/core/.
 
 \bibitem{pdfbox}
 The Apache~Software Foundation.
@@ -49,12 +58,6 @@ The Stanford Natural Language~Processing Group.
 \newblock {Stanford CoreNLP API}.
 \newblock http://nlp.stanford.edu/software/corenlp.shtml.
 
-\bibitem{solr.config}
-Grant Ingersoll.
-\newblock Search smarter with apache solr, part 1: Essential features and the
-  solr schema.
-\newblock http://public.dhe.ibm.com/software/dw/java/j-solr1-pdf.pdf, 2007.
-
 \bibitem{Klavans:2009:TCM:1527090.1527095}
 Richard Klavans and Kevin~W. Boyack.
 \newblock Toward a consensus map of science.
@@ -79,6 +82,18 @@ Qiaozhu Mei and ChengXiang Zhai.
 \newblock Generating impact-based summaries for scientific literature.
 \newblock In {\em Proceedings of ACL-08: HLT}, pages 816--824, Columbus, Ohio,
   June 2008. Association for Computational Linguistics.
+
+\bibitem{mongo}
+Inc. MongoDB.
+\newblock Mongodb database.
+\newblock http://www.mongodb.org/.
+
+\bibitem{Nakov04citances:citation}
+Preslav~I. Nakov, Ariel~S. Schwartz, and Marti~A. Hearst.
+\newblock Citances: Citation sentences for semantic analysis of bioscience
+  text.
+\newblock In {\em In Proceedings of the SIGIR’04 workshop on Search and
+  Discovery in Bioinformatics}, 2004.
 
 \bibitem{Nanba:1999:TMS:1624312.1624351}
 Hidetsugu Nanba and Manabu Okumura.

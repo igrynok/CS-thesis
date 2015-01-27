@@ -4,56 +4,53 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
 Warning--entry type for "smith" isn't style-file defined
---line 145 of file thesis.bib
-Warning--entry type for "solr.config" isn't style-file defined
---line 204 of file thesis.bib
-Warning--entry type for "mongo" isn't style-file defined
---line 216 of file thesis.bib
+--line 152 of file thesis.bib
 Warning--entry type for "use.solr.2" isn't style-file defined
---line 254 of file thesis.bib
+--line 275 of file thesis.bib
 Warning--entry type for "use.solr1" isn't style-file defined
---line 262 of file thesis.bib
-Warning--to sort, need author or key in mongo
+--line 283 of file thesis.bib
+Warning--entry type for "mongo" isn't style-file defined
+--line 291 of file thesis.bib
 Warning--empty booktitle in Porter:1997:ASS:275537.275705
-You've used 25 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            643 strings with 8010 characters,
-and the built_in function-call counts, 7414 in all, are:
-= -- 738
-> -- 296
-< -- 7
-+ -- 118
-- -- 93
-* -- 390
-:= -- 1181
-add.period$ -- 79
-call.type$ -- 25
-change.case$ -- 120
+            656 strings with 8434 characters,
+and the built_in function-call counts, 8238 in all, are:
+= -- 814
+> -- 335
+< -- 9
++ -- 132
+- -- 105
+* -- 439
+:= -- 1317
+add.period$ -- 87
+call.type$ -- 27
+change.case$ -- 131
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 293
-empty$ -- 665
-format.name$ -- 93
-if$ -- 1640
+cite$ -- 28
+duplicate$ -- 332
+empty$ -- 735
+format.name$ -- 105
+if$ -- 1822
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 11
-newline$ -- 125
-num.names$ -- 50
-pop$ -- 181
+int.to.str$ -- 27
+missing$ -- 13
+newline$ -- 136
+num.names$ -- 58
+pop$ -- 197
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 104
 quote$ -- 0
-skip$ -- 259
+skip$ -- 286
 stack$ -- 0
-substring$ -- 358
-swap$ -- 78
-text.length$ -- 7
+substring$ -- 396
+swap$ -- 92
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
-warning$ -- 2
-while$ -- 71
-width$ -- 27
-write$ -- 259
-(There were 7 warnings)
+type$ -- 108
+warning$ -- 1
+while$ -- 80
+width$ -- 29
+write$ -- 283
+(There were 5 warnings)
