@@ -43,7 +43,6 @@ We set following goals:
 The rest of the paper structured as follows:
 \begin{description}
 	\item[Chapter 2] The chapter first gives a high overview of the architecture of a typical web search engine and shortly reviews popular academic search engines. Then It describes the main steps for inverted index construction.
-	%\item[Chapter 3] Devoted to the exploring the structure of scientific papers and identifying parsing challenges.
 	\item[Chapter 3] Describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then describes details of implementation of each component. 
 	\item[Chapter 4] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
 	\item[Chapter 5] Evaluation
@@ -407,6 +406,8 @@ Every time while sending a new citation with paper title to MongoDB we check if 
 
 %We want to establish the link between sentences containing citations (and therefore reference keys) in the text and the corresponding bibliographic references in the bibliography of the publication. This task is straightforward if the reference keys are in numerical or alphanumerical form (e.g. '[75]', '[BER08]') because in this case they are also present at the beginning of the corresponding reference in the bibliography. The difficulty arises when the bibliography style does not include the reference keys themselves and the keys present in the text are formed from the authors' names and the year using a specific syntax that may vary from one publication to another. This type of reference keys is more often used in human and social sciences. A classification of the different types of reference keys in scientific texts has been proposed by 
 
+%distinct ref from code
+
 \section{Indexator}
 
 As an Indexator we use Solr: solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, information retrieval library that provides indexing and full text search capabilities \cite{lucene}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server: Instagram (photo and video sharing social network), Netflix (movie hosting service), StubHub.com (public entertainment events ticket reseller). 
@@ -565,9 +566,9 @@ Additionally, there are other configuration files that appear in the configurati
 \begin{tabular}{ | l | p{10cm}  | } 
  \hline
  Name & Description \\  \hline
- protwords.txt & In this file, you can specify protected words that you do not wish to get stemmed. So, for example, a stemmer might stem the word "catfish" to "cat" or "fish".\\ \hline
- spellings.txt & In this file, you can provide spelling suggestions to the end user. \\ \hline
- elevate.txt & With this file, you can influence the search results and make your own results among the top-ranked results. This overrides Lucene's standard ranking scheme, taking into account elevations from this file. \\ \hline
+ protwords.txt & file where you can specify protected words that you do not wish to get stemmed. So, for example, a stemmer might stem the word "catfish" to "cat" or "fish".\\ \hline
+ spellings.txt & file where you can provide spelling suggestions to the end user. \\ \hline
+ elevate.txt & file  where you can change the search results by making your own results among the top-ranked results. This overrides standard ranking scheme, taking into account elevations from this file. \\ \hline
  stopwords.txt & Stopwords are those that will not be indexed and used by Solr in the applications. This is particularly helpful when you really wish to get rid of certain words. For example, in the string, "Jamie and joseph," the word "and" can be marked as a stopword. \\ \hline
 \end{tabular}
 \caption{Additional configuration files in Solr}
@@ -576,7 +577,30 @@ Additionally, there are other configuration files that appear in the configurati
 \end{table}
 
 \section{Meta Information storage}
+As a meta information storage we used MongoDb. MongoDB is a NoSQL document oriented storage written in C++. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \cite{bson}. MongoDB requires a little amount of configuration to start to work with. 
+
 \subsection{Configuration}
+Once MonogDB distributive is downloaded is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
+\begin{lstlisting}[language=Bash]
+	> mongod --dbpath /home/aliya/mongodb2 --port 27272
+\end{lstlisting}
+
+MongoDB provides REST API, to enable REST API use parameter --rest:
+\begin{lstlisting}[language=Bash]
+	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
+\end{lstlisting}
+
+The simple way to communicate with MongoDB server is to use mongo shell, in our case we specify --port parameter to connect to our instance of MongoDB:
+\begin{lstlisting}[language=Bash]
+	> mongo --port 27272
+\end{lstlisting}
+
+Compared to relational databases MongoDB operates with terms collection, which is equivalent to table, and document, which is equivalent to record in relational databases. MongoDB doesn't require creating databases and collections explicitly. Databases and collections can be created while starting to use MongoDB. To see list of databases or collections, type show dbs in mongo shell:
+ \begin{lstlisting}[language=Bash]
+	> show dbs
+\end{lstlisting}
+Mongo shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \cite{mongo}. 
+
 \section{Web search interface}
 \subsection{Citation search page}
 \subsection{Details page}

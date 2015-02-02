@@ -11,46 +11,48 @@ Warning--entry type for "use.solr1" isn't style-file defined
 --line 283 of file thesis.bib
 Warning--entry type for "mongo" isn't style-file defined
 --line 291 of file thesis.bib
+Warning--entry type for "bson" isn't style-file defined
+--line 301 of file thesis.bib
 Warning--empty booktitle in Porter:1997:ASS:275537.275705
-You've used 27 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            656 strings with 8434 characters,
-and the built_in function-call counts, 8238 in all, are:
-= -- 814
-> -- 335
+            659 strings with 8476 characters,
+and the built_in function-call counts, 8442 in all, are:
+= -- 833
+> -- 342
 < -- 9
-+ -- 132
-- -- 105
-* -- 439
-:= -- 1317
-add.period$ -- 87
-call.type$ -- 27
-change.case$ -- 131
++ -- 135
+- -- 107
+* -- 444
+:= -- 1351
+add.period$ -- 90
+call.type$ -- 28
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 332
-empty$ -- 735
-format.name$ -- 105
-if$ -- 1822
+cite$ -- 29
+duplicate$ -- 339
+empty$ -- 757
+format.name$ -- 107
+if$ -- 1867
 int.to.chr$ -- 0
-int.to.str$ -- 27
+int.to.str$ -- 28
 missing$ -- 13
-newline$ -- 136
-num.names$ -- 58
-pop$ -- 197
+newline$ -- 141
+num.names$ -- 60
+pop$ -- 205
 preamble$ -- 1
-purify$ -- 104
+purify$ -- 107
 quote$ -- 0
-skip$ -- 286
+skip$ -- 294
 stack$ -- 0
-substring$ -- 396
-swap$ -- 92
+substring$ -- 401
+swap$ -- 93
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 112
 warning$ -- 1
-while$ -- 80
-width$ -- 29
-write$ -- 283
-(There were 5 warnings)
+while$ -- 82
+width$ -- 30
+write$ -- 292
+(There were 6 warnings)

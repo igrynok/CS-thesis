@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  27 JAN 2015 17:46
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 FEB 2015 13:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,23 +892,23 @@ Package pdftex.def Info: images/logos/UNI_Fribourg.png used on input line 271.
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/
 aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/
-logos/MSc_quer.png (PNG copy)>])pdfTeX warning (ext4): destination with the sam
-e identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.8 \chapter
-            *{\centering Abstract} [1 </Users/aliya/Documents/Master Thesis/tem
-plate/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Bern.png (PNG copy)> </
-Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/i
-mages/logos/UNI_Neuenburg.png (PNG copy)> </Users/aliya/Documents/Master Thesis
-/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png>]
+logos/MSc_quer.png (PNG copy)> </Users/aliya/Documents/Master Thesis/template/s
+cgbib/LatexTemplates/msc-thesis/images/logos/UNI_Bern.png (PNG copy)> </Users/a
+liya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/l
+ogos/UNI_Neuenburg.png (PNG copy)> </Users/aliya/Documents/Master Thesis/templa
+te/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png>])
 LaTeX Font Info:    Try loading font information for T1+put on input line 8.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 8.
-[2
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.16 \clearpage
+                [1
 
 ]
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
@@ -961,7 +961,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 30.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 31.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 32.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 33.
-[3
+[2
 
 
 ]
@@ -975,233 +975,233 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 39.
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
-[4]
+[3]
 Chapter 1.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 26.
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 35.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5
+) [4
 
-] [6]
+] [5]
 Chapter 2.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 53.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 56.
-<images/web-search-engine.png, id=212, 446.6286pt x 144.54pt>
+0.6,0.6}' on input line 52.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 55.
+<images/web-search-engine.png, id=207, 446.6286pt x 144.54pt>
 File: images/web-search-engine.png Graphic file (type png)
 <use images/web-search-engine.png>
-Package pdftex.def Info: images/web-search-engine.png used on input line 65.
+Package pdftex.def Info: images/web-search-engine.png used on input line 64.
 (pdftex.def)             Requested size: 446.6275pt x 144.53963pt.
 
-Overfull \hbox (28.37383pt too wide) in paragraph at lines 65--66
+Overfull \hbox (28.37383pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 76.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 77.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 77.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 77.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 78.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 81.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 82.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 83.
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--84
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
 
  []
 
-[7
+[6
 
 ]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 86.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 86.
-<images/inverted-index.png, id=228, 664.4825pt x 273.02pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 85.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 85.
+<images/inverted-index.png, id=224, 664.4825pt x 273.02pt>
 File: images/inverted-index.png Graphic file (type png)
 <use images/inverted-index.png>
-Package pdftex.def Info: images/inverted-index.png used on input line 89.
+Package pdftex.def Info: images/inverted-index.png used on input line 88.
 (pdftex.def)             Requested size: 365.46649pt x 150.16145pt.
-[8 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-the
-sis/images/web-search-engine.png>] [9 </Users/aliya/Documents/Master Thesis/tem
+[7 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-the
+sis/images/web-search-engine.png>] [8 </Users/aliya/Documents/Master Thesis/tem
 plate/scgbib/LatexTemplates/msc-thesis/images/inverted-index.png>]
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 109.
+ line 108.
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 111.
+ line 110.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 120.
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 120.
+ line 119.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 119.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 120.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 119.
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 122.
+ line 121.
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 126.
+ line 125.
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 132.
+ line 131.
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 134.
-[10]
+ line 133.
+[9]
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
- line 136.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 138.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 145.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 145.
-<images/input-indexing.png, id=262, 367.3725pt x 359.3425pt>
+ line 135.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 137.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 144.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 144.
+<images/input-indexing.png, id=258, 367.3725pt x 359.3425pt>
 File: images/input-indexing.png Graphic file (type png)
 <use images/input-indexing.png>
-Package pdftex.def Info: images/input-indexing.png used on input line 149.
+Package pdftex.def Info: images/input-indexing.png used on input line 148.
 (pdftex.def)             Requested size: 183.68579pt x 179.6708pt.
-[11]
+[10]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 162.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 164.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 164.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 164.
-[12 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
-esis/images/input-indexing.png>] <images/search-full-diagram.png, id=280, 711.6
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 163.
+[11 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+esis/images/input-indexing.png>] <images/search-full-diagram.png, id=275, 711.6
 5875pt x 363.3575pt>
 File: images/search-full-diagram.png Graphic file (type png)
 <use images/search-full-diagram.png>
-Package pdftex.def Info: images/search-full-diagram.png used on input line 168.
+Package pdftex.def Info: images/search-full-diagram.png used on input line 167.
 
 (pdftex.def)             Requested size: 426.99855pt x 218.01617pt.
 
-Overfull \hbox (8.74487pt too wide) in paragraph at lines 168--169
+Overfull \hbox (8.74487pt too wide) in paragraph at lines 167--168
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 175.
-[13 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 174.
+[12 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/search-full-diagram.png>]
 Chapter 3.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 182.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 186.
-<images/cs.png, id=311, 503.8825pt x 370.38374pt>
+0.6,0.6}' on input line 181.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 185.
+<images/cs.png, id=307, 503.8825pt x 370.38374pt>
 File: images/cs.png Graphic file (type png)
 <use images/cs.png>
-Package pdftex.def Info: images/cs.png used on input line 190.
+Package pdftex.def Info: images/cs.png used on input line 189.
 (pdftex.def)             Requested size: 302.33183pt x 222.23195pt.
-[14
+[13
 
 ]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 203.
-<images/parser.png, id=319, 551.05875pt x 106.3975pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 202.
+<images/parser.png, id=314, 551.05875pt x 106.3975pt>
 File: images/parser.png Graphic file (type png)
 <use images/parser.png>
-Package pdftex.def Info: images/parser.png used on input line 207.
+Package pdftex.def Info: images/parser.png used on input line 206.
 (pdftex.def)             Requested size: 330.63779pt x 63.83897pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 212.
-[15 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 211.
+[14 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/cs.png> </Users/aliya/Documents/Master Thesis/template/scgbib/Latex
 Templates/msc-thesis/images/parser.png>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 216.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 218.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 227.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
-[16] <images/template.png, id=338, 563.10374pt x 559.08875pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 215.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 217.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 226.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 243.
+[15] <images/template.png, id=334, 563.10374pt x 559.08875pt>
 File: images/template.png Graphic file (type png)
 <use images/template.png>
-Package pdftex.def Info: images/template.png used on input line 248.
+Package pdftex.def Info: images/template.png used on input line 247.
 (pdftex.def)             Requested size: 337.86485pt x 335.45583pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 255.
-[17 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 252.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
+[16 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/template.png>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 274.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 274.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 273.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 273.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 300.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 300.
-<images/processing.png, id=351, 795.97375pt x 55.20625pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 299.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 299.
+<images/processing.png, id=347, 795.97375pt x 55.20625pt>
 File: images/processing.png Graphic file (type png)
 <use images/processing.png>
-Package pdftex.def Info: images/processing.png used on input line 304.
+Package pdftex.def Info: images/processing.png used on input line 303.
 (pdftex.def)             Requested size: 437.78693pt x 30.36351pt.
 
-Overfull \hbox (19.53325pt too wide) in paragraph at lines 304--305
+Overfull \hbox (19.53325pt too wide) in paragraph at lines 303--304
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 310.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 310.
-[18]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 309.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 309.
+[17]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/link.png, id=364, 823.075pt x 59.22125pt>
+<images/link.png, id=359, 823.075pt x 59.22125pt>
 File: images/link.png Graphic file (type png)
 <use images/link.png>
-Package pdftex.def Info: images/link.png used on input line 335.
+Package pdftex.def Info: images/link.png used on input line 334.
 (pdftex.def)             Requested size: 411.53648pt x 29.61053pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 345.
-[19 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 344.
+[18 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/processing.png> </Users/aliya/Documents/Master Thesis/template/scgb
-ib/LatexTemplates/msc-thesis/images/link.png>] <images/doc.png, id=373, 143.536
+ib/LatexTemplates/msc-thesis/images/link.png>] <images/doc.png, id=369, 143.536
 25pt x 137.51375pt>
 File: images/doc.png Graphic file (type png)
 <use images/doc.png>
-Package pdftex.def Info: images/doc.png used on input line 349.
+Package pdftex.def Info: images/doc.png used on input line 348.
 (pdftex.def)             Requested size: 100.47467pt x 96.25896pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 363.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 363.
-[20 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 362.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 362.
+[19 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/doc.png>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 366.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 366.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 365.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 365.
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 377.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 376.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 3
-77.
+76.
 Missing character: There is no â in font pcrr7t!
 Missing character: There is no € in font pcrr7t!
 Missing character: There is no œ in font pcrr7t!
@@ -1227,24 +1227,24 @@ Missing character: There is no â in font pcrr7t!
 Missing character: There is no € in font pcrr7t!
 Missing character: There is no œ in font pcrr7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-03.
+02.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-03.
+02.
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 376--405
+Overfull \hbox (17.0pt too wide) in paragraph at lines 375--404
 []$[]$ 
  []
 
-[21]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 412.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 414.
-[22] <images/solr.png, id=428, 592.2125pt x 468.75125pt>
+[20]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 413.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 415.
+[21] <images/solr.png, id=424, 592.2125pt x 468.75125pt>
 File: images/solr.png Graphic file (type png)
 <use images/solr.png>
-Package pdftex.def Info: images/solr.png used on input line 420.
+Package pdftex.def Info: images/solr.png used on input line 421.
 (pdftex.def)             Requested size: 414.54591pt x 328.12363pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 427.
-[23 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 428.
+[22 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/solr.png>] (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/l
 stlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -1252,212 +1252,287 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
+41.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-40.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 441.
+41.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 442.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-42.
+43.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-42.
+43.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Overfull \hbox (2.4222pt too wide) in paragraph at lines 443--444
+Overfull \hbox (2.4222pt too wide) in paragraph at lines 444--445
 []\OT1/ptm/b/n/10.95 JNDI lookup \OT1/ptm/m/n/10.95 (-20) Or it is pos-si-ble t
 o con-fig-ure the JNDI lookup for the java:comp/env/solr/home
  []
 
 
-Overfull \hbox (41.67691pt too wide) in paragraph at lines 443--444
+Overfull \hbox (41.67691pt too wide) in paragraph at lines 444--445
 \OT1/ptm/m/n/10.95 (-20) XML file with some name (con-text.xml) in \TS1/ptm/m/n
 /10.95 $\OT1/ptm/m/n/10.95 (-20) CATALINA[]HOME/conf/Catalina/localhost/context
 .xml
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-44.
+45.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 445.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 446.
 
-Overfull \hbox (57.32088pt too wide) in paragraph at lines 446--447
+Overfull \hbox (57.32088pt too wide) in paragraph at lines 447--448
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (170.72075pt too wide) in paragraph at lines 447--448
+Overfull \hbox (170.72075pt too wide) in paragraph at lines 448--449
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-49.
+50.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-49.
-[24]
+50.
+[23]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-62.
+63.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-69.
+70.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-69.
+70.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-72.
+73.
 
-Overfull \hbox (19.14583pt too wide) in paragraph at lines 473--474
+Overfull \hbox (19.14583pt too wide) in paragraph at lines 474--475
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-74.
+75.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-74.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 475.
+75.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 476.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-95.
+96.
 
-Overfull \hbox (73.14577pt too wide) in paragraph at lines 497--498
+Overfull \hbox (73.14577pt too wide) in paragraph at lines 498--499
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
  []
 
 
-Overfull \hbox (2.94585pt too wide) in paragraph at lines 500--501
+Overfull \hbox (2.94585pt too wide) in paragraph at lines 501--502
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (89.34575pt too wide) in paragraph at lines 502--503
+Overfull \hbox (89.34575pt too wide) in paragraph at lines 503--504
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-04.
+05.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-04.
-[25]
+05.
+[24]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-18.
+19.
 
-Overfull \hbox (8.34584pt too wide) in paragraph at lines 519--520
+Overfull \hbox (8.34584pt too wide) in paragraph at lines 520--521
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-24.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-24.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 526.
+25.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 527.
+[25]
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+56.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+61.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+61.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 563.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 580.
 [26]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-55.
+84.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-60.
+86.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-60.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 562.
-[27] [28]
+86.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+89.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+91.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+91.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+94.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+96.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+96.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 6
+01.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 6
+01.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 602.
+[27]
 Chapter 4.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 584.
-[29
+0.6,0.6}' on input line 608.
+[28
 
 ]
 Chapter 5.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 587.
+0.6,0.6}' on input line 611.
 
 (/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis
-/thesis.bbl [30
+/thesis.bbl [29
 
 ]
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
@@ -1470,7 +1545,7 @@ Underfull \hbox (badness 4181) in paragraph at lines 57--60
 .  Stan-ford CoreNLP API.
  []
 
-[31
+[30
 
 ]
 Missing character: There is no Ã in font ptmr7t!
@@ -1485,41 +1560,42 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
 []\OT1/ptm/m/n/10.95 (+20) Jonathan Rochkind.  Think-ing like solr  its not an 
 rdbms.
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 138.
+[31]
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 143.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--145
 \OT1/pcr/m/n/10.95 bitstream / handle / 2142 / 7190 / librarytrendsv30i1i _ %20
 opt . pdf ?
  []
 
-[32]) [33]
+) [32]
 Appendix A.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 604.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 609.
-[34
+0.6,0.6}' on input line 628.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 633.
+[33
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 609.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 633.
 
 (/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis
 /thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 609.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 609.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 633.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 633.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 5BF43E5B6AF2682BFF20C829E643BA29;2277.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 633.
  ) 
 Here is how much of TeX's memory you used:
- 17996 strings out of 493488
- 291131 string characters out of 3141326
- 457796 words of memory out of 3000000
- 20524 multiletter control sequences out of 15000+200000
+ 18017 strings out of 493488
+ 291380 string characters out of 3141326
+ 457812 words of memory out of 3000000
+ 20537 multiletter control sequences out of 15000+200000
  52871 words of font info for 210 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,11n,51p,1637b,1386s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1533,10 +1609,10 @@ onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
 /utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
 Output written on "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTe
-mplates/msc-thesis/thesis.pdf" (35 pages, 790779 bytes).
+mplates/msc-thesis/thesis.pdf" (34 pages, 790513 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 526 compressed objects within 6 object streams
- 190 named destinations out of 1000 (max. 500000)
+ 612 PDF objects out of 1000 (max. 8388607)
+ 535 compressed objects within 6 object streams
+ 198 named destinations out of 1000 (max. 500000)
  26964 words of extra memory for PDF output out of 29859 (max. 10000000)
 

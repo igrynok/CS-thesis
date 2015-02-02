@@ -256,14 +256,13 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1put.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/t1put.fd
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/utopia/putb8t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/utopia/putb8t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc
@@ -303,6 +302,7 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 OUTPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmro7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmro8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ts1ptm.fd

@@ -83,6 +83,11 @@ Qiaozhu Mei and ChengXiang Zhai.
 \newblock In {\em Proceedings of ACL-08: HLT}, pages 816--824, Columbus, Ohio,
   June 2008. Association for Computational Linguistics.
 
+\bibitem{bson}
+Inc. MongoDB.
+\newblock Bson specification.
+\newblock http://bsonspec.org/.
+
 \bibitem{mongo}
 Inc. MongoDB.
 \newblock Mongodb database.
