@@ -28,12 +28,12 @@
 \contentsline {section}{\numberline {3.4}Meta Information storage}{26}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Configuration}{27}{subsection.3.4.1}
 \contentsline {section}{\numberline {3.5}Web search interface}{27}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Citation search page}{27}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Details page}{27}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Validation}{28}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{29}{chapter.5}
-\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{33}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{33}{section.A.1}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{33}{section.A.2}
-\contentsline {section}{\numberline {A.3}Running parser}{33}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search interface deployment}{33}{section.A.4}
+\contentsline {subsection}{\numberline {3.5.1}Citation search page}{28}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Details page}{28}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Validation}{29}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{30}{chapter.5}
+\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{34}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{34}{section.A.1}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{34}{section.A.2}
+\contentsline {section}{\numberline {A.3}Running parser}{34}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search interface deployment}{34}{section.A.4}

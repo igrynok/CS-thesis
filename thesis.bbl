@@ -35,6 +35,11 @@ The Apache~Software Foundation.
 \newblock {Apache Solr}.
 \newblock http://lucene.apache.org/solr/.
 
+\bibitem{struts}
+The Apache~Software Foundation.
+\newblock {Struts framework}.
+\newblock https://struts.apache.org/.
+
 \bibitem{map1}
 Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
 \newblock Visualizing the scientific landscape using maps of science.

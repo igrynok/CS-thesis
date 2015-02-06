@@ -602,6 +602,15 @@ Compared to relational databases MongoDB operates with terms collection, which i
 Mongo shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \cite{mongo}. 
 
 \section{Web search interface}
+Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \cite{struts}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6]{mvc}
+    \caption{Architecture overview of web search application}
+    \label{fig:mvc}
+  \end{figure}  
+
 \subsection{Citation search page}
 \subsection{Details page}
 
