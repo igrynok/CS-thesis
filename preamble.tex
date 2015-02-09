@@ -59,6 +59,8 @@
 \newcommand{\superscript}[1]{$^{\textrm{\footnotesize{#1}}}$}
 \newcommand{\vertical}[1]{\raisebox{-4em}{\begin{sideways}{#1}\end{sideways}}}
 
+
+
 \newboolean{showedits}
 \setboolean{showedits}{true} % toggle to show or hide edits
 \ifthenelse{\boolean{showedits}}
@@ -66,15 +68,23 @@
        \newcommand{\ugh}[1]{\textcolor{red}{\uwave{#1}}} % please rephrase
        \newcommand{\ins}[1]{\textcolor{blue}{\uline{#1}}} % please insert
        \newcommand{\del}[1]{\textcolor{red}{\sout{#1}}} % please delete
-       \newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change
+       \newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change   
+       
+       \newcommand{\nbc}[3]{
+ {\colorbox{#3}{\bfseries\sffamily\scriptsize\textcolor{white}{#1}}}
+ {\textcolor{#3}{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}}}
+ 
+
 }{
        \newcommand{\ugh}[1]{#1} % please rephrase
        \newcommand{\ins}[1]{#1} % please insert
        \newcommand{\del}[1]{} % please delete
        \newcommand{\chg}[2]{#2}
+       \newcommand{\nbc}[3]{}
 }
 
-
+	\newcommand\ho[1]{\nbc{H.}{#1}{violet}}
+	
 % ============================================================================
 % Put edit comments in a really ugly standout display
 

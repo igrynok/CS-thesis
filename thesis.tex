@@ -8,10 +8,10 @@
 \chapter*{\centering Abstract}
 \begin{quotation}
 \noindent 
-Nowadays the amount of documents in World Wide Web grows exponentially. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine that search
-for information in World Wide Web is a software system that performs full-text indexing without considering meta information. This paper is devoted to the design of the academic paper search engine that takes advantage of meta-information, specifically citations. It is believed that citation is a very concise statement describing the source it refers to. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument.
-This paper describes implementation of Citation Search Engine, a system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. Besides it analyses the results of the deployment of the system on the collection of scientific papers provided by Software Composition Group.
+Nowadays the \chg{amount}{number} of documents in World Wide Web grows \ugh{exponentially}. Tools that can facilitate information retrieval present a particular interest in the modern world. A typical web search engine that search\ins{es} for information in \ins{the} World Wide Web is a software system that performs full-text indexing \ugh{without considering meta information} \ho{not necessary. Do you have a proof for that definition}. This paper is devoted to the design of \chg{the}{an} academic paper search engine that takes advantage of \ins{the} meta-information, specifically citations. \ugh{It is believed that citation is a very concise statement describing the source it refers to}. Retrieving such statements can be particularly useful in writing scientific papers, for example, to build up a good argument.
+This paper describes \ins{the} implementation of Citation Search Engine \ho{rename your tool and use that name when you refer to it}, a system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. Besides it analyses the results of the deployment of the system on \chg{the}{a} collection of scientific papers \ugh{provided by Software Composition Group}\ho{not necessary to mention}.
 
+\ho{At this point, the abstract does not explain the purpose of the thesis. Stick to the point. The abstract should go as follows: Problem, then existing work, then your solution and what is good about it in plain direct English}
 \end{quotation}
 \clearpage
 
@@ -27,20 +27,20 @@ This paper describes implementation of Citation Search Engine, a system that mak
 \label{cha:introduction}
 
 \section{Thesis statement}
-We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific papers. We consider citations as important text blocks summarising or judging previous scientific findings assisting in creating a new scientific work. We propose Citation Search Engine a software system that extracts citations from scientific papers, aggregates citations based on the referred source, then indexes extracted content. It provides a practical web interface that allows users to search for citations. 
+We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval \ho{nice!}. Particularly, we target information retrieval for scientific papers. We consider citations as important text blocks summarising or judging previous scientific findings assisting in creating a new scientific work. We propose Citation Search Engine a software system that extracts citations from scientific papers, aggregates citations based on the \chg{referred}{referenced} source, then indexes extracted content. It provides a practical web interface that allows users to search for citations. \ho{I think you should be able to describe it better.}
 
 \section{Goals}
-We set following goals:
+We set following goals \ho{those are not goals. Plus, they are on different levels!!}:
 \begin{itemize}
 	\item Introduce the state of the art techniques in information search.
-	\item Explore the structure of scientific articles, reveal common patterns
+	\item Explore the structure of scientific articles, reveal common patterns.
 	\item Design and implement the academic search engine.
 	\item Deploy the system on the given collection of scientific papers
 	\item Analyse results, define future work
 \end{itemize}
 
 \section{Outline}
-The rest of the paper structured as follows:
+The rest of the paper structured as follows \ho{use ``label" and ``autoref" when you refer to chapters }:
 \begin{description}
 	\item[Chapter 2] The chapter first gives a high overview of the architecture of a typical web search engine and shortly reviews popular academic search engines. Then It describes the main steps for inverted index construction.
 	\item[Chapter 3] Describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then describes details of implementation of each component. 
@@ -48,15 +48,17 @@ The rest of the paper structured as follows:
 	\item[Chapter 5] Evaluation
 	\item[Chapter 6] Contains conclusion and possible future work. 
 \end{description}
+\ho{This is not enough as an introduction. The introduction should really introduce the reader to the whole field, problems, solution, \etc. When you write the introduction try to imagine that you are explaining your thesis to a stranger in the street ;) The stranger should get the whole idea with no problem.}
 
 \chapter {Related Work}
 \section{Typical web search engine} 
 
-Figure \ref{fig:web-search} illustrates a high level architecture of a standard web engine. It consist of three main components:
+Figure \ref{fig:web-search} \ho{-this figure is not quite accurate-} illustrates a high level architecture of a standard web engine. It consist\ins{s} of three main components:
 \begin{itemize}
-	\item Web Crawler
-	\item Data indexer
-	\item Search interface
+	\item \del{Web} Crawler
+	\item \del{Data} indexer	
+	\item Search interface \ho{where is the datastore??}
+	
 \end{itemize} 
 
   \begin{figure}[htp]
@@ -66,27 +68,28 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. Index helps to quickly query information. Users can search and view query results through Search Interface. When user makes a query the search engine analysis its index and returns best matched web pages according to specific to indexer criteria. 
+Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Data Indexer. Data Indexer decides how a page content should be stored in an index database. \chg{The Index}{Indices} help\del{s} to quickly query \ugh{information}. Users can search and view query results through \ins{the} Search Interface. When \ins{a} user makes a query the search engine \chg{analysis}{analyzes} its index and returns best matched web pages according to specific \del{to indexer} criteria. 
 
-Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers are academic-focused crawlers that crawls academical documents. Such crawlers become components of the "focused" search engines. Next chapter reviews some of popular academical search engines.  
+Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of focused crawlers \chg{are}{is} \ins{an} academic-focused crawler\del{s} that crawls \chg{academical documents}{scientific papers}. Such crawlers become components of the "focused" search engines. Next chapter reviews some of \ins{the} popular academical search engines.  
 
 \section{Popular academic search engines}
 \paragraph{CiteSeer\textsuperscript{x}}
-CiteSeer\textsuperscript{x} is an autonomous citation search engine \cite{citeseer, Giles:1998:CAC:276675.276685}. CiteSeer\textsuperscript{x} automatically parses and index publicly available scientific articles found on the World Wide Web. It uses the impact of citations to rank documents.
-CiteSeer\textsuperscript{x} is built on the open source infrastructure SeerSuite \cite{seersuite} and uses Apache Solr \cite{solr} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such ParseCit \cite{Councill08parscit:an}. 
+CiteSeer\textsuperscript{x} is an autonomous \ho{what do you mean?} citation search engine \cite{citeseer, Giles:1998:CAC:276675.276685}. CiteSeer\textsuperscript{x} automatically parses and index\ins{es} publicly available scientific articles found on the World Wide Web. It uses the impact of citations \ho{what do you mean} to rank documents.
+CiteSeer\textsuperscript{x} is built on \ins{top of the} the open source infrastructure SeerSuite \cite{seersuite} and uses Apache Solr \cite{solr} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such ParseCit \cite{Councill08parscit:an}. 
 CiteSeer\textsuperscript{x}  one of the world's top repositories and was rated number 1 in July 2010 \cite{web-repos}. It currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. 
-CiteSeer\textsuperscript{x} focuses on indexing citations more precisely bibliographic links while in Citation Search Engine we intend to index text of the citations in a body of a document.
+\ugh{CiteSeer\textsuperscript{x} focuses on indexing citations more precisely bibliographic links while in Citation Search Engine we intend to index text of the citations in a body of a document.}
+\ho{This is a main related work. Try to spend more time explaining it in more detail and explaining how it is related/different to/from ours.}
 \\ \\
 \textbf{Google Scholar} 
-Google Scholar is a freely accessible web search engine that makes full-text indexing of scientific literature \cite{google.scholar}. Among features of Google Scholar engine are unique ranking algorithm, "cited by" feature, allowing to view abstracts of the articles citied the given article, "related articles" feature, showing the list of closely related articles.
-Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}. 
+Google Scholar is a freely accessible web search engine that makes full-text indexing of scientific literature \cite{google.scholar} \ho{I prefer websites to be footnotes rather than references}. Among features of Google Scholar engine are unique ranking algorithm, "cited by" feature, allowing to view abstracts of the articles \chg{citied}{citing} the given article, "related articles" feature, showing the list of closely related articles.
+Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}. \ho{again . . . more should be spent on this since it is a closely related work}
 
 \section{Inverted index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. When user makes a query to such systems one would like to have a mechanism to process document collections quickly. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index} that is the major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. \ugh{When \ins{a} user makes a query to such systems one would like to have a mechanism to process document collections quickly}\ho{how are these related}. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}\chg{ that}{, Which} is \chg{the}{a} major concept in information retrieval. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.55]{inverted-index}
-    \caption{Inverted index example}
+    \caption{Inverted index example \ho{write a better explanation of the figure. What are those numbers? What is dictionary? . . .  The caption should fully explain the diagram}}
     \label{fig:inverted-index}
   \end{figure}
   
@@ -99,20 +102,20 @@ Search engines like CiteSeer or Google Scholar deal with a large collection of d
 	\item Index documents by creating  an inverted index, consisting of a dictionary and postings
 \end{enumerate}
 
-First step of the index construction is documents collection that aims to obtain a set of documents containing sequence of characters. Usually the input to the indexing process is digital documents that are bytes in a file or a web server. While for the plain English text in ASCII encoding solution is straightforward there might be trickier cases. Consider for example a collection of PDF files, we need to correctly decode out characters of some binary representation. Finally, the textual part of the document may need to be extracted out of other parts that will not be processed. Next we should determine a document unit, for example it might be a chapter in a book, or a paragraph in a scientific article. 
+First step of the index construction is documents collection\chg{ that}{. It} aims \chg{to}{at} obtain\ins{ing} a set of documents containing sequence of characters. \ugh{Usually the input to the indexing process is digital documents that are bytes in a file or a web server. While for the plain English text in ASCII encoding solution is straightforward there might be trickier cases. Consider for example a collection of PDF files, we need to correctly decode out characters of some binary representation. Finally, the textual part of the document may need to be extracted out of other parts that will not be processed.} \ho{not clear} Next we should determine a document unit\chg{, f}{. F}or example it might be a chapter in a book, or a paragraph in a scientific article. 
 
-After getting the sequence of characters in document units next step is to breaking up documents into \emph{tokens}. Token can be think of a semantical unit for processing, for example, it might be a word or a number. At the same time during tokenisation some characters like punctuations can be thrown out. 
+\chg{After getting the sequence of characters in document units next step is to breaking up documents into \emph{tokens}}{The next step after getting the sequences of characters in the document units, is to break up documents into \emph{tokens}} \ho{try to order your sentences in the most straightforward way}. \chg{Token can be think of a}{Tokens can be thought of as the} semantical unit\ins{s} for processing\chg{, f}{. F}or example, it might be a word or a number. \del{At the same time} \chg{d}{D}uring tokenisation some characters like punctuations can be thrown out. 
 
 Here is a tokenisation example:
 
-\hspace{50pt}\textcolor[rgb]{0,0,1}{ Input: Friends, Romans, Countrymen, lend me your ears; }
+\hspace{50pt}\textcolor[rgb]{0,0,1}{ Input: Friends, Romans, Countrymen, lend me your ears; }\ho{could you come up with a better example?}
 
 \hspace{50pt}\textcolor[rgb]{0,0,1}{Output: \framebox{Friends} \framebox{Romans} \framebox{Countrymen} \framebox{lend} \framebox{me} \framebox{your} \framebox{ears}} \\
 
-The third step is normalization. It's good when tokens in a user query match tokens in the token list of documents. Consider an example of querying the word \emph{co-operation}, a user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite superficial differences in the character sequences. One way of token normalisation is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are the equivalence classes. Consider some common normalization rules that are often used:
+The third step is normalization. \ugh{\chg{It's}{It is} good when tokens in a user query match tokens in the token list of documents}\ho{what do you mean?}. Consider an example of querying the word \emph{co-operation}\chg{, a}{. A} user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite \chg{superficial}{lexical?} differences in the character sequences. One way of token normalisation is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are\ugh{ the equivalence classes}. Consider \chg{some}{the following} common normalization rules that are often used:
 
 \begin{description}
-	\item[Stemming and lemmatization] Words can be used in different grammatical forms, for instance, \emph{organize}, \emph{organizes}, \emph{organizing}, however in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatization is reduce a form of the word to a common base form. 
+	\item[Stemming and \chg{l}{L}emmatization] Words can be used in different grammatical forms\chg{, f}{. F}or instance, \emph{organize}, \emph{organizes}, \emph{organizing}\chg{, h}{H}owever in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatization is \ins{to} reduce \chg{a}{the} form of the word to a common base form. 
 	
 Here is an example: 
 	
@@ -122,46 +125,47 @@ Here is an example:
 
 The result of applying the rule to the sentence:
 
-\hspace{50pt} \textcolor[rgb]{0,0,1}{the boys cars are different colors   =\textgreater the boy car be differ color}
+\hspace{50pt} \textcolor[rgb]{0,0,1}{the boys cars are different colors   =\textgreater the boy car be differ color} \ho{can you bring yup a better example (grammatically correct)?}
 
-Stemming and lemmatization are closely related concepts however there is a difference. \emph{Lemmatization} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing it context and thereby can't distinguish the same words having different meanings depending on the context. 
+Stemming and lemmatization are closely related concepts however there is a difference. \emph{Lemmatization} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing its context and thereby can't distinguish \ins{that} the same words hav\chg{ing}{e} different meanings depending on the context. 
 
 Here is an example:
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatization since requires dictionary look-up
+\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatization since \ins{it} requires dictionary look-up
 
 \hspace{10pt} \textcolor[rgb]{0,0,1}{writing  =\textgreater write}, can be matched by both lemmatization and stemming
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatization since requires the word context 
+\hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatization since \ins{it} requires the word context 
 
-In general stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
+In general\ins{,} stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
 	  
-	\item[Capitalization/case-folding] A simple strategy is to reduce all letters to a lower case, so that sentences with \emph{Automobile} will match to queries with \emph{automobile}., however this approach would not be appropriate for example to identifying company names, such as \emph{General Motors}. The better strategy for English language would be to lowercase words only in the beginning of the sentences and to lowercase all words in titles. Case-folding can be be done more accurately by a machine learning model using more features to identify weather a words should be lowercased.
-	\item[Accents and diacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds.  However in many cases users can enter queries for words without diacritics, whether for reasons of speed, laziness or limited software 
+	\item[Capitalization/\chg{c}{C}ase-\chg{f}{F}olding] A simple strategy is to reduce all letters to a lower case, so that sentences with \emph{Automobile} will match to queries with \emph{automobile}. \chg{however}{However} this approach would not be appropriate \ins{in some contexts} \chg{for example to}{like} identifying company names, such as \emph{General Motors}. The better strategy for English language would be to lowercase words only in the beginning of the sentences and to lowercase all words in titles \ho{What??}. Case-folding can be be done more accurately by a machine learning model using more features to identify \chg{weather}{whether} a word\del{s} should be lowercased.
+	\item[Accents and \chg{d}{D}iacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds.  However\ins{,} in many cases\ins{,} users can enter queries for words without diacritics\ugh{, whether for reasons of speed, laziness or limited software} 
 \end{description}
 
-The last step is the core part of the building inverted index. The input to indexing is a list of normalized tokens for each document, which is a list of pairs of
-term and document ID, as on Figure \ref{fig:input-indexing}. The indexing algorithm is sorting the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown on Figure \ref{fig:inverted-index}.
+The last step is the core \del{part} of \del{the} building \ins{the} inverted index. The input to indexing is a list of normalized tokens for each document, \ugh{which}\ho{which here refers to the document and I think you mean the list, right?} is a list of pairs of
+term and document ID, as \chg{on}{in} Figure \ref{fig:input-indexing}. The indexing algorithm \chg{is sorting}{sorts} the input list so that the terms are in alphabetical order. Then it merges the same terms from the same document \ho{how?}. And finally instances of the same term are grouped and the result is split into a dictionary and postings, as shown on Figure \ref{fig:inverted-index}.
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5]{input-indexing}
-    \caption{Input to the indexing algorithm}
+    \caption{Input to the indexing algorithm \ho{again, the caption should be more explanative}}
     \label{fig:input-indexing}
   \end{figure}
 
 %%Since a term generally occurs in a number of documents, this data organization already reduces the storage requirements of the index. 
 
 \section{Dynamic indexing}
-So far we assumed that document collection is static however there are many cases when collection can be updated, for example, by adding new documents, deleting or updating existing documents. One simple way dealing with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if changes made in collection are small over time and delay in making new documents searchable is not critical. However if there is one of a requirement mentioned above, for example, making new documents searchable quickly then one might be interested in another solution: keeping auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both of the indexes and results are merged. When auxiliary index becomes too large it can be merged with the main index.
+So far we assumed that document collection is static\chg{ h}{. H}owever there are many cases when \ins{the} collection can be updated, for example, by adding new documents, deleting or updating existing documents. One simple way \chg{dealing}{to deal} with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if \ins{the} changes made in \ins{the} collection are small over time and \ins{the} delay in making new documents searchable is not critical. However if there is one of \chg{a requirement mentioned above, for example, making new documents searchable quickly then}{the aforementioned conditions is violated,} one might be interested in another \ins{more dynamic} solution\chg{:}{ like} keeping \ins{an} auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both \del{of the} indexes and results are merged. When \ins{the} auxiliary index becomes too large it can be merged with the main index.
 
 \section{Retrieving search results}
-When a user makes a query she would be interested in getting a result document containing all terms in the query so that terms are close to each other. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in a number of words. For instance a smallest  window for 4-terms query will be 4. Intuitively, smaller windows represent better results for users. Such window can become one of the indicators scoring a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hides the complexity of searching a result from user introducing \emph{free text query parsers} so a user can make only one query.     
+\ugh{When a user makes a query she would be interested in getting a result document containing all terms in the query so that terms are close to each other}. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in \del{a} number of words. For instance \chg{a}{the} smallest window for 4-term\del{s} query will be 4. Intuitively, smaller windows represent better results for users. Such window can become one of the \ugh{indicators scoring a document in the search result}. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide\del{s} the complexity \chg{of searching a result}{querying} from \ins{the} user \ins{by} introducing \emph{free text query parsers} so a user can make only one query.
 
 \section{Search Engine - entire picture} 
-Figure \ref{fig:search-full-diagram} summarizes approaches described above in a more detailed picture of a basic search system. 
+\ho{this section is not necessary}
+\del{Figure \ref{fig:search-full-diagram} summarizes approaches described above in a more detailed picture of a basic search system. 
 Left stream in the Figure \ref{fig:search-full-diagram} describes the process of parsing a set of documents and applying linguistic processings (tokenization and lemmatization) in order to built indexes with the help of a indexer. The middle stream on Figure \ref{fig:search-full-diagram} represents a user making a query, where free text parsers together with spell checkers send requests to the index bank. The index bank returns document candidates to a scoring and ranking component, the left stream on Figure \ref{fig:search-full-diagram}. Finally, ranked document are shown to the user as a result page.    
-
+}
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6]{search-full-diagram}
@@ -170,9 +174,10 @@ Left stream in the Figure \ref{fig:search-full-diagram} describes the process of
   \end{figure}
 
 \section{Citations in scientific publications}
-Citations remain interesting basic units for analysis in many scientific studies. 
-Bradshaw et al. \cite{bradshaw} showed that citations provide many different perspectives on the same article, in their work authors improves search engine results with a method called Reference Directed Indexing. Bertin and Atanassova \cite{marc1}, \cite{M_automaticannotation} made an attempt to automatically extract citations and annotate them using set of semantic categories. There are several studies that used citations to evaluate science by introducing map of science, which graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1}, \cite{Klavans:2009:TCM:1527090.1527095}, \cite{DBLP:journals/corr/abs-1202-1914}, \cite{Small:1999:VSC:308915.308932}. An interesting approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. In work by Nakov et al. citations have been used to support automatic paraphrasing \cite{Nakov04citances:citation}. An expert literature survey on citation analysis was made by Smith \cite{smith}, she reviewed hundred of scientific articles on this topic.      
- 
+\ho{this section also should be expanded}
+\ugh{Citations remain interesting basic units for analysis in many scientific studies. }
+Bradshaw et al. \cite{bradshaw} showed that citations provide many different perspectives on the same article\chg{, i}{. I}n their work \ins{the} authors improve\del{s} \ins{the} search engine results with a method called Reference Directed Indexing. Bertin and Atanassova \cite{marc1}\del{, }\cite{M_automaticannotation} made an attempt to automatically extract citations and annotate them using set of semantic categories. There are several studies that used citations to evaluate science by introducing map of science, which graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1}\del{, }\cite{Klavans:2009:TCM:1527090.1527095}\del{, }\cite{DBLP:journals/corr/abs-1202-1914}\del{, }\cite{Small:1999:VSC:308915.308932}. An interesting approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. In work by Nakov et al. citations have been used to support automatic paraphrasing \cite{Nakov04citances:citation}. An expert literature survey on citation analysis was made by Smith \cite{smith}, she reviewed hundred of scientific articles on this topic.      
+ \ho{you have to choose one tense and stick with it: either simple past or simple present. . . not both}
 
 %\chapter {Related Work}
 
