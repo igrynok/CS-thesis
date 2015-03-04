@@ -6,6 +6,15 @@ Marc Bertin and Iana Atanassova.
   Citation analysis through contextual and cognitive analysis.
 \newblock {\em D-Lib Magazine}, 18:8, 2012.
 
+\bibitem{autocit}
+Marc Bertin and Iana Atanassova.
+\newblock Extraction and characterization of citations in scientific papers.
+\newblock In Valentina Presutti, Milan Stankovic, Erik Cambria, Iván Cantador,
+  Angelo Di~Iorio, Tommaso Di~Noia, Christoph Lange, Diego Reforgiato~Recupero,
+  and Anna Tordai, editors, {\em Semantic Web Evaluation Challenge}, volume 475
+  of {\em Communications in Computer and Information Science}, pages 120--126.
+  Springer International Publishing, 2014.
+
 \bibitem{bradshaw}
 Shannon Bradshaw.
 \newblock Reference directed indexing: Redeeming relevance for subject search
@@ -14,31 +23,17 @@ Shannon Bradshaw.
   and Advanced Technology for Digital Libraries}, volume 2769 of {\em Lecture
   Notes in Computer Science}, pages 499--510. Springer Berlin Heidelberg, 2003.
 
+\bibitem{bradshaw2002reference}
+Shannon~Glenn Bradshaw.
+\newblock {\em Reference directed indexing: Indexing scientific literature in
+  the context of its use}.
+\newblock Northwestern University, 2002.
+
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
 \newblock Parscit: An open-source crf reference string parsing package.
 \newblock In {\em International Language Resources and Evaluation}. European
   Language Resources Association, 2008.
-
-\bibitem{lucene}
-The Apache~Software Foundation.
-\newblock {Apache Lucene}.
-\newblock http://lucene.apache.org/core/.
-
-\bibitem{pdfbox}
-The Apache~Software Foundation.
-\newblock {Apache PDFBox}.
-\newblock https://pdfbox.apache.org/.
-
-\bibitem{solr}
-The Apache~Software Foundation.
-\newblock {Apache Solr}.
-\newblock http://lucene.apache.org/solr/.
-
-\bibitem{struts}
-The Apache~Software Foundation.
-\newblock {Struts framework}.
-\newblock https://struts.apache.org/.
 
 \bibitem{map1}
 Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
@@ -47,31 +42,38 @@ Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
   editors, {\em Industrial Engineering: Innovative Networks}, pages 103--112.
   Springer London, 2012.
 
+\bibitem{garfield1964science}
+Eugene Garfield et~al.
+\newblock Science citation index-a new dimension in indexing.
+\newblock {\em Science}, 144(3619):649--654, 1964.
+
 \bibitem{Giles:1998:CAC:276675.276685}
 C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
 \newblock Citeseer: An automatic citation indexing system.
 \newblock In {\em Proceedings of the Third ACM Conference on Digital
   Libraries}, DL '98, pages 89--98, New York, NY, USA, 1998. ACM.
 
-\bibitem{google.scholar}
-Google.
-\newblock {Google Scholar}.
-\newblock http://scholar.google.ch/.
-
 \bibitem{stanford.nlp}
 The Stanford Natural Language~Processing Group.
 \newblock {Stanford CoreNLP API}.
 \newblock http://nlp.stanford.edu/software/corenlp.shtml.
+
+\bibitem{ASI:ASI5090140103}
+M.~M. Kessler.
+\newblock Bibliographic coupling between scientific papers.
+\newblock {\em American Documentation}, 14(1):10--25, 1963.
 
 \bibitem{Klavans:2009:TCM:1527090.1527095}
 Richard Klavans and Kevin~W. Boyack.
 \newblock Toward a consensus map of science.
 \newblock {\em J. Am. Soc. Inf. Sci. Technol.}, 60(3):455--476, March 2009.
 
-\bibitem{web-repos}
-Cybermetrics Lab.
-\newblock {Ranking Web of Repositories}.
-\newblock http://repositories.webometrics.info/.
+\bibitem{larson1996bibliometrics}
+Ray~R Larson.
+\newblock Bibliometrics of the world wide web: An exploratory analysis of the
+  intellectual structure of cyberspace.
+\newblock In {\em PROCEEDINGS OF THE ANNUAL MEETING-AMERICAN SOCIETY FOR
+  INFORMATION SCIENCE}, volume~33, pages 71--78, 1996.
 
 \bibitem{DBLP:journals/corr/abs-1202-1914}
 Loet Leydesdorff, Stephen Carley, and Ismael Rafols.
@@ -87,16 +89,6 @@ Qiaozhu Mei and ChengXiang Zhai.
 \newblock Generating impact-based summaries for scientific literature.
 \newblock In {\em Proceedings of ACL-08: HLT}, pages 816--824, Columbus, Ohio,
   June 2008. Association for Computational Linguistics.
-
-\bibitem{bson}
-Inc. MongoDB.
-\newblock Bson specification.
-\newblock http://bsonspec.org/.
-
-\bibitem{mongo}
-Inc. MongoDB.
-\newblock Mongodb database.
-\newblock http://www.mongodb.org/.
 
 \bibitem{Nakov04citances:citation}
 Preslav~I. Nakov, Ariel~S. Schwartz, and Marti~A. Hearst.
@@ -136,6 +128,13 @@ Jonathan Rochkind.
 \newblock
   https://bibwild.wordpress.com/2011/01/24/thinking-like-solr-its-not-an-rdbms/.
 
+\bibitem{ASI:ASI4630240406}
+Henry Small.
+\newblock Co-citation in the scientific literature: A new measure of the
+  relationship between two documents.
+\newblock {\em Journal of the American Society for Information Science},
+  24(4):265--269, 1973.
+
 \bibitem{Small:1999:VSC:308915.308932}
 Henry Small.
 \newblock Visualizing science by citation mapping.
@@ -147,16 +146,6 @@ Linda~C. Smith.
 \newblock
   \url{https://www.ideals.illinois.edu/bitstream/handle/2142/7190/librarytrendsv30i1i_%20opt.pdf?sequence=1},
   1981.
-
-\bibitem{citeseer}
-The Pennsylvania~State University.
-\newblock {Citeseer}.
-\newblock http://citeseerx.ist.psu.edu/.
-
-\bibitem{seersuite}
-The Pennsylvania~State University.
-\newblock {SeerSuite}.
-\newblock http://citeseerx.sourceforge.net/.
 
 \bibitem{use.solr1}
 Solr Wiki.
