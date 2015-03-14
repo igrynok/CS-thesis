@@ -12,27 +12,27 @@
 \contentsline {paragraph}{CiteSeer\textsuperscript {x}}{13}{section*.3}
 \contentsline {chapter}{\numberline {3}Citation Search Engine}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}System overview}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Parser}{16}{section.3.2}
+\contentsline {section}{\numberline {3.2}Parser}{17}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Processing}{17}{subsection.3.2.1}
 \contentsline {paragraph}{Processing bibliographic links}{20}{section*.4}
-\contentsline {subsection}{\numberline {3.2.2}Publishing}{20}{subsection.3.2.2}
-\contentsline {paragraph}{Publishing to Solr}{21}{section*.5}
-\contentsline {paragraph}{Publishing to MongoDB}{22}{section*.6}
-\contentsline {subsection}{\numberline {3.2.3}Challenges}{23}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Indexator}{24}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Solr Configuration}{24}{subsection.3.3.1}
-\contentsline {paragraph}{Defining Solr schema}{26}{section*.7}
-\contentsline {paragraph}{Configuring Solr parameters}{28}{section*.8}
-\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{28}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Meta Information storage}{29}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Configuration}{30}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Web search interface}{30}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Citation search page}{30}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Details page}{30}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Validation}{32}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{33}{chapter.5}
-\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{37}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{37}{section.A.1}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{37}{section.A.2}
-\contentsline {section}{\numberline {A.3}Running parser}{37}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search interface deployment}{37}{section.A.4}
+\contentsline {subsection}{\numberline {3.2.2}Publishing}{22}{subsection.3.2.2}
+\contentsline {paragraph}{Publishing to Solr}{22}{section*.5}
+\contentsline {paragraph}{Publishing to MongoDB}{23}{section*.6}
+\contentsline {subsection}{\numberline {3.2.3}Challenges}{24}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Indexator}{25}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Solr Configuration}{25}{subsection.3.3.1}
+\contentsline {paragraph}{Defining Solr schema}{27}{section*.7}
+\contentsline {paragraph}{Configuring Solr parameters}{29}{section*.8}
+\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{29}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Meta Information storage}{30}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Configuration}{31}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Web search interface}{31}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Citation search page}{31}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Details page}{31}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Validation}{33}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{34}{chapter.5}
+\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{38}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{38}{section.A.1}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{38}{section.A.2}
+\contentsline {section}{\numberline {A.3}Running parser}{38}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search interface deployment}{38}{section.A.4}

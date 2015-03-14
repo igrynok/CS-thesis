@@ -258,25 +258,27 @@ Google Scholar contains roughly 160 million of documents by May 2014 \cite{ordun
 
 \section{System overview}
 
-The overall architecture of Citation Search Engine is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying on resulted indexes. Correspondingly there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer Solution} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} for storing indexes and \emph{Meta Information Storage} for storing meta information. For the convenience, the workflow of the system is numbered and will be explained below.
+The overall architecture of Citation Search Engine is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying \chg{on}{the} resulted indexes. Correspondingly\ins{,} there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer Solution}\ho{Indexer Solution is not a good name for a component. Just name it the Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} for storing indexes and \emph{Meta Information Storage} for storing meta information \ho{First, the names are pretty self-explanatory. Second: Why there are two different storage? You have to justify.}. For the convenience, the workflow of the system is numbered and will be explained below.
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 20mm 0mm 20mm]{cs}
-    \caption{Search Engine high level architecture}
+    \caption{\chg{Search Engine}{change this to the name of the tool ;)} high level architecture \ho{The architecture diagram is not clear because it is a mix between an activity diagrams and a component diagram. There should be one diagram for each.}}
     \label{fig:cs}
   \end{figure}
 
-First operation performed by the system is indexing. In the indexing process collection of PDF files is provided to \emph{Parser} (1). \emph{Parser} parses PDF files into text and extract meta information from text. It then packs data about citations into documents and publishes obtained documents to \emph{Indexer Solution} (2) which indexes and stores indexes in \emph{Indexes Storage} (2'). Meta information extracted from textual representation of PDF files that doesn't require indexing is stored in \emph{Meta Information Storage} (3). 
+\ho{There should be two diagrams. One component diagram and one activity diagram. Then you should explain each one one its own.}
 
-In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analyzed by \emph{Indexer Solution}. \emph{Indexer Solution} finds documents matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If user is interested in getting details regarding the specific reference the information will be looked up in \emph{Meta Information Storage} (5). Finally, the result is shown to the user as a an html page (6). 
+\chg{F}{The f}irst operation performed by the system is indexing. \del{In the indexing process collection of PDF files is provided to \emph{Parser}} (1). \ins{The} \emph{Parser} \chg{parses}{converts} \ins{the} PDF files into text and extract meta \ho{what meta information} information from text. It then packs data about citations into documents and publishes obtained documents to \emph{Indexer Solution} (2) which indexes and stores indexes in \emph{Indexes Storage} (2'). Meta information extracted from textual representation of PDF files that doesn't require indexing is stored in \emph{Meta Information Storage} (3). \ho{the whole paragraph is not clear. Try to simplify it by just enumerating the steps in an another activity diagram where you explicitly specify the input and output if each step.}
 
-Next sections of the chapter describe implementation of each component in detail and show the reasons of choosing a particular solution.       
+In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analyzed by \ins{the} \emph{Indexer Solution}. \emph{Indexer Solution} finds documents \ho{what documents?? Remember that your thesis should be self-explanatory. I know that the term ``documents" is used when dealing with Solr, but the reader doesn't. Try to be more clear.} matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If \ins{the} user is interested in getting details regarding \chg{the}{a} specific reference\ins{,} the information \ho{what information?} will be looked up in \ins{the} \emph{Meta Information Storage} (5). Finally, the result is shown to the user as \del{a} an \chg{html}{HTML} page (6). 
+
+\ins{The} \chg{N}{n}ext sections of \chg{the}{this} chapter describe \ins{the} implementation of each component in detail and show the reasons \chg{of}{behind} choosing a particular solution.       
 
 \section{Parser}
 
-It is practical to divide the work of \emph{Parser} into two phases: \emph{Processing} and \emph{Publishing}, as on Figure \ref{fig:parser}. The output of \emph{Processing} phase is input to \emph{Publishing} phase. \emph{Processing} phase aims to parse PDF-files and prepare documents with extracted information for publishing. Next parts of this section describes \emph{Processing} and \emph{Publishing} phases in detail. 
-
+It is practical to divide the work of \ins{the} \emph{Parser} into two phases: \emph{Processing} and \emph{Publishing}, as \chg{on}{in} Figure \ref{fig:parser}. The output of \ins{the} \emph{Processing} phase is \ins{the} input to \ins{the} \emph{Publishing} phase. \del{ \emph{Processing} phase aims to parse PDF-files and prepare documents with extracted information for publishing. Next parts of this section describes \emph{Processing} and \emph{Publishing} phases in detail. 
+}
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 140mm 0mm 10mm]{parser}
@@ -285,21 +287,22 @@ It is practical to divide the work of \emph{Parser} into two phases: \emph{Proce
   \end{figure}
 
 \subsection{Processing}
+\ho{give this phase a better title and use it accordingly in the text.}
 The main role of \emph{Processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
-In common case parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that there exist scientific articles written decades ago which can use different encoding algorithms than articles created recently. Thereby building a universal parser is practically impossible. In our case we try to identify common patterns covering majority of scientific article formats or at least formats found in our collection of articles.  
+\del{In common case }\chg{p}{P}arsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that\ins{,} there exist scientific articles written decades ago which can use different encoding algorithms \chg{than}{from} articles created recently. Thereby\ins{,} building a universal parser is \chg{practically impossible}{very hard in practice}. In our case\ins{,} we try to identify common patterns covering \ins{the} majority of \ins{the} scientific article formats or at least \ins{the} formats found in our collection of articles.  
 
-\emph{Processing} phase starts with recursively walking though directory tree of the collection library. While walking though directory \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We used Apache PDFBox library \footnote{Apache PDFBox, https://pdfbox.apache.org/} to parse PDF-files into text. The library extracts full text from PDF-file but without any hints on the initial structure of the article. In our case to find citations and bibliographic references in text we need to look them up in different parts of the article, so it was designed an algorithm to break PDF-text into sections.
+\emph{Processing} phase starts with recursively walking though \ins{the} directory tree of the collection library. While walking \chg{though}{through} \ins{the} directory\ins{, the} \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use\del{d} Apache PDFBox library \footnote{Apache PDFBox, https://pdfbox.apache.org/} to parse PDF-files into text. The library extracts full text from PDF-file\ins{s,} but without any hints on the initial structure of the article. In our case\ins{,} to find citations and bibliographic references in text\ins{,} we need to look them up in different parts of the article\chg{, so it was}{. We} designed an algorithm to break \ins{the} PDF-text into sections.
 
-Generally we are interested in identifying a body of the document where we can find citations and references block where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some section. Based on keywords on can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
+Generally\ins{,} we are interested in identifying a body of the document where we can find citations and reference\del{s} block\ins{s} where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some section\ins{s}. Based on \ins{those} keywords\ins{,} on\ins{e} can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
   
-One can notice following characteristics of scientific articles:
+One can notice \ins{the} following characteristics of scientific articles:
 \begin{itemize}
-	\item Body of a document comes before references section
-	\item Appendix or Author's biography sections can come after references section 
-	\item Each document contains an Abstract and References words and might contain Appendix word. We call these words keywords. 
+	\item \ins{The} Body of a document comes before \ins{the} references section\ins{.}
+	\item \ins{The} Appendix or Author's biography sections can come after \ins{the} references section\ins{.}
+	\item Each document contains \chg{an}{the} \ins{``}Abstract\ins{"} and \ins{the ``}References\ins{"} words and might contain \ins{the ``}Appendix\ins{"} word. We call these words keywords. 
 \end{itemize}  
 
-In common case keywords can be written in different formats, for example, using upper or lower case. Table \ref{tab:keywords} illustrates variations of keywords in the beginning of document sections.
+\chg{In common case }{The }keywords can be written in different formats, \chg{for example,}{like} using upper or lower case\ins{s}. Table \ref{tab:keywords} illustrates \ins{some} variations of \ins{the} keywords\del{ in the beginning of document sections}.
 
 \begin{table}[ht]
 \begin{center}
@@ -316,18 +319,18 @@ In common case keywords can be written in different formats, for example, using 
 \end{center}
 \end{table}
 
-After breaking down a document into sections as show on Figure \ref{fig:template}, text in sections are presented in one-column format. There are two aspects regarding this format. First, sentences can be splitted by new line symbol in the end of a line. Secondly, words can be splitted by dash symbol in the end of a line. It was introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain continues text.
+After breaking \chg{down a document}{a document down} into sections as show\ins{n} \chg{on}{in} Figure \ref{fig:template}, \ins{the} text \chg{in sections are}{is} presented in one-column format. There are two aspects regarding this format. First, sentences can be \chg{splitted}{split} by new line symbol\ins{s} \chg{in}{at} the end of a line. Second\del{ly}, words can be \chg{splitted}{split} by dash symbol \chg{in}{at} the end of a line. \chg{It was}{We} introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain \chg{continues}{continuous} text.
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6]{template}
-    \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.}
+    \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.\ho{Why isn't this figure centred?}}
     \label{fig:template}
   \end{figure}
 
-As a result of normalization step we have a document divided into body and references sections. Before searching citations in the body of a document it is reasonable to break body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can encounter in a sentence itself, for example, an item of a numbered list or a name of a scientist. Besides, not all sentences end by period, for example, title of a section or an item of a list. It was used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
+As a result of \ins{the} normalization step\ins{,} we have a document divided into body and references sections. Before searching citations in the body of a document\chg{ it is reasonable to }{, we }break \ins{the} body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can \ins{be} encounter\ins{ed} in\ins{side} \chg{a }{the} sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end \chg{by}{with a} period, \chg{for example,}{like the} title of a section or an item of a list. \chg{It was}{We} used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
-Next, we search for citations in a body of a document and bibliography links in a references section. When an author makes a citation it puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations. After analyzing some set of articles it was revealed frequent patterns in using square brackets for citing showed in Table \ref{tab:citations}. 
+Next, we search for \ins{the} citations in \chg{a}{the} body\del{ of a document} and \ins{for the }bibliography links in \chg{a}{the} references section. When an author makes a citation \chg{it}{he} puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations \ho{convoluted. Try to write sentences in the normal order}. After analyzing some set of articles\chg{ it was revealed}{, we found multiple} \del{frequent} patterns in using square brackets for \chg{citing}{citations}\ins{, as} \chg{showed}{shown} in Table \ref{tab:citations}. 
 
 \begin{table}[ht]
 \begin{center}
