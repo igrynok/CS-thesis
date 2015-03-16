@@ -416,11 +416,11 @@ As usual we try to recognize common patterns \chg{belonging to}{covering the} ma
   \end{figure}     
 
 \subsection{Publishing}
-
-There are two systems where documents will be published: Solr and MongoDB. As already explained above Solr is used for indexing citations and MongoDB for storing meta-data. Some reasonings in favor of using MongoDB additionally to Solr storage will be given below.
+\ho{Remember to have a better title}
+There are two systems where documents \chg{will be}{are} published \ins{to}: Solr and MongoDB. As already explained above\ins{,} Solr is used for indexing citations and MongoDB for storing meta-data.\del{ Some reasonings in favor of using MongoDB additionally to Solr storage will be given below.}
 
 \paragraph{Publishing to Solr}
-The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document \ho{this definition should have been introduced a lot earlier} and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
     \centering
@@ -438,10 +438,10 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-Lets have a look at how Solr stores documents. Solr uses NoSQL like data storage, but actually it is even more limited than traditional NoSQL databases. Indeed, the data stored in Solr storage is very `flat', which means that Solr doesn't allow to store even hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case along with the references we intent to store a title of the scientific article parsed from the reference string, so later we can aggregate citations referred to the same scientific article. /*It's worth to say that citation itself can refer to multiple scientific articles*/ We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease quality of user experience. Thus we are coming to the external storage solution that will keep titles of scientific articles and all citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution it was decided to use MongoDB as an external storage.     
+\del{Lets have a look at how Solr stores documents. }Solr uses NoSQL\ins{-}like data storage, but actually it is even more limited than traditional NoSQL databases. \del{Indeed,} the data stored in Solr\del{ storage} is very `flat', which means that Solr \chg{doesn't allow to}{cannot} store \del{even} hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case\ins{,} along with the references\ins{,} we \chg{intent}{intend} to store a title of the scientific article parsed from the reference string, so \del{later} we can aggregate citations referred to the same scientific article. \del{/*}It's worth to say that citation itself can refer to multiple scientific articles\del{*/}\ins{.} We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease \ins{the} quality of user experience. Thus we \chg{are coming to the}{use an} external storage solution that \chg{will}{can} keep \ins{the} titles of scientific articles and all \ins{the} citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution \chg{it was decided}{we decided} to use MongoDB as an external storage.     
 
 \paragraph{Publishing to MongoDB} 
-MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, http://www.mongodb.org/}. To connect to database we used Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to JSON structure of a document showed on Listing \ref{lst:json}. 
+MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, http://www.mongodb.org/}. To connect to \ins{the} database we used \ins{a} Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to \ins{the} JSON structure of \chg{a}{the} document \chg{showed}{shown} \chg{on}{in} Listing \ref{lst:json}. 
 The json document consist of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
@@ -449,7 +449,7 @@ The json document consist of following fields:
 	\item cittations: citations with its references of the scientific article identifying by title field 
 \end{itemize} 
 
-Every time while sending a new citation with paper title to MongoDB we check if document with the same title already exist. If so we add a new citaion to this document otherwise create a new document. \\
+Every time \chg{while sending}{we send} a new citation with \ins{a} paper title to MongoDB\ins{,} we check if \ins{a} document with the same title already exist\ins{s}. If so\ins{,} we add a new citation to \chg{this}{that} document\ins{,} otherwise create a new document. \\
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[label={lst:json}, caption={Sample document stored in MongoDB}]
@@ -483,18 +483,18 @@ Every time while sending a new citation with paper title to MongoDB we check if 
 
 \subsection{Challenges}
 
-One of the challenge during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence.
+One of the challenge\ins{s we encounter} during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence. \ho{give an example}
 
-Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography. Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
+Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography. Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. \ho{yes bit in that case you will not have a problem. You will extract a citation and never find the reference to it. So you drop it.}
 
 
 \section{Indexator}
+\ho{All the technical information about how to configure and setup Solr should be moved to an Appendix}
+\chg{As an Indexator we use Solr}{We use Solr as an Indexator}: \ins{a} solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, information retrieval library that provides indexing and full text search capabilities \footnote{Apache Lucene, http://lucene.apache.org/core/}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server \chg{:}{are} Instagram (photo and video sharing social network), Netflix (movie hosting service), \ins{and} StubHub.com (public entertainment events ticket reseller). 
 
-As an Indexator we use Solr: solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, information retrieval library that provides indexing and full text search capabilities \footnote{Apache Lucene, http://lucene.apache.org/core/}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server: Instagram (photo and video sharing social network), Netflix (movie hosting service), StubHub.com (public entertainment events ticket reseller). 
+Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different \chg{inspections}{preprocessing phases can be applied} to remove duplicates in the data or some document-level operations prior to indexing, or \ins{to} create multiple documents from a single one\del{ can be applied}. Solr comes with \ins{a} variety of query parser implementations responsible for parsing the queries passed by the \chg{end search}{end user} as \del{a} search string\ins{s}. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed.
 
-Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different inspections to remove duplicates in the data or some document-level operations prior to indexing, or create multiple documents from a single one can be applied. Solr comes with variety of query parser implementations responsible for parsing the queries passed by the end search as a search string. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed.
-
-Next section describes configuration of Solr instance for our search system.  
+\del{Next section describes configuration of Solr instance for our search system.  }
 
   \begin{figure}[htp]
     \centering
@@ -504,24 +504,24 @@ Next section describes configuration of Solr instance for our search system.
   \end{figure} 
 
 \subsection{Solr Configuration}
-Solr installation requires JDK and any servlet container installed on a machine. Here configuration process for Apache Tomcat container is described.
-We need to download Solr distribution that can be found on official Solr home page \footnote{Apache Solr, http://lucene.apache.org/solr/}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
+Solr installation requires JDK and any servlet container \ins{to be} installed on \chg{a}{the} machine. Here \chg{configuration process for Apache Tomcat container is described.}{we describe the configuration of Solr.}
+We need to download Solr distribution that can be found on \ins{the} official Solr home page \footnote{Apache Solr, http://lucene.apache.org/solr/}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
 
 \begin{itemize}
 	\item \textbf{contrib/} - directory containing additional libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
-	\item \textbf{dist/} - directory providing distributions of Solr and other useful libraries such as SolrJ, UIMA, MapReduce, and so on.
+	\item \textbf{dist/} - directory providing distributions of Solr and other useful libraries such as SolrJ, UIMA, MapReduce, and so on. \ho{what is the difference from contrib/}
 	\item \textbf{docs/} - directory with documentation for Solr.
 	\item \textbf{example/} - Jetty based web application that can be used directly.
 	\item \textbf{Licenses/} - directory containing all the licenses of the underlying libraries used by Solr.
 \end{itemize}
 
-Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war. Then point out to Solr location of home directory describing a collection. By collection in Apache Solr one imply a collection of Solr documents that represent one complete index. It's possible to choose one of the options:
+Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war \ho{you have to say that you are working with Tomcat}. Then point out to Solr location of home directory describing a collection \ho{not clear}. By \ins{a} collection in Apache Solr one \chg{imply}{indicates} a collection of Solr documents that represent\ins{s} one complete index. It's possible to choose one of the options:
 \begin{itemize}
-	\item \textbf{Java options} one can use following command so that the container picks up Solr collection information from the appropriate location:
+	\item \textbf{Java options:} one can use following command so that the container picks up Solr collection information from the appropriate location:
 	\begin{lstlisting}[language=bash]
 $export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/opt/solr/example"
 	\end{lstlisting}
-	\item \textbf{JNDI lookup} Or it is possible to configure the JNDI lookup for the java:comp/env/solr/home resource by pointing it to the Solr home directory. This can be done by creating a context XML file with some name (context.xml) in \$CATALINA\_HOME/conf/Catalina/localhost/context.xml and adding the following entries:
+	\item \textbf{JNDI lookup:} Or it is possible to configure the JNDI lookup for the java:comp/env/solr/home resource by pointing it to the Solr home directory. This can be done by creating a context XML file with some name (context.xml) in \$CATALINA\_HOME/conf/Catalina/localhost/context.xml and adding the following entries: \ho{fix the margins. You have some text out of the page borders}
 	\begin{lstlisting}[language=XML]
 <?xml version="1.0" encoding="utf-8"?>
 <Context docBase="<solr-home>/example/solr/solr.war" debug="0" crossContext="true">
@@ -539,7 +539,7 @@ The Solr home directory contains configuration files and index-related data. It 
 
 Configuring Solr instance requires defining a Solr schema and configuring Solr parameters.
 \paragraph{Defining Solr schema}
-Solr schema is defined in schema.xml file placed to conf/ directory of Solr home directory. Solr distribution comes with a sample schema file that can be changed for the needs of the project. Schema file defines the structure of the index, including fields and field types. The basic overall structure of schema file is following:
+Solr schema is defined in \ins{the} schema.xml file placed \chg{to}{in the} conf/ directory of \ins{the} Solr home directory. Solr distribution comes with a sample schema file that can be changed for the needs of the project. \ins{The} schema file defines the structure of the index, including fields and field types. The basic overall structure of \ins{the} schema file is\del{ following}:
 \begin{lstlisting}[language=XML]
 	<schema>
 	  <types>
@@ -549,7 +549,7 @@ Solr schema is defined in schema.xml file placed to conf/ directory of Solr home
 	</schema>
 \end{lstlisting}
 
-The basic unit of data in Solr is document. Each document in Solr consist of fields that described in schema.xml file. By describing data in schema.xml Solr understand the structure of the data and what actions should be performed to handle this data. Here is an example of a field in schema file:
+The basic unit of data in Solr is document. Each document in Solr consist\ins{s} of fields that \ins{are} described in \ins{the} schema.xml file. By describing data in \ins{the} schema.xml\ins{,} Solr understand\ins{s} the structure of the data and what actions should be performed to handle this data. Here is an example of a field in \ins{the} schema file:
 \begin{lstlisting}[language=XML]
 	<field name="id" type="integer" indexed="true" stored="true" required="true"/>
 \end{lstlisting}
@@ -563,7 +563,7 @@ Table \ref{tab:field.attrs} lists and explains major attributes of field element
  Default & default value if it is not read while importing a document \\ \hline
  Indexed & true if field should be indexed \\ \hline
  Stored & when true a field is stored in index store and is accessible while displaying results \\ \hline
- compressed & when true a field will be zipped, applicable for text-type fields \\ \hline
+ compressed \ho{either all of them are capitalised or no one is} & when true a field will be zipped, applicable for text-type fields \\ \hline
  multiValued & if true, field can contain multiple values in the same document. \\ 
  \hline
 \end{tabular}
@@ -584,14 +584,14 @@ Here is a fragment of schema file defining fields of a document in Citation Sear
     </fields>
 \end{lstlisting}
 
-Every document represent a citation with matching bibliographic references. In schema file we indicate that we want to index text field which is citation text. We store id of a citation, that is a generated value, calculated from the hash of the citation string. Specifying id is particularly useful for updating documents. We also store a context of a citation and path to the scientific article where citation was found. As citation can refer to multiple sources, we make reference field multivalued. 
+Every document represent\ins{s} a citation with matching bibliographic references. In \ins{the} schema file we indicate that we want to index \ins{a} text field which is \ins{the} citation text. We store \ins{an} id of a citation, that is a generated value, calculated from the hash of the citation string. Specifying \ins{the} id is particularly useful for updating documents. We also store a context \chg{of}{for} a citation and \ins{a} path to the scientific article where \ins{the} citation was found. As \ins{a} citation can refer to multiple sources, we make \ins{the} reference field multivalued. 
 
-In schema configuration file one can define field type, for example, string, date or integer and map them to Java class. This can be handy to define custom type. A field type includes following information:
+In \ins{the} schema configuration file\ins{,} one can define \ins{the} field type, \chg{for example}{like} string, date or integer and map them to Java class\ins{es}. This can be handy \chg{to}{when we} define custom type\ins{s}. A field type includes \ins{the} following information:
 
 \begin{itemize}
 \item Name
 \item Implementation class name
-\item If field type is TextField, it will include a description of field analysis
+\item If \ins{the} field type is \ins{a} TextField, it will include a description of \ins{the} field analysis
 \item Field attributes 
 \end{itemize}
 
@@ -618,21 +618,21 @@ Other elements in the Solr schema file listed in Table \ref{tab:fields.others}:
 \label{tab:fields.others}
 \end{center}
 \end{table}
-Once the schema is configured next step is to configure instance itself.
+Once the schema is configured\ins{,} \ugh{next step is to configure instance itself}.
 
 \paragraph{Configuring Solr parameters}
-To configure Solr instance itself we need to describe solrconfig.xml and solr.xml files.
+To configure \ins{a} Solr instance\del{ itself} we need to describe \ins{the} solrconfig.xml and solr.xml files.
 
 \begin{description}
 \item[solr.xml] The solr.xml configuration is located in solr home directory and used for configuration of logging and advanced options to run Solr in a cloud mode.
-\item[solrconfig.xml] The solrconfig.xml configuration file primarily provides you with an access to index-management settings, RequestHandlers, listeners, and request dispatchers. The file has a number of complex sections and mainly is changed when a specific need encounter. 
+\item[solrconfig.xml] The solrconfig.xml configuration file primarily provides you with an access to index-management settings, RequestHandlers, listeners, and request dispatchers. The file has a number of complex sections and mainly is changed when a specific need \ins{is} encounter\ins{ed}. 
 \end{description} 
 
 
  %\cite{solr.config}
 
 \subsection{Enhanced search features}
-Solr provides a number of additional features that can enhance search system. One of the feature we use is synonyms. To use this feature you need to specify synonyms.txt file with listed synonyms. This file is used by synonym filter to replace words with their synonyms. For example, a search for "DVD"may expand to "DVD", "DVDs", "Digital Versatile Disk" depending on the mapping in this file. This file can be also used for spelling corrections. Here is an example of synonyms.txt file:
+Solr provides a number of additional features that can enhance \ins{the} search system. One of the feature\ins{s} we use is synonyms. To use this feature you need to specify synonyms.txt file with listed synonyms. This file is used by synonym filter to replace words with their synonyms. For example, a search for "DVD" may expand to "DVD", "DVDs", "Digital Versatile Disk" depending on the mapping in this file. This file can be also used for spelling corrections. Here is an example of synonyms.txt file:
 \begin{lstlisting}
 GB, gib, gigabyte, gigabytes
 MB, mib, megabyte, megabytes
@@ -657,15 +657,16 @@ Additionally, there are other configuration files that appear in the configurati
 \end{table}
 
 \section{Meta Information storage}
-As a meta information storage we used MongoDB. MongoDB is a NoSQL document oriented storage written in C++. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, http://bsonspec.org/}. MongoDB requires a little amount of configuration to start to work with. 
+\ho{also this information about Mongo should be put in an appendix section}
+As a meta information storage we used MongoDB. MongoDB is a NoSQL document\ins{-}oriented \chg{storage written in C++}{database}. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, http://bsonspec.org/}. MongoDB requires a little amount of configuration to start to work with. 
 
 \subsection{Configuration}
-Once MonogDB distributive is downloaded is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
+Once MonogDB \del{distributive} is downloaded\ins{, it} is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
 \begin{lstlisting}[language=Bash]
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272
 \end{lstlisting}
 
-MongoDB provides REST API, to enable REST API use parameter --rest:
+MongoDB provides REST API\chg{, t}{. T}o enable REST API use parameter --rest:
 \begin{lstlisting}[language=Bash]
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
 \end{lstlisting}

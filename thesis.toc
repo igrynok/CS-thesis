@@ -21,14 +21,14 @@
 \contentsline {subsection}{\numberline {3.2.3}Challenges}{24}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Indexator}{25}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Solr Configuration}{25}{subsection.3.3.1}
-\contentsline {paragraph}{Defining Solr schema}{27}{section*.7}
+\contentsline {paragraph}{Defining Solr schema}{28}{section*.7}
 \contentsline {paragraph}{Configuring Solr parameters}{29}{section*.8}
-\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{29}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Meta Information storage}{30}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{30}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Meta Information storage}{31}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Configuration}{31}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Web search interface}{31}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Citation search page}{31}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Details page}{31}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.5}Web search interface}{32}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Citation search page}{32}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Details page}{32}{subsection.3.5.2}
 \contentsline {chapter}{\numberline {4}Validation}{33}{chapter.4}
 \contentsline {chapter}{\numberline {5}Conclusion and Future Work}{34}{chapter.5}
 \contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{38}{appendix.A}
