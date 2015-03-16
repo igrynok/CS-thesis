@@ -349,7 +349,7 @@ Next, we search for \ins{the} citations in \chg{a}{the} body\del{ of a document}
 \end{table}
 
 
-Further we need to extract bibliographic links from a references section. For that we studied most common variants of composing references sections. Table \ref{tab:references} surmises these findings. To extract bibliographic links we make list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow us to match citations with bibliographic links.
+Further we need to extract bibliographic links from \chg{a}{the} references section. For that we studied most common variants of composing \ins{the} references sections. Table \ref{tab:references} \chg{surmises}{summarises} these findings. To extract bibliographic links we make \ins{a} list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow\ins{s} us to match citations with bibliographic links.
 
 \begin{table}[h]
 \begin{center}
@@ -375,7 +375,7 @@ Further we need to extract bibliographic links from a references section. For th
 \end{center}
 \end{table}
 
-The pipeline of processing stage described above depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
+The pipeline of processing stage\ins{s} described above \ins{is} depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
 
   \begin{figure}[htp]
     \centering
@@ -385,7 +385,7 @@ The pipeline of processing stage described above depicted on Figure \ref{fig:pro
   \end{figure} 
 
 \paragraph{Processing bibliographic links}
-As usual we try to recognize common patterns belonging to majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First, it was noticed that if bibliographic link contains some sort of quotes, for example, double quotes ``'' or single quotes `', then highly probably that a title is enclosed by these quotes. Then, some observations were made for bibliographic links without quotes. Very often, a bibliographic link structured as follows: it begins by listing paper's authors, then paper's title goes and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it's enough to take the second part of the bibliographic link to be a title.   
+As usual we try to recognize common patterns \chg{belonging to}{covering the} majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First, \chg{it was noticed}{we noticed} that if \ins{a} bibliographic link contains some sort of quotes, for example, double quotes \ins{(}``''\ins{)} or single quotes \ins{(}`'\ins{)}, then \ins{it is} highly probabl\chg{y}{e} that a title is enclosed by these quotes. Then, \chg{some observations were made}{we made some observations} for bibliographic links without quotes. Very often, a bibliographic link \ins{is} structured as follows: it begins by listing \ins{the} paper's authors, then \chg{paper's}{the} title\del{ goes} \ins{,} and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it's enough to take the second part of the bibliographic link to be a title.   
 
 \begin{table}[h]
 \begin{center}
