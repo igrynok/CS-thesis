@@ -695,9 +695,81 @@ Web Search interface is a Java web application running in a servlet container. F
 \subsection{Citation search page}
 \subsection{Details page}
 
-\chapter {Validation}
-\label{cha:validation}
-In which you show how well the solution works.
+\chapter {Evaluation experiments}
+\label{cha:experiments}
+To measure effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from different than Computer Science domain, for example, Biology or Physics.  Thus all experiments were conducted with Google Scholar and Citation Search Engine.
+
+There are many aspects on how two search engines might be compared. In our experiments we focused on quality of user experience that is how effective users in finding documents and personal impression on using both engines.
+
+\section{Experiments setup}
+For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
+
+\paragraph{Task1} As a first task an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure illustrates one of a citation from the paper given to an expert. An expert can read the cited sentence as well as the context of this sentence however he is not aware of referred source paper. The task is to find a referred paper that proves given citation.
+
+In overall, an expert was given 4 different citations from one of his papers and asked to find references using Google Scholar or Citation Search alternately.  Every time the order of using search engines was changed. Before the experiment, an article with a citation was removed from our dataset so an expert could not find an exact match using Citation Search.
+
+During the execution of tasks following observations were recorded:
+\begin{itemize}[noitemsep]
+	\item Citation and search engine name
+	\item Search time
+	\item Number of queries made
+	\item Number of words in a query
+	\item Expert comments
+\end{itemize}  
+
+\paragraph{Task1'} This task was given to the second group as an extra task. An expert was also given a citation to find a reference to it as in Task 1. But this time a search engine was not specified and a citation was taken from the paper not authored by expert. 
+
+Every expert received only one citation for this task. As for the previous task the paper containing citation was removed from Citation Search dataset.
+
+During Task1’ we observed which search engine was used to find a reference.
+
+\paragraph{Task2} For this task we asked every expert in advance to provide with her favorite paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using state of the art TextRank   algorithm. TextRank algorithm is a graph-based algorithm for Natural Language Processing (NLP). It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub.  Another summary was built using citations to the paper collected by Citation Search. If TextRank provides with the extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
+
+As a task an expert was given two summaries and asked to give a score from 0 to 10. The score should reflect how summaries are good in describing a paper.
+
+\section{Questionnaires before and after each experiment}
+
+Before the beginning of the experiment each expert was asked to fill a form with following questions:
+\begin{itemize}[noitemsep]
+	\item What search engines do you usually use to find scientific literature?
+	\item How often do you use listed above search engines? (Possible answers: everyday, a few times per week, once a week or less)
+	\item Have you ever used following search engines?(Google Scholar, Citation Search )
+\end{itemize} 
+After filling the form each expert was introduced to the simple query syntax and to interfaces of search engines. Then experiment begins with Task1 and Task1’. After Task1 and Task1’ experts were asked some general questions about their impressions on using Google Scholar and Citation Search, for example:
+\begin{itemize}[noitemsep]
+	\item What did you like, what you did not like about using particular search engine?
+	\item What difficulties did you have?
+\end{itemize}
+Right after the experiment experts were asked to fill a form with following questions:
+\begin{itemize}[noitemsep]
+	\item Has the experiments changed your opinion on the two search engines?
+	\item Would you consider using one of these search engines? 
+\end{itemize}
+
+\section{Experiments results}
+
+First survey, taken by experts before the experiment, showed that all experts use Google Scholar to find scientific literature. Some experts mentioned that they use IEEE Explorer, ACM digital library and DBLP as well. Half of the respondents use Google Scholar every day (Figure \ref{fig:q1_1_2}).
+
+\begin{figure}
+\hfill
+\subfigure{\includegraphics[width=7cm]{q1_1}}
+\hfill
+\subfigure{\includegraphics[width=7cm]{q1_2}}
+\hfill
+\caption{Questions 1 and 2}
+\label{fig:q1_1_2}
+\end{figure}
+
+Four respondents answered positively on the question if they have ever used Citation Search Engine (Figure \ref{fig:q1_3}). 
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.8, trim = 0mm 0mm 0mm 0mm,]{q1_3}
+    \caption{Question 3}
+    \label{fig:q1_3}
+  \end{figure}
+
+
 
 \chapter {Conclusion and Future Work}
 \label{cha:conclusion}
