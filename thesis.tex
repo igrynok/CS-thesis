@@ -8,9 +8,9 @@
 \chapter*{\centering Abstract}
 \begin{quotation}
 \noindent 
-Nowadays the number of documents in the World Wide Web grows extremely fast. Tools that can facilitate information retrieval present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating a new scientific work. 
+Nowadays the number of documents in the World Wide Web grows extremely fast \footnote{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}. Tools that can facilitate information retrieval present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating a new scientific work. 
 
-We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. Besides it analyses the results of the deployment of the system on a collection of scientific papers. It evaluates searching capabilities of the system by comparing with alternative approaches.
+We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. We evaluates searching capabilities of the system by comparing with alternative approaches.
 
 \end{quotation}
 \clearpage
@@ -258,27 +258,31 @@ Google Scholar contains roughly 160 million of documents by May 2014 \cite{ordun
 
 \section{System overview}
 
-The overall architecture of Citation Search Engine is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying \chg{on}{the} resulted indexes. Correspondingly\ins{,} there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer Solution}\ho{Indexer Solution is not a good name for a component. Just name it the Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} for storing indexes and \emph{Meta Information Storage} for storing meta information \ho{First, the names are pretty self-explanatory. Second: Why there are two different storage? You have to justify.}. For the convenience, the workflow of the system is numbered and will be explained below.
+The components of Citation Search is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referred to the same article. 
 
   \begin{figure}[htp]
     \centering
-    \includegraphics[scale=0.5, trim = 0mm 20mm 0mm 20mm]{cs}
-    \caption{\chg{Search Engine}{change this to the name of the tool ;)} high level architecture \ho{The architecture diagram is not clear because it is a mix between an activity diagrams and a component diagram. There should be one diagram for each.}}
+    \includegraphics[scale=0.4, trim = 0mm 40mm 0mm 20mm]{cs-components}
+    \caption{Component diagram of Citation Search.}
     \label{fig:cs}
   \end{figure}
 
-\ho{There should be two diagrams. One component diagram and one activity diagram. Then you should explain each one one its own.}
 
-\chg{F}{The f}irst operation performed by the system is indexing. \del{In the indexing process collection of PDF files is provided to \emph{Parser}} (1). \ins{The} \emph{Parser} \chg{parses}{converts} \ins{the} PDF files into text and extract meta \ho{what meta information} information from text. It then packs data about citations into documents and publishes obtained documents to \emph{Indexer Solution} (2) which indexes and stores indexes in \emph{Indexes Storage} (2'). Meta information extracted from textual representation of PDF files that doesn't require indexing is stored in \emph{Meta Information Storage} (3). \ho{the whole paragraph is not clear. Try to simplify it by just enumerating the steps in an another activity diagram where you explicitly specify the input and output if each step.}
+The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into the text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consist of a citation, that should be indexed and an additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consist of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referred to the same source. Once the \emph{Parser} processed the PDF file it can proceed to the next paper if there is any left. When all papers are processed, user can make queries over \emph{Search Web App}.
 
-In the querying process user searches for some phrase using \emph{Search Web App} user interface. The phrase is analyzed by \ins{the} \emph{Indexer Solution}. \emph{Indexer Solution} finds documents \ho{what documents?? Remember that your thesis should be self-explanatory. I know that the term ``documents" is used when dealing with Solr, but the reader doesn't. Try to be more clear.} matching the query phrase in \emph{Indexes Storage} (2') and sends them to \emph{Search Web App} (4). If \ins{the} user is interested in getting details regarding \chg{the}{a} specific reference\ins{,} the information \ho{what information?} will be looked up in \ins{the} \emph{Meta Information Storage} (5). Finally, the result is shown to the user as \del{a} an \chg{html}{HTML} page (6). 
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
+    \caption{Activity diagram of Citation Search.}
+    \label{fig:cs-activity-diagram}
+  \end{figure}
 
-\ins{The} \chg{N}{n}ext sections of \chg{the}{this} chapter describe \ins{the} implementation of each component in detail and show the reasons \chg{of}{behind} choosing a particular solution.       
+The next sections of this chapter describe the implementation of each component in detail and show the reasons behind choosing a particular solution.       
 
 \section{Parser}
 
-It is practical to divide the work of \ins{the} \emph{Parser} into two phases: \emph{Processing} and \emph{Publishing}, as \chg{on}{in} Figure \ref{fig:parser}. The output of \ins{the} \emph{Processing} phase is \ins{the} input to \ins{the} \emph{Publishing} phase. \del{ \emph{Processing} phase aims to parse PDF-files and prepare documents with extracted information for publishing. Next parts of this section describes \emph{Processing} and \emph{Publishing} phases in detail. 
-}
+It is practical to divide the work of the \emph{Parser} into two phases: \emph{PDF processing} and \emph{Document publishing}, as in Figure \ref{fig:parser}. The output of the \emph{PDF processing} phase is the input to the \emph{Documents publishing} phase. 
+
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 140mm 0mm 10mm]{parser}
@@ -286,23 +290,22 @@ It is practical to divide the work of \ins{the} \emph{Parser} into two phases: \
     \label{fig:parser}
   \end{figure}
 
-\subsection{Processing}
-\ho{give this phase a better title and use it accordingly in the text.}
-The main role of \emph{Processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
-\del{In common case }\chg{p}{P}arsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that\ins{,} there exist scientific articles written decades ago which can use different encoding algorithms \chg{than}{from} articles created recently. Thereby\ins{,} building a universal parser is \chg{practically impossible}{very hard in practice}. In our case\ins{,} we try to identify common patterns covering \ins{the} majority of \ins{the} scientific article formats or at least \ins{the} formats found in our collection of articles.  
+\subsection{PDF processing}
+The main role of \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
+Parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that, there exist scientific articles written decades ago which can use different encoding algorithms from articles created recently. Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the majority of the scientific article formats or at least the formats found in our collection of articles.  
 
-\emph{Processing} phase starts with recursively walking though \ins{the} directory tree of the collection library. While walking \chg{though}{through} \ins{the} directory\ins{, the} \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use\del{d} Apache PDFBox library \footnote{Apache PDFBox, https://pdfbox.apache.org/} to parse PDF-files into text. The library extracts full text from PDF-file\ins{s,} but without any hints on the initial structure of the article. In our case\ins{,} to find citations and bibliographic references in text\ins{,} we need to look them up in different parts of the article\chg{, so it was}{. We} designed an algorithm to break \ins{the} PDF-text into sections.
+\emph{PDF processing} phase starts with recursively walking though the directory tree of the collection library. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library \footnote{Apache PDFBox, https://pdfbox.apache.org/} to parse PDF-files into text. The library extracts full text from PDF-files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We designed an algorithm to break the PDF-text into sections.
 
-Generally\ins{,} we are interested in identifying a body of the document where we can find citations and reference\del{s} block\ins{s} where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some section\ins{s}. Based on \ins{those} keywords\ins{,} on\ins{e} can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
+Generally, we are interested in identifying a body of the document where we can find citations and reference blocks where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some sections. Based on those keywords, one can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
   
-One can notice \ins{the} following characteristics of scientific articles:
+One can notice the following characteristics of scientific articles:
 \begin{itemize}
-	\item \ins{The} Body of a document comes before \ins{the} references section\ins{.}
-	\item \ins{The} Appendix or Author's biography sections can come after \ins{the} references section\ins{.}
-	\item Each document contains \chg{an}{the} \ins{``}Abstract\ins{"} and \ins{the ``}References\ins{"} words and might contain \ins{the ``}Appendix\ins{"} word. We call these words keywords. 
+	\item The body of a document comes before the references section.
+	\item The appendix or author's biography sections can come after the references section.
+	\item Each document contains the ``Abstract" and the ``References" words and might contain the ``Appendix" word. We call these words keywords. 
 \end{itemize}  
 
-\chg{In common case }{The }keywords can be written in different formats, \chg{for example,}{like} using upper or lower case\ins{s}. Table \ref{tab:keywords} illustrates \ins{some} variations of \ins{the} keywords\del{ in the beginning of document sections}.
+The keywords can be written in different formats, like using upper or lower cases. Table \ref{tab:keywords} illustrates some variations of the keywords.
 
 \begin{table}[ht]
 \begin{center}
@@ -319,18 +322,18 @@ One can notice \ins{the} following characteristics of scientific articles:
 \end{center}
 \end{table}
 
-After breaking \chg{down a document}{a document down} into sections as show\ins{n} \chg{on}{in} Figure \ref{fig:template}, \ins{the} text \chg{in sections are}{is} presented in one-column format. There are two aspects regarding this format. First, sentences can be \chg{splitted}{split} by new line symbol\ins{s} \chg{in}{at} the end of a line. Second\del{ly}, words can be \chg{splitted}{split} by dash symbol \chg{in}{at} the end of a line. \chg{It was}{We} introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain \chg{continues}{continuous} text.
+After breaking a document down into sections as shown in Figure \ref{fig:template}, the text is presented in one-column format. There are two aspects regarding this format. First, sentences can be split by new line symbols at the end of a line. Second, words can be split by dash symbol at the end of a line. We introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain continuous text.
 
   \begin{figure}[htp]
-    \centering
-    \includegraphics[scale=0.6]{template}
-    \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.\ho{Why isn't this figure centred?}}
+  	\centering
+    \includegraphics[scale=0.6, trim = 50mm 0mm 0mm 0mm]{template}
+    \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.}
     \label{fig:template}
   \end{figure}
 
-As a result of \ins{the} normalization step\ins{,} we have a document divided into body and references sections. Before searching citations in the body of a document\chg{ it is reasonable to }{, we }break \ins{the} body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can \ins{be} encounter\ins{ed} in\ins{side} \chg{a }{the} sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end \chg{by}{with a} period, \chg{for example,}{like the} title of a section or an item of a list. \chg{It was}{We} used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
+As a result of the normalization step, we have a document divided into body and references sections. Before searching citations in the body of a document, we break the body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can be encountered inside the sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end with a period, like the title of a section or an item of a list. We used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
-Next, we search for \ins{the} citations in \chg{a}{the} body\del{ of a document} and \ins{for the }bibliography links in \chg{a}{the} references section. When an author makes a citation \chg{it}{he} puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, detecting square brackets in the text we can identify citations \ho{convoluted. Try to write sentences in the normal order}. After analyzing some set of articles\chg{ it was revealed}{, we found multiple} \del{frequent} patterns in using square brackets for \chg{citing}{citations}\ins{, as} \chg{showed}{shown} in Table \ref{tab:citations}. 
+Next, we search for the citations in the body and for the bibliography links in the references section. When an author makes a citation she puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, we can identify citations by detecting square brackets in the text. After analyzing some set of articles we found multiple patterns in using square brackets for {citations, as shown in Table \ref{tab:citations}. 
 
 \begin{table}[ht]
 \begin{center}
@@ -349,7 +352,7 @@ Next, we search for \ins{the} citations in \chg{a}{the} body\del{ of a document}
 \end{table}
 
 
-Further we need to extract bibliographic links from \chg{a}{the} references section. For that we studied most common variants of composing \ins{the} references sections. Table \ref{tab:references} \chg{surmises}{summarises} these findings. To extract bibliographic links we make \ins{a} list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allow\ins{s} us to match citations with bibliographic links.
+Further we need to extract bibliographic links from the references section. For that we studied most common variants of composing the references sections. Table \ref{tab:references} summarises these findings. To extract bibliographic links we make a list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allows us to match citations with bibliographic links.
 
 \begin{table}[h]
 \begin{center}
@@ -375,7 +378,7 @@ Further we need to extract bibliographic links from \chg{a}{the} references sect
 \end{center}
 \end{table}
 
-The pipeline of processing stage\ins{s} described above \ins{is} depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
+The pipeline of PDF processing stages described above is depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
 
   \begin{figure}[htp]
     \centering
@@ -385,7 +388,7 @@ The pipeline of processing stage\ins{s} described above \ins{is} depicted on Fig
   \end{figure} 
 
 \paragraph{Processing bibliographic links}
-As usual we try to recognize common patterns \chg{belonging to}{covering the} majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First, \chg{it was noticed}{we noticed} that if \ins{a} bibliographic link contains some sort of quotes, for example, double quotes \ins{(}``''\ins{)} or single quotes \ins{(}`'\ins{)}, then \ins{it is} highly probabl\chg{y}{e} that a title is enclosed by these quotes. Then, \chg{some observations were made}{we made some observations} for bibliographic links without quotes. Very often, a bibliographic link \ins{is} structured as follows: it begins by listing \ins{the} paper's authors, then \chg{paper's}{the} title\del{ goes} \ins{,} and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it's enough to take the second part of the bibliographic link to be a title.   
+As usual we try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of quotes, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it's enough to take the second part of the bibliographic link to be a title.   
 
 \begin{table}[h]
 \begin{center}
@@ -415,11 +418,10 @@ As usual we try to recognize common patterns \chg{belonging to}{covering the} ma
     \label{fig:link}
   \end{figure}     
 
-\subsection{Publishing}
-\ho{Remember to have a better title}
-There are two systems where documents \chg{will be}{are} published \ins{to}: Solr and MongoDB. As already explained above\ins{,} Solr is used for indexing citations and MongoDB for storing meta-data.\del{ Some reasonings in favor of using MongoDB additionally to Solr storage will be given below.}
+\subsection{Document publishing}
+There are two systems where documents are published to: Solr and MongoDB. As already explained above, Solr is used for indexing citations and MongoDB for storing meta-data.
 
-\paragraph{Publishing to Solr}
+\paragraph{Publishing documents to Solr}
 The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document \ho{this definition should have been introduced a lot earlier} and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
@@ -438,10 +440,10 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-\del{Lets have a look at how Solr stores documents. }Solr uses NoSQL\ins{-}like data storage, but actually it is even more limited than traditional NoSQL databases. \del{Indeed,} the data stored in Solr\del{ storage} is very `flat', which means that Solr \chg{doesn't allow to}{cannot} store \del{even} hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case\ins{,} along with the references\ins{,} we \chg{intent}{intend} to store a title of the scientific article parsed from the reference string, so \del{later} we can aggregate citations referred to the same scientific article. \del{/*}It's worth to say that citation itself can refer to multiple scientific articles\del{*/}\ins{.} We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease \ins{the} quality of user experience. Thus we \chg{are coming to the}{use an} external storage solution that \chg{will}{can} keep \ins{the} titles of scientific articles and all \ins{the} citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution \chg{it was decided}{we decided} to use MongoDB as an external storage.     
+Solr uses NoSQL-like data storage, but actually it is even more limited than traditional NoSQL databases. The data stored in Solr is very `flat', which means that Solr cannot store \del{even} hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store a title of the scientific article parsed from the reference string, so we can aggregate citations referred to the same scientific article. It is worth to say that citation itself can refer to multiple scientific articles. We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease the quality of user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.     
 
-\paragraph{Publishing to MongoDB} 
-MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, http://www.mongodb.org/}. To connect to \ins{the} database we used \ins{a} Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to \ins{the} JSON structure of \chg{a}{the} document \chg{showed}{shown} \chg{on}{in} Listing \ref{lst:json}. 
+\paragraph{Publishing documents to MongoDB} 
+MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, http://www.mongodb.org/}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
 The json document consist of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
@@ -449,7 +451,7 @@ The json document consist of following fields:
 	\item cittations: citations with its references of the scientific article identifying by title field 
 \end{itemize} 
 
-Every time \chg{while sending}{we send} a new citation with \ins{a} paper title to MongoDB\ins{,} we check if \ins{a} document with the same title already exist\ins{s}. If so\ins{,} we add a new citation to \chg{this}{that} document\ins{,} otherwise create a new document. \\
+Every time we send a new citation with a paper title to MongoDB, we check if a document with the same title already exists. If so, we add a new citation to document, otherwise create a new document. \\
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[label={lst:json}, caption={Sample document stored in MongoDB}]
@@ -483,18 +485,28 @@ Every time \chg{while sending}{we send} a new citation with \ins{a} paper title 
 
 \subsection{Challenges}
 
-One of the challenge\ins{s we encounter} during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence. \ho{give an example}
+One of the challenges we encounter during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
 
-Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography. Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. \ho{yes bit in that case you will not have a problem. You will extract a citation and never find the reference to it. So you drop it.}
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5, trim = 0mm 150mm 0mm 10mm]{no-ref-tag}
+    \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to bibliography composed from authors' names making it hard to distinguish a citation from any other sentences.} 
+    \label{fig:no-ref-tag}
+  \end{figure} 
 
+Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
 
-\section{Indexator}
-\ho{All the technical information about how to configure and setup Solr should be moved to an Appendix}
-\chg{As an Indexator we use Solr}{We use Solr as an Indexator}: \ins{a} solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, information retrieval library that provides indexing and full text search capabilities \footnote{Apache Lucene, http://lucene.apache.org/core/}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server \chg{:}{are} Instagram (photo and video sharing social network), Netflix (movie hosting service), \ins{and} StubHub.com (public entertainment events ticket reseller). 
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5, trim = 0mm 120mm 0mm 10mm]{code-snippet}
+    \caption{An example of the code snippet from the article ``Modular Verification of Higher-Order Methods with Mandatory Calls Specified by Model Programs'' authored by Steve M. Shaner et al. The code snippet is wrongly considered as a citation and is matched to the first bibliographic entry.} 
+    \label{fig:code-snippet}
+  \end{figure}
 
-Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different \chg{inspections}{preprocessing phases can be applied} to remove duplicates in the data or some document-level operations prior to indexing, or \ins{to} create multiple documents from a single one\del{ can be applied}. Solr comes with \ins{a} variety of query parser implementations responsible for parsing the queries passed by the \chg{end search}{end user} as \del{a} search string\ins{s}. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed.
+\section{Indexer}
+We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, information retrieval library that provides indexing and full text search capabilities \footnote{Apache Lucene, http://lucene.apache.org/core/}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
-\del{Next section describes configuration of Solr instance for our search system.  }
+Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed.
 
   \begin{figure}[htp]
     \centering
@@ -503,184 +515,10 @@ Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is dis
     \label{fig:solr}
   \end{figure} 
 
-\subsection{Solr Configuration}
-Solr installation requires JDK and any servlet container \ins{to be} installed on \chg{a}{the} machine. Here \chg{configuration process for Apache Tomcat container is described.}{we describe the configuration of Solr.}
-We need to download Solr distribution that can be found on \ins{the} official Solr home page \footnote{Apache Solr, http://lucene.apache.org/solr/}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
-
-\begin{itemize}
-	\item \textbf{contrib/} - directory containing additional libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
-	\item \textbf{dist/} - directory providing distributions of Solr and other useful libraries such as SolrJ, UIMA, MapReduce, and so on. \ho{what is the difference from contrib/}
-	\item \textbf{docs/} - directory with documentation for Solr.
-	\item \textbf{example/} - Jetty based web application that can be used directly.
-	\item \textbf{Licenses/} - directory containing all the licenses of the underlying libraries used by Solr.
-\end{itemize}
-
-Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war \ho{you have to say that you are working with Tomcat}. Then point out to Solr location of home directory describing a collection \ho{not clear}. By \ins{a} collection in Apache Solr one \chg{imply}{indicates} a collection of Solr documents that represent\ins{s} one complete index. It's possible to choose one of the options:
-\begin{itemize}
-	\item \textbf{Java options:} one can use following command so that the container picks up Solr collection information from the appropriate location:
-	\begin{lstlisting}[language=bash]
-$export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/opt/solr/example"
-	\end{lstlisting}
-	\item \textbf{JNDI lookup:} Or it is possible to configure the JNDI lookup for the java:comp/env/solr/home resource by pointing it to the Solr home directory. This can be done by creating a context XML file with some name (context.xml) in \$CATALINA\_HOME/conf/Catalina/localhost/context.xml and adding the following entries: \ho{fix the margins. You have some text out of the page borders}
-	\begin{lstlisting}[language=XML]
-<?xml version="1.0" encoding="utf-8"?>
-<Context docBase="<solr-home>/example/solr/solr.war" debug="0" crossContext="true">
-<Environment name="solr/home" type="java.lang.String" value="<solr-home>/example/solr" override="true"/>
-</Context>
-	\end{lstlisting}
-\end{itemize}
-
-The Solr home directory contains configuration files and index-related data. It should consist of three directories:
-\begin{itemize}
-\item \textbf{conf/} - directory containing configuration files, such as solrconfig.xml and schema.xml
-\item \textbf{data/} - default location for storing data related to index generated by Solr
-\item \textbf{lib/} - optional directory for additional libraries, used by Solr to resolve any plugins
-\end{itemize}
-
-Configuring Solr instance requires defining a Solr schema and configuring Solr parameters.
-\paragraph{Defining Solr schema}
-Solr schema is defined in \ins{the} schema.xml file placed \chg{to}{in the} conf/ directory of \ins{the} Solr home directory. Solr distribution comes with a sample schema file that can be changed for the needs of the project. \ins{The} schema file defines the structure of the index, including fields and field types. The basic overall structure of \ins{the} schema file is\del{ following}:
-\begin{lstlisting}[language=XML]
-	<schema>
-	  <types>
-	  <fields>
-	  <uniqueKey>
-	  <copyField>
-	</schema>
-\end{lstlisting}
-
-The basic unit of data in Solr is document. Each document in Solr consist\ins{s} of fields that \ins{are} described in \ins{the} schema.xml file. By describing data in \ins{the} schema.xml\ins{,} Solr understand\ins{s} the structure of the data and what actions should be performed to handle this data. Here is an example of a field in \ins{the} schema file:
-\begin{lstlisting}[language=XML]
-	<field name="id" type="integer" indexed="true" stored="true" required="true"/>
-\end{lstlisting}
-Table \ref{tab:field.attrs} lists and explains major attributes of field element. 
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{ | l | p{10cm}  | } 
- \hline
- Name & Description \\  \hline
- Default & default value if it is not read while importing a document \\ \hline
- Indexed & true if field should be indexed \\ \hline
- Stored & when true a field is stored in index store and is accessible while displaying results \\ \hline
- compressed \ho{either all of them are capitalised or no one is} & when true a field will be zipped, applicable for text-type fields \\ \hline
- multiValued & if true, field can contain multiple values in the same document. \\ 
- \hline
-\end{tabular}
-\caption{Major attributes of field element in schema.xml}
-\label{tab:field.attrs}
-\end{center}
-\end{table}
-
-Here is a fragment of schema file defining fields of a document in Citation Search Engine collection:
-\begin{lstlisting}[language=XML]
-    <fields>
-     <field name="_version_" type="long" indexed="true" stored="true" multiValued="false"/>
-     <field name="id" type="string" multiValued="false"/>
-     <field name="text" type="text_en" indexed="true" multiValued="false"/>
-     <field name="context" type="string" indexed="false" multiValued="false"/>
-     <field name="path" type="string" indexed="false" multiValued="false"/>
-     <field name="reference" type="string" indexed="false" stored="true" multiValued="true" />
-    </fields>
-\end{lstlisting}
-
-Every document represent\ins{s} a citation with matching bibliographic references. In \ins{the} schema file we indicate that we want to index \ins{a} text field which is \ins{the} citation text. We store \ins{an} id of a citation, that is a generated value, calculated from the hash of the citation string. Specifying \ins{the} id is particularly useful for updating documents. We also store a context \chg{of}{for} a citation and \ins{a} path to the scientific article where \ins{the} citation was found. As \ins{a} citation can refer to multiple sources, we make \ins{the} reference field multivalued. 
-
-In \ins{the} schema configuration file\ins{,} one can define \ins{the} field type, \chg{for example}{like} string, date or integer and map them to Java class\ins{es}. This can be handy \chg{to}{when we} define custom type\ins{s}. A field type includes \ins{the} following information:
-
-\begin{itemize}
-\item Name
-\item Implementation class name
-\item If \ins{the} field type is \ins{a} TextField, it will include a description of \ins{the} field analysis
-\item Field attributes 
-\end{itemize}
-
-A sample field type description:
-\begin{lstlisting}[language=XML]
-	<fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
-  		<analyzer>
-  		<tokenizer class="solr.WhitespaceTokenizerFactory"/>
-  		</analyzer>
-	</fieldType>
-\end{lstlisting}
-
-Other elements in the Solr schema file listed in Table \ref{tab:fields.others}:
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{ | l | p{10cm}  | } 
- \hline
- Name & Description \\  \hline
- UniqueKey & specifies which field in documents is a unique identifier of a document, should be used if you ever update a document in the index\\ \hline
- copyField & used to copy field's value from one field to another \\ \hline
-\end{tabular}
-\caption{Description of some elements in schema.xml}
-\label{tab:fields.others}
-\end{center}
-\end{table}
-Once the schema is configured\ins{,} \ugh{next step is to configure instance itself}.
-
-\paragraph{Configuring Solr parameters}
-To configure \ins{a} Solr instance\del{ itself} we need to describe \ins{the} solrconfig.xml and solr.xml files.
-
-\begin{description}
-\item[solr.xml] The solr.xml configuration is located in solr home directory and used for configuration of logging and advanced options to run Solr in a cloud mode.
-\item[solrconfig.xml] The solrconfig.xml configuration file primarily provides you with an access to index-management settings, RequestHandlers, listeners, and request dispatchers. The file has a number of complex sections and mainly is changed when a specific need \ins{is} encounter\ins{ed}. 
-\end{description} 
-
-
  %\cite{solr.config}
 
-\subsection{Enhanced search features}
-Solr provides a number of additional features that can enhance \ins{the} search system. One of the feature\ins{s} we use is synonyms. To use this feature you need to specify synonyms.txt file with listed synonyms. This file is used by synonym filter to replace words with their synonyms. For example, a search for "DVD" may expand to "DVD", "DVDs", "Digital Versatile Disk" depending on the mapping in this file. This file can be also used for spelling corrections. Here is an example of synonyms.txt file:
-\begin{lstlisting}
-GB, gib, gigabyte, gigabytes
-MB, mib, megabyte, megabytes
-Television, Televisions, TV, TVs
-Incident_error, error
-\end{lstlisting}
-
-Additionally, there are other configuration files that appear in the configuration directory. We are listing them in Table \ref{tab:solr.config} with the description of each configuration:
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{ | l | p{10cm}  | } 
- \hline
- Name & Description \\  \hline
- protwords.txt & file where you can specify protected words that you do not wish to get stemmed. So, for example, a stemmer might stem the word "catfish" to "cat" or "fish".\\ \hline
- spellings.txt & file where you can provide spelling suggestions to the end user. \\ \hline
- elevate.txt & file  where you can change the search results by making your own results among the top-ranked results. This overrides standard ranking scheme, taking into account elevations from this file. \\ \hline
- stopwords.txt & Stopwords are those that will not be indexed and used by Solr in the applications. This is particularly helpful when you really wish to get rid of certain words. For example, in the string, "Jamie and joseph," the word "and" can be marked as a stopword. \\ \hline
-\end{tabular}
-\caption{Additional configuration files in Solr}
-\label{tab:solr.config}
-\end{center}
-\end{table}
-
-\section{Meta Information storage}
-\ho{also this information about Mongo should be put in an appendix section}
-As a meta information storage we used MongoDB. MongoDB is a NoSQL document\ins{-}oriented \chg{storage written in C++}{database}. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, http://bsonspec.org/}. MongoDB requires a little amount of configuration to start to work with. 
-
-\subsection{Configuration}
-Once MonogDB \del{distributive} is downloaded\ins{, it} is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
-\begin{lstlisting}[language=Bash]
-	> mongod --dbpath /home/aliya/mongodb2 --port 27272
-\end{lstlisting}
-
-MongoDB provides REST API\chg{, t}{. T}o enable REST API use parameter --rest:
-\begin{lstlisting}[language=Bash]
-	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
-\end{lstlisting}
-
-The simple way to communicate with MongoDB server is to use mongo shell, in our case we specify --port parameter to connect to our instance of MongoDB:
-\begin{lstlisting}[language=Bash]
-	> mongo --port 27272
-\end{lstlisting}
-
-Compared to relational databases MongoDB operates with terms collection, which is equivalent to table, and document, which is equivalent to record in relational databases. MongoDB doesn't require creating databases and collections explicitly. Databases and collections can be created while starting to use MongoDB. To see list of databases or collections, type show dbs in mongo shell:
- \begin{lstlisting}[language=Bash]
-	> show dbs
-\end{lstlisting}
-Mongo shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \footnote{MongoDB database, http://www.mongodb.org/}. 
+\section{Meta data storage}
+As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, http://bsonspec.org/}. MongoDB requires a little amount of configuration to start to work with. 
 
 \section{Web search interface}
 Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \footnote{Struts framework, https://struts.apache.org/}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
@@ -692,14 +530,40 @@ Web Search interface is a Java web application running in a servlet container. F
     \label{fig:mvc}
   \end{figure}  
 
-\subsection{Citation search page}
-\subsection{Details page}
+\subsection{Citation search main page}
+
+The main page of Citation Search presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user see a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available online then user can open it using a link ``See pdf on SCG resources''.  
+
+  \begin{figure}[htp]
+    \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-main-page}
+    \caption{A screenshot of the main page of Citation Search}
+    \label{fig:cs-main-page}
+  \end{figure}
+
+ If a reference has a title recognizable by Citation Search then a user can see all citations referred to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
+
+   \begin{figure}[htp]
+    \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-view-citations}
+    \caption{A screenshot}
+    \label{fig:cs-view-citations}
+  \end{figure}
+
+ User can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the Citation Search interface and in the Appendix of this article.    
+
+\subsection{Search by bibliography page}
+Another feature provided by citation Search is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user see a list of bibliographic entries with matched author's name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
+
+   \begin{figure}[htp]
+    \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-search-bibl}
+    \caption{A screenshot}
+    \label{fig:cs-search-bibl}
+  \end{figure}
 
 \chapter {Evaluation experiments}
 \label{cha:experiments}
 To measure effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from different than Computer Science domain, for example, Biology or Physics.  Thus all experiments were conducted with Google Scholar and Citation Search Engine.
 
-There are many aspects on how two search engines might be compared. In our experiments we focused on quality of user experience that is how effective users in finding documents and personal impression on using both engines.
+There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly can users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
 \section{Experiments setup}
 For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
@@ -746,7 +610,7 @@ Right after the experiment experts were asked to fill a form with following ques
 	\item Would you consider using one of these search engines? 
 \end{itemize}
 
-\section{Experiments results}
+\section{Evaluation results}
 
 First survey, taken by experts before the experiment, showed that all experts use Google Scholar to find scientific literature. Some experts mentioned that they use IEEE Explorer, ACM digital library and DBLP as well. Half of the respondents use Google Scholar every day (Figure \ref{fig:q1_1_2}).
 
@@ -760,7 +624,7 @@ First survey, taken by experts before the experiment, showed that all experts us
 \label{fig:q1_1_2}
 \end{figure}
 
-Four respondents answered positively on the question if they have ever used Citation Search Engine (Figure \ref{fig:q1_3}). 
+Four respondents answered positively on the question if they have ever used Citation Search(Figure \ref{fig:q1_3}). However all of them mentioned that they used Citaion Search only a few times or rare.  
 
   \begin{figure}[htp]
     \centering
@@ -769,14 +633,106 @@ Four respondents answered positively on the question if they have ever used Cita
     \label{fig:q1_3}
   \end{figure}
 
+\subsection{Results for Task 1}  
 
+Table \ref{tab:search-time} and Figure \ref{fig:search-time} give results for search time in Task 1. Table \ref{tab:search-time} shows mean and standard deviation values for search time for both search engines. Figure \ref{fig:search-time} illustrates a normal distribution of search time for both search engines. From Table \ref{tab:search-time} and Figure \ref{fig:search-time} we observed that average time to find a reference for a given citation is approximately 2.5 minutes. Experts were slightly faster with finding results using Citation Search. However there is no statistically significant difference between search times of Citation Search and Google Scholar according to ttest with significant level p = 5\%.  
 
-\chapter {Conclusion and Future Work}
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6, trim = 0mm 80mm 0mm 60mm,]{search-time}
+    \caption{Normal distribution fit for a search time}
+    \label{fig:search-time}
+  \end{figure}
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | c | c | c | } 
+ \hline
+ & \textbf{Mean(sec)} & \textbf{Std(sec)} \\  \hline
+ Citation Search & 150 & 97\\ \hline
+ Google Scholar & 160 & 78  \\    
+ \hline
+\end{tabular}
+\caption{Mean and standard deviation for search time in Task 1.}
+\label{tab:search-time}
+\end{center}
+\end{table}
+
+Table \ref{tab:search-query} shows average values and standard deviations for number of queries made by experts to find references. Table \ref{tab:avg-words} shows average values and standard deviations for average number of words in queries. We did not see any significant differences in a number of queries and average number of words in a query between two search engines. From Table \ref{tab:search-query} we concluded that in average experts made 2-3 queries before finding a referred paper. And from Table \ref{tab:avg-words} we concluded that average number of words in a query was 4.
+
+ \begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | c | c | c | } 
+ \hline
+ & \textbf{Mean} & \textbf{Std} \\  \hline
+ Citation Search & 2.0 & 1.5\\ \hline
+ Google Scholar & 2.5 & 1.5  \\    
+ \hline
+\end{tabular}
+\caption{Mean and standard deviation  values for a number of queries made in Task 1.}
+\label{tab:search-query}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | c | c | c | } 
+ \hline
+ & \textbf{Mean} & \textbf{Std} \\  \hline
+ Citation Search & 4.3 & 1.7\\ \hline
+ Google Scholar & 4.2 & 1.2  \\    
+ \hline
+\end{tabular}
+\caption{Mean and standard deviation values for an average number of words in a query in Task 1.}
+\label{tab:avg-words}
+\end{center}
+\end{table}
+
+ During the experiments we noticed that experts were more familiar with Google Scholar search interface so participants spent some time exploring Citation Search interface. This could affect search time for Citation Search making it longer.
+
+Usability - search interfaces are important. 
+ We also noted that the way search engines present result documents affect search time. Google Scholar, for example, a result   
+
+\subsection{Results for Task 1'}
+
+Results for Task 1' are shown on Table \ref{tab:se-any}. Task 1' was given to four experts. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if an expert tried to use both search engines. From Table \ref{tab:se-any} we concluded that all experts found a referred paper using Citation Search. Meantime three of experts tried both search engines and one expert did not use Goggle Scholar at all. 
+
+ \begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | c | c | c | } 
+ \hline
+ & \textbf{Search Engine} & \textbf{Tried to use both SEs} \\  \hline
+ Expert1 & Citation Search & Yes\\ \hline
+ Expert2 & Citation Search & Yes\\ \hline
+ Expert3 & Citation Search & Yes\\ \hline
+ Expert4 & Citation Search & No\\   
+ \hline
+\end{tabular}
+\caption{Results for Task 1'. Table shows in what search engine a result was retrieved and if an expert tried to used both search engines during the task.}
+\label{tab:se-any}
+\end{center}
+\end{table}  
+
+\subsection{Results for Task 2}
+
+Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summaries} illustrates scores from 0 to 10 given by expert to summaries generated with TRank and citation from Citation Search.
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6, trim = 0mm 0mm 0mm 0mm,]{summaries}
+    \caption{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TRank and citations from Citation Search. }
+    \label{fig:summaries}
+  \end{figure}
+Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to ttest with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TRank and Citation Search. Experts noted that a summary generated with TRank tends to consist of too general or not important for understanding a paper sentences. According to experts, summary composed with citations tends to contain sentences more relevant for understanding a paper. However, sometimes sentences rephrase each other not adding new meaning to the summary. Also, compared to TRank there is no a natural flow in a summary from citations: sentences in a summary are not ordered in a story manner.       
+
+\subsection{Final questionnaire}
+Final questionnaire show that some experts were pleasantly surprised by the capabilities of another type of search engine. All experts answered positively if they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some experts Citation search is more appropriate to search for a related work on the given topic. Others think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts highlighted following feature of Citation Search: possibility to see citations with a context, possibility to search by bibliography entries.  
+
+\subsection{Results summary}
+In our evaluation experiments we compared Citation Search with Google Scholar. During experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, however there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all experts succeeded in the task accomplishment using Citation Search.
+
+The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of Citation Search could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
+
+\chapter {Conclusion}
 \label{cha:conclusion}
-In which we step back, have a critical look at the entire work, then conclude, and learn what lays beyond this thesis.
 
-%%CS can be used as a search engine for the repository of scientific papers in research institutes, in universities, or in any
-%%organization that deals with collection of scientific papers. /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex
 %Parser enchancement
 %meta information by advanced pdf-parsers
 %personal storage
@@ -790,8 +746,186 @@ In which we step back, have a critical look at the entire work, then conclude, a
 
 \appendix
 \chapter{User guide for Citation Search Engine deployment}
+
 \section{Solr Installation}
+
+Solr installation requires JDK and any servlet container to be installed on the server machine. Here we describe the configuration of Solr for Apache Tomcat container.
+We need to download Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, http://lucene.apache.org/solr/}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
+
+\begin{itemize}
+	\item \textbf{contrib/} - directory containing additional libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
+	\item \textbf{dist/} - directory providing distributions of Solr and other useful libraries such as SolrJ, UIMA, MapReduce, and so on. \ho{what is the difference from contrib/}
+	\item \textbf{docs/} - directory with documentation for Solr.
+	\item \textbf{example/} - Jetty based web application that can be used directly.
+	\item \textbf{Licenses/} - directory containing all the licenses of the underlying libraries used by Solr.
+\end{itemize}
+
+Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war. Then point out to Solr location of home directory describing a collection \ho{not clear}. By a collection in Apache Solr one indicates a collection of Solr documents that represents one complete index. It's possible to choose one of the options:
+\begin{itemize}
+	\item \textbf{Java options:} one can use following command so that the container picks up Solr collection information from the appropriate location:
+	\begin{lstlisting}[language=bash]
+$export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/opt/solr/example"
+	\end{lstlisting}
+	\item \textbf{JNDI lookup:} Or it is possible to configure the JNDI lookup for the java:comp/env/solr/home resource by pointing it to the Solr home directory. This can be done by creating a context XML file with some name (context.xml) in \$CATALINA\_HOME/conf/Catalina/localhost/context.xml and adding the following entries: \ho{fix the margins. You have some text out of the page borders}
+	\begin{lstlisting}[language=XML]
+<?xml version="1.0" encoding="utf-8"?>
+<Context docBase="<solr-home>/example/solr/solr.war" 
+		 debug="0" crossContext="true">
+	<Environment name="solr/home" type="java.lang.String" 
+		         value="<solr-home>/example/solr" override="true"/>
+</Context>
+	\end{lstlisting}
+\end{itemize}
+
+The Solr home directory contains configuration files and index-related data. It should consist of three directories:
+\begin{itemize}
+\item \textbf{conf/} - directory containing configuration files, such as solrconfig.xml and schema.xml
+\item \textbf{data/} - default location for storing data related to index generated by Solr
+\item \textbf{lib/} - optional directory for additional libraries, used by Solr to resolve any plugins
+\end{itemize}
+
+\subsection{Solr Configuration}
+
+Configuring Solr instance requires defining a Solr schema and configuring Solr parameters.
+\paragraph{Defining Solr schema}
+Solr schema is defined in the schema.xml file placed in the conf/ directory of the Solr home directory. Solr distribution comes with a sample schema file that can be changed for the needs of the project. The schema file defines the structure of the index, including fields and field types. The basic overall structure of the schema file is:
+\begin{lstlisting}[language=XML]
+	<schema>
+	  <types>
+	  <fields>
+	  <uniqueKey>
+	  <copyField>
+	</schema>
+\end{lstlisting}
+
+The basic unit of data in Solr is document. Each document in Solr consists of fields that are described in the schema.xml file. By describing data in the schema.xml, Solr understands the structure of the data and what actions should be performed to handle this data. Here is an example of a field in the schema file:
+\begin{lstlisting}[language=XML]
+<field name="id" type="integer" indexed="true" stored="true" required="true"/>
+\end{lstlisting}
+Table \ref{tab:field.attrs} lists and explains major attributes of field element. 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{10cm}  | } 
+ \hline
+ Name & Description \\  \hline
+ default & default value if it is not read while importing a document \\ \hline
+ indexed & true if field should be indexed \\ \hline
+ stored & when true a field is stored in index store and is accessible while displaying results \\ \hline
+ compressed & when true a field will be zipped, applicable for text-type fields \\ \hline
+ multiValued & if true, field can contain multiple values in the same document. \\ 
+ \hline
+\end{tabular}
+\caption{Major attributes of field element in schema.xml}
+\label{tab:field.attrs}
+\end{center}
+\end{table}
+
+Here is a fragment of schema file defining fields of a document in Citation Search Engine collection:
+\begin{lstlisting}[language=XML]
+    <fields>
+     <field name="_version_" type="long" indexed="true" stored="true" 
+     		multiValued="false"/>
+     <field name="id" type="string" multiValued="false"/>
+     <field name="text" type="text_en" indexed="true" multiValued="false"/>
+     <field name="context" type="string" indexed="false" multiValued="false"/>
+     <field name="path" type="string" indexed="false" multiValued="false"/>
+     <field name="reference" type="string" indexed="false" stored="true" 
+     		multiValued="true" />
+    </fields>
+\end{lstlisting}
+
+Every document represents a citation with matching bibliographic references. In the schema file we indicate that we want to index a text field which is the citation text. We store an id of a citation, that is a generated value, calculated from the hash of the citation string. Specifying the id is particularly useful for updating documents. We also store a context for a citation and a path to the scientific article where the citation was found. As a citation can refer to multiple sources, we make the reference field multivalued. 
+
+In the schema configuration file, one can define the field type, like string, date or integer and map them to Java classes. This can be handy when we define custom types. A field type includes the following information:
+
+\begin{itemize}
+\item Name
+\item Implementation class name
+\item If the field type is a TextField, it will include a description of the field analysis
+\item Field attributes 
+\end{itemize}
+
+A sample field type description:
+\begin{lstlisting}[language=XML]
+	<fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+  		<analyzer>
+  		<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+  		</analyzer>
+	</fieldType>
+\end{lstlisting}
+
+Other elements in the Solr schema file listed in Table \ref{tab:fields.others}:
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{10cm}  | } 
+ \hline
+ Name & Description \\  \hline
+ uniqueKey & specifies which field in documents is a unique identifier of a document, should be used if you ever update a document in the index\\ \hline
+ copyField & used to copy field's value from one field to another \\ \hline
+\end{tabular}
+\caption{Description of some elements in schema.xml}
+\label{tab:fields.others}
+\end{center}
+\end{table}
+
+\paragraph{Configuring Solr parameters}
+To configure a Solr instance we need to describe the solrconfig.xml and solr.xml files.
+
+\begin{description}
+\item[solr.xml] The solr.xml configuration is located in solr home directory and used for configuration of logging and advanced options to run Solr in a cloud mode.
+\item[solrconfig.xml] The solrconfig.xml configuration file primarily provides you with an access to index-management settings, RequestHandlers, listeners, and request dispatchers. The file has a number of complex sections and mainly is changed when a specific need is encountered. 
+\end{description} 
+
+\subsection{Enhanced Solr search features}
+Solr provides a number of additional features that can enhance the search system. One of the features we use is synonyms. To use this feature you need to specify synonyms.txt file with listed synonyms. This file is used by synonym filter to replace words with their synonyms. For example, a search for "DVD" may expand to "DVD", "DVDs", "Digital Versatile Disk" depending on the mapping in this file. This file can be also used for spelling corrections. Here is an example of synonyms.txt file:
+\begin{lstlisting}
+GB, gib, gigabyte, gigabytes
+MB, mib, megabyte, megabytes
+Television, Televisions, TV, TVs
+Incident_error, error
+\end{lstlisting}
+
+Additionally, there are other configuration files that appear in the configuration directory. We are listing them in Table \ref{tab:solr.config} with the description of each configuration:
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{10cm}  | } 
+ \hline
+ Name & Description \\  \hline
+ protwords.txt & file where you can specify protected words that you do not wish to get stemmed. So, for example, a stemmer might stem the word "catfish" to "cat" or "fish".\\ \hline
+ spellings.txt & file where you can provide spelling suggestions to the end user. \\ \hline
+ elevate.txt & file  where you can change the search results by making your own results among the top-ranked results. This overrides standard ranking scheme, taking into account elevations from this file. \\ \hline
+ stopwords.txt & Stopwords are those that will not be indexed and used by Solr in the applications. This is particularly helpful when you really wish to get rid of certain words. For example, in the string, "Jamie and joseph," the word "and" can be marked as a stopword. \\ \hline
+\end{tabular}
+\caption{Additional configuration files in Solr}
+\label{tab:solr.config}
+\end{center}
+\end{table}
+
 \section{MongoDB Installation}
+
+\subsection{MongoDB configuration}
+Once MonogDB is downloaded, it is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
+\begin{lstlisting}[language=Bash]
+	> mongod --dbpath /home/aliya/mongodb2 --port 27272
+\end{lstlisting}
+
+MongoDB provides REST API\chg{, t}{. T}o enable REST API use parameter --rest:
+\begin{lstlisting}[language=Bash]
+	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
+\end{lstlisting}
+
+The simple way to communicate with MongoDB server is to use mongo shell, in our case we specify --port parameter to connect to our instance of MongoDB:
+\begin{lstlisting}[language=Bash]
+	> mongo --port 27272
+\end{lstlisting}
+
+Compared to relational databases MongoDB operates with terms collection, which is equivalent to table, and document, which is equivalent to record in relational databases. MongoDB doesn't require creating databases and collections explicitly. Databases and collections can be created while starting to use MongoDB. To see list of databases or collections, type show dbs in mongo shell:
+ \begin{lstlisting}[language=Bash]
+	> show dbs
+\end{lstlisting}
+Mongo shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \footnote{MongoDB database, http://www.mongodb.org/}. 
 \section{Running parser}
 \section{Search interface deployment}
 \end{document}

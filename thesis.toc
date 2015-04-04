@@ -12,33 +12,38 @@
 \contentsline {paragraph}{CiteSeer\textsuperscript {x}}{13}{section*.3}
 \contentsline {chapter}{\numberline {3}Citation Search Engine}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}System overview}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Parser}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Processing}{17}{subsection.3.2.1}
-\contentsline {paragraph}{Processing bibliographic links}{20}{section*.4}
-\contentsline {subsection}{\numberline {3.2.2}Publishing}{22}{subsection.3.2.2}
-\contentsline {paragraph}{Publishing to Solr}{22}{section*.5}
-\contentsline {paragraph}{Publishing to MongoDB}{23}{section*.6}
+\contentsline {section}{\numberline {3.2}Parser}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}PDF processing}{18}{subsection.3.2.1}
+\contentsline {paragraph}{Processing bibliographic links}{21}{section*.4}
+\contentsline {subsection}{\numberline {3.2.2}Document publishing}{21}{subsection.3.2.2}
+\contentsline {paragraph}{Publishing documents to Solr}{22}{section*.5}
+\contentsline {paragraph}{Publishing documents to MongoDB}{23}{section*.6}
 \contentsline {subsection}{\numberline {3.2.3}Challenges}{24}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Indexator}{25}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Solr Configuration}{25}{subsection.3.3.1}
-\contentsline {paragraph}{Defining Solr schema}{28}{section*.7}
-\contentsline {paragraph}{Configuring Solr parameters}{29}{section*.8}
-\contentsline {subsection}{\numberline {3.3.2}Enhanced search features}{30}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Meta Information storage}{31}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Configuration}{31}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Web search interface}{32}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Citation search page}{32}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Details page}{32}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Evaluation experiments}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Experiments setup}{33}{section.4.1}
-\contentsline {paragraph}{Task1}{34}{section*.9}
-\contentsline {paragraph}{Task1'}{34}{section*.10}
-\contentsline {paragraph}{Task2}{34}{section*.11}
-\contentsline {section}{\numberline {4.2}Questionnaires before and after each experiment}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experiments results}{35}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Work}{37}{chapter.5}
-\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{41}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{41}{section.A.1}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{41}{section.A.2}
-\contentsline {section}{\numberline {A.3}Running parser}{41}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search interface deployment}{41}{section.A.4}
+\contentsline {section}{\numberline {3.3}Indexer}{26}{section.3.3}
+\contentsline {section}{\numberline {3.4}Meta data storage}{26}{section.3.4}
+\contentsline {section}{\numberline {3.5}Web search interface}{26}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Citation search main page}{29}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Search by bibliography page}{31}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Evaluation experiments}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}Experiments setup}{32}{section.4.1}
+\contentsline {paragraph}{Task1}{33}{section*.7}
+\contentsline {paragraph}{Task1'}{33}{section*.8}
+\contentsline {paragraph}{Task2}{33}{section*.9}
+\contentsline {section}{\numberline {4.2}Questionnaires before and after each experiment}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation results}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Results for Task 1}{35}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Results for Task 1'}{36}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Results for Task 2}{37}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Final questionnaire}{37}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Results summary}{38}{subsection.4.3.5}
+\contentsline {chapter}{\numberline {5}Conclusion}{40}{chapter.5}
+\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{44}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{44}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{45}{subsection.A.1.1}
+\contentsline {paragraph}{Defining Solr schema}{45}{section*.11}
+\contentsline {paragraph}{Configuring Solr parameters}{47}{section*.12}
+\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr search features}{48}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{48}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{48}{subsection.A.2.1}
+\contentsline {section}{\numberline {A.3}Running parser}{49}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search interface deployment}{49}{section.A.4}
