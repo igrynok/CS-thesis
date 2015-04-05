@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 APR 2015 20:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 APR 2015 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,9 +923,13 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Try loading font information for U+stmry on input line 11.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)pdfTeX warning
- (ext4): destination with the same identifier (name{page.1}) has been already u
-sed, duplicate ignored
+(/usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 11.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 11.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.16 \clearpage
@@ -1003,7 +1007,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 47.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 48.
 [5]
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 54.
-<images/typical-se.pdf, id=249, 845.1575pt x 597.23125pt>
+<images/typical-se.pdf, id=251, 845.1575pt x 597.23125pt>
 File: images/typical-se.pdf Graphic file (type pdf)
 <use images/typical-se.pdf>
 Package pdftex.def Info: images/typical-se.pdf used on input line 65.
@@ -1016,7 +1020,7 @@ Overfull \hbox (46.58438pt too wide) in paragraph at lines 65--66
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 72.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 75.
-<images/inverted-index.pdf, id=253, 845.1575pt x 597.23125pt>
+<images/inverted-index.pdf, id=255, 845.1575pt x 597.23125pt>
 File: images/inverted-index.pdf Graphic file (type pdf)
 <use images/inverted-index.pdf>
 Package pdftex.def Info: images/inverted-index.pdf used on input line 78.
@@ -1093,9 +1097,14 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 240.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 240.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 242.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 242.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 242.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 244.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 250.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 250.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 250.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 250.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 251.
@@ -1109,7 +1118,7 @@ Chapter 3.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 255.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 260.
-<images/cs-components.pdf, id=462, 597.23125pt x 845.1575pt>
+<images/cs-components.pdf, id=469, 597.23125pt x 845.1575pt>
 File: images/cs-components.pdf Graphic file (type pdf)
 <use images/cs-components.pdf>
 Package pdftex.def Info: images/cs-components.pdf used on input line 264.
@@ -1117,14 +1126,14 @@ Package pdftex.def Info: images/cs-components.pdf used on input line 264.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 270.
 [15
 
-] <images/cs-activity-diagram.pdf, id=470, 597.23125pt x 845.1575pt>
+] <images/cs-activity-diagram.pdf, id=478, 597.23125pt x 845.1575pt>
 File: images/cs-activity-diagram.pdf Graphic file (type pdf)
 <use images/cs-activity-diagram.pdf>
 Package pdftex.def Info: images/cs-activity-diagram.pdf used on input line 274.
 
 (pdftex.def)             Requested size: 298.61488pt x 294.54065pt.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 283.
-<images/parser.pdf, id=472, 845.1575pt x 597.23125pt>
+<images/parser.pdf, id=480, 845.1575pt x 597.23125pt>
 File: images/parser.pdf Graphic file (type pdf)
 <use images/parser.pdf>
 Package pdftex.def Info: images/parser.pdf used on input line 287.
@@ -1142,10 +1151,11 @@ ate/scgbib/LatexTemplates/msc-thesis/images/cs-activity-diagram.pdf> </Users/al
 iya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/pa
 rser.pdf>]
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 296.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 296.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 298.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 307.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 324.
-[18] <images/template.pdf, id=634, 845.1575pt x 597.23125pt>
+[18] <images/template.pdf, id=643, 845.1575pt x 597.23125pt>
 File: images/template.pdf Graphic file (type pdf)
 <use images/template.pdf>
 Package pdftex.def Info: images/template.pdf used on input line 328.
@@ -1166,7 +1176,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 380.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 380.
-<images/processing.pdf, id=658, 845.1575pt x 597.23125pt>
+<images/processing.pdf, id=666, 845.1575pt x 597.23125pt>
 File: images/processing.pdf Graphic file (type pdf)
 <use images/processing.pdf>
 Package pdftex.def Info: images/processing.pdf used on input line 384.
@@ -1185,7 +1195,7 @@ Missing character: There is no “ in font ptmr7t!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/link.pdf, id=669, 845.1575pt x 597.23125pt>
+<images/link.pdf, id=677, 845.1575pt x 597.23125pt>
 File: images/link.pdf Graphic file (type pdf)
 <use images/link.pdf>
 Package pdftex.def Info: images/link.pdf used on input line 415.
@@ -1213,7 +1223,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 424.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 424.
 [21 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
-esis/images/processing.pdf>] <images/doc.pdf, id=687, 845.1575pt x 597.23125pt>
+esis/images/processing.pdf>] <images/doc.pdf, id=695, 845.1575pt x 597.23125pt>
 File: images/doc.pdf Graphic file (type pdf)
 <use images/doc.pdf>
 Package pdftex.def Info: images/doc.pdf used on input line 428.
@@ -1225,16 +1235,12 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 442.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 442.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 445.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 445.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 445.
 
 Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 456.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
 56.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
@@ -1284,7 +1290,7 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 455--484
 
 [23]
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 487.
-<images/no-ref-tag.pdf, id=735, 845.1575pt x 597.23125pt>
+<images/no-ref-tag.pdf, id=744, 845.1575pt x 597.23125pt>
 File: images/no-ref-tag.pdf Graphic file (type pdf)
 <use images/no-ref-tag.pdf>
 Package pdftex.def Info: images/no-ref-tag.pdf used on input line 491.
@@ -1295,7 +1301,7 @@ Overfull \hbox (4.32404pt too wide) in paragraph at lines 491--492
  []
 
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 496.
-<images/code-snippet.pdf, id=737, 845.1575pt x 597.23125pt>
+<images/code-snippet.pdf, id=746, 845.1575pt x 597.23125pt>
 File: images/code-snippet.pdf Graphic file (type pdf)
 <use images/code-snippet.pdf>
 Package pdftex.def Info: images/code-snippet.pdf used on input line 500.
@@ -1306,11 +1312,12 @@ Overfull \hbox (4.32404pt too wide) in paragraph at lines 500--501
  []
 
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 506.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 506.
 [24] [25 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/m
 sc-thesis/images/no-ref-tag.pdf> </Users/aliya/Documents/Master Thesis/template
 /scgbib/LatexTemplates/msc-thesis/images/code-snippet.pdf>]
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 508.
-<images/solr.pdf, id=824, 845.1575pt x 597.23125pt>
+<images/solr.pdf, id=833, 845.1575pt x 597.23125pt>
 File: images/solr.pdf Graphic file (type pdf)
 <use images/solr.pdf>
 Package pdftex.def Info: images/solr.pdf used on input line 512.
@@ -1321,9 +1328,11 @@ Overfull \hbox (46.58438pt too wide) in paragraph at lines 512--513
  []
 
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 520.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 520.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 523.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 523.
-<images/mvc.pdf, id=828, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 523.
+<images/mvc.pdf, id=839, 845.1575pt x 597.23125pt>
 File: images/mvc.pdf Graphic file (type pdf)
 <use images/mvc.pdf>
 Package pdftex.def Info: images/mvc.pdf used on input line 527.
@@ -1337,7 +1346,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 534.
 [26] [27 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/m
 sc-thesis/images/solr.pdf>] [28 </Users/aliya/Documents/Master Thesis/template/
 scgbib/LatexTemplates/msc-thesis/images/mvc.pdf>] <images/cs-main-page.pdf, id=
-881, 1223.57124pt x 650.43pt>
+892, 1223.57124pt x 650.43pt>
 File: images/cs-main-page.pdf Graphic file (type pdf)
 <use images/cs-main-page.pdf>
 Package pdftex.def Info: images/cs-main-page.pdf used on input line 537.
@@ -1348,7 +1357,7 @@ Overfull \hbox (71.16615pt too wide) in paragraph at lines 537--538
  []
 
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 542.
-<images/cs-view-citations.pdf, id=883, 1248.665pt x 708.6475pt>
+<images/cs-view-citations.pdf, id=894, 1248.665pt x 708.6475pt>
 File: images/cs-view-citations.pdf Graphic file (type pdf)
 <use images/cs-view-citations.pdf>
 Package pdftex.def Info: images/cs-view-citations.pdf used on input line 545.
@@ -1362,7 +1371,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 553.
 [29 </Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 esis/images/cs-main-page.pdf>] [30 </Users/aliya/Documents/Master Thesis/templa
 te/scgbib/LatexTemplates/msc-thesis/images/cs-view-citations.pdf>] <images/cs-s
-earch-bibl.pdf, id=917, 1009.7725pt x 552.0625pt>
+earch-bibl.pdf, id=928, 1009.7725pt x 552.0625pt>
 File: images/cs-search-bibl.pdf Graphic file (type pdf)
 <use images/cs-search-bibl.pdf>
 Package pdftex.def Info: images/cs-search-bibl.pdf used on input line 556.
@@ -1388,18 +1397,18 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 614.
-<images/q1_1.pdf, id=949, 282.05376pt x 181.67876pt>
+<images/q1_1.pdf, id=960, 282.05376pt x 181.67876pt>
 File: images/q1_1.pdf Graphic file (type pdf)
 <use images/q1_1.pdf>
 Package pdftex.def Info: images/q1_1.pdf used on input line 618.
 (pdftex.def)             Requested size: 199.16928pt x 128.29144pt.
-<images/q1_2.pdf, id=950, 282.05376pt x 179.67125pt>
+<images/q1_2.pdf, id=961, 282.05376pt x 179.67125pt>
 File: images/q1_2.pdf Graphic file (type pdf)
 <use images/q1_2.pdf>
 Package pdftex.def Info: images/q1_2.pdf used on input line 620.
 (pdftex.def)             Requested size: 199.16928pt x 126.87384pt.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 626.
-<images/q1_3.pdf, id=952, 300.12125pt x 120.45pt>
+<images/q1_3.pdf, id=963, 300.12125pt x 120.45pt>
 File: images/q1_3.pdf Graphic file (type pdf)
 <use images/q1_3.pdf>
 Package pdftex.def Info: images/q1_3.pdf used on input line 630.
@@ -1410,7 +1419,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 637.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 637.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 637.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 637.
-[34] <images/search-time.pdf, id=965, 614.295pt x 794.97pt>
+[34] <images/search-time.pdf, id=976, 614.295pt x 794.97pt>
 File: images/search-time.pdf Graphic file (type pdf)
 <use images/search-time.pdf>
 Package pdftex.def Info: images/search-time.pdf used on input line 641.
@@ -1430,7 +1439,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 694.
 esis/images/search-time.pdf>]
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 714.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 714.
-<images/summaries.pdf, id=1091, 571.13374pt x 398.48875pt>
+<images/summaries.pdf, id=1102, 571.13374pt x 398.48875pt>
 File: images/summaries.pdf Graphic file (type pdf)
 <use images/summaries.pdf>
 Package pdftex.def Info: images/summaries.pdf used on input line 717.
@@ -1488,6 +1497,7 @@ opt . pdf ?
 Appendix A.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 746.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 751.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 751.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -1895,7 +1905,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 990.
 Here is how much of TeX's memory you used:
  18350 strings out of 493488
  296703 string characters out of 3141326
- 462929 words of memory out of 3000000
+ 463064 words of memory out of 3000000
  20731 multiletter control sequences out of 15000+200000
  67035 words of font info for 260 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1914,10 +1924,10 @@ ype1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
 Output written on "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTe
-mplates/msc-thesis/thesis.pdf" (51 pages, 1120121 bytes).
+mplates/msc-thesis/thesis.pdf" (51 pages, 1121071 bytes).
 PDF statistics:
- 1365 PDF objects out of 1440 (max. 8388607)
- 1084 compressed objects within 11 object streams
+ 1377 PDF objects out of 1440 (max. 8388607)
+ 1096 compressed objects within 11 object streams
  265 named destinations out of 1000 (max. 500000)
  40894 words of extra memory for PDF output out of 42996 (max. 10000000)
 
