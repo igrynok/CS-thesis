@@ -129,7 +129,9 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{cha:experiments}{{4}{32}{Evaluation experiments\relax }{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Experiments setup}{32}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Experimental setup}{32}{section.4.1}}
+\citation{mihalcea2004textrank}
+\citation{mihalcea2004graph}
 \@writefile{toc}{\contentsline {paragraph}{Task1}{33}{section*.7}}
 \@writefile{toc}{\contentsline {paragraph}{Task1'}{33}{section*.8}}
 \@writefile{toc}{\contentsline {paragraph}{Task2}{33}{section*.9}}
@@ -146,15 +148,15 @@
 \newlabel{fig:search-time}{{4.3}{36}{Normal distribution fit for a search time\relax }{figure.4.3}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Mean and standard deviation values for a number of queries made in Task 1.}}{36}{table.4.2}}
 \newlabel{tab:search-query}{{4.2}{36}{Mean and standard deviation values for a number of queries made in Task 1}{table.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Results for Task 1'}{36}{subsection.4.3.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Mean and standard deviation values for an average number of words in a query in Task 1.}}{37}{table.4.3}}
 \newlabel{tab:avg-words}{{4.3}{37}{Mean and standard deviation values for an average number of words in a query in Task 1}{table.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Results for Task 1'}{37}{subsection.4.3.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Results for Task 1'. Table shows in what search engine a result was retrieved and if an expert tried to used both search engines during the task.}}{37}{table.4.4}}
 \newlabel{tab:se-any}{{4.4}{37}{Results for Task 1'. Table shows in what search engine a result was retrieved and if an expert tried to used both search engines during the task}{table.4.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Results for Task 2}{37}{subsection.4.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Final questionnaire}{37}{subsection.4.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Scores from 0 to 10 given by experts in Task 2 to summaries generated with TRank and citations from Citation Search. }}{38}{figure.4.4}}
-\newlabel{fig:summaries}{{4.4}{38}{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TRank and citations from Citation Search}{figure.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Scores from 0 to 10 given by experts in Task 2 to summaries generated with TextRank and citations from Citation Search. }}{38}{figure.4.4}}
+\newlabel{fig:summaries}{{4.4}{38}{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TextRank and citations from Citation Search}{figure.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Final questionnaire}{38}{subsection.4.3.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Results summary}{38}{subsection.4.3.5}}
 \bibstyle{plain}
 \bibdata{thesis}
@@ -177,16 +179,18 @@
 \bibcite{DBLP:journals/corr/abs-1202-1914}{{13}{}{{}}{{}}}
 \bibcite{M_automaticannotation}{{14}{}{{}}{{}}}
 \bibcite{mei-zhai:2008:ACLMain}{{15}{}{{}}{{}}}
-\bibcite{Nakov04citances:citation}{{16}{}{{}}{{}}}
-\bibcite{Nanba:1999:TMS:1624312.1624351}{{17}{}{{}}{{}}}
-\bibcite{orduna2014size}{{18}{}{{}}{{}}}
-\bibcite{Porter:1997:ASS:275537.275705}{{19}{}{{}}{{}}}
-\bibcite{Qazvinian:2008:SPS:1599081.1599168}{{20}{}{{}}{{}}}
-\bibcite{use.solr.2}{{21}{}{{}}{{}}}
-\bibcite{ASI:ASI4630240406}{{22}{}{{}}{{}}}
-\bibcite{Small:1999:VSC:308915.308932}{{23}{}{{}}{{}}}
-\bibcite{smith}{{24}{}{{}}{{}}}
-\bibcite{use.solr1}{{25}{}{{}}{{}}}
+\bibcite{mihalcea2004graph}{{16}{}{{}}{{}}}
+\bibcite{mihalcea2004textrank}{{17}{}{{}}{{}}}
+\bibcite{Nakov04citances:citation}{{18}{}{{}}{{}}}
+\bibcite{Nanba:1999:TMS:1624312.1624351}{{19}{}{{}}{{}}}
+\bibcite{orduna2014size}{{20}{}{{}}{{}}}
+\bibcite{Porter:1997:ASS:275537.275705}{{21}{}{{}}{{}}}
+\bibcite{Qazvinian:2008:SPS:1599081.1599168}{{22}{}{{}}{{}}}
+\bibcite{use.solr.2}{{23}{}{{}}{{}}}
+\bibcite{ASI:ASI4630240406}{{24}{}{{}}{{}}}
+\bibcite{Small:1999:VSC:308915.308932}{{25}{}{{}}{{}}}
+\bibcite{smith}{{26}{}{{}}{{}}}
+\bibcite{use.solr1}{{27}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{44}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -198,11 +202,15 @@
 \@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Description of some elements in schema.xml}}{47}{table.A.2}}
 \newlabel{tab:fields.others}{{A.2}{47}{Description of some elements in schema.xml\relax }{table.A.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Configuring Solr parameters}{47}{section*.12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr search features}{48}{subsection.A.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr search features}{47}{subsection.A.1.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Additional configuration files in Solr}}{48}{table.A.3}}
 \newlabel{tab:solr.config}{{A.3}{48}{Additional configuration files in Solr\relax }{table.A.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.2}MongoDB Installation}{48}{section.A.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{48}{subsection.A.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Running the parser}{49}{section.A.3}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Running parser}{49}{section.A.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}Search interface deployment}{49}{section.A.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.4}{\ignorespaces Explanation of properties of a \emph  {parser.properties} file.}}{50}{table.A.4}}
+\newlabel{tab:parser-properties}{{A.4}{50}{Explanation of properties of a \emph {parser.properties} file}{table.A.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.4}Search interface deployment}{50}{section.A.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Explanation of properties of a \emph  {search.properties} file.}}{50}{table.A.5}}
+\newlabel{tab:search-properties}{{A.5}{50}{Explanation of properties of a \emph {search.properties} file}{table.A.5}{}}

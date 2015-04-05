@@ -447,8 +447,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/courier/pcrr8c.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/courier/pcrb7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux

@@ -90,6 +90,19 @@ Qiaozhu Mei and ChengXiang Zhai.
 \newblock In {\em Proceedings of ACL-08: HLT}, pages 816--824, Columbus, Ohio,
   June 2008. Association for Computational Linguistics.
 
+\bibitem{mihalcea2004graph}
+Rada Mihalcea.
+\newblock Graph-based ranking algorithms for sentence extraction, applied to
+  text summarization.
+\newblock In {\em Proceedings of the ACL 2004 on Interactive poster and
+  demonstration sessions}, page~20. Association for Computational Linguistics,
+  2004.
+
+\bibitem{mihalcea2004textrank}
+Rada Mihalcea and Paul Tarau.
+\newblock Textrank: Bringing order into texts.
+\newblock Association for Computational Linguistics, 2004.
+
 \bibitem{Nakov04citances:citation}
 Preslav~I. Nakov, Ariel~S. Schwartz, and Marti~A. Hearst.
 \newblock Citances: Citation sentences for semantic analysis of bioscience

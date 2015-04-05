@@ -10,7 +10,7 @@
 \noindent 
 Nowadays the number of documents in the World Wide Web grows extremely fast \footnote{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}. Tools that can facilitate information retrieval present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating a new scientific work. 
 
-We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. We evaluate searching capabilities of our system by conducting user evaluation experiments and comparing it with alternative approaches. In our experiments we measured how efficient is our system or how quickly users can find a result in comparison with Google Scholar. We used a citation aggregation feature of Citation Search to create automatic summarization of scientific articles. We asked experts to evaluate summaries created by Citation Search and TextRank algorithm. We showed that Citation Search performs equal with Google Scholar in terms of efficiency and outperforms TextRank algorithm.    
+We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. We evaluate searching capabilities of our system by conducting user evaluation experiments and comparing it with alternative approaches. In our experiments we measured how efficient is our system or how quickly users can find a result in comparison with Google Scholar. We used a citation aggregation feature of Citation Search to create automatic summarization of scientific articles. We asked experts to evaluate summaries created by Citation Search and TextRank algorithm. We showed that Citation Search performs equal with Google Scholar in terms of efficiency and outperforms TextRank algorithm in creating a better article summarization.  
 
 \end{quotation}
 \clearpage
@@ -32,21 +32,20 @@ Searching over large collection of documents by hand is time inefficient. The co
 \section{Highlights}
 Following are highlights of this work:
 \begin{itemize}
-	\item Design and implement the Citation Search Engine.
-	\item Deploy the system on the given collection of scientific papers
-	\item Make evaluation by comparing with alternative approaches
-	\item Analyze results, define future work
+	\item Design and implement Citation Search Engine.
+	\item Deploy the system on the given collection of scientific papers.
+	\item Make evaluation of the system by conducting user evaluation experiments.
+	\item Analyze results, make a conclusion.
 \end{itemize}
 
 \section{Outline}
 The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter \ref{cha:introduction}] The chapter Gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
-	\item[Chapter \ref{cha:related-work}] The chapter surveys the research related to citations in scientific publications. It makes an overview of two popular academic search engines: Google Scholar and CiteSeer.
-	\item[Chapter \ref{cha:CS}] The chapter describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
-	\item[Chapter \ref{cha:validation}] The chapter describes the deployment process and analysis the result of setting up the system on the given collection of scientific articles.
-	\item[Chapter 5] Evaluation
-	\item[Chapter \ref{cha:conclusion}] Contains conclusion and possible future work. 
+	\item[Chapter \ref{cha:introduction}] This chapter Gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
+	\item[Chapter \ref{cha:related-work}] This chapter surveys the research related to citations in scientific publications. It makes an overview of two popular academic search engines: Google Scholar and CiteSeer.
+	\item[Chapter \ref{cha:CS}] This chapter describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
+	\item[Chapter \ref{cha:experiments}] This chapter describes user evaluation experiments and analysis the results.
+	\item[Chapter \ref{cha:conclusion}] This chapter contains a conclusion and possible future work. 
 \end{description}
 \pagebreak
 
@@ -419,7 +418,7 @@ As usual we try to recognize common patterns covering the majority of bibliograp
   \end{figure}     
 
 \subsection{Document publishing}
-There are two systems where documents are published to: Solr and MongoDB. As already explained above, Solr is used for indexing citations and MongoDB for storing meta-data.
+There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. 
 
 \paragraph{Publishing documents to Solr}
 The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document \ho{this definition should have been introduced a lot earlier} and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
@@ -440,7 +439,7 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-Solr uses NoSQL-like data storage, but actually it is even more limited than traditional NoSQL databases. The data stored in Solr is very `flat', which means that Solr cannot store \del{even} hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store a title of the scientific article parsed from the reference string, so we can aggregate citations referred to the same scientific article. It is worth to say that citation itself can refer to multiple scientific articles. We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease the quality of user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.     
+Solr uses NoSQL-like data storage, but actually it is even more limited than traditional NoSQL databases. The data stored in Solr is very `flat', which means that Solr cannot store hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store a title of the scientific article parsed from the reference string, so we can aggregate citations referred to the same scientific article. It is worth to say that citation itself can refer to multiple scientific articles. We are also interested in a solution that doesn't require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease the quality of user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.     
 
 \paragraph{Publishing documents to MongoDB} 
 MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, http://www.mongodb.org/}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
@@ -565,7 +564,7 @@ To measure effectiveness of Citation Search Engine we conducted evaluation exper
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly can users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
-\section{Experiments setup}
+\section{Experimental setup}
 For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
 
 \paragraph{Task1} As a first task an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure illustrates one of a citation from the paper given to an expert. An expert can read the cited sentence as well as the context of this sentence however he is not aware of referred source paper. The task is to find a referred paper that proves given citation.
@@ -587,7 +586,7 @@ Every expert received only one citation for this task. As for the previous task 
 
 During Task1’ we observed which search engine was used to find a reference.
 
-\paragraph{Task2} For this task we asked every expert in advance to provide with her favorite paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using state of the art TextRank   algorithm. TextRank algorithm is a graph-based algorithm for Natural Language Processing (NLP). It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub.  Another summary was built using citations to the paper collected by Citation Search. If TextRank provides with the extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
+\paragraph{Task2} For this task we asked every expert in advance to provide with her favorite paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using state of the art TextRank algorithm \cite{mihalcea2004textrank}. TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub.  Another summary was built using citations to the paper collected by Citation Search. If TextRank provides with the extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
 
 As a task an expert was given two summaries and asked to give a score from 0 to 10. The score should reflect how summaries are good in describing a paper.
 
@@ -688,8 +687,7 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 
  During the experiments we noticed that experts were more familiar with Google Scholar search interface so participants spent some time exploring Citation Search interface. This could affect search time for Citation Search making it longer.
 
-Usability - search interfaces are important. 
- We also noted that the way search engines present result documents affect search time. Google Scholar, for example, a result   
+We also noted that the way search engines present results is important factor of the search engine usability. For example, most of experts admitted that they like that Citation Search engine shows the exact place from the article where match was hound. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where match was found. In this case experts had to open the article and make a manual search over the text.  
 
 \subsection{Results for Task 1'}
 
@@ -713,14 +711,14 @@ Results for Task 1' are shown on Table \ref{tab:se-any}. Task 1' was given to fo
 
 \subsection{Results for Task 2}
 
-Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summaries} illustrates scores from 0 to 10 given by expert to summaries generated with TRank and citation from Citation Search.
+Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summaries} illustrates scores from 0 to 10 given by expert to summaries generated with TextRank and citation from Citation Search.
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 0mm 0mm 0mm,]{summaries}
-    \caption{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TRank and citations from Citation Search. }
+    \caption{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TextRank and citations from Citation Search. }
     \label{fig:summaries}
   \end{figure}
-Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to ttest with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TRank and Citation Search. Experts noted that a summary generated with TRank tends to consist of too general or not important for understanding a paper sentences. According to experts, summary composed with citations tends to contain sentences more relevant for understanding a paper. However, sometimes sentences rephrase each other not adding new meaning to the summary. Also, compared to TRank there is no a natural flow in a summary from citations: sentences in a summary are not ordered in a story manner.       
+Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to ttest with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Experts noted that a summary generated with TextRank tends to consist of too general or not important for understanding a paper sentences. According to experts, summary composed with citations tends to contain sentences more relevant for understanding a paper. However, sometimes sentences rephrase each other not adding new meaning to the summary. Also, compared to TextRank there is no a natural flow in a summary from citations, saying in other words sentences in a summary are not ordered in a story manner.       
 
 \subsection{Final questionnaire}
 Final questionnaire show that some experts were pleasantly surprised by the capabilities of another type of search engine. All experts answered positively if they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some experts Citation search is more appropriate to search for a related work on the given topic. Others think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts highlighted following feature of Citation Search: possibility to see citations with a context, possibility to search by bibliography entries.  
@@ -753,29 +751,21 @@ Solr installation requires JDK and any servlet container to be installed on the 
 We need to download Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, http://lucene.apache.org/solr/}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
 
 \begin{itemize}
-	\item \textbf{contrib/} - directory containing additional libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
-	\item \textbf{dist/} - directory providing distributions of Solr and other useful libraries such as SolrJ, UIMA, MapReduce, and so on. \ho{what is the difference from contrib/}
+	\item \textbf{contrib/} - directory containing extra libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
+	\item \textbf{dist/} - directory providing distributions of Solr and some useful libraries such as SolrJ. 
 	\item \textbf{docs/} - directory with documentation for Solr.
 	\item \textbf{example/} - Jetty based web application that can be used directly.
 	\item \textbf{Licenses/} - directory containing all the licenses of the underlying libraries used by Solr.
 \end{itemize}
 
-Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war. Then point out to Solr location of home directory describing a collection \ho{not clear}. By a collection in Apache Solr one indicates a collection of Solr documents that represents one complete index. It's possible to choose one of the options:
+Copy the dist/solr.war file from the unzipped folder to \$CATALINA\_HOME/webapps/solr.war. Then point out to Solr location of home directory describing a collection:
 \begin{itemize}
 	\item \textbf{Java options:} one can use following command so that the container picks up Solr collection information from the appropriate location:
 	\begin{lstlisting}[language=bash]
 $export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/opt/solr/example"
 	\end{lstlisting}
-	\item \textbf{JNDI lookup:} Or it is possible to configure the JNDI lookup for the java:comp/env/solr/home resource by pointing it to the Solr home directory. This can be done by creating a context XML file with some name (context.xml) in \$CATALINA\_HOME/conf/Catalina/localhost/context.xml and adding the following entries: \ho{fix the margins. You have some text out of the page borders}
-	\begin{lstlisting}[language=XML]
-<?xml version="1.0" encoding="utf-8"?>
-<Context docBase="<solr-home>/example/solr/solr.war" 
-		 debug="0" crossContext="true">
-	<Environment name="solr/home" type="java.lang.String" 
-		         value="<solr-home>/example/solr" override="true"/>
-</Context>
-	\end{lstlisting}
 \end{itemize}
+By a collection in Apache Solr one indicates a collection of Solr documents that represents one complete index.
 
 The Solr home directory contains configuration files and index-related data. It should consist of three directories:
 \begin{itemize}
@@ -916,7 +906,7 @@ MongoDB provides REST API\chg{, t}{. T}o enable REST API use parameter --rest:
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
 \end{lstlisting}
 
-The simple way to communicate with MongoDB server is to use mongo shell, in our case we specify --port parameter to connect to our instance of MongoDB:
+The simple way to communicate with theD MongoDB server is to use the MongoDB shell, in our case we specify --port parameter to connect to our instance of MongoDB:
 \begin{lstlisting}[language=Bash]
 	> mongo --port 27272
 \end{lstlisting}
@@ -925,7 +915,76 @@ Compared to relational databases MongoDB operates with terms collection, which i
  \begin{lstlisting}[language=Bash]
 	> show dbs
 \end{lstlisting}
-Mongo shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \footnote{MongoDB database, http://www.mongodb.org/}. 
-\section{Running parser}
+MongoDB shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \footnote{MongoDB database, \url{http://www.mongodb.org/}}. 
+
+\section{Running the parser}
+Before running the parser Solr web application should be deployed on the Tomcat web server and MongoDB instance should be run. One should use Java version 7 or above to run the parser. Get the parser distribution:
+\begin{lstlisting}[language=Bash]
+	> git clone git@scg.unibe.ch:citation-search-engine
+\end{lstlisting}
+
+The cloned directory consists of three modules:
+\begin{itemize}
+\item \textbf{solr} - Solr related configuration files,
+\item \textbf{citation\_search} - a parser of scientific articles, that extracts meta-information and publish documents to Solr and MongoDB,
+\item \textbf{citation\_search\_web} - a web application for searching citations.
+\end{itemize}
+
+All files related to the parser are located in the \emph{citation\_search} directory. The \emph{citation\_search} directory has a standard Maven project layout \footnote{\href{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}{Apache Maven, https://maven.apache.org}}. Go to the resources \emph{parser.properties} according to your development environment. Table \ref{tab:parser-properties} describes properties of a \emph{parser.properties} file with sample values.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{4cm} | l | } 
+ \hline
+ \textbf{Property} & \textbf{Description} & \textbf{Sample value} \\  \hline
+solr.url.citations & Endpoint for publishing citations. & http://localhost:8088/solr/collection1/\\ \hline
+solr.url.bibliography & Endpoint for publishing bibliographic links. & http://localhost:8088/solr/collection2/  \\  \hline
+db.host & MongoDB host server IP address. & 127.0.0.1  \\  \hline 
+db.port & MongoDB listening port. & 27272  \\  \hline
+db.name & MongoDB database name. & CS  \\  \hline 
+db.collection & MongoDB database collection name. & papers  \\  \hline
+pdfs.path & Location of pdf files. & /home/aliya/Library  \\  \hline  
+\end{tabular}
+\caption{Explanation of properties of a \emph{parser.properties} file.}
+\label{tab:parser-properties}
+\end{center}
+\end{table}
+
+One can change default logging properties for Log4j \footnote{Apache Log4j, \url{http://logging.apache.org/log4j/2.x/}} library in a \emph{logj4.properties} file.
+Once property files are configured, build a jar file executing following command from the directory containing a \emph{pom.xml} file:
+\begin{lstlisting}[language=Bash]
+	> mvn assembly:assembly -­‐DdescriptorId=jar-­‐with-­‐dependencies –DskipTests
+\end{lstlisting}
+
+Maven will generate a jar file \emph{citation\_search-­‐1.0-­‐jar-­‐with-­‐dependencies.jar} in a \emph{target} folder. To execute the jar file run following command:
+\begin{lstlisting}[language=Bash]
+	> java -­‐jar citation_search-­‐1.0-­‐jar-­‐with-­‐dependencies.jar
+\end{lstlisting}
+
 \section{Search interface deployment}
+
+All web application related web files are located in a \emph{citation\_search\_web} directory. The directory has a standard Maven project layout \footnote{\href{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}{Apache Maven, https://maven.apache.org}}. Change a \emph{search.properties} file in a \emph{resources} folder. Table \ref{tab:search-properties} describes properties of a \emph{search.properties} file with sample values . 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ | l | p{4cm} | l | } 
+ \hline
+ \textbf{Property} & \textbf{Description} & \textbf{Sample value} \\  \hline
+solr.url.citations & Endpoint for querying citations. & http://localhost:8088/solr/collection1/\\ \hline
+solr.url.bibliography & Endpoint for querying bibliographic links. & http://localhost:8088/solr/collection2/  \\  \hline
+\end{tabular}
+\caption{Explanation of properties of a \emph{search.properties} file.}
+\label{tab:search-properties}
+\end{center}
+\end{table}
+
+One can change default logging properties for Log4j \footnote{Apache Log4j, \url{http://logging.apache.org/log4j/2.x/}} library in a \emph{logj4.properties} file.
+Once property files are configured, build a war file executing following command from the directory containing a \emph{pom.xml} file:
+\begin{lstlisting}[language=Bash]
+	> mvn package -­‐DskipTests
+\end{lstlisting}
+
+Maven will generate a war file in a \emph{target} folder. Deploy to the Tomcat web server by putting a war­‐file in a Tomcat \emph{webapp} directory or use a Tomcat web interface to deploy through Tomcat's manager. 
+
+
 \end{document}

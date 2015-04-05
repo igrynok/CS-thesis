@@ -25,16 +25,16 @@
 \contentsline {subsection}{\numberline {3.5.1}Citation search main page}{29}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Search by bibliography page}{31}{subsection.3.5.2}
 \contentsline {chapter}{\numberline {4}Evaluation experiments}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}Experiments setup}{32}{section.4.1}
+\contentsline {section}{\numberline {4.1}Experimental setup}{32}{section.4.1}
 \contentsline {paragraph}{Task1}{33}{section*.7}
 \contentsline {paragraph}{Task1'}{33}{section*.8}
 \contentsline {paragraph}{Task2}{33}{section*.9}
 \contentsline {section}{\numberline {4.2}Questionnaires before and after each experiment}{34}{section.4.2}
 \contentsline {section}{\numberline {4.3}Evaluation results}{34}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Results for Task 1}{35}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Results for Task 1'}{36}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Results for Task 1'}{37}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Results for Task 2}{37}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Final questionnaire}{37}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Final questionnaire}{38}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Results summary}{38}{subsection.4.3.5}
 \contentsline {chapter}{\numberline {5}Conclusion}{40}{chapter.5}
 \contentsline {chapter}{\numberline {A}User guide for Citation Search Engine deployment}{44}{appendix.A}
@@ -42,8 +42,8 @@
 \contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{45}{subsection.A.1.1}
 \contentsline {paragraph}{Defining Solr schema}{45}{section*.11}
 \contentsline {paragraph}{Configuring Solr parameters}{47}{section*.12}
-\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr search features}{48}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr search features}{47}{subsection.A.1.2}
 \contentsline {section}{\numberline {A.2}MongoDB Installation}{48}{section.A.2}
 \contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{48}{subsection.A.2.1}
-\contentsline {section}{\numberline {A.3}Running parser}{49}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search interface deployment}{49}{section.A.4}
+\contentsline {section}{\numberline {A.3}Running the parser}{49}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search interface deployment}{50}{section.A.4}
