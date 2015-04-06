@@ -10,7 +10,7 @@
 \noindent 
 Nowadays the number of documents in the World Wide Web grows extremely fast \footnote{\url{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}}. Tools that can facilitate information retrieval present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate information retrieval. Particularly, we target information retrieval for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating a new scientific work. 
 
-We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. We evaluate searching capabilities of our system by conducting user evaluation experiments and comparing it with alternative approaches. In our experiments we measured how efficient is our system or how quickly users can find a result in comparison with Google Scholar. We used a citation aggregation feature of Citation Search to create automatic summarization of scientific articles. We asked experts to evaluate summaries created by Citation Search and TextRank algorithm. We showed that Citation Search performs equal with Google Scholar in terms of efficiency and outperforms TextRank algorithm in creating a better article summarization.  
+We propose Citation Search Engine a software system that makes an attempt to automatically extract, index and aggregate citations from a set of scientific articles in PDF format. We evaluate searching capabilities of our system by conducting user evaluation experiments and comparing it with alternative approaches. In our experiments we measured how efficient is our system or how quickly users can find a result in comparison with Google Scholar. We used a citation aggregation feature of Citation Search to create automatic summaries of scientific articles. We asked experts to evaluate summaries created by Citation Search and TextRank algorithm. We showed that Citation Search performs equal with Google Scholar in terms of efficiency and outperforms TextRank algorithm in creating a better article descriptions.  
 
 \end{quotation}
 \clearpage
@@ -514,6 +514,16 @@ Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is dis
     \label{fig:solr}
   \end{figure} 
 
+\subsection{Solr ranking model}
+Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-IDF model \cite{manning2008introduction}. This model takes into consideration following factors:
+\begin{itemize}
+\item \textbf{tf} - term frequency, a frequency of the term in a document. The higher the term frequency, the higher a document score. 
+\item \textbf{idf} - inverse document frequency, an inverse frequency of the term in all documents. The rare the term occurs in all documents, the higher its contribution to the document's score.  
+\item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has.
+\end{itemize}
+
+The exact scoring formula can be found on the official web page of the Lucene documentation \footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}.  
+
  %\cite{solr.config}
 
 \section{Meta data storage}
@@ -564,7 +574,7 @@ To measure effectiveness of Citation Search Engine we conducted evaluation exper
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly can users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
-\section{Experimental setup}
+\section{Experiment setup}
 For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
 
 \paragraph{Task1} As a first task an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure illustrates one of a citation from the paper given to an expert. An expert can read the cited sentence as well as the context of this sentence however he is not aware of referred source paper. The task is to find a referred paper that proves given citation.
@@ -730,11 +740,11 @@ The results for summaries comparison show that summary generated with citations 
 
 \chapter {Conclusion}
 \label{cha:conclusion}
+In this work we address the problem of information retrieval (IR) for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented Citation Search engine which automatically extracts and indexes citations from scientific articles in a PDF format. In general, a citation composed of two parts: a cited text in the body of a document and a bibliographic link in a reference section of a document. In Citation Search engine we index both parts separately allowing user to make a choice between different indexed collections. One more feature of Citation Search is the ability to aggregate citations referred to the same source article. This feature could be used to build automatic summaries of scientific articles.
 
-%Parser enchancement
-%meta information by advanced pdf-parsers
-%personal storage
-%distributed solution
+We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how quickly can users find results using both search engines. Our results showed that Citation Search performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of Citation Search to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that Citation Search gives better description of scientific articles according to expert's opinion.  
+
+Nowadays when the amount of information grows fast, efficient IR systems present particular interest. Our system is different from typical IR systems that performs full-text indexing. Instead we index citations with the intent to reduce search space at the same time making it more effective.          
 
 %END Doc
 %-------------------------------------------------------
@@ -894,6 +904,8 @@ Additionally, there are other configuration files that appear in the configurati
 \end{table}
 
 \section{MongoDB Installation}
+
+To install MonogoDB follow instruction on the official web site \url{http://docs.mongodb.org/manual/installation/}. 
 
 \subsection{MongoDB configuration}
 Once MonogDB is downloaded, it is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:

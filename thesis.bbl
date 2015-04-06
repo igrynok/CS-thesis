@@ -84,6 +84,11 @@ Loet Leydesdorff, Stephen Carley, and Ismael Rafols.
 Bertin M, Desclés~J. P, Djioua B, Krushkov Y, and Lalicc Umr.
 \newblock Automatic annotation in text for bibliometrics use.
 
+\bibitem{manning2008introduction}
+Christopher~D Manning, Prabhakar Raghavan, and Hinrich Sch{\"u}tze.
+\newblock {\em Introduction to information retrieval}, volume~1.
+\newblock Cambridge university press Cambridge, 2008.
+
 \bibitem{mei-zhai:2008:ACLMain}
 Qiaozhu Mei and ChengXiang Zhai.
 \newblock Generating impact-based summaries for scientific literature.

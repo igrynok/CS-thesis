@@ -16,25 +16,26 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Document publishing}{section.3.2}% 16
 \BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Challenges}{section.3.2}% 17
 \BOOKMARK [1][-]{section.3.3}{3.3 Indexer}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.4}{3.4 Meta data storage}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.5}{3.5 Web search interface}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 Citation search main page}{section.3.5}% 21
-\BOOKMARK [2][-]{subsection.3.5.2}{3.5.2 Search by bibliography page}{section.3.5}% 22
-\BOOKMARK [0][-]{chapter.4}{4 Evaluation experiments}{}% 23
-\BOOKMARK [1][-]{section.4.1}{4.1 Experimental setup}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{4.2 Questionnaires before and after each experiment}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{4.3 Evaluation results}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Results for Task 1}{section.4.3}% 27
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Results for Task 1'}{section.4.3}% 28
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Results for Task 2}{section.4.3}% 29
-\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Final questionnaire}{section.4.3}% 30
-\BOOKMARK [2][-]{subsection.4.3.5}{4.3.5 Results summary}{section.4.3}% 31
-\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 32
-\BOOKMARK [0][-]{appendix.A}{A User guide for Citation Search Engine deployment}{}% 33
-\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 34
-\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 35
-\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr search features}{section.A.1}% 36
-\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 37
-\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 38
-\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 39
-\BOOKMARK [1][-]{section.A.4}{A.4 Search interface deployment}{appendix.A}% 40
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Solr ranking model}{section.3.3}% 19
+\BOOKMARK [1][-]{section.3.4}{3.4 Meta data storage}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{3.5 Web search interface}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 Citation search main page}{section.3.5}% 22
+\BOOKMARK [2][-]{subsection.3.5.2}{3.5.2 Search by bibliography page}{section.3.5}% 23
+\BOOKMARK [0][-]{chapter.4}{4 Evaluation experiments}{}% 24
+\BOOKMARK [1][-]{section.4.1}{4.1 Experiment setup}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{4.2 Questionnaires before and after each experiment}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{4.3 Evaluation results}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Results for Task 1}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Results for Task 1'}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Results for Task 2}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Final questionnaire}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.5}{4.3.5 Results summary}{section.4.3}% 32
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 33
+\BOOKMARK [0][-]{appendix.A}{A User guide for Citation Search Engine deployment}{}% 34
+\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 35
+\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 36
+\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr search features}{section.A.1}% 37
+\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 38
+\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 39
+\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.4}{A.4 Search interface deployment}{appendix.A}% 41
