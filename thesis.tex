@@ -55,7 +55,7 @@ The rest of the paper structured as follows:
 \end{description}
 \pagebreak
 
-\section{Typical web search engine} 
+\section{Typical Web Search Engine} 
 
 Figure \ref{fig:web-search} illustrates a high level architecture of a standard web engine. It consists of three main components:
 \begin{itemize}
@@ -77,7 +77,7 @@ Web Crawler is a program that browses the World Wide Web reading the content of 
 
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
-\section{Inverted index}
+\section{Inverted Index}
 Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it's first encountered. \\
   \begin{figure}[htp]
     \centering
@@ -214,16 +214,16 @@ Then it merges the same terms from the same document by folding two identical ad
 
 %%Since a term generally occurs in a number of documents, this data organization already reduces the storage requirements of the index. 
 
-\section{Dynamic indexing}
+\section{Dynamic Indexing}
 So far we assumed that document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents. Simple way to deal with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if there is one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
 
-\section{Retrieving search results}
+\section{Retrieving Search Results}
 When a user makes a query it would be good to give her back a result document containing all terms in the query, so that terms are located close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide the complexity querying from the user by introducing \emph{free text query parsers} so a user can make only one query.
 
 \chapter {Related Work}
 \label{cha:related-work}
 
-\section{Citations in scientific publications}
+\section{Citations In Scientific Publications}
 
 Citations are the subject of many interesting scientific studies. 
 
@@ -240,7 +240,7 @@ Another approach is to use citations to build summaries of scientific publicatio
 
 An expert literature survey on citation analysis was made by Smith \cite{smith}, she reviewed hundred of scientific articles on this topic. 
 
-\section{Popular academic search engines}
+\section{Popular Academic Search Engines}
 \paragraph{CiteSeer\textsuperscript{x}}
 
 CiteSeer\textsuperscript{x} is built on the concept of citation index. The concept of citation index was first introduced by Eugene Garfield in \cite{garfield1964science}. In terms of Eugene Garfield citations are bibliographic links or referrers linking scientific documents. In his work Eugene Garfield proposed an approach where citations between documents were manually cataloged and maintained so that a researcher can search through listings of citations traversing citation links either back through supporting literature or forward through the work of later researchers \cite{bradshaw2002reference}.
@@ -261,7 +261,7 @@ Google Scholar contains roughly 160 million of documents by May 2014 \cite{ordun
 \chapter {Citation Search Engine}
 \label{cha:CS}
 
-\section{System overview}
+\section{System Overview}
 
 The components of Citation Search is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referred to the same article. 
 
@@ -295,7 +295,7 @@ It is practical to divide the work of the \emph{Parser} into two phases: \emph{P
     \label{fig:parser}
   \end{figure}
 
-\subsection{PDF processing}
+\subsection{PDF Processing}
 The main role of \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
 Parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that, there exist scientific articles written decades ago which can use different encoding algorithms from articles created recently. Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the majority of the scientific article formats or at least the formats found in our collection of articles.  
 
@@ -423,7 +423,7 @@ As usual we try to recognize common patterns covering the majority of bibliograp
     \label{fig:link}
   \end{figure}     
 
-\subsection{Document publishing}
+\subsection{Document Publishing}
 There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. 
 
 \paragraph{Publishing documents to Solr}
@@ -520,7 +520,7 @@ Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is dis
     \label{fig:solr}
   \end{figure} 
 
-\subsection{Solr ranking model}
+\subsection{Solr Ranking Model}
 Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-IDF model \cite{manning2008introduction}. This model takes into consideration following factors:
 \begin{itemize}
 \item \textbf{tf} - term frequency, a frequency of the term in a document. The higher the term frequency, the higher a document score. 
@@ -528,14 +528,14 @@ Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-
 \item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has.
 \end{itemize}
 
-The exact scoring formula can be found on the official web page of the Lucene documentation \footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}.  
+The exact scoring formula can be found on the official web page of the Lucene documentation \footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
 
  %\cite{solr.config}
 
-\section{Meta data storage}
+\section{Meta Data Storage}
 As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with. 
 
-\section{Web search interface}
+\section{Web Search Interface}
 Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
 
   \begin{figure}[htp]
@@ -545,7 +545,7 @@ Web Search interface is a Java web application running in a servlet container. F
     \label{fig:mvc}
   \end{figure}  
 
-\subsection{Citation search main page}
+\subsection{Citation Search Main Page}
 
 The main page of Citation Search presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user see a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available online then user can open it using a link ``See pdf on SCG resources''.  
 
@@ -565,7 +565,7 @@ The main page of Citation Search presents a simple search interface allowing use
 
  User can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the Citation Search interface and in the Appendix of this article.    
 
-\subsection{Search by bibliography page}
+\subsection{Search by Bibliography Page}
 Another feature provided by citation Search is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user see a list of bibliographic entries with matched author's name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
 
    \begin{figure}[htp]
@@ -574,13 +574,13 @@ Another feature provided by citation Search is the possibility to search by bibl
     \label{fig:cs-search-bibl}
   \end{figure}
 
-\chapter {Evaluation experiments}
+\chapter {Evaluation Experiments}
 \label{cha:experiments}
 To measure effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from different than Computer Science domain, for example, Biology or Physics.  Thus all experiments were conducted with Google Scholar and Citation Search Engine.
 
-There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly can users can find documents and by usability we imply simplicity of search interfaces and personal impression.
+There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
-\section{Experiment setup}
+\section{Experiment Setup}
 For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
 
 \paragraph{Task1} As a first task an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure illustrates one of a citation from the paper given to an expert. An expert can read the cited sentence as well as the context of this sentence however he is not aware of referred source paper. The task is to find a referred paper that proves given citation.
@@ -625,7 +625,7 @@ Right after the experiment experts were asked to fill a form with following ques
 	\item Would you consider using one of these search engines? 
 \end{itemize}
 
-\section{Evaluation results}
+\section{Evaluation Results}
 
 First survey, taken by experts before the experiment, showed that all experts use Google Scholar to find scientific literature. Some experts mentioned that they use IEEE Explorer, ACM digital library and DBLP as well. Half of the respondents use Google Scholar every day (Figure \ref{fig:q1_1_2}).
 
@@ -736,10 +736,10 @@ Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summ
   \end{figure}
 Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to ttest with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Experts noted that a summary generated with TextRank tends to consist of too general or not important for understanding a paper sentences. According to experts, summary composed with citations tends to contain sentences more relevant for understanding a paper. However, sometimes sentences rephrase each other not adding new meaning to the summary. Also, compared to TextRank there is no a natural flow in a summary from citations, saying in other words sentences in a summary are not ordered in a story manner.       
 
-\subsection{Final questionnaire}
+\subsection{Final Questionnaire}
 Final questionnaire show that some experts were pleasantly surprised by the capabilities of another type of search engine. All experts answered positively if they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some experts Citation search is more appropriate to search for a related work on the given topic. Others think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts highlighted following feature of Citation Search: possibility to see citations with a context, possibility to search by bibliography entries.  
 
-\subsection{Results summary}
+\subsection{Results Summary}
 In our evaluation experiments we compared Citation Search with Google Scholar. During experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, however there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all experts succeeded in the task accomplishment using Citation Search.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of Citation Search could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
@@ -759,9 +759,10 @@ Nowadays when the amount of information grows fast, efficient IR systems present
 \bibliography{thesis}
 
 \appendix
-\chapter{User guide for Citation Search Engine deployment}
+\chapter{User Guide for Citation Search Deployment}
 
 \section{Solr Installation}
+\label{solr:installation}
 
 Solr installation requires JDK and any servlet container to be installed on the server machine. Here we describe the configuration of Solr for Apache Tomcat container.
 We need to download Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, \url{http://lucene.apache.org/solr/}}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
@@ -876,7 +877,7 @@ Other elements in the Solr schema file listed in Table \ref{tab:fields.others}:
 \end{center}
 \end{table}
 
-\paragraph{Configuring Solr parameters}
+\paragraph{Configuring Solr Parameters}
 To configure a Solr instance we need to describe the solrconfig.xml and solr.xml files.
 
 \begin{description}
@@ -884,7 +885,7 @@ To configure a Solr instance we need to describe the solrconfig.xml and solr.xml
 \item[solrconfig.xml] The solrconfig.xml configuration file primarily provides you with an access to index-management settings, RequestHandlers, listeners, and request dispatchers. The file has a number of complex sections and mainly is changed when a specific need is encountered. 
 \end{description} 
 
-\subsection{Enhanced Solr search features}
+\subsection{Enhanced Solr Search Features}
 Solr provides a number of additional features that can enhance the search system. One of the features we use is synonyms. To use this feature you need to specify synonyms.txt file with listed synonyms. This file is used by synonym filter to replace words with their synonyms. For example, a search for "DVD" may expand to "DVD", "DVDs", "Digital Versatile Disk" depending on the mapping in this file. This file can be also used for spelling corrections. Here is an example of synonyms.txt file:
 \begin{lstlisting}
 GB, gib, gigabyte, gigabytes
@@ -979,7 +980,7 @@ Maven will generate a jar file \emph{citation\_search-­‐1.0-­‐jar-­‐wit
 	> java -­‐jar citation_search-­‐1.0-­‐jar-­‐with-­‐dependencies.jar
 \end{lstlisting}
 
-\section{Search interface deployment}
+\section{Search Interface Deployment}
 
 All web application related web files are located in a \emph{citation\_search\_web} directory. The directory has a standard Maven project layout \footnote{\href{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}{Apache Maven, https://maven.apache.org}}. Change a \emph{search.properties} file in a \emph{resources} folder. Table \ref{tab:search-properties} describes properties of a \emph{search.properties} file with sample values . 
 
