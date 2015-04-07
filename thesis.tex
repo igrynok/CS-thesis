@@ -436,7 +436,7 @@ As usual we try to recognize common patterns covering the majority of bibliograp
 There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. 
 
 \paragraph{Publishing documents to Solr}
-The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document \ho{this definition should have been introduced a lot earlier} and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
     \centering
@@ -520,7 +520,7 @@ Another challenge in using square brackets as citation identifiers arises when s
 \section{Indexer}
 We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities \footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
-Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed.
+Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed (see Appendix \ref{app:solr} for Solr installation and configuration).
 
   \begin{figure}[htp]
     \centering
@@ -542,7 +542,7 @@ The exact scoring formula can be found on the official web page of the Lucene do
  %\cite{solr.config}
 
 \section{Meta Data Storage}
-As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with. 
+As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with (see Appendix \ref{app:mongo}). 
 
 \section{Web Search Interface}
 Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
@@ -771,7 +771,7 @@ Nowadays when the amount of information grows fast, efficient IR systems present
 \chapter{User Guide for Citation Search Deployment}
 
 \section{Solr Installation}
-\label{solr:installation}
+\label{app:solr}
 
 Solr installation requires JDK and any servlet container to be installed on the server machine. Here we describe the configuration of Solr for Apache Tomcat container.
 We need to download Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, \url{http://lucene.apache.org/solr/}}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
@@ -920,6 +920,7 @@ Additionally, there are other configuration files that appear in the configurati
 \end{table}
 
 \section{MongoDB Installation}
+\label{app:mongo}
 
 To install MonogoDB follow instruction on the official web site \url{http://docs.mongodb.org/manual/installation/}. 
 
