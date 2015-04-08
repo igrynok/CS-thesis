@@ -291,7 +291,7 @@ The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
-    \caption{Activity diagram of Citation Search.}
+    \caption{Activity diagram of Citation Search.\brs{first action is 'Parsing A PDF file' note the article}}
     \label{fig:cs-activity-diagram}
   \end{figure}
 
@@ -312,7 +312,7 @@ It is practical to divide the work of the \emph{Parser} into two phases: \emph{P
 The main role of \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
 Parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that, there exist scientific articles written decades ago which can use different encoding algorithms from articles created recently. Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the majority of the scientific article formats or at least the formats found in our collection of articles.  
 
-\emph{PDF processing} phase starts with recursively walking though the directory tree of the collection library. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library \footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}} to parse PDF-files into text. The library extracts full text from PDF-files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We designed an algorithm to break the PDF-text into sections.
+\emph{PDF processing} phase starts with recursively walking though the directory tree of the collection library. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library \footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}} \brs{no space before footnote}to parse PDF-files into text. The library extracts full text from PDF-files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We designed an algorithm to break the PDF-text into sections.
 
 Generally, we are interested in identifying a body of the document where we can find citations and reference blocks where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some sections. Based on those keywords, one can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
   
@@ -364,7 +364,7 @@ Next, we search for the citations in the body and for the bibliography links in 
  {[}PJe02{]} & In a lazy language like Haskell \textbf{[PJe02]} this is not an issue - which is one key reason Haskell is very good at defining domain specific languages.  \\
  \hline
 \end{tabular}
-\caption{Frequent patterns in using square brackets ([ and ])for citing}
+\caption{Frequent patterns in using square brackets ([ and ])for citing \brs{more space between text examples}}
 \label{tab:citations}
 \end{center}
 \end{table}
@@ -406,7 +406,7 @@ The pipeline of PDF processing stages described above is depicted on Figure \ref
   \end{figure} 
 
 \paragraph{Processing bibliographic links}
-As usual we try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of quotes, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it is enough to take the second part of the bibliographic link to be a title.   
+As usual we try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of \ugh{quotes}\brs{Quotation marks}, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it is enough to take the second part of the bibliographic link to be a title. \brs{unclear how Core NLP is used here}
 
 \begin{table}[h]
 \begin{center}
@@ -437,10 +437,10 @@ As usual we try to recognize common patterns covering the majority of bibliograp
   \end{figure}     
 
 \subsection{Document Publishing}
-There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. 
+There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. \brs{Tie in to the story of figure 3.1 a bit more strongly, say that mongo is the Meta Data Storage module, and that Solr is the indexer module}
 
 \paragraph{Publishing documents to Solr}
-The common way to interact with Solr is using REST API. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using REST API \brs{Link or ref to what a REST API is}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
     \centering
@@ -521,6 +521,8 @@ Another challenge in using square brackets as citation identifiers arises when s
     \label{fig:code-snippet}
   \end{figure}
 
+\brs{so, how did you address these challenges?}
+
 \section{Indexer}
 We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities \footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
@@ -548,7 +550,7 @@ The exact scoring formula can be found on the official web page of the Lucene do
 \section{Meta Data Storage}
 As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with (see Appendix \ref{app:mongo}). 
 
-\brs{until here}
+\brs{There seems to be some duplication between the publishing documents part and the indexer/meta data storage part. I don't know what is what and why they are separate sections. The flow is a bit confusing}
 
 \section{Web Search Interface}
 Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
