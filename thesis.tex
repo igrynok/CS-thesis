@@ -30,16 +30,12 @@ Secondly, we developed a citation aggregation feature to create automatic summar
 \label{cha:introduction}
 
 \section{Thesis statement}
-Searching large collections of documents manually is not time efficient. The common way of making search effective in terms of time is \ins{automated} indexing \ins{of} documents in advance. Before \ins{the} indexing procedure, documents should be parsed and \ugh{analyzed}\brs{what to you mean by this? analyzed how? if I am indexing a pure text file there is not much analysis to be done right?}. In this work we propose a search system over collections of scientific articles in PDF format. Scientific articles are different from ordinary documents in following sense\chg{.}{:} First, scientific articles in PDF format need to be converted into textual representation\chg{.}{;} Second, scientific articles have a certain layout format, \ugh{where each section needs to be considered separately}\brs{this is not important. we don't focus on which sections does what}. In \ugh{Citation Search Engine}\brs{what is a Citation Search Engine? define before use: we call our tool bla bla bla}, we do not aim to index entire contents of articles. Instead, we aim to take advantage of indexing extracted meta-information. We argue that considering meta-information enhances a search system. \brs{What meta information? be more precise, say that we mean citations and use it as a segue way into the next paragraph about citations}
-
-In general, a citation is composed of two parts: a citation text in a body of a document and a bibliographic link in a reference section. Citation Search Engine indexes both parts separately \ugh{thus allowing \ins{the} user to make a choice between different indexed collections}\brs{wat? not sure what this means}. We also store a context of a citation, i.e., text surrounding a citation, to provide better understanding of a cited text. Bibliographic links identify the cited origin paper. By finding bibliographic links pointing to the same original source we can merge citations related to the same paper. Such functionality is especially useful to automatically find citations of a given article in other articles.   
-
-\brs{I expected a high level overview of what was done and I did not get it. You focus on many unimportant details here (\ie saving the context of the citation) and you don't explain more important details (\ie How does the search work? what do the citations have to do with it, what meta data, \etc)}
+In this work we propose Citation Search -- a novel search engine for scientific literature based on citations. Searching large collections of documents manually is not time efficient. The common way of making search efficient is to index documents in advance. Documents should be parsed before the indexing procedure. Our system is designed to parse scientific articles in a PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built the algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers. Citation Search provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.    
 
 \section{Contributions}
 Following are the main contributions of this work:
 \begin{itemize}
-	\item A novel IR\brs{abbreviation only mentioned in the abstract, abstract is not a part of the text} system for scientific articles based on citations,
+	\item A novel IR system for scientific articles based on citations,
 	\item A search interface to discover relevant scientific results based on a statement query,
 	\item A search interface to discover citations based on meta-information queries,
 	\item A new method of summary generation by means of citation aggregation,
@@ -49,24 +45,21 @@ Following are the main contributions of this work:
 \section{Outline}
 The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter \ref{cha:introduction}] \ugh{gives}\brs{Chapters don't do these thing, authors do. rephrase to 'in chapter bla We give bla'} a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
-	\item[Chapter \ref{cha:related-work}] surveys the research related to citations in scientific publications. It overviews two popular academic search engines: Google Scholar and CiteSeer.
-	\item[Chapter \ref{cha:CS}] describes the design of Citation Search Engine. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
-	\item[Chapter \ref{cha:experiments}] describes user evaluation experiments and analysis the results.
-	\item[Chapter \ref{cha:conclusion}] concludes the work and describes potential future work. 
+	\item[Chapter \ref{cha:introduction}] In chapter \ref{cha:introduction} we give a high overview of the architecture of a typical web search engine. We describe the main steps to construct an inverted index.
+	\item[Chapter \ref{cha:related-work}] In chapter \ref{cha:related-work} we survey the research related to citations in scientific publications. We overview two popular academic search engines: Google Scholar and CiteSeer.
+	\item[Chapter \ref{cha:CS}] In chapter \ref{cha:CS} we describe the design of Citation Search Engine. We first show overall architecture of the proposed system and then show details of implementation of each component. 
+	\item[Chapter \ref{cha:experiments}] In chapter \ref{cha:experiments} we describe user evaluation experiments and analyze the results.
+	\item[Chapter \ref{cha:conclusion}] In chapter \ref{cha:conclusion} we conclude the work and describe potential future work. 
 \end{description}
 
 \pagebreak
 
 \section{Glossary of Terms}
-\brs{why use page breaks?}
 \begin{description}
 	\item[Citation] is ``a reference to a published or unpublished source'' \footnote{\url{http://en.wikipedia.org/wiki/Citation}}. Consist of two parts: a cited text in the body of the article and a bibliographic link in the references section of the article. If it is not specified, by citation in this work we mean a cited text in the body of the article.
 	\item[Bibliographic link or bibliographic reference] is a bibliographic entry in the references section of the article associated with the cited text in the body of an article. 
-	\item[Document] a broader term, having multiple meanings. In this work we can use a term \emph{document} to refer to a single file, i.e a PDF article. A \emph{document} term can be used to refer to a basic storage unit, i.e  basic storage unit of a Indexes storage or a MongoDB database.
+	\item[Document] a broader term, having multiple meanings. In this work we can use a term \emph{document} to refer to a single file, i.e a PDF article. A \emph{document} term can be used to refer to a basic storage unit, i.e  basic storage unit of an Indexes storage or a MongoDB database.
 \end{description}
-
-\pagebreak
 
 \section{Typical Web Search Engine} 
 
@@ -91,7 +84,7 @@ Web Crawler is a program that browses the World Wide Web reading the content of 
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
 \section{Inverted Index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in \ugh{IR}. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic idea of an inverted index\brs{does it show the basic idea or an example?}. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in \ugh{IR}. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
@@ -247,7 +240,7 @@ automatically the text. In \cite{autocit} they proposed a hybrid method for the 
 
 There are several studies that used citations to evaluate science by introducing map of science. Map of science graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1} \cite{Klavans:2009:TCM:1527090.1527095} \cite{DBLP:journals/corr/abs-1202-1914} \cite{Small:1999:VSC:308915.308932}. 
 
-Kessler \cite{ASI:ASI5090140103} first used the concept of bibliographic coupling for document clustering. To build a cluster of similar documents Kessler used a similarity function based on the degree of bibliographic coupling. Bibliographic coupling is a number of citations two documents have in common. The idea was developed further by Small in co-citation analysis \cite{ASI:ASI4630240406}. Later co-citation analysis and bibliographic coupling was used by Larson \cite{larson1996bibliometrics} for measuring similarity of \ugh{wwww}\brs{wat?} pages.
+Kessler \cite{ASI:ASI5090140103} first used the concept of bibliographic coupling for document clustering. To build a cluster of similar documents Kessler used a similarity function based on the degree of bibliographic coupling. Bibliographic coupling is a number of citations two documents have in common. The idea was developed further by Small in co-citation analysis \cite{ASI:ASI4630240406}. Later co-citation analysis and bibliographic coupling was used by Larson \cite{larson1996bibliometrics} for measuring similarity of web pages.
 
 Another approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. In work by Nakov et al. citations have been used to support automatic paraphrasing \cite{Nakov04citances:citation}. 
 
@@ -263,7 +256,7 @@ Lawrence et al. automated this process in CiteSeer\textsuperscript{x} \footnote{
 CiteSeer\textsuperscript{x} is built on top of the the open source infrastructure SeerSuite \footnote{SeerSuite, \url{http://citeseerx.sourceforge.net/}} and uses Apache Solr \footnote{Apache Solr. \url{http://lucene.apache.org/solr/}} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such as ParseCit \cite{Councill08parscit:an}. 
 CiteSeer\textsuperscript{x} currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. 
 
-CiteSeer\textsuperscript{x} indexes citations more precisely bibliographic links or referrers while in \ugh{Citation Search Engine}\brs{what is this?} we intend to index not only bibliographic links but also cited text in a body of a document. If by indexing bibliographic links CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in Citation Search we focus on simplifying retrieval of documents containing a text of interest.  
+CiteSeer\textsuperscript{x} indexes citations more precisely bibliographic links or referrers while in Citation Search we intend to index not only bibliographic links but also cited text in a body of a document. If by indexing bibliographic links CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in Citation Search we focus on simplifying retrieval of documents containing a text of interest.  
 \\ \\
 \textbf{Google Scholar} 
 Google Scholar is a freely accessible web search engine that makes full-text or metadata indexing of scientific literature \footnote{Google Scholar, \url{http://scholar.google.ch/}}. Besides the simple search Google Scholar proposes following features\chg{.}{:} Unique ranking algorithm, an algorithm that ranks documents ``the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature'' \footnote{\url{https://scholar.google.com/scholar/about.html}}\chg{.}{;}"Cited by" feature allows to view abstracts of articles citing the given article\chg{.}{;} "Related articles" feature shows the list of closely related articles. It is also possible to filter articles by author name or published date.
@@ -291,7 +284,7 @@ The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
-    \caption{Activity diagram of Citation Search.\brs{first action is 'Parsing A PDF file' note the article}}
+    \caption{Activity diagram of Citation Search.}
     \label{fig:cs-activity-diagram}
   \end{figure}
 
@@ -312,7 +305,7 @@ It is practical to divide the work of the \emph{Parser} into two phases: \emph{P
 The main role of \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
 Parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. Besides that, there exist scientific articles written decades ago which can use different encoding algorithms from articles created recently. Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the majority of the scientific article formats or at least the formats found in our collection of articles.  
 
-\emph{PDF processing} phase starts with recursively walking though the directory tree of the collection library. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library \footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}} \brs{no space before footnote}to parse PDF-files into text. The library extracts full text from PDF-files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We designed an algorithm to break the PDF-text into sections.
+\emph{PDF processing} phase starts with recursively walking though the directory tree of the collection library. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library\footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}}. The library extracts full text from PDF-files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We designed an algorithm to break the PDF-text into sections.
 
 Generally, we are interested in identifying a body of the document where we can find citations and reference blocks where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some sections. Based on those keywords, one can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
   
@@ -349,7 +342,7 @@ After breaking a document down into sections as shown in Figure \ref{fig:templat
     \label{fig:template}
   \end{figure}
 
-As a result of the normalization step, we have a document divided into body and references sections. Before searching citations in the body of a document, we break the body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can be encountered inside the sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end with a period, like the title of a section or an item of a list. We used Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
+As a result of the normalization step, we have a document divided into body and references sections. Before searching citations in the body of a document, we break the body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can be encountered inside the sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end with a period, like the title of a section or an item of a list. We use Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
 Next, we search for the citations in the body and for the bibliography links in the references section. When an author makes a citation she puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ and ]) to make a link to a bibliographic reference in the sentence. Thus, we can identify citations by detecting square brackets in the text. After analyzing some set of articles we found multiple patterns in using square brackets for {citations, as shown in Table \ref{tab:citations}. 
 
@@ -358,13 +351,13 @@ Next, we search for the citations in the body and for the bibliography links in 
 \begin{tabular}{ | l | p{7cm} | } 
  \hline
  Patterns of using [ ] & Example in text \\  \hline
- {[}21{]} & Our conclusion is that, contrary to prior pessimism \textbf{[21]}, [22], data mining static code attributes to learn defect predictors is useful. \\ 
- {[}20, 3, 11, 17{]} & In the nineties, researchers focused on specialized multivariate models, i.e., models based on sets of metrics selected for specific application areas and particular development environments \textbf{[20, 3, 11, 17]}. \\
- {[}24, Sections 6.3 and 6.4 {]}& Details on the life-cycle of a bug can be found in the BUGZILLA documentation \textbf{[24, Sections 6.3 and 6.4]}. \\
- {[}PJe02{]} & In a lazy language like Haskell \textbf{[PJe02]} this is not an issue - which is one key reason Haskell is very good at defining domain specific languages.  \\
+ {[}21{]} & Our conclusion is that, contrary to prior pessimism \textbf{[21]}, [22], data mining static code attributes to learn defect predictors is useful. \\ \\ 
+ {[}20, 3, 11, 17{]} & In the nineties, researchers focused on specialized multivariate models, i.e., models based on sets of metrics selected for specific application areas and particular development environments \textbf{[20, 3, 11, 17]}. \\ \\
+ {[}24, Sections 6.3 and 6.4 {]}& Details on the life-cycle of a bug can be found in the BUGZILLA documentation \textbf{[24, Sections 6.3 and 6.4]}. \\ \\
+ {[}PJe02{]} & In a lazy language like Haskell \textbf{[PJe02]} this is not an issue - which is one key reason Haskell is very good at defining domain specific languages.  \\ \\
  \hline
 \end{tabular}
-\caption{Frequent patterns in using square brackets ([ and ])for citing \brs{more space between text examples}}
+\caption{Frequent patterns in using square brackets ([ and ])for citing}
 \label{tab:citations}
 \end{center}
 \end{table}
@@ -406,7 +399,7 @@ The pipeline of PDF processing stages described above is depicted on Figure \ref
   \end{figure} 
 
 \paragraph{Processing bibliographic links}
-As usual we try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of \ugh{quotes}\brs{Quotation marks}, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). It turned out that Core NLP library used for breaking text into sentences is good in dividing a link into parts according to our view. In most of cases it is enough to take the second part of the bibliographic link to be a title. \brs{unclear how Core NLP is used here}
+As usual we try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of quotation marks, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). We use Core NLP library to break a link into parts according to our view. In most of cases it is enough to take the second part of the bibliographic link to be a title.
 
 \begin{table}[h]
 \begin{center}
@@ -437,10 +430,10 @@ As usual we try to recognize common patterns covering the majority of bibliograp
   \end{figure}     
 
 \subsection{Document Publishing}
-There are two systems where documents are published to: Solr and MongoDB. Solr is used for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. \brs{Tie in to the story of figure 3.1 a bit more strongly, say that mongo is the Meta Data Storage module, and that Solr is the indexer module}
+There are two systems where documents are published to: Solr and MongoDB. Solr corresponds to a Indexer component and MongoDB corresponds to a Mata Data Storage components in Figure \ref{fig:cs}. We use Solr for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. 
 
 \paragraph{Publishing documents to Solr}
-The common way to interact with Solr is using REST API \brs{Link or ref to what a REST API is}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using REST-like API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
     \centering
@@ -461,7 +454,7 @@ Every document representing one citation consist of following fields:
 Solr uses NoSQL-like data storage, but actually it is even more limited than traditional NoSQL databases. The data stored in Solr is very `flat', which means that Solr cannot store hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store a title of the scientific article parsed from the reference string, so we can aggregate citations referred to the same scientific article. It is worth to say that citation itself can refer to multiple scientific articles. We are also interested in a solution that does not require reviewing all Solr documents to find citations referred to the same scientific article as it will be too slow and will decrease the quality of user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.     
 
 \paragraph{Publishing documents to MongoDB} 
-MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema \footnote{MongoDB database, \url{http://www.mongodb.org/}}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
+MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema\footnote{MongoDB database, \url{http://www.mongodb.org/}}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
 The json document consist of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
@@ -524,7 +517,7 @@ Another challenge in using square brackets as citation identifiers arises when s
 \brs{so, how did you address these challenges?}
 
 \section{Indexer}
-We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities \footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
+We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities\footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
 Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed (see Appendix \ref{app:solr} for Solr installation and configuration).
 
@@ -543,17 +536,12 @@ Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-
 \item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has.
 \end{itemize}
 
-The exact scoring formula can be found on the official web page of the Lucene documentation \footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
+The exact scoring formula can be found on the official web page of the Lucene documentation\footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
 
  %\cite{solr.config}
 
-\section{Meta Data Storage}
-As a meta information storage we used MongoDB. MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange \footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with (see Appendix \ref{app:mongo}). 
-
-\brs{There seems to be some duplication between the publishing documents part and the indexer/meta data storage part. I don't know what is what and why they are separate sections. The flow is a bit confusing}
-
 \section{Web Search Interface}
-Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework \footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
+Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
 
   \begin{figure}[htp]
     \centering
@@ -930,6 +918,8 @@ Additionally, there are other configuration files that appear in the configurati
 \section{MongoDB Installation}
 \label{app:mongo}
 
+MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON-like documents with a dynamic schema. The format of stored data is called BSON, which stands for Binary JSON. BSON is an open standard developed for human readable data exchange\footnote{BSON specification, \url{http://bsonspec.org/}}. MongoDB requires a little amount of configuration to start to work with. 
+
 To install MonogoDB follow instruction on the official web site \url{http://docs.mongodb.org/manual/installation/}. 
 
 \subsection{MongoDB configuration}
@@ -938,7 +928,7 @@ Once MonogDB is downloaded, it is very easy to set up a database server. All we 
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272
 \end{lstlisting}
 
-MongoDB provides REST API\chg{, t}{. T}o enable REST API use parameter --rest:
+MongoDB provides REST API. To enable REST API use parameter --rest:
 \begin{lstlisting}[language=Bash]
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
 \end{lstlisting}
