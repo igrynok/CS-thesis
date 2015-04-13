@@ -574,52 +574,58 @@ The main page of Citation Search presents a simple search interface allowing use
 Another feature provided by citation Search is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user see a list of bibliographic entries with matched author's name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
 
    \begin{figure}[htp]
-    \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-search-bibl}
+    \includegraphics[scale=0.4]{cs-search-bibl}
     \caption{A screenshot of the `search by bibliography' page of a Citation Search interface illustrating a search for citations based on a meta-information query. Here a user searches for citations of scientific articles authored by Mircea Lungu.}
     \label{fig:cs-search-bibl}
   \end{figure}
 
 \chapter {Evaluation Experiments}
 \label{cha:experiments}
-To measure effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from different than Computer Science domain, for example, Biology or Physics.  Thus all experiments were conducted with Google Scholar and Citation Search Engine.
+\ho{Call this chapter just ``Evaluation"}
+To measure \ins{the} effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from \ins{a }different \ins{domain }than Computer Science\del{ domain}, \chg{for example,}{like} Biology or Physics.  Thus\ins{,} all experiments were conducted with Google Scholar and Citation Search Engine. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
-\section{Experiment Setup}
-For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) voluntarily agreed to participate in experiments. Participants were split into two groups. Both groups were asked to perform the same tasks however the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
+\ho{I guess you were too short on explaining the choices. You need to dedicate a section just to explain the trial runs of the experiments and their results. What were the other tools? why did you choose them? what is the outcome of the trial runs? Why did you decide what you decided? ...}
 
-\paragraph{Task1} As a first task an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure illustrates one of a citation from the paper given to an expert. An expert can read the cited sentence as well as the context of this sentence however he is not aware of referred source paper. The task is to find a referred paper that proves given citation.
+\section{Experiment Setup}
+\ho{Usually, the experimental setup is composed of subjects, objects, process, and tools. It would be better if you can have those as subsections as follows: Data and Tools, Participants, Process. In each subsection you describe the characteristics of each.}
+For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) \del{voluntarily agreed to} participate\ins{d} in \ins{the} experiments. Participants were split into two groups. Both groups were asked to perform the same tasks\chg{ h}{. H}owever the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
+
+\paragraph{Task1} \ho{use present tense to describe the experiments and tasks} As a first task\ins{,} an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure\ho{???} illustrates one \del{of a }citation from \chg{the}{a} paper given to an expert. An expert can read the cited sentence as well as the context of this sentence \chg{however}{but} he is not aware of referred source paper. The task is to find a referred paper that proves \ins{the }given citation.
 
 In overall, an expert was given 4 different citations from one of his papers and asked to find references using Google Scholar or Citation Search alternately.  Every time the order of using search engines was changed. Before the experiment, an article with a citation was removed from our dataset so an expert could not find an exact match using Citation Search.
 
-During the execution of tasks following observations were recorded:
+During the execution of tasks \chg{following observations were recorded:}{, we recorded the following:}
 \begin{itemize}[noitemsep]
-	\item Citation and search engine name
+	\item \del{Citation and search engine name}
 	\item Search time
 	\item Number of queries made
 	\item Number of words in a query
 	\item Expert comments
 \end{itemize}  
 
-\paragraph{Task1'} This task was given to the second group as an extra task. An expert was also given a citation to find a reference to it as in Task 1. But this time a search engine was not specified and a citation was taken from the paper not authored by expert. 
+\ho{the explanation of the task is so convoluted. Please try to describe the task as simple algorithmic steps. So you do like this: First we looked for a paper published by the test subject. Second we extracted four citations form that paper ....and so on.}
 
-Every expert received only one citation for this task. As for the previous task the paper containing citation was removed from Citation Search dataset.
+\paragraph{Task1\chg{'}{$^\prime$}} This task was given to the second group as an extra task \ho{why? and why not also to the first group? How many in the first group and how many in the second group? Put these in the experimental setup section}. An expert was also given a citation to find a reference to \del{it} as in Task 1\chg{. B}{, b}ut this time a search engine was not specified and a citation was taken from \chg{the}{a} paper not authored by expert. \ho{You use the word `expert' quite a lot. Try to use the word `subject' or `participant' instead}
 
-During Task1’ we observed which search engine was used to find a reference.
+Every expert received only one citation for this task. As for the previous task the paper containing citation was removed from Citation Search dataset 
 
-\paragraph{Task2} For this task we asked every expert in advance to provide with her favorite paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using state of the art TextRank algorithm \cite{mihalcea2004textrank}. TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub.  Another summary was built using citations to the paper collected by Citation Search. If TextRank provides with the extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
+During Task1\chg{’}{$^\prime$, } we observed which search engine was used to find a reference.
+
+\paragraph{Task2} For this task we asked every expert in advance to provide \chg{with her favorite}{a} paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using \chg{state of the art}{a state-of-the-art algorithm called} TextRank \del{algorithm} \cite{mihalcea2004textrank} \ho{how can you say state of the art and the book is published in 2004??}. \ins{The} TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub \ho{provide a reference or a url as a footnote}.  Another summary was built using citations to the paper collected by Citation Search. \chg{If}{While} TextRank provides \chg{with the}{an} extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
 
 As a task an expert was given two summaries and asked to give a score from 0 to 10. The score should reflect how summaries are good in describing a paper.
 
-\section{Questionnaires before and after each experiment}
+\section{Questionnaires before and after each experiment \ho{They are called Pre-experiment Questionnaire and Post-experiment Questionnaire}}
 
 Before the beginning of the experiment each expert was asked to fill a form with following questions:
 \begin{itemize}[noitemsep]
 	\item What search engines do you usually use to find scientific literature?
-	\item How often do you use listed above search engines? (Possible answers: everyday, a few times per week, once a week or less)
-	\item Have you ever used following search engines?(Google Scholar, Citation Search )
+	\item How often do you use \ins{the }listed \del{above} search engines? (Possible answers: everyday, a few times per week, once a week or less)
+	\item Have you ever used \ins{the} following search engines?(Google Scholar, Citation Search )
 \end{itemize} 
-After filling the form each expert was introduced to the simple query syntax and to interfaces of search engines. Then experiment begins with Task1 and Task1’. After Task1 and Task1’ experts were asked some general questions about their impressions on using Google Scholar and Citation Search, for example:
+After filling the form each expert was introduced to the simple query syntax and to interfaces of search engines \ho{what search engines}. Then experiment begins with Task1 and Task1’. After Task1 and Task1’ experts were asked some general questions about their impressions on using Google Scholar and Citation Search, for example:
 \begin{itemize}[noitemsep]
 	\item What did you like, what you did not like about using particular search engine?
 	\item What difficulties did you have?
