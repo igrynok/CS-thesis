@@ -620,7 +620,7 @@ During Task1\chg{’}{$^\prime$, } we observed which search engine was used to f
 \paragraph{Task2} For this task we asked every expert in advance to provide \chg{with her favorite}{a} paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using \chg{state of the art}{a state-of-the-art algorithm called} TextRank \del{algorithm} \cite{mihalcea2004textrank} \ho{how can you say state of the art and the book is published in 2004??}. \ins{The} TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub \ho{provide a reference or a url as a footnote}.  Another summary was built using citations to the paper collected by Citation Search. \chg{If}{While} TextRank provides \chg{with the}{an} extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
 
 As a task an expert was given two summaries and asked to give a score from 0 to 10. The score should reflect how summaries are good in describing a paper.
-
+\ho{I got to say at this point that the explanation of the experimental setup is not optimal. You have to organise your thoughts a little bit better and think of the reader as a complete ignorant person who needs careful taking by the hand. It seems to me that you sat down and started writing whatever jumps to your mind regarding the experimental setup. It is better if you organise your ideas and structure them on a sheet of paper first. Then, you write the skeleton of the section (subsections and sub-subsections), then start filling the space with explanations. I am just guessing that I will be saying the same about the later sections. Let's see ;)}
 \section{Questionnaires before and after each experiment \ho{They are called Pre-experiment Questionnaire and Post-experiment Questionnaire}}
 
 Before the beginning of the experiment each expert was asked to fill a form with following questions:
@@ -629,20 +629,21 @@ Before the beginning of the experiment each expert was asked to fill a form with
 	\item How often do you use \ins{the }listed \del{above} search engines? (Possible answers: everyday, a few times per week, once a week or less)
 	\item Have you ever used \ins{the} following search engines?(Google Scholar, Citation Search )
 \end{itemize} 
-After filling the form each expert was introduced to the simple query syntax and to interfaces of search engines \ho{what search engines}. Then experiment begins with Task1 and Task1’. After Task1 and Task1’ experts were asked some general questions about their impressions on using Google Scholar and Citation Search, for example:
+After filling the form each expert was introduced to the simple query syntax and to interfaces of search engines \ho{what search engines}. Then experiment begins with Task1 and Task1\chg{’}{$^\prime$}. After Task1 and Task1\chg{’}{$^\prime$, } \ins{the} experts were asked some general questions about their impressions on using Google Scholar and Citation Search, for example:
 \begin{itemize}[noitemsep]
-	\item What did you like, what you did not like about using particular search engine?
+	\item What did you like\chg{, what you did not like}{/dislike} about using \ins{each} particular search engine?
 	\item What difficulties did you have?
 \end{itemize}
-Right after the experiment experts were asked to fill a form with following questions:
+Right after the experiment \ins{the} experts were asked to fill a form with following questions:\ho{Why is the list of questions split?}
 \begin{itemize}[noitemsep]
 	\item Has the experiments changed your opinion on the two search engines?
 	\item Would you consider using one of these search engines? 
 \end{itemize}
 
+
 \section{Evaluation Results}
 
-First survey, taken by experts before the experiment, showed that all experts use Google Scholar to find scientific literature. Some experts mentioned that they use IEEE Explorer, ACM digital library and DBLP as well. Half of the respondents use Google Scholar every day (Figure \ref{fig:q1_1_2}).
+\chg{First survey, taken by experts before the experiment,}{The post-experiment questionnaire} showed that all experts use Google Scholar to find scientific literature. Some experts mentioned that they use IEEE Explorer, ACM digital library and DBLP as well. Half of the respondents use Google Scholar every day (Figure \ref{fig:q1_1_2}).\ho{Honestly, I don't think you need diagrams to describe 9 data points and definitely not a piechart. I think you should describe these results in the form of tables. However, if you really want to use diagrams, use different colors for different things.}
 
 \begin{figure}
 \hfill
@@ -650,27 +651,26 @@ First survey, taken by experts before the experiment, showed that all experts us
 \hfill
 \subfigure{\includegraphics[width=7cm]{q1_2}}
 \hfill
-\caption{Results for questions 1 and 2}
+\caption{Results for questions 1 and 2 \ho{this is not a valid caption. A figure should be self-contained and -explained. You don't want you readers to go look for the questions 1 and 2 and get back to the diagram and ... Also you have a typo in the title of the diagram. Also either put all the text inside the piechart or all the results outside. Be consistent.}}
 \label{fig:q1_1_2}
 \end{figure}
 
-Four respondents answered positively on the question if they have ever used Citation Search(Figure \ref{fig:q1_3}). However all of them mentioned that they used Citaion Search only a few times or rare.  
+Four respondents answered positively on the question if they have ever used Citation Search(Figure \ref{fig:q1_3}). However all of them mentioned that they used Citation Search only a few times or rare. \ho{why isn't that result in the diagram???} 
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.8, trim = 0mm 0mm 0mm 0mm,]{q1_3}
-    \caption{results for question 3}
+    \caption{results for question 3 \ho{the same}}
     \label{fig:q1_3}
   \end{figure}
 
 \subsection{Results for Task 1}  
-
-Table \ref{tab:search-time} and Figure \ref{fig:search-time} give results for search time in Task 1. Table \ref{tab:search-time} shows mean and standard deviation values for search time for both search engines. Figure \ref{fig:search-time} illustrates a normal distribution of search time for both search engines. From Table \ref{tab:search-time} and Figure \ref{fig:search-time} we observed that average time to find a reference for a given citation is approximately 2.5 minutes. Experts were slightly faster with finding results using Citation Search. However there is no statistically significant difference between search times of Citation Search and Google Scholar according to ttest with significant level p = 5\%.  
+Table \ref{tab:search-time} and Figure \ref{fig:search-time} give results for search time \ho{What search time?} in Task 1. Table \ref{tab:search-time} shows \ins{the }mean and standard deviation values for search time for both search engines. Figure \ref{fig:search-time} illustrates a normal distribution of search time for both search engines \ho{how many data points are there anyway?}. From Table \ref{tab:search-time} and Figure \ref{fig:search-time} we observed that \ins{the} average time to find a reference for a given citation is approximately 2.5 minutes. Experts were slightly faster with finding results using Citation Search. However\ins{,} there is no statistically significant difference between search time\del{s} of Citation Search and Google Scholar according to t-test with significan\chg{t}{ce} level p = 5\%.  
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 80mm 0mm 60mm,]{search-time}
-    \caption{Normal distribution fit for a search time for both search engines}
+    \caption{Normal distribution fit for a search time for both search engines. \ho{What is this diagram? I don't understand the x- and y-axis. How did you draw it? It seems like it is inferred, isn't it?}}
     \label{fig:search-time}
   \end{figure}
 \begin{table}[ht]
@@ -687,6 +687,7 @@ Table \ref{tab:search-time} and Figure \ref{fig:search-time} give results for se
 \end{center}
 \end{table}
 
+\ho{Tables 4.1, 4.2, 4.3 should be merged in one table.}
 Table \ref{tab:search-query} shows average values and standard deviations for number of queries made by experts to find references. Table \ref{tab:avg-words} shows average values and standard deviations for average number of words in queries. We did not see any significant differences in a number of queries and average number of words in a query between two search engines. From Table \ref{tab:search-query} we concluded that in average experts made 2-3 queries before finding a referred paper. And from Table \ref{tab:avg-words} we concluded that average number of words in a query was 4.
 
  \begin{table}[ht]
@@ -718,11 +719,10 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 
  During the experiments we noticed that experts were more familiar with Google Scholar search interface so participants spent some time exploring Citation Search interface. This could affect search time for Citation Search making it longer.
 
-We also noted that the way search engines present results is important factor of the search engine usability. For example, most of experts admitted that they like that Citation Search engine shows the exact place from the article where match was hound. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where match was found. In this case experts had to open the article and make a manual search over the text.  
+We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of \ins{the} experts admitted that they like that Citation Search engine shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where \ins{the} match was found. In this case experts had to open the article and make a manual search over the text.  
 
-\subsection{Results for Task 1'}
-
-Results for Task 1' are shown on Table \ref{tab:se-any}. Task 1' was given to four experts. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if an expert tried to use both search engines. From Table \ref{tab:se-any} we concluded that all experts found a referred paper using Citation Search. Meantime three of experts tried both search engines and one expert did not use Goggle Scholar at all. 
+\subsection{Results for Task 1$^\prime$}
+Results for Task 1\chg{'}{$^\prime$} are shown on Table \ref{tab:se-any}. Task 1' was given to four experts. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if an expert tried to use both search engines. From Table \ref{tab:se-any} we concluded that all experts found a referred paper using Citation Search. Meantime three of experts tried both search engines and one expert did not use Google Scholar at all. 
 
  \begin{table}[ht]
 \begin{center}
@@ -735,7 +735,7 @@ Results for Task 1' are shown on Table \ref{tab:se-any}. Task 1' was given to fo
  Expert4 & Citation Search & No\\   
  \hline
 \end{tabular}
-\caption{Results for Task 1'. Table shows in what search engine a result was retrieved and if an expert tried to used both search engines during the task.}
+\caption{Results for Task 1'. \ins{The} table shows in what search engine a result was retrieved and if an expert tried to used both search engines during the task.}
 \label{tab:se-any}
 \end{center}
 \end{table}  
@@ -746,16 +746,16 @@ Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summ
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 0mm 0mm 0mm,]{summaries}
-    \caption{Scores from 0 to 10 given by experts in Task 2 to summaries generated with TextRank and citations from Citation Search. }
+    \caption{Scores from 0 to 10 given by experts in Task 2 to \ins{the} summaries generated with TextRank and citations from Citation Search. \ho{What is the y-axis? I guess it is the expert number. You should make it clear. Also where are the other two?}}
     \label{fig:summaries}
   \end{figure}
-Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to ttest with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Experts noted that a summary generated with TextRank tends to consist of too general or not important for understanding a paper sentences. According to experts, summary composed with citations tends to contain sentences more relevant for understanding a paper. However, sometimes sentences rephrase each other not adding new meaning to the summary. Also, compared to TextRank there is no a natural flow in a summary from citations, saying in other words sentences in a summary are not ordered in a story manner.       
+Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to \chg{ttest}{t-test} with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Experts noted that a summary generated with TextRank \ugh{tends to consist of too general or not important for understanding a paper sentences}. According to experts, \ins{the }summary composed with citations tends to contain sentences more relevant for understanding \chg{a}{the summarized} paper. However, \ugh{sometimes sentences rephrase each other not adding new meaning to the summary}. Also, compared to TextRank there is no \del{a} natural flow in \chg{a}{the} summary from citations, \ugh{saying in other words sentences in a summary are not ordered in a story manner}.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that some experts were pleasantly surprised by the capabilities of another type of search engine. All experts answered positively if they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some experts Citation search is more appropriate to search for a related work on the given topic. Others think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts highlighted following feature of Citation Search: possibility to see citations with a context, possibility to search by bibliography entries.  
+Final questionnaire show that \ugh{some}\ho{how many??} experts were \ugh{pleasantly surprised by the capabilities of another type of search engine}. All experts answered positively \ins{when they were asked} \chg{if}{whether} they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some\ho{how many??} experts Citation search is more appropriate to search for a related work on the given topic. Others\ho{how many} think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts \ugh{highlighted following feature of Citation Search}: possibility to see citations with a context, possibility to search by bibliography entries.  
 
 \subsection{Results Summary}
-In our evaluation experiments we compared Citation Search with Google Scholar. During experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, however there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all experts succeeded in the task accomplishment using Citation Search.
+In our evaluation experiments we compared Citation Search with Google Scholar. During \ins{the }experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, \chg{however}{but} there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar \ho{what a strong claim?? Lighten it a little bit}. Indeed, when experts have a possibility to choose between two search engines, all experts succeeded in the task accomplishment using Citation Search.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of Citation Search could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 
