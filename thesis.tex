@@ -29,8 +29,11 @@ Secondly, we developed a citation aggregation feature to create automatic summar
 \chapter{Introduction}
 \label{cha:introduction}
 
-\section{Thesis statement}
-In this work we propose Citation Search -- a novel search engine for scientific literature based on citations. Searching large collections of documents manually is not time efficient. The common way of making search efficient is to index documents in advance. Documents should be parsed before the indexing procedure. Our system is designed to parse scientific articles in \del{a} PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built \chg{the}{an} algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers. Citation Search provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.
+\section{Thesis statement} 
+
+During the writing of a paper, one of the main difficulties is to find the right citation for some claims.
+
+In this work we propose Citation Search -- a novel search engine for scientific literature based on citations. Searching large collections of documents manually is not time efficient. The common way of making search efficient is to index documents in advance. Documents should be parsed before the indexing procedure. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers. Citation Search provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.
 
 \brs{Better, but can still be improved. Thesis statement is very similar to the abstract, and Kent Beck wrote about the following about abstracts: 
 Abstract. The abstract is your four sentence summary of the conclusions of your paper. Its primary purpose is to get your paper into the A pile. Most PC members sort their papers in an A pile and a B pile by reading the abstracts. The A pile papers get smiling interest, the B pile papers are a chore to be slogged through. By keeping your abstract short and clear, you greatly enhance your chances of being in the A pile. I try to have four sentences in my abstract. The first states the problem. The second states why the problem is a problem. The third is my startling sentence. The fourth states the implication of my startling sentence. An abstract for this paper done in this style would be:
@@ -65,6 +68,7 @@ The rest of the paper structured as follows:
 	\item[Document] a broader term, having multiple meanings. In this work we can use a term \emph{document} to refer to a single file, i.e a PDF article. A \emph{document} term can be used to refer to a basic storage unit, i.e  basic storage unit of an Indexes storage or a MongoDB database.
 \end{description}
 
+\chapter{Technical background}
 \section{Typical Web Search Engine} 
 
 Figure \ref{fig:web-search} illustrates a high level architecture of a standard web engine. It consists of three main components:
@@ -88,7 +92,7 @@ Web Crawler is a program that browses the World Wide Web reading the content of 
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
 \section{Inverted Index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in \ugh{IR}. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
@@ -228,7 +232,7 @@ Then it merges the same terms from the same document by folding two identical ad
 So far we assumed that document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents. Simple way to deal with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if there is one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
 
 \section{Retrieving Search Results}
-When a user makes a query it would be good to give her back a result document containing all terms in the query, so that terms are located close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such \ins{a} window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide the complexity querying from the user by introducing \emph{free text query parsers} so a user can make only one query.
+When a user makes a query it would be good to give her back a result document containing all terms in the query, so that terms are located close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such a window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide the complexity querying from the user by introducing \emph{free text query parsers} so a user can make only one query.
 
 \chapter {Related Work}
 \label{cha:related-work}
@@ -277,7 +281,7 @@ The components of Citation Search is shown on Figure \ref{fig:cs}. There are thr
 
   \begin{figure}[htp]
     \centering
-    \includegraphics[scale=0.4, trim = 0mm 40mm 0mm 20mm]{cs-components}
+    \includegraphics[scale=0.38, trim = 0mm 65mm 0mm 20mm]{cs-components}
     \caption{Component diagram of Citation Search.}
     \label{fig:cs}
   \end{figure}
@@ -498,28 +502,6 @@ Every time we send a new citation with a paper title to MongoDB, we check if a d
 \end{lstlisting}
 \end{minipage}
 
-\subsection{Challenges}
-
-One of the challenges we encounter during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
-
-  \begin{figure}[htp]
-    \centering
-    \includegraphics[scale=0.5, trim = 0mm 150mm 0mm 10mm]{no-ref-tag}
-    \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to bibliography composed from authors' names making it hard to distinguish a citation from any other sentences.} 
-    \label{fig:no-ref-tag}
-  \end{figure} 
-
-Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
-
-  \begin{figure}[htp]
-    \centering
-    \includegraphics[scale=0.5, trim = 0mm 120mm 0mm 10mm]{code-snippet}
-    \caption{An example of the code snippet from the article ``Modular Verification of Higher-Order Methods with Mandatory Calls Specified by Model Programs'' authored by Steve M. Shaner et al. The code snippet is wrongly considered as a citation and is matched to the first bibliographic entry.} 
-    \label{fig:code-snippet}
-  \end{figure}
-
-\brs{so, how did you address these challenges?}
-
 \section{Indexer}
 We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities\footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public service that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
@@ -583,45 +565,102 @@ Another feature provided by citation Search is the possibility to search by bibl
     \label{fig:cs-search-bibl}
   \end{figure}
 
-\chapter {Evaluation Experiments}
+\chapter {Evaluation}
 \label{cha:experiments}
-\ho{Call this chapter just ``Evaluation"}
-To measure \ins{the} effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from \ins{a }different \ins{domain }than Computer Science\del{ domain}, \chg{for example,}{like} Biology or Physics.  Thus\ins{,} all experiments were conducted with Google Scholar and Citation Search Engine. 
+To measure the effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and Citation Search Engine. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
 \ho{I guess you were too short on explaining the choices. You need to dedicate a section just to explain the trial runs of the experiments and their results. What were the other tools? why did you choose them? what is the outcome of the trial runs? Why did you decide what you decided? ...}
 
 \section{Experiment Setup}
-\ho{Usually, the experimental setup is composed of subjects, objects, process, and tools. It would be better if you can have those as subsections as follows: Data and Tools, Participants, Process. In each subsection you describe the characteristics of each.}
-For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages.  Besides we intentionally looked for experts in these domains that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) \del{voluntarily agreed to} participate\ins{d} in \ins{the} experiments. Participants were split into two groups. Both groups were asked to perform the same tasks\chg{ h}{. H}owever the second group was asked to do one more additional task.  Time given to complete each task was limited to 5 minutes. All tasks will be described below. Each experiment was setup to last for approximately 45 minutes.  During the experiment all participants were provided with a laptop and their actions was recorded with a screen casting application.
+\subsection{Data and Tools}
+For evaluation experiments we used dataset of scientific articles collected by SCG members over decades. Collection contains for about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages.  Dataset of Google Scholar is very large compared to our dataset, so we reduced searching space to the domain of Software Engineering and Programming Languages. During the experiment all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
+\subsection{Participants}
+We intentionally looked for experts in the domain of Software Engineering and Programming Languages that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) participated in experiments ( see Table \ref{tab:experts}).
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{  c | c | c | c } 
+ \hline
+ \textbf{ID} & \textbf{Position} & \textbf{Domains of Interest} &\textbf{Years} \\ \hline
+ P1 & Professor researcher & Software Engineering and Programming Languages & 35\\
+ P2 & PostDoc researcher & Software and Ecosystem Analysis & 11  \\ 
+ P3 & PhD candidate & Software Quality & 2 \\   
+ P4 & PhD candidate & Ecosystem Analysis & 2 \\
+ P5 & PhD candidate & Dynamic Analysis & 2 \\  
+ P6 & PhD candidate & Software Architecture & 3 \\
+ P7 & PhD candidate & Development Tools & 3 \\
+ P8 & PhD candidate & Parsing & 3 \\ 
+ P9 & PhD candidate & Software Visualization & 1 \\ 
+ \hline  
+\end{tabular}
+\caption{The table describes experts participated in the experiments, their domain of interests and academic experience in years.}
+\label{tab:experts}
+\end{center}
+\end{table}
+\subsection{Process}
+Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks will be described below.  
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{  c | c | c  } 
+ \hline
+ \textbf{Groups} & \textbf{Participants} & \textbf{Tasks to perform} \\ \hline
+ Group1 & P1, P3, P4, P5, P6 & Task1, Task2\\
+ Group2 & P2, P7, P8, P9 & Task1, Task1{$^\prime$}, Task2\\  
+ \hline  
+\end{tabular}
+\caption{Devision of participants by groups and tasks given to each group.}
+\label{tab:groups}
+\end{center}
+\end{table}
 
-\paragraph{Task1} \ho{use present tense to describe the experiments and tasks} As a first task\ins{,} an expert was asked to find a reference to a citation from one of his articles written in the past using the particular search engine.  Figure\ho{???} illustrates one \del{of a }citation from \chg{the}{a} paper given to an expert. An expert can read the cited sentence as well as the context of this sentence \chg{however}{but} he is not aware of referred source paper. The task is to find a referred paper that proves \ins{the }given citation.
+Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce to: 1) user interfaces of both Citation Search and Google Scholar, 2) standard syntax query common to both search engines. Before the beginning of a new task an oral instructions were provided to a participant to explain the task. 
 
-In overall, an expert was given 4 different citations from one of his papers and asked to find references using Google Scholar or Citation Search alternately.  Every time the order of using search engines was changed. Before the experiment, an article with a citation was removed from our dataset so an expert could not find an exact match using Citation Search.
+\subsection{Tasks}
+\paragraph{Task1} As a first task, a participant was asked to find a reference to a citation from one of his articles written in the past using the particular search engine. A test subject can read the cited sentence as well as the context of this sentence but he is not aware of referred source paper. The task is to find a referred paper that proves the given citation. We use following procedure to conduct Task1:
+\\Before the experiment.
+\begin{enumerate}
+	\item We look for a paper published by the test subject.
+	\item We extract four citations from that paper.
+	\item We delete extracted citations from Citation Search so the test subject could not find an exact match using Citation Search.
+\end{enumerate}
+During the experiment.
+\begin{enumerate}
+	\item We let the test subject read one cited sentence as well as the context of this sentence.
+	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (Citation Search or Google Scholar).
+	\item We repeat steps for four citations every time changing the using search engine. 
+\end{enumerate}
 
-During the execution of tasks \chg{following observations were recorded:}{, we recorded the following:}
+During the execution of tasks, we observe the following:
 \begin{itemize}[noitemsep]
-	\item \del{Citation and search engine name}
-	\item Search time
-	\item Number of queries made
-	\item Number of words in a query
-	\item Expert comments
+	\item \emph{Search time}, time spent by participant to find a paper supporting the given cited text. 
+	\item \emph{Number of queries}, the amount of queries made by participant to find a reference.
+	\item \emph{Number of words in each query}, numbers of words in each query made by the test subject while search.
+	\item \emph{Expert comments}, any comments made by the test subject during the task execution.
 \end{itemize}  
 
-\ho{the explanation of the task is so convoluted. Please try to describe the task as simple algorithmic steps. So you do like this: First we looked for a paper published by the test subject. Second we extracted four citations form that paper ....and so on.}
+\paragraph{Task1{$^\prime$}} Task1{$^\prime$} was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task1 a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant receive only one citation for this task. As for the previous task the citation was removed from Citation Search before the experiment. 
 
-\paragraph{Task1\chg{'}{$^\prime$}} This task was given to the second group as an extra task \ho{why? and why not also to the first group? How many in the first group and how many in the second group? Put these in the experimental setup section}. An expert was also given a citation to find a reference to \del{it} as in Task 1\chg{. B}{, b}ut this time a search engine was not specified and a citation was taken from \chg{the}{a} paper not authored by expert. \ho{You use the word `expert' quite a lot. Try to use the word `subject' or `participant' instead}
+During Task1{$^\prime$,} we observed which search engine was used to find a reference. 
 
-Every expert received only one citation for this task. As for the previous task the paper containing citation was removed from Citation Search dataset 
+\paragraph{Task2} In Task2 we asked participants to compare two summaries generated with Citation Search and TextRank algorithm \cite{mihalcea2004textrank}. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub \footnote{\url{https://github.com/davidadamojr/TextRank}}.We use following procedure to conduct Task1:
+\\Before the experiment.
+\begin{enumerate}
+	\item We asked every participant in advance to provide a paper that she thinks is important in her research field.
+	\item We built two summaries: . We limited the size of summaries to the size of an abstract of a paper, which is approximately 9-10 sentences. 
+\end{enumerate}
+During the experiment.
+\begin{enumerate}
+	\item We let the test subject read two summaries.
+	\item We ask test subjects to access quality of summaries by giving a score from 0 to 10.
+\end{enumerate}
 
-During Task1\chg{’}{$^\prime$, } we observed which search engine was used to find a reference.
-
-\paragraph{Task2} For this task we asked every expert in advance to provide \chg{with her favorite}{a} paper that she thinks is important in her research field. We then built two automatic summaries of this paper. One summary was built using \chg{state of the art}{a state-of-the-art algorithm called} TextRank \del{algorithm} \cite{mihalcea2004textrank} \ho{how can you say state of the art and the book is published in 2004??}. \ins{The} TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub \ho{provide a reference or a url as a footnote}.  Another summary was built using citations to the paper collected by Citation Search. \chg{If}{While} TextRank provides \chg{with the}{an} extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
+To conduct Task2 we asked every expert in advance to provide a paper that she thinks is important in her research field. We then built two automatic summaries of that paper. One summary was built using TextRank \cite{mihalcea2004textrank}. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We used Python implementation of this algorithm that can be found on GitHub \footnote{\url{https://github.com/davidadamojr/TextRank}}.  Another summary was built using citations to the paper collected by Citation Search. While TextRank provides an extractive summary, Citation Search collects external opinions about the paper. We limited the size of summaries to the abstract size that is approximately 9-10 sentences. 
 
 As a task an expert was given two summaries and asked to give a score from 0 to 10. The score should reflect how summaries are good in describing a paper.
 \ho{I got to say at this point that the explanation of the experimental setup is not optimal. You have to organise your thoughts a little bit better and think of the reader as a complete ignorant person who needs careful taking by the hand. It seems to me that you sat down and started writing whatever jumps to your mind regarding the experimental setup. It is better if you organise your ideas and structure them on a sheet of paper first. Then, you write the skeleton of the section (subsections and sub-subsections), then start filling the space with explanations. I am just guessing that I will be saying the same about the later sections. Let's see ;)}
-\section{Questionnaires before and after each experiment \ho{They are called Pre-experiment Questionnaire and Post-experiment Questionnaire}}
+
+\section{Pre-experiment Questionnaire and Post-experiment Questionnaire}
 
 Before the beginning of the experiment each expert was asked to fill a form with following questions:
 \begin{itemize}[noitemsep]
@@ -752,7 +791,9 @@ Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summ
 Almost all experts except one gave better score to the summary composed by citations from Citation Search. According to \chg{ttest}{t-test} with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Experts noted that a summary generated with TextRank \ugh{tends to consist of too general or not important for understanding a paper sentences}. According to experts, \ins{the }summary composed with citations tends to contain sentences more relevant for understanding \chg{a}{the summarized} paper. However, \ugh{sometimes sentences rephrase each other not adding new meaning to the summary}. Also, compared to TextRank there is no \del{a} natural flow in \chg{a}{the} summary from citations, \ugh{saying in other words sentences in a summary are not ordered in a story manner}.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that \ugh{some}\ho{how many??} experts were \ugh{pleasantly surprised by the capabilities of another type of search engine}. All experts answered positively \ins{when they were asked} \chg{if}{whether} they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some\ho{how many??} experts Citation search is more appropriate to search for a related work on the given topic. Others\ho{how many} think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts \ugh{highlighted following feature of Citation Search}: possibility to see citations with a context, possibility to search by bibliography entries.  
+Final questionnaire show that \ugh{some}\ho{how many??} experts were \ugh{pleasantly surprised by the capabilities of another type of search engine}. All experts answered positively \ins{when they were asked} \chg{if}{whether} they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some\ho{how many??} experts Citation search is more appropriate to search for a related work on the given topic. Others\ho{how many} think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts \ugh{highlighted following feature of Citation Search}: possibility to see citations with a context, possibility to search by bibliography entries.
+
+\subsection{User Feedback}  
 
 \subsection{Results Summary}
 In our evaluation experiments we compared Citation Search with Google Scholar. During \ins{the }experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, \chg{however}{but} there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar \ho{what a strong claim?? Lighten it a little bit}. Indeed, when experts have a possibility to choose between two search engines, all experts succeeded in the task accomplishment using Citation Search.
@@ -766,6 +807,31 @@ In this work we address the problem of IR for scientific articles. We believe th
 We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how quickly can users find results using both search engines. Our results showed that Citation Search performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of Citation Search to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that Citation Search gives better description of scientific articles according to expert's opinion.  
 
 Nowadays when the amount of information grows fast, efficient IR systems present particular interest. Our system is different from typical IR systems that performs full-text indexing. Instead we index citations with the intent to reduce search space at the same time making it more effective.          
+
+\section {Future Work}
+\label{cha:future-work}
+
+\subsection{Parser Enhancement}
+One of the challenges we encounter during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5, trim = 0mm 150mm 0mm 10mm]{no-ref-tag}
+    \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to bibliography composed from authors' names making it hard to distinguish a citation from any other sentences.} 
+    \label{fig:no-ref-tag}
+  \end{figure} 
+
+Another challenge in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
+
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.5, trim = 0mm 120mm 0mm 10mm]{code-snippet}
+    \caption{An example of the code snippet from the article ``Modular Verification of Higher-Order Methods with Mandatory Calls Specified by Model Programs'' authored by Steve M. Shaner et al. The code snippet is wrongly considered as a citation and is matched to the first bibliographic entry.} 
+    \label{fig:code-snippet}
+  \end{figure}
+
+\subsection{UI enhancement}
+\subsection{Feature extensions}
 
 %END Doc
 %-------------------------------------------------------
