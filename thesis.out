@@ -27,24 +27,27 @@
 \BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Participants}{section.5.1}% 27
 \BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Process}{section.5.1}% 28
 \BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Tasks}{section.5.1}% 29
-\BOOKMARK [1][-]{section.5.2}{5.2 Pre-experiment Questionnaire and Post-experiment Questionnaire}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.3}{5.3 Evaluation Results}{chapter.5}% 31
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Results for Task 1}{section.5.3}% 32
-\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Results for Task 1}{section.5.3}% 33
-\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3 Results for Task 2}{section.5.3}% 34
-\BOOKMARK [2][-]{subsection.5.3.4}{5.3.4 Final Questionnaire}{section.5.3}% 35
-\BOOKMARK [2][-]{subsection.5.3.5}{5.3.5 User Feedback}{section.5.3}% 36
-\BOOKMARK [2][-]{subsection.5.3.6}{5.3.6 Results Summary}{section.5.3}% 37
-\BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 38
-\BOOKMARK [1][-]{section.6.1}{6.1 Future Work}{chapter.6}% 39
-\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Parser Enhancement}{section.6.1}% 40
-\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 UI enhancement}{section.6.1}% 41
-\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Feature extensions}{section.6.1}% 42
-\BOOKMARK [0][-]{appendix.A}{A User Guide for Citation Search Deployment}{}% 43
-\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 44
-\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 45
-\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr Search Features}{section.A.1}% 46
-\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 47
-\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 48
-\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 49
-\BOOKMARK [1][-]{section.A.4}{A.4 Search Interface Deployment}{appendix.A}% 50
+\BOOKMARK [1][-]{section.5.2}{5.2 Questionnaires}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Pre-experiment Questionnaire}{section.5.2}% 31
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Debriefing interview}{section.5.2}% 32
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Post-experiment Questionnaire}{section.5.2}% 33
+\BOOKMARK [1][-]{section.5.3}{5.3 Evaluation Results}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Results for Task 1}{section.5.3}% 35
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Results for Task 1}{section.5.3}% 36
+\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3 Results for Task 2}{section.5.3}% 37
+\BOOKMARK [2][-]{subsection.5.3.4}{5.3.4 Final Questionnaire}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.5}{5.3.5 Discussions and User Feedback}{section.5.3}% 39
+\BOOKMARK [2][-]{subsection.5.3.6}{5.3.6 Results Summary}{section.5.3}% 40
+\BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 41
+\BOOKMARK [1][-]{section.6.1}{6.1 Future Work}{chapter.6}% 42
+\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Parser Enhancement}{section.6.1}% 43
+\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 UI enhancement}{section.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Feature extensions}{section.6.1}% 45
+\BOOKMARK [0][-]{appendix.A}{A User Guide for Citation Search Deployment}{}% 46
+\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 47
+\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 48
+\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr Search Features}{section.A.1}% 49
+\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 50
+\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 51
+\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 52
+\BOOKMARK [1][-]{section.A.4}{A.4 Search Interface Deployment}{appendix.A}% 53
