@@ -2,61 +2,61 @@
 \contentsline {section}{\numberline {1.1}Thesis statement}{4}{section.1.1}
 \contentsline {section}{\numberline {1.2}Contributions}{5}{section.1.2}
 \contentsline {section}{\numberline {1.3}Outline}{5}{section.1.3}
-\contentsline {section}{\numberline {1.4}Glossary of Terms}{7}{section.1.4}
-\contentsline {chapter}{\numberline {2}Technical background}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Typical Web Search Engine}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Inverted Index}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}Dynamic Indexing}{12}{section.2.3}
-\contentsline {section}{\numberline {2.4}Retrieving Search Results}{14}{section.2.4}
-\contentsline {chapter}{\numberline {3}Related Work}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Citations In Scientific Publications}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Popular Academic Search Engines}{16}{section.3.2}
-\contentsline {paragraph}{CiteSeer\textsuperscript {x}}{16}{section*.3}
-\contentsline {chapter}{\numberline {4}Citation Search Engine}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}System Overview}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Parser}{19}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}PDF Processing}{19}{subsection.4.2.1}
-\contentsline {paragraph}{Processing bibliographic links}{24}{section*.4}
-\contentsline {subsection}{\numberline {4.2.2}Document Publishing}{25}{subsection.4.2.2}
-\contentsline {paragraph}{Publishing documents to Solr}{25}{section*.5}
-\contentsline {paragraph}{Publishing documents to MongoDB}{26}{section*.6}
-\contentsline {section}{\numberline {4.3}Indexer}{27}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{28}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Web Search Interface}{28}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Citation Search Main Page}{30}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{32}{subsection.4.4.2}
-\contentsline {chapter}{\numberline {5}Evaluation}{34}{chapter.5}
-\contentsline {section}{\numberline {5.1}Experiment Setup}{35}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Data and Tools}{35}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Participants}{35}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Process}{35}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Tasks}{36}{subsection.5.1.4}
-\contentsline {paragraph}{Task1}{36}{section*.7}
-\contentsline {paragraph}{Task1{$^\prime $}}{37}{section*.8}
-\contentsline {paragraph}{Task2}{37}{section*.9}
-\contentsline {section}{\numberline {5.2}Questionnaires}{38}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Pre-experiment Questionnaire}{38}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Debriefing interview}{38}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Post-experiment Questionnaire}{38}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Evaluation Results}{38}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Results for Task 1}{39}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Results for Task 1$^\prime $}{41}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{41}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Final Questionnaire}{42}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Discussions and User Feedback}{43}{subsection.5.3.5}
-\contentsline {subsection}{\numberline {5.3.6}Results Summary}{43}{subsection.5.3.6}
-\contentsline {chapter}{\numberline {6}Conclusion}{44}{chapter.6}
-\contentsline {section}{\numberline {6.1}Future Work}{45}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parser Enhancement}{45}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}UI enhancement}{46}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Feature extensions}{46}{subsection.6.1.3}
-\contentsline {chapter}{\numberline {A}User Guide for Citation Search Deployment}{50}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{50}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{51}{subsection.A.1.1}
-\contentsline {paragraph}{Defining Solr schema}{51}{section*.11}
-\contentsline {paragraph}{Configuring Solr Parameters}{53}{section*.12}
-\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{53}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{54}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{54}{subsection.A.2.1}
-\contentsline {section}{\numberline {A.3}Running the parser}{55}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search Interface Deployment}{56}{section.A.4}
+\contentsline {section}{\numberline {1.4}Glossary of Terms}{6}{section.1.4}
+\contentsline {chapter}{\numberline {2}Technical background}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Typical Web Search Engine}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Inverted Index}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}Dynamic Indexing}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Retrieving Search Results}{13}{section.2.4}
+\contentsline {chapter}{\numberline {3}Related Work}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Citations In Scientific Publications}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Popular Academic Search Engines}{15}{section.3.2}
+\contentsline {paragraph}{CiteSeer\textsuperscript {x}}{15}{section*.3}
+\contentsline {chapter}{\numberline {4}Citation Search Engine}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}System Overview}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Parser}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}PDF Processing}{18}{subsection.4.2.1}
+\contentsline {paragraph}{Processing bibliographic links}{23}{section*.4}
+\contentsline {subsection}{\numberline {4.2.2}Document Publishing}{24}{subsection.4.2.2}
+\contentsline {paragraph}{Publishing documents to Solr}{24}{section*.5}
+\contentsline {paragraph}{Publishing documents to MongoDB}{25}{section*.6}
+\contentsline {section}{\numberline {4.3}Indexer}{26}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{27}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Web Search Interface}{27}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Citation Search Main Page}{29}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{31}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {5}Evaluation}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Experiment Setup}{34}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Data and Tools}{34}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Participants}{34}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Process}{34}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Tasks}{35}{subsection.5.1.4}
+\contentsline {paragraph}{Task1}{35}{section*.7}
+\contentsline {paragraph}{Task1{$^\prime $}}{36}{section*.8}
+\contentsline {paragraph}{Task2}{36}{section*.9}
+\contentsline {section}{\numberline {5.2}Questionnaires}{37}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Pre-experiment Questionnaire}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Debriefing interview}{37}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Post-experiment Questionnaire}{37}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Evaluation Results}{37}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Results for Task 1}{38}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Results for Task 1$^\prime $}{40}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{40}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Final Questionnaire}{41}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Discussions and User Feedback}{42}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Results Summary}{42}{subsection.5.3.6}
+\contentsline {chapter}{\numberline {6}Conclusion}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{44}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parser Enhancement}{44}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}UI enhancement}{45}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Feature extensions}{45}{subsection.6.1.3}
+\contentsline {chapter}{\numberline {A}User Guide for Citation Search Deployment}{49}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{49}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{50}{subsection.A.1.1}
+\contentsline {paragraph}{Defining Solr schema}{50}{section*.11}
+\contentsline {paragraph}{Configuring Solr Parameters}{52}{section*.12}
+\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{52}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{53}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{53}{subsection.A.2.1}
+\contentsline {section}{\numberline {A.3}Running the parser}{54}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search Interface Deployment}{55}{section.A.4}
