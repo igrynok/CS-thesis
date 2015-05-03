@@ -816,28 +816,25 @@ Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summ
     \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from Citation Search.}
     \label{fig:summaries}
   \end{figure}
-Almost all participants except one (6 participants) gave better score to the summary composed by citations from Citation Search. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, \ugh{sometimes sentences rephrase each other not adding new meaning to the summary}. Also, compared to TextRank there is no \del{a} natural flow in \chg{a}{the} summary from citations, \ugh{saying in other words sentences in a summary are not ordered in a story manner}.       
+Almost all participants except one (6 participants) gave better score to the summary composed by citations from Citation Search. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that \ugh{some}\ho{how many??} experts were \ugh{pleasantly surprised by the capabilities of another type of search engine}. All experts answered positively \ins{when they were asked} \chg{if}{whether} they are willing to continue to use Citation Search. Some experts specified that they will use Google Scholar and Citation Search for different purposes. According to some\ho{how many??} experts Citation search is more appropriate to search for a related work on the given topic. Others\ho{how many} think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Experts \ugh{highlighted following feature of Citation Search}: possibility to see citations with a context, possibility to search by bibliography entries.
-
-\subsection{Discussions and User Feedback}  
+Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use Citation Search. Some participants specified that they will use Google Scholar and Citation Search for different purposes. According to opinion of two participants Citation search is more appropriate to search for a related work on the given topic. Others (5 participants) think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Participants admitted usefulness of following features of Citation Search: possibility to see citations with a context, possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
-In our evaluation experiments we compared Citation Search with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be a good alternative to Google Scholar \ho{what a strong claim?? Lighten it a little bit}. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using Citation Search.
+In our evaluation experiments we compared Citation Search with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using Citation Search.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of Citation Search could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 
 \chapter {Conclusion}
 \label{cha:conclusion}
-In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented Citation Search engine which automatically extracts and indexes citations from scientific articles in a PDF format. In general, a citation composed of two parts: a cited text in the body of a document and a bibliographic link in a reference section of a document. In Citation Search engine we index both parts separately allowing user to make a choice between different indexed collections. One more feature of Citation Search is the ability to aggregate citations referred to the same source article. This feature could be used to build automatic summaries of scientific articles.
+In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented Citation Search engine which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers.
 
-We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how quickly can users find results using both search engines. Our results showed that Citation Search performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of Citation Search to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that Citation Search gives better description of scientific articles according to expert's opinion.        
+We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that Citation Search performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of Citation Search to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that Citation Search gives better description of scientific articles according to expert's opinion.        
 
 \section {Future Work}
 \label{cha:future-work}
 
-\subsection{Parser Enhancement}
 One of the challenges we encounter during parsing is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
 
   \begin{figure}[htp]
@@ -855,13 +852,8 @@ Another challenge in using square brackets as citation identifiers arises when s
     \caption{An example of the code snippet from the article ``Modular Verification of Higher-Order Methods with Mandatory Calls Specified by Model Programs'' authored by Steve M. Shaner et al. The code snippet is wrongly considered as a citation and is matched to the first bibliographic entry.} 
     \label{fig:code-snippet}
   \end{figure}
-
-\subsection{UI enhancement}
--show title of a paper with the citaion
-\subsection{Feature extensions}
--use to generate summaries
--craw paper from open sources in Web 
--automatic citaion aggregation for any paper in Web
+  
+During the debriefing interviews two participants admitted that they would like to view a title of an article from witch a citation was extracted. A title of an article could be extracted using the information about the font of the text. Such feature can be implemented using PDF parsers that provide information about the font of the extracted text.  
 
 %END Doc
 %-------------------------------------------------------
