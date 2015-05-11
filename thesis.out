@@ -11,7 +11,7 @@
 \BOOKMARK [0][-]{chapter.3}{3 Related Work}{}% 11
 \BOOKMARK [1][-]{section.3.1}{3.1 Citations In Scientific Publications}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{3.2 Popular Academic Search Engines}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{4 Citation Search Engine}{}% 14
+\BOOKMARK [0][-]{chapter.4}{4 CiteWise}{}% 14
 \BOOKMARK [1][-]{section.4.1}{4.1 System Overview}{chapter.4}% 15
 \BOOKMARK [1][-]{section.4.2}{4.2 Parser}{chapter.4}% 16
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 PDF Processing}{section.4.2}% 17
@@ -19,7 +19,7 @@
 \BOOKMARK [1][-]{section.4.3}{4.3 Indexer}{chapter.4}% 19
 \BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Solr Ranking Model}{section.4.3}% 20
 \BOOKMARK [1][-]{section.4.4}{4.4 Web Search Interface}{chapter.4}% 21
-\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Citation Search Main Page}{section.4.4}% 22
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 CiteWise Main Page}{section.4.4}% 22
 \BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Search by Bibliography Page}{section.4.4}% 23
 \BOOKMARK [0][-]{chapter.5}{5 Evaluation}{}% 24
 \BOOKMARK [1][-]{section.5.1}{5.1 Experiment Setup}{chapter.5}% 25
@@ -39,7 +39,7 @@
 \BOOKMARK [2][-]{subsection.5.3.5}{5.3.5 Results Summary}{section.5.3}% 39
 \BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 40
 \BOOKMARK [1][-]{section.6.1}{6.1 Future Work}{chapter.6}% 41
-\BOOKMARK [0][-]{appendix.A}{A User Guide for Citation Search Deployment}{}% 42
+\BOOKMARK [0][-]{appendix.A}{A User Guide for CiteWise Deployment}{}% 42
 \BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 43
 \BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 44
 \BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr Search Features}{section.A.1}% 45

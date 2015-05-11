@@ -10,10 +10,10 @@
 \noindent 
 Nowadays the number of documents in the World Wide Web grows at extremely fast rate\footnote{\url{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}}. Tools that can facilitate information retrieval (IR) present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate IR. Particularly, we target an IR task for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating new scientific work.
 
-We propose \emph{Citation Search} -- a software system that automatically extracts, indexes and aggregates citations from collections of scientific articles in a PDF format. Our system proposes a search interface to discover relevant scientific results based on a statement query. Also search interface of Citation Search allows to search for citations based on meta-information queries.
+We propose \emph{CiteWise} -- a software system that automatically extracts, indexes and aggregates citations from collections of scientific articles in a PDF format. Our system proposes a search interface to discover relevant scientific results based on a statement query. Also search interface of CiteWise allows to search for citations based on meta-information queries.
 
-We evaluated searching capabilities of our system by conducting user evaluation experiments that compare it with alternative approaches. In the first set of experiments, we measured the efficiency of our system, i.e. how fast users can find relevant results in comparison with \emph{Google Scholar}. We found that Citation Search performs equally well as Google Scholar.
-Secondly, we developed a citation aggregation feature to create automatic summaries of scientific articles and asked domain experts to evaluate summaries created by Citation Search and TextRank algorithms. We found that Citation Search outperforms TextRank algorithm in generating article summaries.  
+We evaluated searching capabilities of our system by conducting user evaluation experiments that compare it with alternative approaches. In the first set of experiments, we measured the efficiency of our system, i.e. how fast users can find relevant results in comparison with \emph{Google Scholar}. We found that CiteWise performs equally well as Google Scholar.
+Secondly, we developed a citation aggregation feature to create automatic summaries of scientific articles and asked domain experts to evaluate summaries created by CiteWise and TextRank algorithms. We found that CiteWise outperforms TextRank algorithm in generating article summaries.  
 
 \end{quotation}
 \clearpage
@@ -42,7 +42,7 @@ This happens due to the following facts that they do not take document structure
 A more plausible option is to look at what other people used in their papers as references for their claims.
 In other words, if we have a previous paper using certain claims, we can see what citations the authors used to support those claims.
 
-We address the described problem by introducing Citation Search -- a novel search engine for scientific literature based on citations. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers. Citation Search provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.
+We address the described problem by introducing CiteWise -- a novel search engine for scientific literature based on citations. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers. CiteWise provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.
 
 %\brs{Better, but can still be improved. Thesis statement is very similar to the abstract, and Kent Beck wrote about the following about abstracts: 
 %Abstract. The abstract is your four sentence summary of the conclusions of your paper. Its primary purpose is to get your paper into the A pile. Most PC members sort their papers in an A pile and a B pile by reading the abstracts. The A pile papers get smiling interest, the B pile papers are a chore to be slogged through. By keeping your abstract short and clear, you greatly enhance your chances of being in the A pile. I try to have four sentences in my abstract. The first states the problem. The second states why the problem is a problem. The third is my startling sentence. The fourth states the implication of my startling sentence. An abstract for this paper done in this style would be:
@@ -63,7 +63,7 @@ The rest of the paper structured as follows:
 \begin{description}
 	\item[Chapter \ref{cha:introduction}] In chapter \ref{cha:introduction} we give a high overview of the architecture of a typical web search engine. We describe the main steps to construct an inverted index.
 	\item[Chapter \ref{cha:related-work}] In chapter \ref{cha:related-work} we survey the research related to citations in scientific publications. We overview two popular academic search engines: Google Scholar and CiteSeer.
-	\item[Chapter \ref{cha:CS}] In chapter \ref{cha:CS} we describe the design of Citation Search Engine. We first show overall architecture of the proposed system and then show details of implementation of each component. 
+	\item[Chapter \ref{cha:CS}] In chapter \ref{cha:CS} we describe the design of CiteWise. We first show overall architecture of the proposed system and then show details of implementation of each component. 
 	\item[Chapter \ref{cha:experiments}] In chapter \ref{cha:experiments} we describe user evaluation experiments and analyze the results.
 	\item[Chapter \ref{cha:conclusion}] In chapter \ref{cha:conclusion} we conclude the work and describe potential future work. 
 \end{description}
@@ -273,7 +273,7 @@ Lawrence et al. automated this process in CiteSeer\textsuperscript{x} \footnote{
 CiteSeer\textsuperscript{x} is built on top of the the open source infrastructure SeerSuite \footnote{SeerSuite, \url{http://citeseerx.sourceforge.net/}} and uses Apache Solr \footnote{Apache Solr. \url{http://lucene.apache.org/solr/}} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such as ParseCit \cite{Councill08parscit:an}. 
 CiteSeer\textsuperscript{x} currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. 
 
-CiteSeer\textsuperscript{x} indexes citations more precisely bibliographic links or referrers while in Citation Search we intend to index not only bibliographic links but also cited text in a body of a document. If by indexing bibliographic links CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in Citation Search we focus on simplifying retrieval of documents containing a text of interest.  
+CiteSeer\textsuperscript{x} indexes citations more precisely bibliographic links or referrers while in CiteWise we intend to index not only bibliographic links but also cited text in a body of a document. If by indexing bibliographic links CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in CiteWise we focus on simplifying retrieval of documents containing a text of interest.  
 \\ \\
 \textbf{Google Scholar} 
 Google Scholar is a freely accessible web search engine that makes full-text or metadata indexing of scientific literature \footnote{Google Scholar, \url{http://scholar.google.ch/}}. Besides the simple search Google Scholar proposes following features\chg{.}{:} Unique ranking algorithm, an algorithm that ranks documents ``the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature'' \footnote{\url{https://scholar.google.com/scholar/about.html}}\chg{.}{;}"Cited by" feature allows to view abstracts of articles citing the given article\chg{.}{;} "Related articles" feature shows the list of closely related articles. It is also possible to filter articles by author name or published date.
@@ -281,17 +281,17 @@ Google Scholar contains roughly 160 million of documents by May 2014 \cite{ordun
 
 %In which we understand what the problem is in detail.
 
-\chapter {Citation Search Engine}
+\chapter {CiteWise}
 \label{cha:CS}
 
 \section{System Overview}
 
-The components of Citation Search is shown on Figure \ref{fig:cs}. There are three main operations performed by Citation Search Engine: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referred to the same article. 
+The components of CiteWise is shown on Figure \ref{fig:cs}. There are three main operations performed by CiteWise: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referred to the same article. 
 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.38, trim = 0mm 65mm 0mm 20mm]{cs-components}
-    \caption{Component diagram of Citation Search.}
+    \caption{Component diagram of CiteWise.}
     \label{fig:cs}
   \end{figure}
 
@@ -301,7 +301,7 @@ The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
-    \caption{Activity diagram of Citation Search.}
+    \caption{Activity diagram of CiteWise.}
     \label{fig:cs-activity-diagram}
   \end{figure}
 
@@ -545,42 +545,40 @@ Web Search interface is a Java web application running in a servlet container. F
     \label{fig:mvc}
   \end{figure}  
 
-\subsection{Citation Search Main Page}
+\subsection{CiteWise Main Page}
 
-The main page of Citation Search presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user see a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available online then user can open it using a link ``See pdf on SCG resources''.  
+The main page of CiteWise presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user see a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available online then user can open it using a link ``See pdf on SCG resources''.  
 
   \begin{figure}[htp]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-main-page}
-    \caption{A screenshot of the main page of the Citation Search interface showing results for a statement query ``software testing is time-consuming''}
+    \caption{A screenshot of the main page of the CiteWise interface showing results for a statement query ``software testing is time-consuming''}
     \label{fig:cs-main-page}
   \end{figure}
 
- If a reference has a title recognizable by Citation Search then a user can see all citations referred to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
+ If a reference has a title recognizable by CiteWise then a user can see all citations referred to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
 
    \begin{figure}[htp]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-view-citations}
-    \caption{A screenshot of the main page of a Citation Search interface showing citations referred to the article with the recognizable title ``Software maintenance and evolution: a roadmap.''}
+    \caption{A screenshot of the main page of a CiteWise interface showing citations referred to the article with the recognizable title ``Software maintenance and evolution: a roadmap.''}
     \label{fig:cs-view-citations}
   \end{figure}
 
- User can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the Citation Search interface and in the Appendix of this article.    
+ User can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the CiteWise interface and in the Appendix of this article.    
 
 \subsection{Search by Bibliography Page}
-Another feature provided by citation Search is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user see a list of bibliographic entries with matched author's name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
+Another feature provided by CiteWise is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user see a list of bibliographic entries with matched author's name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
 
    \begin{figure}[htp]
     \includegraphics[scale=0.4]{cs-search-bibl}
-    \caption{A screenshot of the `search by bibliography' page of a Citation Search interface illustrating a search for citations based on a meta-information query. Here a user searches for citations of scientific articles authored by Mircea Lungu.}
+    \caption{A screenshot of the `search by bibliography' page of a CiteWise interface illustrating a search for citations based on a meta-information query. Here a user searches for citations of scientific articles authored by Mircea Lungu.}
     \label{fig:cs-search-bibl}
   \end{figure}
 
 \chapter {Evaluation}
 \label{cha:experiments}
-To measure the effectiveness of Citation Search Engine we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with Citation Search Engine: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and Citation Search Engine. 
+To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare with CiteWise: CiteSeerX and Google Scholar. Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and CiteWise. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
-
-\ho{I guess you were too short on explaining the choices. You need to dedicate a section just to explain the trial runs of the experiments and their results. What were the other tools? why did you choose them? what is the outcome of the trial runs? Why did you decide what you decided? ...}
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
@@ -623,7 +621,7 @@ Participants were split into two groups. All experiments were conducted in two d
 \end{center}
 \end{table}
 
-Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce to: 1) user interfaces of both Citation Search and Google Scholar, 2) standard syntax query common to both search engines. Before the beginning of a new task an oral instructions were provided to a participant to explain the task. 
+Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce to: 1) user interfaces of both CiteWise and Google Scholar, 2) standard syntax query common to both search engines. Before the beginning of a new task an oral instructions were provided to a participant to explain the task. 
 
 \subsection{Tasks}
 \paragraph{Task1} As a first task, a participant was asked to find a reference to a citation from one of his articles written in the past using the particular search engine. A test subject can read the cited sentence as well as the context of this sentence but he is not aware of referred source paper. The task is to find a referred paper that proves the given citation. We use following procedure to conduct Task1:
@@ -631,12 +629,12 @@ Each experiment was setup to last for approximately 45 minutes and each experime
 \begin{enumerate}
 	\item We look for a paper published by the test subject.
 	\item We extract four citations from that paper.
-	\item We delete extracted citations from Citation Search so the test subject could not find an exact match using Citation Search.
+	\item We delete extracted citations from CiteWise so the test subject could not find an exact match using CiteWise.
 \end{enumerate}
 During the experiment.
 \begin{enumerate}
 	\item We let the test subject read one cited sentence as well as the context of this sentence.
-	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (Citation Search or Google Scholar).
+	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (CiteWise or Google Scholar).
 	\item We repeat steps for four citations every time changing the using search engine. 
 \end{enumerate}
 
@@ -648,17 +646,17 @@ During the execution of tasks, we observe the following:
 	\item \emph{Expert comments}, any comments made by the test subject during the task execution.
 \end{itemize}  
 
-\paragraph{Task1{$^\prime$}} Task1{$^\prime$} was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task1 a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant receive only one citation for this task. As for the previous task the citation was removed from Citation Search before the experiment. 
+\paragraph{Task1{$^\prime$}} Task1{$^\prime$} was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task1 a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant receive only one citation for this task. As for the previous task the citation was removed from CiteWise before the experiment. 
 
 During Task1{$^\prime$,} we observed which search engine was used to find a reference. 
 
-\paragraph{Task2} In Task2 we asked participants to compare two summaries generated with Citation Search and TextRank\cite{mihalcea2004textrank} algorithms. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use following procedure to conduct Task2:
+\paragraph{Task2} In Task2 we asked participants to compare two summaries generated with CiteWise and TextRank\cite{mihalcea2004textrank} algorithms. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use following procedure to conduct Task2:
 \\Before the experiment.
 \begin{enumerate}
 	\item We ask every participant in advance to provide a paper that she thinks is important in her research field. 
-	\item We verify that a provided paper was cited at least by ten other papers in the Citation Search dataset.
+	\item We verify that a provided paper was cited at least by ten other papers in the CiteWise dataset.
 	\item We build a first summary using the TextRank algorithm. We use Python implementation of this algorithm that can be found on GitHub \footnote{\url{https://github.com/adamfabish/Reduction}}. We extract the text of a paper and feed it to TextRank. We limit the size of summaries to the size of an abstract in a paper, that is approximately 9-10 sentences.
-	\item We build a second summary using citations to the paper collected by Citation Search. Citation Search might collect more than ten citations of a paper. In this case we pick ten sentences randomly. Again we limit the size of summaries to the size of an abstract in a paper. 
+	\item We build a second summary using citations to the paper collected by CiteWise. CiteWise might collect more than ten citations of a paper. In this case we pick ten sentences randomly. Again we limit the size of summaries to the size of an abstract in a paper. 
 \end{enumerate}
 During the experiment.
 \begin{enumerate}
@@ -673,18 +671,18 @@ Before the beginning of the experiment we ask the test subjects to provide preli
 \begin{itemize}
 	\item What search engines do you usually use to find scientific literature?
 	\item How often do you use the listed search engines? (Possible answers: everyday, a few times per week, once a week or less)
-	\item Have you ever used the following search engines?(Google Scholar, Citation Search )
+	\item Have you ever used the following search engines?(Google Scholar, CiteWise )
 \end{itemize} 
 
 \subsection{Debriefing interview}
-After completing Task1 and Task1{$^\prime$} we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and Citation Search. During the interview the participants have chance to share their impression on using both search engines. Sample questions asked during the interview:
+After completing Task1 and Task1{$^\prime$} we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and CiteWise. During the interview the participants have chance to share their impression on using both search engines. Sample questions asked during the interview:
 \begin{itemize}
 	\item What did you like/dislike about using each search engine?
 	\item What difficulties did you have?
 \end{itemize}
 
 \subsection{Post-experiment Questionnaire}
-Right after the experiment we ask the participant to fill in a post-experiment questionnaire. The main goal of the post-experiment questionnaire is to gather further feedback on using Citation Search and Google Scholar. We ask the participants to fill in a form with following questions:
+Right after the experiment we ask the participant to fill in a post-experiment questionnaire. The main goal of the post-experiment questionnaire is to gather further feedback on using CiteWise and Google Scholar. We ask the participants to fill in a form with following questions:
 \begin{itemize}
 	\item Has the experiments changed your opinion on the two search engines?
 	\item Would you consider using one of these search engines? 
@@ -738,10 +736,10 @@ The pre-experiment questionnaire showed that almost all participants (8 experts)
 \end{center}
 \end{table}
 
-Four respondents answered positively on the question if they have ever used Citation Search. However all of them mentioned that they used Citation Search only a few times.
+Four respondents answered positively on the question if they have ever used CiteWise. However all of them mentioned that they used CiteWise only a few times.
 
 \subsection{Results for Task 1}  
-In Task1 we measured search time. Each participant perofrmed Task1 4 times: 2 times with Citation Search and 2 times with Google Schoalr. In overall, we made 18 measurements for Citation Search and 18 measurements for google Schoalr. Figure \ref{fig:boxplot-search-time} illustrates results for search time in Task 1 using boxplots \footnote{\url{http://en.wikipedia.org/wiki/Box_plot}}. Table \ref{tab:search-time} shows the mean and standard deviation of search times for both search engines. From Table \ref{tab:search-time} we observed that the average time to find a reference for a given citation is approximately 2.5 minutes. Participants were slightly faster with finding results using Citation Search. However, there is no statistically significant difference between search times of Citation Search and Google Scholar according to t-test with significance level p = 5\%. 
+In Task1 we measured search time. Each participant perofrmed Task1 4 times: 2 times with CiteWise and 2 times with Google Schoalr. In overall, we made 18 measurements for CiteWise and 18 measurements for google Schoalr. Figure \ref{fig:boxplot-search-time} illustrates results for search time in Task 1 using boxplots \footnote{\url{http://en.wikipedia.org/wiki/Box_plot}}. Table \ref{tab:search-time} shows the mean and standard deviation of search times for both search engines. From Table \ref{tab:search-time} we observed that the average time to find a reference for a given citation is approximately 2.5 minutes. Participants were slightly faster with finding results using CiteWise. However, there is no statistically significant difference between search times of CiteWise and Google Scholar according to t-test with significance level p = 5\%. 
 
   \begin{figure}[htp]
     \centering
@@ -755,11 +753,11 @@ In Task1 we measured search time. Each participant perofrmed Task1 4 times: 2 ti
 \begin{tabular}{ | c | c | c | } 
  \hline
  & \textbf{Mean(sec)} & \textbf{Std(sec)} \\  \hline
- Citation Search & 150 & 97\\ \hline
+ CiteWise & 150 & 97\\ \hline
  Google Scholar & 160 & 78  \\    
  \hline
 \end{tabular}
-\caption{The mean and standard deviation of search times for Citation Search and Google Scholar in Task 1.}
+\caption{The mean and standard deviation of search times for CiteWise and Google Scholar in Task 1.}
 \label{tab:search-time}
 \end{center}
 \end{table}
@@ -772,10 +770,10 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
  \hline
  & \textbf{Mean} & \textbf{Std} \\  \hline
  \textbf{Number of queries} & & \\ \hline
- Citation Search & 2.0 & 1.5\\ 
+ CiteWise & 2.0 & 1.5\\ 
  Google Scholar & 2.5 & 1.5  \\  \hline 
  \textbf{Average number of words in a query} & & \\ \hline 
- Citation Search & 4.3 & 1.7\\
+ CiteWise & 4.3 & 1.7\\
  Google Scholar & 4.2 & 1.2  \\     
  \hline
 \end{tabular}
@@ -784,22 +782,22 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 \end{center}
 \end{table}
 
- During the experiments we noticed that participants were more familiar with Google Scholar search interface so participants spent some time exploring Citation Search interface. This could affect search time for Citation Search making it longer.
+ During the experiments we noticed that participants were more familiar with Google Scholar search interface so participants spent some time exploring CiteWise interface. This could affect search time for CiteWise making it longer.
 
-We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that Citation Search engine shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
+We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that CiteWise shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
 
 \subsection{Results for Task 1$^\prime$}
-Results for Task 1{$^\prime$} are shown on Table \ref{tab:se-any}. Task1' was given to four participants. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if a participant tried to use both search engines. From Table \ref{tab:se-any} we concluded that all participants found a referred paper using Citation Search. Meantime three of participants tried both search engines and one participant did not use Google Scholar at all. 
+Results for Task 1{$^\prime$} are shown on Table \ref{tab:se-any}. Task1' was given to four participants. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if a participant tried to use both search engines. From Table \ref{tab:se-any} we concluded that all participants found a referred paper using CiteWise. Meantime three of participants tried both search engines and one participant did not use Google Scholar at all. 
 
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{ c | c | c } 
  \hline
  & \textbf{Search engine} & \textbf{Wether both search engines were used} \\  \hline
- P7 & Citation Search & Yes\\ \hline
- P9 & Citation Search & Yes\\ \hline
- P4 & Citation Search & Yes\\ \hline
- P2 & Citation Search & No\\   
+ P7 & CiteWise & Yes\\ \hline
+ P9 & CiteWise & Yes\\ \hline
+ P4 & CiteWise & Yes\\ \hline
+ P2 & CiteWise & No\\   
  \hline
 \end{tabular}
 \caption{Results for Task 1$^\prime$. The table shows in what search engine a result was retrieved and if a participant tried to used both search engines during the task.}
@@ -809,28 +807,28 @@ Results for Task 1{$^\prime$} are shown on Table \ref{tab:se-any}. Task1' was gi
 
 \subsection{Results for Task 2}
 
-Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summaries} illustrates scores from 0 to 10 given by participants to summaries generated with TextRank and citation from Citation Search.  
+Results for Task 2 are shown in Figure \ref{fig:summaries}. Figure \ref{fig:summaries} illustrates scores from 0 to 10 given by participants to summaries generated with TextRank and citation from CiteWise.  
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.7, trim = 0mm 0mm 0mm 0mm,]{summaries}
-    \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from Citation Search.}
+    \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from CiteWise.}
     \label{fig:summaries}
   \end{figure}
-Almost all participants except one (6 participants) gave better score to the summary composed by citations from Citation Search. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and Citation Search. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
+Almost all participants except one (6 participants) gave better score to the summary composed by citations from CiteWise. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use Citation Search. Some participants specified that they will use Google Scholar and Citation Search for different purposes. According to opinion of two participants Citation search is more appropriate to search for a related work on the given topic. Others (5 participants) think that Citation Search is good to prove claims while writing a scientific paper. One expert opinion states that Citation Search is useful for discovering new works in the given domain. Participants admitted usefulness of following features of Citation Search: possibility to see citations with a context, possibility to search by bibliographic entries. 
+Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One expert opinion states that CiteWise is useful for discovering new works in the given domain. Participants admitted usefulness of following features of CiteWise: possibility to see citations with a context, possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
-In our evaluation experiments we compared Citation Search with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that Citation Search performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, Citation Search might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using Citation Search.
+In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in WWW, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
 
-The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of Citation Search could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
+The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 
 \chapter {Conclusion}
 \label{cha:conclusion}
-In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented Citation Search engine which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of Citation Search to generate automatic summaries of papers.
+In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented CiteWise which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers.
 
-We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that Citation Search performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of Citation Search to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that Citation Search gives better description of scientific articles according to expert's opinion.        
+We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that CiteWise performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that CiteWise gives better description of scientific articles according to expert's opinion.        
 
 \section {Future Work}
 \label{cha:future-work}
@@ -862,7 +860,7 @@ During the debriefing interviews two participants admitted that they would like 
 \bibliography{thesis}
 
 \appendix
-\chapter{User Guide for Citation Search Deployment}
+\chapter{User Guide for CiteWise Deployment}
 
 \section{Solr Installation}
 \label{app:solr}
@@ -931,7 +929,7 @@ Table \ref{tab:field.attrs} lists and explains major attributes of field element
 \end{center}
 \end{table}
 
-Here is a fragment of schema file defining fields of a document in Citation Search Engine collection:
+Here is a fragment of schema file defining fields of a document in CiteWise collection:
 \begin{lstlisting}[language=XML]
     <fields>
      <field name="_version_" type="long" indexed="true" stored="true" 
