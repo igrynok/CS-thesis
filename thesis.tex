@@ -31,14 +31,13 @@ Secondly, we developed a citation aggregation feature to create automatic summar
 
 \section{Thesis statement} 
 
-The increasing amount of research literature produced by the scientific community poses a number of challenges to the task of finding relevant related work to newly written papers.
-This fact leads to an overall decrease of quality of research papers. \brs{Says who? it would be nice to have a reference for these claims}
+The increasing amount of research literature produced by the scientific community poses a number of challenges to the task of finding relevant related work to newly written papers. This fact leads to an overall decrease of quality of research papers \cite{prokofyev2012tag}.
 In particular, during the process of writing of a paper, one of the main difficulties is to validate proposed claims with the right citations.
 The claims are required in many situations to construct a valid argument, but only if supported by appropriate citations.
 %It is equally important to not overlook the citations that contradict the proposed claim, in order to 
 
-Current solutions to the problem, such a Google Scholar, are typically based on a keyword search, and thus do not work well for the case of finding relevant citations.
-This happens due to the \del{following} facts that they do not take document structure into account and they \ugh{search for claims}\brs{rephrase, they do not search for claims, not do they claim to} in the parts of documents that do not contain any claims at all, and therefore return a large amount of irrelevant results.
+Current solutions to the problem, such a Google Scholar, are typically based on keyword search, and thus do not work well for the case of finding relevant citations.
+This happens due to the fact that they do not take document structure into account, i.e, that some sentences in a document are more likely to contain claims than others. Therefore, such systems return a large amount of irrelevant results.
 A more plausible option is to look at what other people used in their papers as references for their claims.
 In other words, if we have a previous paper using certain claims, we can see what citations the authors used to support those claims.
 
@@ -49,7 +48,7 @@ We address the described problem by introducing CiteWise -- a novel search engin
 %``The rejection rate for OOPSLA papers in near 90\%. Most papers are rejected not because of a lack of good ideas, but because they are poorly structured. Following four simple steps in writing a paper will dramatically increase your chances of acceptance. If everyone followed these steps, the amount of communication in the object community would increase, improving the rate of progress.'' Try to think in those terms (\ie you first say we present a search engine, than you say searching manually is bad). Don't limit your self to 4 sentences, but it is good advice even if it ends up with 4 paragraphs.}
 
 \section{Contributions}
-\ins{The} Following are the main contributions of this work:
+The following are the main contributions of this work:
 \begin{itemize}
 	\item A novel IR system for scientific articles based on citations,
 	\item A search interface to discover relevant scientific results based on a statement query,
@@ -59,13 +58,13 @@ We address the described problem by introducing CiteWise -- a novel search engin
 \end{itemize}
 
 \section{Outline}
-The rest of the paper structured as follows\brs{The ``CHAPTER X In Chapter X we'' form is ugly, rephrase so that there is only one mention of Chapter}:
+The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter \ref{cha:introduction}] In chapter \ref{cha:introduction} we give a high overview of the architecture of a typical web search engine. We describe the main steps to construct an inverted index.
-	\item[Chapter \ref{cha:related-work}] In chapter \ref{cha:related-work} we survey the research related to citations in scientific publications. We overview two popular academic search engines: Google Scholar and CiteSeer.
-	\item[Chapter \ref{cha:CS}] In chapter \ref{cha:CS} we describe the design of CiteWise. We first show overall architecture of the proposed system and then show details of implementation of each component. 
-	\item[Chapter \ref{cha:experiments}] In chapter \ref{cha:experiments} we describe user evaluation experiments and analyze the results.
-	\item[Chapter \ref{cha:conclusion}] In chapter \ref{cha:conclusion} we conclude the work and describe potential future work. 
+	\item[Chapter \ref{cha:introduction}] Gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
+	\item[Chapter \ref{cha:related-work}] Surveys the research related to citations in scientific publications. It overviews two popular academic search engines: Google Scholar and CiteSeer.
+	\item[Chapter \ref{cha:CS}] Describes the design of CiteWise. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
+	\item[Chapter \ref{cha:experiments}] Describes user evaluation experiments and analyze the results.
+	\item[Chapter \ref{cha:conclusion}] Concludes the work and describe potential future work. 
 \end{description}
 
 \pagebreak

@@ -133,6 +133,14 @@ M.~F. Porter.
 \newblock chapter An Algorithm for Suffix Stripping, pages 313--316. Morgan
   Kaufmann Publishers Inc., San Francisco, CA, USA, 1997.
 
+\bibitem{prokofyev2012tag}
+Roman Prokofyev, Alexey Boyarsky, Oleg Ruchayskiy, Karl Aberer, Gianluca
+  Demartini, and Philippe Cudr{\'e}-Mauroux.
+\newblock Tag recommendation for large-scale ontology-based information
+  systems.
+\newblock In {\em Proceedings of the 11th international conference on The
+  Semantic Web-Volume Part II}, pages 325--336. Springer-Verlag, 2012.
+
 \bibitem{Qazvinian:2008:SPS:1599081.1599168}
 Vahed Qazvinian and Dragomir~R. Radev.
 \newblock Scientific paper summarization using citation summary networks.
