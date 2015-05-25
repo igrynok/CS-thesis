@@ -342,26 +342,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/typical-se.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/typical-se.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/typical-se.pdf
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/inverted-index.pdf
@@ -383,8 +363,26 @@ INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.pdf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
@@ -413,6 +411,8 @@ INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs-search-bibl.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs-search-bibl.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs-search-bibl.pdf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/boxplot-search-time.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/boxplot-search-time.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/boxplot-search-time.pdf

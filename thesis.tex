@@ -97,10 +97,10 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
 
 Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Indexer. Indexer decides how a page content should be stored in an index storage. Indices help to quickly query documents from the index storage. Users can search and view query results through the Search Interface. When a user makes a query the search engine analyzes its index and returns best matched web pages according to specific criteria. 
 
-Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers. \brs{Says who? would be nice to have a reference, \ie a book on IR} An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
+Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers \cite{chakrabarti1999focused}. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
 \section{Inverted Index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted \ins{index}. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
@@ -111,23 +111,26 @@ Search engines like CiteSeer or Google Scholar deal with a large collection of d
  The construction of the inverted index has following steps:
  
 \begin{enumerate}
-	\item Documents collection \brs{isn't this the crawlers job? if so, say: usulay performed by the crawler}
-	\item Breaking each document into tokens, turning a document into a list of tokens
-  	\item Linguistic preprocessing of a list of tokens into normalised list of tokens
-	\item Index documents by creating an inverted index, consisting of a dictionary with terms and postings
+	\item Obtaining a document collection (usually performed by the crawler);
+	\item Breaking each document into tokens, turning a document into a list of tokens;
+  	\item Linguistic preprocessing of a list of tokens into normalized list of tokens;
+	\item Index documents by creating an inverted index, consisting of a dictionary with terms and postings.
 \end{enumerate}
 
-First step of the index construction is documents collection. It aims at obtaining a set of documents containing a sequence of characters. The input to the indexing process could be digital documents that are bytes in a file or a web server. Consider, for example, a collection of PDF files\brs{why? we are talking about traditional search engines}. First, we need to correctly decode out characters of the binary representation. Next we should determine a document unit. For example, it might be a chapter in a book, or a paragraph in a scientific article. 
+First step of the index construction is obtaining a collection of documents. The goal here is to collect a set of documents containing textual data.
+%Consider, for example, a collection of documents in PDF format \brs{why? we are talking about traditional search engines}.
+%First, we need to correctly decode characters of the binary representation.
+%Next, we should determine a document unit. For example, it might be a chapter in a book, or a paragraph in a scientific article. 
 
-The next step after getting the sequences of characters in the document units, is to break up documents into \emph{tokens}. Tokens can be thought of as the semantical units for processing. For example, it might be a word or a number. During tokenisation some characters like punctuations can be thrown out. 
+The next step is to break up each document into \emph{tokens}. Tokens can be thought of as the semantical units for processing. For example, it might be a word or a number. During tokenization, some characters, such as punctuation marks, can be thrown away. 
 
-Here is a tokenisation example:
+An example of the tokenization process is shown below:
 
-\hspace{100pt}\textcolor[rgb]{0,0,1}{ Input: Sometimes, I forget things.}
+\hspace{100pt}\textcolor[rgb]{0,0,1}{Input: Sometimes, I forget things.}
 
 \hspace{100pt}\textcolor[rgb]{0,0,1}{Output: \framebox{Sometimes} \framebox{I} \framebox{forget} \framebox{things}} \\
 
-The third step is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperaion}. \emph{Token normalisation} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalisation is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. Consider the following common normalization rules that are often used:
+The third step is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperation}. \emph{Token normalization} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalization is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. Consider the following common normalization rules that are often used:
 
 \begin{description}
 	\item[Stemming and Lemmatization] Words can be used in different grammatical forms. For instance, \emph{organize}, \emph{organizes}, \emph{organizing}.However in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatization is to reduce the form of the word to a common base form. 
@@ -146,13 +149,13 @@ Stemming and lemmatization are closely related concepts however there is a diffe
 
 Here is an example:
 
-\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatization since \ins{it} requires dictionary look-up
+\hspace{10pt} \textcolor[rgb]{0,0,1}{ better = \textgreater good }, can only be matched by lemmatization since it requires dictionary look-up
 
 \hspace{10pt} \textcolor[rgb]{0,0,1}{writing  =\textgreater write}, can be matched by both lemmatization and stemming
 
 \hspace{10pt} \textcolor[rgb]{0,0,1}{meeting  =\textgreater meeting(noun) or to meet(verb)}, can be matched only by lemmatization since it requires the word context 
 
-In general\ins{,} stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
+In general, stemmers are easier to implement and run faster. The most common algorithm for stemming is \emph{Porter's} algorithm \cite{Porter:1997:ASS:275537.275705}.
 	  
 	\item[Capitalization/Case-Folding] A simple strategy is to reduce all letters to a lower case, so that sentences with \emph{Automobile} will match to queries with \emph{automobile}. However this approach would not be appropriate in some contexts like identifying company names, such as \emph{General Motors}. Case-folding can be be done more accurately by a machine learning model using more features to identify whether a word should be lowercased.
 	\item[Accents and Diacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds. However, in many cases, users can enter queries for words without diacritics.
@@ -165,7 +168,7 @@ The last step of building the inverted index is sorting. The input to indexing i
 	\item Document 3: The gates are open.
 \end{itemize}
 
- After applying tokenasation and normalisation steps of the listed documents the input to the indexing is shown in Table \ref{tab:input-indexing}. 
+ After applying tokenization and normalization steps of the listed documents the input to the indexing is shown in Table \ref{tab:input-indexing}. 
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{ | l | l | } 

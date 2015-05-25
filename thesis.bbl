@@ -29,6 +29,12 @@ Shannon~Glenn Bradshaw.
   the context of its use}.
 \newblock Northwestern University, 2002.
 
+\bibitem{chakrabarti1999focused}
+Soumen Chakrabarti, Martin Van~den Berg, and Byron Dom.
+\newblock Focused crawling: a new approach to topic-specific web resource
+  discovery.
+\newblock {\em Computer Networks}, 31(11):1623--1640, 1999.
+
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
 \newblock Parscit: An open-source crf reference string parsing package.
