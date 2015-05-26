@@ -363,6 +363,17 @@ INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-th
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.pdf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
+INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
@@ -377,21 +388,10 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
-INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/link.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.pdf
 INPUT /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/doc.pdf
