@@ -18,13 +18,13 @@
 \contentsline {subsection}{\numberline {4.2.1}PDF Processing}{17}{subsection.4.2.1}
 \contentsline {paragraph}{Processing bibliographic links}{22}{section*.4}
 \contentsline {subsection}{\numberline {4.2.2}Document Publishing}{23}{subsection.4.2.2}
-\contentsline {paragraph}{Publishing documents to Solr}{23}{section*.5}
-\contentsline {paragraph}{Publishing documents to MongoDB}{25}{section*.6}
-\contentsline {section}{\numberline {4.3}Indexer}{26}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{26}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Web Search Interface}{28}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}CiteWise Main Page}{28}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{29}{subsection.4.4.2}
+\contentsline {paragraph}{Publishing documents to Solr}{24}{section*.5}
+\contentsline {paragraph}{Publishing documents to MongoDB}{24}{section*.6}
+\contentsline {section}{\numberline {4.3}Indexer}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{27}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Web Search Interface}{27}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}CiteWise Main Page}{27}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{31}{subsection.4.4.2}
 \contentsline {chapter}{\numberline {5}Evaluation}{32}{chapter.5}
 \contentsline {section}{\numberline {5.1}Experiment Setup}{32}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Data and Tools}{32}{subsection.5.1.1}

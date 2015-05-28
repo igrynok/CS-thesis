@@ -288,7 +288,7 @@ Google Scholar contains roughly 160 million of documents by May 2014 \cite{ordun
 
 \section{System Overview}
 
-The components of CiteWise is shown on Figure \ref{fig:cs}. There are three main operations performed by CiteWise: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referred to the same article. 
+The components of CiteWise is shown on Figure \ref{fig:cs}. There are three main operations performed by CiteWise: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for accomplishment of these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referring to the same article. 
 
   \begin{figure}[htp]
     \centering
@@ -298,7 +298,7 @@ The components of CiteWise is shown on Figure \ref{fig:cs}. There are three main
   \end{figure}
 
 
-The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into the text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consist of a citation, that should be indexed and an additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consist of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referred to the same source. Once the \emph{Parser} processed the PDF file it can proceed to the next paper if there is any left. When all papers are processed, user can make queries over \emph{Search Web App}.
+The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into the text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consist of a citation, that should be indexed and an additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consist of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referring to the same source. Once the \emph{Parser} processed the PDF file it can proceed to the next paper if there is any left. When all papers are processed, user can make queries over \emph{Search Web App}.
 
   \begin{figure}[htp]
     \centering
@@ -410,7 +410,7 @@ Further we need to extract bibliographic links from the references section. For 
 \end{center}
 \end{table}
 
-The pipeline of PDF processing stages described above is depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referred to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
+The pipeline of PDF processing stages described above is depicted on Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referring to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
 
   \begin{figure}[htp]
     \centering
@@ -451,10 +451,15 @@ We try to recognize common patterns covering the majority of bibliographic links
   \end{figure}     
 
 \subsection{Document Publishing}
-There are two systems where documents are published to: Solr and MongoDB. Solr corresponds to a Indexer component and MongoDB corresponds to a Mata Data Storage components in Figure \ref{fig:cs}. We use Solr for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referred to the same source paper. \brs{raises the question, why not use one DB for both? it's kind of explained later when you talk about solr but you need to say if up front}
+There are two systems where documents are published to: Solr and MongoDB. Solr corresponds to a Indexer component and MongoDB corresponds to a Meta Data Storage component in Figure \ref{fig:cs}. We use Solr for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referring to the same source paper.
+
+%Solr uses NoSQL-like data storage \brs{this has no meaning. There is a bunch of different NoSQL DBs that are very different from each other, it's like saying ``my file format uses a NoXML like format''} , but actually it is even more limited than traditional NoSQL databases. 
+The data stored in Solr is very `flat', which means that Solr cannot store hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store the title of the scientific article parsed from the reference string, so we can aggregate citations referring to the same scientific article. 
+%It should be noted that \ugh{citation itself can refer to multiple scientific articles}\brs{not sure what this means}. 
+We are also interested in a solution that does not require reviewing all Solr documents to find citations referring to the same scientific article as it will be too slow and will decrease the quality of the user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referring to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.
 
 \paragraph{Publishing documents to Solr}
-The common way to interact with Solr is using REST-like API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ\brs{footnote link pls} client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using REST-like API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ\footnote{\url{https://cwiki.apache.org/confluence/display/solr/Using+SolrJ}} client library for Java language. This library abstract interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[htp]
     \centering
@@ -472,15 +477,13 @@ Every document representing one citation consist of following fields:
   \item references: list of bibliographic links from references section matching this citation
 \end{itemize}
 
-Solr uses NoSQL-like data storage \brs{this has no meaning. There is a bunch of different NoSQL DBs that are very different from each other, it's like saying ``my file format uses a NoXML like format''} , but actually it is even more limited than traditional NoSQL databases. The data stored in Solr is very `flat', which means that Solr cannot store hierarchical data \cite{use.solr1}, \cite{use.solr.2}. In our case, along with the references, we intend to store \chg{a}{the} title of the scientific article parsed from the reference string, so we can aggregate citations \chg{referred}{referring} to the same scientific article. It \chg{is worth to say}{should be noted} that \ugh{citation itself can refer to multiple scientific articles}\brs{not sure what this means}. We are also interested in a solution that does not require reviewing all Solr documents to find citations \chg{referred}{referring}\brs{fix this everywhere pls} to the same scientific article as it will be too slow and will decrease the quality of \ins{the} user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referred to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage. \brs{most of this has nothing to do with publishing to MongoDB, but rather to why we need 2 DBs and not just one, pls re-factor what is publishing and keep it here, and move the rest up to where you mention 2 DBs}
-
 \paragraph{Publishing documents to MongoDB} 
 MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema\footnote{MongoDB database, \url{http://www.mongodb.org/}}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
 The json document consist of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
 	\item title: title of a scientific article
-	\item \chg{cittations}{citations}: citations with its references of the scientific article identifying by title field 
+	\item citations: citations with its references of the scientific article identifying by title field 
 \end{itemize} 
 
 Every time we send a new citation with a paper title to MongoDB, we check if a document with the same title already exists. If so, we add a new citation to document, otherwise create a new document. \\
@@ -531,27 +534,27 @@ Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is dis
 Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-IDF model \cite{manning2008introduction}. This model takes into consideration following factors:
 \begin{itemize}
 \item \textbf{tf} - term frequency, a frequency of the term in a document. The higher the term frequency, the higher a document score. 
-\item \textbf{idf} - inverse document frequency, an inverse frequency of the term in all documents. The \chg{rare}{rarer} the term occurs in all documents, the higher its contribution to the document's score.  
+\item \textbf{idf} - inverse document frequency, an inverse frequency of the term in all documents. The rarer the term occurs in all documents, the higher its contribution to the document's score.  
 \item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has. \brs{this is a bit confusing... how does it use query terms to rank? what if it has no queries yet?}
 \end{itemize}
 
-The exact scoring formula can be found on the official web page of the Lucene documentation\footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
+The exact scoring formula with the description of all factors can be found on the official web page of the Lucene documentation\footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
 
  %\cite{solr.config}
 
 \section{Web Search Interface}
-Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application \brs{the controller is a set of xml files?}. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
+Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
 
   \begin{figure}[htp]
     \centering
-    \includegraphics[scale=0.6, trim = 0mm 20mm 0mm 10mm]{mvc}
+    \includegraphics[scale=0.6, trim = 0mm 20mm 0mm 10mm]{struts}
     \caption{Architecture overview of a web search application}
     \label{fig:mvc}
   \end{figure}  
 
 \subsection{CiteWise Main Page}
 
-The main page of CiteWise presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user see a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available \del{online} \brs{online usually implies public access we don't want or have that} then user can open it using a link ``See pdf on SCG resources''.  
+The main page of CiteWise presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user sees a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available then user can open it using a link ``See pdf on SCG resources''.  
 
   \begin{figure}[htp]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-main-page}
@@ -559,18 +562,18 @@ The main page of CiteWise presents a simple search interface allowing user to se
     \label{fig:cs-main-page}
   \end{figure}
 
-If a reference has a title recognizable by CiteWise then a user can see all citations referred to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
+If a reference has a title recognizable by CiteWise then a user can see all citations referring to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
 
    \begin{figure}[htp]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-view-citations}
-    \caption{A screenshot of the main page of a CiteWise interface showing citations referred to the article with the recognizable title ``Software maintenance and evolution: a roadmap.''}
+    \caption{A screenshot of the main page of a CiteWise interface showing citations referring to the article with the recognizable title ``Software maintenance and evolution: a roadmap.''}
     \label{fig:cs-view-citations}
   \end{figure}
 
-\ins{A} User can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the CiteWise interface and in the Appendix of this article.
+A user can take advantage of using enhanced search query syntax. The query syntax is explained on the help page of the CiteWise interface and in the Appendix of this article.
 
 \subsection{Search by Bibliography Page}
-Another feature provided by CiteWise is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user \chg{see}{sees} a list of bibliographic entries with \chg{matched}{searched} author\del{'s} name. If an entry has an extractable title then user can see citations from other papers referred to the entry.
+Another feature provided by CiteWise is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user sees a list of bibliographic entries with searched author name. If an entry has an extractable title then user can see citations from other papers referring to the entry.
 
    \begin{figure}[htp]
     \includegraphics[scale=0.4]{cs-search-bibl}
