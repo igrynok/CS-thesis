@@ -583,13 +583,15 @@ Another feature provided by CiteWise is the possibility to search by bibliograph
 
 \chapter {Evaluation}
 \label{cha:experiments}
-To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare \chg{with CiteWise}{CiteWise with}: CiteSeerX and Google Scholar. \brs{start new paragraph} Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and CiteWise. 
+To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare CiteWise with: CiteSeerX and Google Scholar.
+
+Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and CiteWise. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
-For evaluation experiments we used \ins{a} dataset of scientific articles collected by SCG\brs{footnote link pls} members over decades. \ins{The} Collection contains \del{for} about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages. \chg{Dataset of Google Scholar}{The Google Scholar dataset} is chg{very large compared to our dataset}{much larger that the data set used in our experiments}, so we reduced \ins{the} searching space to the domain of Software Engineering and Programming Languages. During the experiment all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
+For evaluation experiments we used a dataset of scientific articles collected by SCG\footnote{\url{http://scgresources.unibe.ch/Literature/}} members over decades. The collection contains about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages. The Google Scholar dataset is much larger that the data set used in our experiments, so we reduced the searching space to the domain of Software Engineering and Programming Languages. During the experiment all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
 
 \subsection{Participants}
 We intentionally looked for experts in the domain of Software Engineering and Programming Languages that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) participated in experiments ( see Table \ref{tab:experts}).
@@ -609,14 +611,14 @@ We intentionally looked for experts in the domain of Software Engineering and Pr
  P9 & PhD candidate & Software Visualization & 1 \\ 
  \hline  
 \end{tabular}
-\caption{The table describes experts \ins{which} participated in the experiments, their domain of interests and academic experience in years.}
+\caption{The table describes experts which participated in the experiments, their domain of interests and academic experience in years.}
 \label{tab:experts}
 \end{center}
 \end{table}
 
 
 \subsection{Process}
-Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks \chg{will be}{are} described \chg{below}{in subsection bla bla bla}.  
+Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks are described in subsection Tasks \ref{sub:tasks}.  
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{  c | c | c  } 
@@ -631,10 +633,11 @@ Participants were split into two groups. All experiments were conducted in two d
 \end{center}
 \end{table}
 
-Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce \ins{the participant} to: 1) user interfaces of both CiteWise and Google Scholar, 2) standard syntax query common to both search engines. \ugh{Before the beginning of a new task \del{an} oral instructions were provided to \chg{a}{the} participant to explain the task. }\brs{rephrase, \ie the task was orally explained to the participant}
+Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce the participant to: 1) user interfaces of both CiteWise and Google Scholar, 2) standard syntax query common to both search engines. Every task in the experiment was orally explained to the participant.
 
 \subsection{Tasks}
-\paragraph{Task 1a} As a first task, a participant was asked to find a reference to a citation\brs{citation or claim?} from one of his articles written in the past using \ugh{the particular search engine}\brs{what does this mean?}. A test subject can read the cited sentence as well as the context of this sentence but \del{he} is not aware of referred source paper. The task is to find a referred paper that proves the given citation. We use following procedure to conduct Task 1a: \brs{rephrase this entire parahraph, it is very confusing}
+\label{sub:tasks}
+\paragraph{Task 1a} As a first task, a participant was asked to find a reference to a claim from one of his papers written in the past using CiteWise or Google Scholar. We specified the type of the search engine in the beginning of the task. A test subject can read the cited sentence as well as the context of this sentence but is not aware of the referred source paper. The task is to find a paper that proves the given citation. We use following procedure to conduct Task 1a:
 \\Before the experiment.
 \begin{enumerate}
 	\item We look for a paper published by the test subject.
@@ -645,7 +648,7 @@ During the experiment.
 \begin{enumerate}
 	\item We let the test subject read one cited sentence as well as the context of this sentence.
 	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (CiteWise or Google Scholar).
-	\item We repeat steps for four citations every time changing the \chg{using}{used} search engine. 
+	\item We repeat steps for four citations every time changing the used search engine. 
 \end{enumerate}
 \brs{make clear what the chose if search engine is! does the subject chose the first time and then it alternates? if not which was the first one? etc.}
 
@@ -653,11 +656,11 @@ During the execution of tasks, we observe the following:
 \begin{itemize}[noitemsep]
 	\item \emph{Search time}, time spent by participant to find a paper supporting the given cited text. 
 	\item \emph{Number of queries}, the amount of queries made by participant to find a reference.
-	\item \emph{Number of words in each query}, numbers of words in each query made by the test subject while search\ins{ing}.
+	\item \emph{Number of words in each query}, numbers of words in each query made by the test subject while searching.
 	\item \emph{Expert comments}, any comments made by the test subject during the task execution.
 \end{itemize}  
 
-\paragraph{Task 1b} Task 1b was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description.\brs{so it was specified in Task 1a. this needs to be clear in the description of Task1a} As in Task 1a a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant receive\ins{d} only one citation for this task. As for the previous task the citation was removed from CiteWise before the experiment. 
+\paragraph{Task 1b} Task 1b was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task 1a a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant received only one citation for this task. As for the previous task the citation was removed from CiteWise before the experiment. 
 
 During Task 1b, we observed which search engine was used to find a reference. 
 
@@ -666,7 +669,7 @@ During Task 1b, we observed which search engine was used to find a reference.
 \begin{enumerate}
 	\item We ask every participant in advance to provide a paper that she thinks is important in her research field. 
 	\item We verify that a provided paper was cited at least by ten other papers in the CiteWise dataset.
-	\item We build a first summary using the TextRank algorithm. We use \ins{a} Python implementation of this algorithm that can be found on GitHub \footnote{\url{https://github.com/adamfabish/Reduction}}. We extract the text of a paper and feed it to TextRank. We limit the size of summaries to the size of an abstract in a paper, that is approximately 9-10 sentences.
+	\item We build a first summary using the TextRank algorithm. We use a Python implementation of this algorithm that can be found on GitHub \footnote{\url{https://github.com/adamfabish/Reduction}}. We extract the text of a paper and feed it to TextRank. We limit the size of summaries to the size of an abstract in a paper, that is approximately 9-10 sentences.
 	\item We build a second summary using citations to the paper collected by CiteWise. CiteWise might collect more than ten citations of a paper. In this case we pick ten sentences randomly. Again we limit the size of summaries to the size of an abstract in a paper. 
 \end{enumerate}
 During the experiment.
@@ -678,7 +681,7 @@ During the experiment.
 \section{Questionnaires}
 
 \subsection{Pre-experiment Questionnaire}
-Before the beginning of the experiment we ask the test subjects to provide preliminary information by filling in a pre-experiment questionnaire. The goal of the pre-experiment questionnaire is to gather \del{a} general statistics about the participants' experience in using various search engines. We ask the participants to fill in a form with following questions:
+Before the beginning of the experiment we ask the test subjects to provide preliminary information by filling in a pre-experiment questionnaire. The goal of the pre-experiment questionnaire is to gather general statistics about the participants' experience in using various search engines. We ask the participants to fill in a form with following questions:
 \begin{itemize}
 	\item What search engines do you usually use to find scientific literature?
 	\item How often do you use the listed search engines? (Possible answers: everyday, a few times per week, once a week or less)
@@ -798,17 +801,17 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that CiteWise shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
 
 \subsection{Results for Task 1b}
-\del{Results for Task 1b are shown on Table \ref{tab:se-any}}. Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if a participant tried to use both search engines. From Table \ref{tab:se-any} we concluded that all participants found a referred paper using CiteWise. Meantime three of participants tried both search engines and one participant did not use Google Scholar at all. 
+Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if a participant tried to use both search engines. From Table \ref{tab:se-any} we concluded that all participants found a referred paper using CiteWise. Meantime three of participants tried both search engines and one participant did not use Google Scholar at all. 
 
 \begin{table}[ht]
 \begin{center}
-\begin{tabular}{ c | c | c } 
+\begin{tabular}{ c | l } 
  \hline
- & \textbf{Search engine} & \textbf{Wether both search engines were used} \\  \hline
- P7 & CiteWise & Yes\\ \hline
- P9 & CiteWise & Yes\\ \hline
- P4 & CiteWise & Yes\\ \hline
- P2 & CiteWise & No\\   
+ \textbf{Participants} & \textbf{How search engines were used} \\  \hline
+ P6 & CiteWise, Google Scholar, \textcolor{red}{CiteWise} \\ \hline
+ P7 & Google Scholar, \textcolor{red}{CiteWise}  \\ \hline
+ P8 & Google Scholar, \textcolor{red}{CiteWise}  \\ \hline
+ P9 & \textcolor{red}{CiteWise} \\   
  \hline
 \end{tabular}
 \caption{Results for Task 1b. The table shows in what search engine a result was retrieved and if a participant tried to used both search engines during the task.}
@@ -818,20 +821,20 @@ We also noted that the way search engines present results is an important factor
 
 \subsection{Results for Task 2}
 
-Results for Task 2 are shown in Figure \ref{fig:summaries}. \chg{Figure \ref{fig:summaries}}{It} illustrates scores from 0 to 10 given by participants to summaries generated with TextRank and citation from CiteWise.  
+Results for Task 2 are shown in Figure \ref{fig:summaries}. It illustrates scores from 0 to 10 given by participants to summaries generated with TextRank and citation from CiteWise.  
   \begin{figure}[htp]
     \centering
-    \includegraphics[scale=0.7, trim = 0mm 0mm 0mm 0mm,]{summaries}
-    \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from CiteWise. \brs{Why are the columns not sorted?}}
+    \includegraphics[scale=0.7, trim = 0mm 0mm 0mm 0mm,]{summary}
+    \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from CiteWise.}
     \label{fig:summaries}
   \end{figure}
-\del{Almost} all participants except one (6 participants) gave better score to the summary composed by citations from CiteWise\brs{why are there 7 participants and not 9?}. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
+All participants except one (6 participants) gave better score to the summary composed by citations from CiteWise. We could not generate summaries for participants P4 and P6 since they did not provide us with papers. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
 
 \subsection{Final Questionnaire}
 Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One expert opinion states that CiteWise is useful for discovering new works in the given domain. Participants admitted usefulness of following features of CiteWise: possibility to see citations with a context, possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
-In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines in \ugh{WWW}, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
+In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 
@@ -839,12 +842,12 @@ The results for summaries comparison show that summary generated with citations 
 \label{cha:conclusion}
 In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented CiteWise which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers.
 
-We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that CiteWise performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that CiteWise gives \ins{a} better description of scientific articles according to expert's opinion.        
+We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that CiteWise performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that CiteWise gives a better description of scientific articles according to expert's opinion.        
 
 \section {Future Work}
 \label{cha:future-work}
 
-One of the \chg{challenges we encounter during parsing}{ways the CiteWise parser can be improved} \brs{challenges  are solved} is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
+One of the ways the CiteWise parser can be improved is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
 
   \begin{figure}[htp]
     \centering
@@ -853,7 +856,7 @@ One of the \chg{challenges we encounter during parsing}{ways the CiteWise parser
     \label{fig:no-ref-tag}
   \end{figure} 
 
-Another \ugh{challenge}\brs{again} in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
+Another issue in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
 
   \begin{figure}[htp]
     \centering
