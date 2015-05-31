@@ -585,10 +585,11 @@ Another feature provided by CiteWise is the possibility to search by bibliograph
 \label{cha:experiments}
 To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare CiteWise with: CiteSeerX and Google Scholar.
 
-Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, in our experiments we compared CiteWise with Google Scholar. 
+Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, in the first part of our experiments we compared CiteWise with Google Scholar. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
+In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm.
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
@@ -665,7 +666,7 @@ During the execution of tasks, we observe the following:
 
 During Task 1b, we observed which search engine was used to find a reference. 
 
-\paragraph{Task 2} In Task 2 we asked participants to compare two summaries generated with CiteWise and TextRank\cite{mihalcea2004textrank} algorithms\brs{this was not mentioned in the beginning of the evaluation section, you said all experiments where conducted with Google Scholar}. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use following procedure to conduct Task 2:
+\paragraph{Task 2} In Task 2 we asked participants to compare two summaries generated with CiteWise and TextRank\cite{mihalcea2004textrank} algorithms. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use following procedure to conduct Task 2:
 \\Before the experiment.
 \begin{enumerate}
 	\item We ask every participant in advance to provide a paper that she thinks is important in her research field. 
