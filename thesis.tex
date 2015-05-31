@@ -535,7 +535,8 @@ Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-
 \begin{itemize}
 \item \textbf{tf} - term frequency, a frequency of the term in a document. The higher the term frequency, the higher a document score. 
 \item \textbf{idf} - inverse document frequency, an inverse frequency of the term in all documents. The rarer the term occurs in all documents, the higher its contribution to the document's score.  
-\item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has. \brs{this is a bit confusing... how does it use query terms to rank? what if it has no queries yet?}
+\item \textbf{coord} - coordination factor, takes into account the number of query terms in a document. The more query terms in a document, the higher score it has. 
+%\brs{this is a bit confusing... how does it use query terms to rank? what if it has no queries yet? \brs{I didn't get :()}}
 \end{itemize}
 
 The exact scoring formula with the description of all factors can be found on the official web page of the Lucene documentation\footnote{\href{http://lucene.apache.org/java/3_5_0/api/core/org/apache/lucene/search/Similarity.html}{Apache Lucene, scoring formula}}. 
@@ -650,9 +651,8 @@ During the experiment.
 \begin{enumerate}
 	\item We let the test subject read one cited sentence as well as the context of this sentence.
 	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (CiteWise or Google Scholar).
-	\item We repeat steps for four citations every time changing the used search engine. 
+	\item We repeat steps for four citations every time changing the used search engine. We used following procedure. In the first run of the Task 1a we asked the participant P1 to find a paper using CiteWise. Then, in the second run we asked P1 to complete the same task using Google Scholar and so on. We asked the participant P2 to use Google Scholar for the first run, CiteWise for the second run and so on. Thus, we alternated a search engine type for the first run and then alternated search engine types for all remaining runs respectively. 
 \end{enumerate}
-\brs{make clear what the chose if search engine is! does the subject chose the first time and then it alternates? if not which was the first one? etc.}
 
 During the execution of tasks, we observe the following:
 \begin{itemize}[noitemsep]
@@ -766,12 +766,10 @@ In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 
 
 \begin{table}[ht]
 \begin{center}
-\begin{tabular}{ | c | c | c | } 
- \hline
+\begin{tabular}{  c | c | c  } 
  & \textbf{Mean (sec)} & \textbf{Std (sec)} \\  \hline
  CiteWise & 150 & 97\\ \hline
  Google Scholar & 160 & 78  \\    
- \hline
 \end{tabular}
 \caption{The mean and standard deviation of search times for CiteWise and Google Scholar in Task 1a.}
 \label{tab:search-time}
@@ -792,7 +790,6 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
  \begin{table}[ht]
 \begin{center}
 \begin{tabular}{  c | c | c  } 
- \hline
  & \textbf{Mean} & \textbf{Std} \\  \hline
  \textbf{Number of queries} & & \\ \hline
  CiteWise & 2.1 & 1.5\\ 
@@ -800,7 +797,6 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
  \textbf{Average number of words in a query} & & \\ \hline 
  CiteWise & 4.3 & 1.7\\
  Google Scholar & 4.2 & 1.2  \\     
- \hline
 \end{tabular}
 \caption{The mean and standard deviation values for a number of queries and avearge number of words in a query in Task 1.}
 \label{tab:search-query}
@@ -817,13 +813,11 @@ Task 1b was given to four participants. Table \ref{tab:se-any} shows in what sea
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{ c | l } 
- \hline
  \textbf{Participants} & \textbf{How search engines were used} \\  \hline
  P6 & CiteWise, Google Scholar, \textcolor{red}{CiteWise} \\ \hline
  P7 & Google Scholar, \textcolor{red}{CiteWise}  \\ \hline
  P8 & Google Scholar, \textcolor{red}{CiteWise}  \\ \hline
  P9 & \textcolor{red}{CiteWise} \\   
- \hline
 \end{tabular}
 \caption{The table illustrates results for Task 1b. It shows the order in which participants used search engines during the task accomplishment. The search engine where a supporting paper was retrieved is marked red.}
 \label{tab:se-any}
