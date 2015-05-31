@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis"] 1432912466 "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis" 1432912660
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" 1432912659 23673 5170fe99a71d163e087f2788ac786cc3 ""
+["bibtex /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis"] 1433068508 "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis" 1433069227
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" 1433069226 23851 d4b12d3dfacdbe9988d9cbf0973a68a6 ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bcf" 0 -1 0 ""
   "/usr/local/texlive/2012/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "thesis.bib" 1432580392 12706 49dd90f4371bf22663efd240be3b6d6e ""
   (generated)
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.blg"
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl"
-["pdflatex"] 1432912657 "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.tex" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.pdf" "thesis" 1432912660
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.blg"
+["pdflatex"] 1433069224 "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.tex" "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.pdf" "thesis" 1433069227
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/boxplot-search-time.pdf" 1429711486 2892 9a902dc422b05620c0398bbff86e548e ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/code-snippet.pdf" 1427719720 19976 20fd9b77f3631322f6183101131a56b0 ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/cs-activity-diagram.pdf" 1428566406 13577 9383ec63f0d9d5bbe886f86f0ba75729 ""
@@ -23,6 +23,7 @@
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Fribourg.png" 1417096348 17923 e79b5bbe680e26eb258468f92b0354da ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/logos/UNI_Neuenburg.png" 1417096348 11821 008ffe7be088c23450012b45585b292f ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/no-ref-tag.pdf" 1427717278 12803 8c775cdd7829ce109b207645d159e780 ""
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/num-queries.pdf" 1433068014 2911 cb60213279cadd7ddcf6ccbb285a0aed ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/parser.pdf" 1425391450 41854 ce8dbb51ee4ef9be38ecc3bec0505d1a ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/processing.pdf" 1425392287 8437 5d87d8d108c39bae4fbbd77d0d7da55a ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/solr.pdf" 1425392458 15674 70479677f8115aba010f54eaa19c85dc ""
@@ -31,11 +32,11 @@
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/template.pdf" 1425392510 78203 6b4b3b75574a11dae803ff645a098d62 ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/images/typical-se.pdf" 1424364689 32782 caee6bd1ea1e923542902908fbcaec02 ""
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/preamble.tex" 1431514128 8679 2ca3423d9bb89912c3406d59c813b3c3 ""
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" 1432912659 23673 5170fe99a71d163e087f2788ac786cc3 ""
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl" 1432912467 7552 b41a4b6bcdb81cee892d0fa7a66ef55e "bibtex /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis"
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out" 1432912659 3448 f15f551f8e697c23710cce12370b1b9e ""
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.tex" 1432912655 89255 3b2ac4689b5a39c16136fdb6ced5110c ""
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc" 1432912659 4551 6dbb092904512f7c36b87bc5f558ec1f ""
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux" 1433069226 23851 d4b12d3dfacdbe9988d9cbf0973a68a6 ""
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.bbl" 1433068508 7552 b41a4b6bcdb81cee892d0fa7a66ef55e "bibtex /Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis"
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out" 1433069226 3448 f15f551f8e697c23710cce12370b1b9e ""
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.tex" 1433069221 90404 f79af36a76f2bab4f6bfc4569db66924 ""
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc" 1433069226 4551 f78ea60722d03d91da1112490317fd43 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm" 1136768653 960 4ab65358b8406f30ef5496c8c096d22b ""
@@ -245,6 +246,7 @@
   "images/logos/UNI_Fribourg.png" 1417096348 17923 e79b5bbe680e26eb258468f92b0354da ""
   "images/logos/UNI_Neuenburg.png" 1417096348 11821 008ffe7be088c23450012b45585b292f ""
   "images/no-ref-tag.pdf" 1427717278 12803 8c775cdd7829ce109b207645d159e780 ""
+  "images/num-queries.pdf" 1433068014 2911 cb60213279cadd7ddcf6ccbb285a0aed ""
   "images/parser.pdf" 1425391450 41854 ce8dbb51ee4ef9be38ecc3bec0505d1a ""
   "images/processing.pdf" 1425392287 8437 5d87d8d108c39bae4fbbd77d0d7da55a ""
   "images/solr.pdf" 1425392458 15674 70479677f8115aba010f54eaa19c85dc ""
@@ -253,8 +255,8 @@
   "images/template.pdf" 1425392510 78203 6b4b3b75574a11dae803ff645a098d62 ""
   "images/typical-se.pdf" 1424364689 32782 caee6bd1ea1e923542902908fbcaec02 ""
   (generated)
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc"
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.out"
-  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux"
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.pdf"
   "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.log"
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.aux"
+  "/Users/aliya/Documents/Master Thesis/template/scgbib/LatexTemplates/msc-thesis/thesis.toc"

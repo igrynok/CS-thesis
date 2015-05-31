@@ -585,9 +585,10 @@ Another feature provided by CiteWise is the possibility to search by bibliograph
 \label{cha:experiments}
 To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare CiteWise with: CiteSeerX and Google Scholar.
 
-Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, all experiments were conducted with Google Scholar and CiteWise. 
+Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, in our experiments we compared CiteWise with Google Scholar. 
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
+
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
@@ -758,7 +759,7 @@ In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 60mm 0mm 50mm,]{boxplot-search-time}
-    \caption{Boxplot of search times in Task 1a for both search engines. The red band inside a box is a second quartile (the median). The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for search times. \brs{mark the axis on the plot}}
+    \caption{Boxplot of search times in Task 1a for both search engines. The red band inside a box is a second quartile (the median). The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for search times.}
     \label{fig:boxplot-search-time}
   \end{figure}
 
@@ -766,7 +767,7 @@ In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 
 \begin{center}
 \begin{tabular}{ | c | c | c | } 
  \hline
- & \textbf{Mean(sec)} & \textbf{Std(sec)} \\  \hline
+ & \textbf{Mean (sec)} & \textbf{Std (sec)} \\  \hline
  CiteWise & 150 & 97\\ \hline
  Google Scholar & 160 & 78  \\    
  \hline
@@ -776,6 +777,15 @@ In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 
 \end{center}
 \end{table}
 
+Figure \ref{fig:boxplot-num-queries} illustrates results for number of queries in Task 1a using boxplots. It shows median and mean values for number of queries for both search engines. From Figure \ref{fig:boxplot-num-queries} we conclude that In 50\% of cases for CiteWise in Task 1a, participants found a supporting paper in less than 2 queries.   
+
+ \begin{figure}[htp]
+    \centering
+    \includegraphics[scale=0.6, trim = 0mm 60mm 0mm 50mm,]{num-queries}
+    \caption{Boxplot of search times in Task 1a for both search engines. The red band inside a box is a second quartile (the median). The black band inside a box is a mean value. The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for number of queries.}
+    \label{fig:boxplot-num-queries}
+  \end{figure}
+
 Table \ref{tab:search-query} shows average values and standard deviations for number of queries made by experts to find references and average number of words in queries. We did not see any significant differences in a number of queries and average number of words in a query between two search engines. From Table \ref{tab:search-query} we concluded that in average participants made 2-3 queries before finding a referred paper and that the average number of words in a query was 4.
 
  \begin{table}[ht]
@@ -784,8 +794,8 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
  \hline
  & \textbf{Mean} & \textbf{Std} \\  \hline
  \textbf{Number of queries} & & \\ \hline
- CiteWise & 2.0 & 1.5\\ 
- Google Scholar & 2.5 & 1.5  \\  \hline 
+ CiteWise & 2.1 & 1.5\\ 
+ Google Scholar & 2.9 & 1.7  \\  \hline 
  \textbf{Average number of words in a query} & & \\ \hline 
  CiteWise & 4.3 & 1.7\\
  Google Scholar & 4.2 & 1.2  \\     
@@ -801,7 +811,7 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that CiteWise shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
 
 \subsection{Results for Task 1b}
-Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a referred paper was found and if a participant tried to use both search engines. From Table \ref{tab:se-any} we concluded that all participants found a referred paper using CiteWise. Meantime three of participants tried both search engines and one participant did not use Google Scholar at all. 
+Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a supporting paper was found and the order in which a participant used search engines. For example, the participant P6 first searched for a paper in CiteWise, then he switched to Google Scholar and finally he switched to CiteWise where he found the result paper. From Table \ref{tab:se-any} we concluded that all participants found a supporting paper using CiteWise. Meantime three of participants used both search engines and one participant did not use Google Scholar at all. 
 
 \begin{table}[ht]
 \begin{center}
@@ -814,7 +824,7 @@ Task 1b was given to four participants. Table \ref{tab:se-any} shows in what sea
  P9 & \textcolor{red}{CiteWise} \\   
  \hline
 \end{tabular}
-\caption{Results for Task 1b. The table shows in what search engine a result was retrieved and if a participant tried to used both search engines during the task.}
+\caption{The table illustrates results for Task 1b. It shows the order in which participants used search engines during the task accomplishment. The search engine where a supporting paper was retrieved is marked red.}
 \label{tab:se-any}
 \end{center}
 \end{table}  
@@ -834,7 +844,7 @@ All participants except one (6 participants) gave better score to the summary co
 Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One expert opinion states that CiteWise is useful for discovering new works in the given domain. Participants admitted usefulness of following features of CiteWise: possibility to see citations with a context, possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
-In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
+In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. We noticed that in 50\% of cases participants found a supporting paper in CiteWise using only one query. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 

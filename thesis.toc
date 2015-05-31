@@ -40,19 +40,19 @@
 \contentsline {subsection}{\numberline {5.2.3}Post-experiment Questionnaire}{36}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}Evaluation Results}{36}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Results for Task 1a}{37}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Results for Task 1b}{39}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{39}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.2}Results for Task 1b}{40}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{40}{subsection.5.3.3}
 \contentsline {subsection}{\numberline {5.3.4}Final Questionnaire}{41}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Results Summary}{41}{subsection.5.3.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{42}{chapter.6}
-\contentsline {section}{\numberline {6.1}Future Work}{42}{section.6.1}
-\contentsline {chapter}{\numberline {A}User Guide for CiteWise Deployment}{47}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{47}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{48}{subsection.A.1.1}
-\contentsline {paragraph}{Defining Solr schema}{48}{section*.11}
-\contentsline {paragraph}{Configuring Solr Parameters}{50}{section*.12}
-\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{50}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{51}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{51}{subsection.A.2.1}
-\contentsline {section}{\numberline {A.3}Running the parser}{52}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search Interface Deployment}{53}{section.A.4}
+\contentsline {subsection}{\numberline {5.3.5}Results Summary}{42}{subsection.5.3.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{43}{section.6.1}
+\contentsline {chapter}{\numberline {A}User Guide for CiteWise Deployment}{48}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{48}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{49}{subsection.A.1.1}
+\contentsline {paragraph}{Defining Solr schema}{49}{section*.11}
+\contentsline {paragraph}{Configuring Solr Parameters}{51}{section*.12}
+\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{51}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{52}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{52}{subsection.A.2.1}
+\contentsline {section}{\numberline {A.3}Running the parser}{53}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search Interface Deployment}{54}{section.A.4}
