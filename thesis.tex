@@ -10,9 +10,9 @@
 \noindent 
 Nowadays the number of documents in the World Wide Web grows at extremely fast rate\footnote{\url{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}}. Tools that can facilitate information retrieval (IR) present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate IR. Particularly, we target an IR task for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating new scientific work.
 
-We propose \emph{CiteWise} -- a software system that automatically extracts, indexes and aggregates citations from collections of scientific articles in a PDF format. Our system proposes a search interface to discover relevant scientific results based on a statement query. Also search interface of CiteWise allows to search for citations based on meta-information queries.
+We propose \emph{CiteWise}, a software system that automatically extracts, indexes and aggregates citations from collections of scientific articles in a PDF format. \ugh{Our system proposes a search interface to discover relevant scientific results based on a statement query}. \del{Also search interface of CiteWise allows to search for citations based on meta-information queries.}
 
-We evaluated searching capabilities of our system by conducting user evaluation experiments that compare it with alternative approaches. In the first set of experiments, we measured the efficiency of our system, i.e. how fast users can find relevant results in comparison with \emph{Google Scholar}. We found that CiteWise performs equally well as Google Scholar.
+We evaluated \chg{searching}{the} capabilities of \chg{our system}{\emph{CiteWise}} by conducting user evaluation experiments that compare it with alternative approaches. In the first set of experiments, we measured the efficiency of our system, i.e. how fast users can find relevant results in comparison with \emph{Google Scholar}. We found that CiteWise performs equally well as Google Scholar.
 Secondly, we developed a citation aggregation feature to create automatic summaries of scientific articles and asked domain experts to evaluate summaries created by CiteWise and TextRank algorithms. We found that CiteWise outperforms TextRank algorithm in generating article summaries.  
 
 \end{quotation}
@@ -31,7 +31,7 @@ Secondly, we developed a citation aggregation feature to create automatic summar
 
 \section{Thesis statement} 
 
-The increasing amount of research literature produced by the scientific community poses a number of challenges to the task of finding relevant related work to newly written papers. This fact leads to an overall decrease of quality of research papers \cite{prokofyev2012tag}.
+The increasing amount of research literature produced by the scientific community poses a number of challenges to the task of finding relevant related work to newly written papers. \ugh{This fact leads to an overall decrease of quality of research papers \cite{prokofyev2012tag}} \ho{What? What is this reference? They don't say that anywhere in their paper. Please check again}.
 In particular, during the process of writing of a paper, one of the main difficulties is to validate proposed claims with the right citations.
 The claims are required in many situations to construct a valid argument, but only if supported by appropriate citations.
 %It is equally important to not overlook the citations that contradict the proposed claim, in order to 
@@ -41,7 +41,7 @@ This happens due to the fact that they do not take document structure into accou
 A more plausible option is to look at what other people used in their papers as references for their claims.
 In other words, if we have a previous paper using certain claims, we can see what citations the authors used to support those claims.
 
-We address the described problem by introducing CiteWise -- a novel search engine for scientific literature based on citations. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers. CiteWise provides a web search interface that supports following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries. Additionally users can look up all citations of a given article in other articles.
+We address the described problem by introducing CiteWise\chg{ --}{,} a novel search engine for scientific literature based on citations. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers. CiteWise provides a web search interface that supports\ins{ the} following use cases: 1) finding relevant citations based on statements and 2) searching for bibliography entries based on meta-information queries\ho{Don't mention the second one. It is not important because it has been done before}. Additionally users can look up all citations of a given article in other articles.
 
 %\brs{Better, but can still be improved. Thesis statement is very similar to the abstract, and Kent Beck wrote about the following about abstracts: 
 %Abstract. The abstract is your four sentence summary of the conclusions of your paper. Its primary purpose is to get your paper into the A pile. Most PC members sort their papers in an A pile and a B pile by reading the abstracts. The A pile papers get smiling interest, the B pile papers are a chore to be slogged through. By keeping your abstract short and clear, you greatly enhance your chances of being in the A pile. I try to have four sentences in my abstract. The first states the problem. The second states why the problem is a problem. The third is my startling sentence. The fourth states the implication of my startling sentence. An abstract for this paper done in this style would be:
@@ -50,23 +50,23 @@ We address the described problem by introducing CiteWise -- a novel search engin
 \section{Contributions}
 The following are the main contributions of this work:
 \begin{itemize}
-	\item A novel IR system for scientific articles based on citations,
-	\item A search interface to discover relevant scientific results based on a statement query,
-	\item A search interface to discover citations based on meta-information queries,
-	\item A new method of summary generation by means of citation aggregation,
+	\item A novel IR system for scientific articles based on citations.
+	\item A search interface to discover relevant scientific results based on a statement query.
+	\item \del{A search interface to discover citations based on meta-information queries,}\ho{this is not a contribution. It has been done in every other search engine}
+	\item A new method of summary generation by means of citation aggregation.
 	\item An empirical evaluation of the system by means of user study experiments.
 \end{itemize}
 
 \section{Outline}
 The rest of the paper structured as follows:
 \begin{description}
-	\item[Chapter \ref{cha:introduction}] Gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
-	\item[Chapter \ref{cha:related-work}] Surveys the research related to citations in scientific publications. It overviews two popular academic search engines: Google Scholar and CiteSeer.
-	\item[Chapter \ref{cha:CS}] Describes the design of CiteWise. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
-	\item[Chapter \ref{cha:experiments}] Describes user evaluation experiments and analyze the results.
-	\item[Chapter \ref{cha:conclusion}] Concludes the work and describe potential future work. 
+	\item[Chapter \ref{cha:introduction}] gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
+	\item[Chapter \ref{cha:related-work}] surveys the research related to citations in scientific publications. It overviews two popular academic search engines: Google Scholar and CiteSeer.
+	\item[Chapter \ref{cha:CS}] describes the design of CiteWise. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
+	\item[Chapter \ref{cha:experiments}] describes user evaluation experiments and analyze the results.
+	\item[Chapter \ref{cha:conclusion}] concludes the work and describe potential future work. 
 \end{description}
-
+\ho{where is the appendix???}
 \pagebreak
 
 \section{Glossary of Terms}
@@ -95,21 +95,19 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
     \label{fig:web-search}
   \end{figure}
 
-Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to Indexer. Indexer decides how a page content should be stored in an index storage. Indices help to quickly query documents from the index storage. Users can search and view query results through the Search Interface. When a user makes a query the search engine analyzes its index and returns best matched web pages according to specific criteria. 
+\ins{A }Web Crawler is a program that browses the World Wide Web reading the content of web pages in order to provide up-to-date data to\ins{ the} Indexer. \ins{The }Indexer decides how a page content should be stored in an index storage. Indices help to quickly query documents from the index storage. Users can search and view query results through the Search Interface. When a user makes a query the search engine analyzes its index and returns best matched web pages according to specific criteria. 
 
-Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers \cite{chakrabarti1999focused}. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar and CiteSeer. Chapter \ref{cha:related-work} gives an overview of these search engines.  
+Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers \cite{chakrabarti1999focused}. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar\ho{add a footnote or a reference} and CiteSeer\ho{also here}. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
 \section{Inverted Index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid linear scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows the basic example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each postings list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. \\
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid \del{linear }scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows\chg{ the basic}{an} example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each posting list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. 
   \begin{figure}[htp]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
     \caption{Example of an inverted index. Each term in a dictionary maps to a posting list consisting of document IDs, where this term occurs. Dictionary terms are sorted alphabetically and posting lists are sorted by document IDs}
     \label{fig:inverted-index}
   \end{figure}
-  
- The construction of the inverted index has following steps:
- 
+The construction of the inverted index has\ins{ the} following steps:
 \begin{enumerate}
 	\item Obtaining a document collection (usually performed by the crawler);
 	\item Breaking each document into tokens, turning a document into a list of tokens;
@@ -117,23 +115,22 @@ Search engines like CiteSeer or Google Scholar deal with a large collection of d
 	\item Index documents by creating an inverted index, consisting of a dictionary with terms and postings.
 \end{enumerate}
 
-First step of the index construction is obtaining a collection of documents. The goal here is to collect a set of documents containing textual data.
+\chg{F}{The f}irst step of the index construction is obtaining a collection of documents. The goal here is to collect a set of documents containing textual data.
 %Consider, for example, a collection of documents in PDF format \brs{why? we are talking about traditional search engines}.
 %First, we need to correctly decode characters of the binary representation.
 %Next, we should determine a document unit. For example, it might be a chapter in a book, or a paragraph in a scientific article. 
 
 The next step is to break up each document into \emph{tokens}. Tokens can be thought of as the semantical units for processing. For example, it might be a word or a number. During tokenization, some characters, such as punctuation marks, can be thrown away. 
-
-An example of the tokenization process is shown below:
+An example of the tokenization process is shown below:\ho{Why is the text in blue? It is disturbing}
 
 \hspace{100pt}\textcolor[rgb]{0,0,1}{Input: Sometimes, I forget things.}
 
 \hspace{100pt}\textcolor[rgb]{0,0,1}{Output: \framebox{Sometimes} \framebox{I} \framebox{forget} \framebox{things}} \\
 
-The third step is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperation}. \emph{Token normalization} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalization is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. Consider the following common normalization rules that are often used:
+The third step is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperation}. \emph{Token normalization} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalization is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. \chg{Consider the following common normalization rules that are often used}{Common normalization rules are}:
 
 \begin{description}
-	\item[Stemming and Lemmatization] Words can be used in different grammatical forms. For instance, \emph{organize}, \emph{organizes}, \emph{organizing}.However in many cases it sounds reasonable for one of these words to return documents contain other forms of the word. The goal of stemming and lemmatization is to reduce the form of the word to a common base form. 
+	\item[Stemming and Lemmatization] Words can be used in different grammatical forms. For instance, \emph{organize}, \emph{organizes}, \emph{organizing}. However in many cases it sounds reasonable for one of these words to return documents\ins{ that} contain other forms of the word. The goal of stemming and lemmatization is to reduce the form of the word to a common base form. 
 	
 Here is an example: 
 	
@@ -161,14 +158,14 @@ In general, stemmers are easier to implement and run faster. The most common alg
 	\item[Accents and Diacritics]  Diacritics in English language play an insignificant role and simply can be removed. For instance \emph{clich\'e} can be substituted by \emph{cliche}. In other languages diacritics can be part of the writing system and distinguish different sounds. However, in many cases, users can enter queries for words without diacritics.
 \end{description}
 
-The last step of building the inverted index is sorting. The input to indexing is a list of pairs of normalized tokens and documents IDs for each document. Consider an example of three documents with their contents:
+The last step of building the inverted index is sorting. The input to indexing is a list of pairs of normalized tokens and documents IDs for each document. Consider an example of three documents with their contents: \ho{it will be much better and easier to read if you merge the examples into one diagram where each table is a step.}
 \begin{itemize}
 	\item Document 1: Follow the rules.
 	\item Document 2: This is our town.
 	\item Document 3: The gates are open.
 \end{itemize}
 
- After applying tokenization and normalization steps of the listed documents the input to the indexing is shown in Table \ref{tab:input-indexing}. 
+After applying tokenization and normalization steps of the listed documents the input to the indexing is shown in Table \ref{tab:input-indexing}. 
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{ | l | l | } 
@@ -240,7 +237,7 @@ Then it merges the same terms from the same document by folding two identical ad
 %%Since a term generally occurs in a number of documents, this data organization already reduces the storage requirements of the index. 
 
 \section{Dynamic Indexing}
-So far we assumed that document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents. Simple way to deal with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if there is one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
+So far we assumed that document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents.\ins{ A} Simple way to deal with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if \del{there is }one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
 
 \section{Retrieving Search Results}
 When a user makes a query it would be good to give her back a result document containing all terms in the query, so that terms are located close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such a window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide the complexity querying from the user by introducing \emph{free text query parsers} so a user can make only one query.
