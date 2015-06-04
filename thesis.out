@@ -11,39 +11,41 @@
 \BOOKMARK [0][-]{chapter.3}{3 Related Work}{}% 11
 \BOOKMARK [1][-]{section.3.1}{3.1 Citations In Scientific Publications}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{3.2 Popular Academic Search Engines}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{4 CiteWise}{}% 14
-\BOOKMARK [1][-]{section.4.1}{4.1 System Overview}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{4.2 Parser}{chapter.4}% 16
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 PDF Processing}{section.4.2}% 17
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Document Publishing}{section.4.2}% 18
-\BOOKMARK [1][-]{section.4.3}{4.3 Indexer}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Solr Ranking Model}{section.4.3}% 20
-\BOOKMARK [1][-]{section.4.4}{4.4 Web Search Interface}{chapter.4}% 21
-\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 CiteWise Main Page}{section.4.4}% 22
-\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Search by Bibliography Page}{section.4.4}% 23
-\BOOKMARK [0][-]{chapter.5}{5 Evaluation}{}% 24
-\BOOKMARK [1][-]{section.5.1}{5.1 Experiment Setup}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Data and Tools}{section.5.1}% 26
-\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Participants}{section.5.1}% 27
-\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Process}{section.5.1}% 28
-\BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Tasks}{section.5.1}% 29
-\BOOKMARK [1][-]{section.5.2}{5.2 Questionnaires}{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Pre-experiment Questionnaire}{section.5.2}% 31
-\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Debriefing interview}{section.5.2}% 32
-\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Post-experiment Questionnaire}{section.5.2}% 33
-\BOOKMARK [1][-]{section.5.3}{5.3 Evaluation Results}{chapter.5}% 34
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Results for Task 1a}{section.5.3}% 35
-\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Results for Task 1b}{section.5.3}% 36
-\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3 Results for Task 2}{section.5.3}% 37
-\BOOKMARK [2][-]{subsection.5.3.4}{5.3.4 Final Questionnaire}{section.5.3}% 38
-\BOOKMARK [2][-]{subsection.5.3.5}{5.3.5 Results Summary}{section.5.3}% 39
-\BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 40
-\BOOKMARK [1][-]{section.6.1}{6.1 Future Work}{chapter.6}% 41
-\BOOKMARK [0][-]{appendix.A}{A User Guide for CiteWise Deployment}{}% 42
-\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 43
-\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 44
-\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr Search Features}{section.A.1}% 45
-\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 46
-\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 47
-\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 48
-\BOOKMARK [1][-]{section.A.4}{A.4 Search Interface Deployment}{appendix.A}% 49
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 CiteSeerx}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Google Scholar}{section.3.2}% 15
+\BOOKMARK [0][-]{chapter.4}{4 CiteWise}{}% 16
+\BOOKMARK [1][-]{section.4.1}{4.1 System Overview}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{4.2 Parser}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 PDF Processing}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Document Publishing}{section.4.2}% 20
+\BOOKMARK [1][-]{section.4.3}{4.3 Indexer}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Solr Ranking Model}{section.4.3}% 22
+\BOOKMARK [1][-]{section.4.4}{4.4 Web Search Interface}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 CiteWise Main Page}{section.4.4}% 24
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Search by Bibliography Page}{section.4.4}% 25
+\BOOKMARK [0][-]{chapter.5}{5 Evaluation}{}% 26
+\BOOKMARK [1][-]{section.5.1}{5.1 Experiment Setup}{chapter.5}% 27
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Data and Tools}{section.5.1}% 28
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Participants}{section.5.1}% 29
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Process}{section.5.1}% 30
+\BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Tasks}{section.5.1}% 31
+\BOOKMARK [1][-]{section.5.2}{5.2 Questionnaires}{chapter.5}% 32
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Pre-experiment Questionnaire}{section.5.2}% 33
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Debriefing interview}{section.5.2}% 34
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Post-experiment Questionnaire}{section.5.2}% 35
+\BOOKMARK [1][-]{section.5.3}{5.3 Evaluation Results}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Results for Task 1a}{section.5.3}% 37
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Results for Task 1b}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.3}{5.3.3 Results for Task 2}{section.5.3}% 39
+\BOOKMARK [2][-]{subsection.5.3.4}{5.3.4 Final Questionnaire}{section.5.3}% 40
+\BOOKMARK [2][-]{subsection.5.3.5}{5.3.5 Results Summary}{section.5.3}% 41
+\BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 42
+\BOOKMARK [1][-]{section.6.1}{6.1 Future Work}{chapter.6}% 43
+\BOOKMARK [0][-]{appendix.A}{A User Guide for CiteWise Deployment}{}% 44
+\BOOKMARK [1][-]{section.A.1}{A.1 Solr Installation}{appendix.A}% 45
+\BOOKMARK [2][-]{subsection.A.1.1}{A.1.1 Solr Configuration}{section.A.1}% 46
+\BOOKMARK [2][-]{subsection.A.1.2}{A.1.2 Enhanced Solr Search Features}{section.A.1}% 47
+\BOOKMARK [1][-]{section.A.2}{A.2 MongoDB Installation}{appendix.A}% 48
+\BOOKMARK [2][-]{subsection.A.2.1}{A.2.1 MongoDB configuration}{section.A.2}% 49
+\BOOKMARK [1][-]{section.A.3}{A.3 Running the parser}{appendix.A}% 50
+\BOOKMARK [1][-]{section.A.4}{A.4 Search Interface Deployment}{appendix.A}% 51

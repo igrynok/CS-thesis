@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.19)  3 JUN 2015 17:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.19)  4 JUN 2015 14:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -869,7 +869,7 @@ LaTeX Info: Redefining \nameref on input line 238.
 
 LaTeX Info: Redefining \Ref on input line 238.
 
-<images/logos/MSc_quer.png, id=200, 737.6358pt x 194.1654pt>
+<images/logos/MSc_quer.png, id=209, 737.6358pt x 194.1654pt>
 File: images/logos/MSc_quer.png Graphic file (type png)
 
 <use images/logos/MSc_quer.png>
@@ -884,14 +884,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 257.
 
-<images/logos/UNI_Bern.png, id=201, 258.2448pt x 199.4652pt>
+<images/logos/UNI_Bern.png, id=210, 258.2448pt x 199.4652pt>
 File: images/logos/UNI_Bern.png Graphic file (type png)
 
 <use images/logos/UNI_Bern.png>
 Package pdftex.def Info: images/logos/UNI_Bern.png used on input line 280.
 (pdftex.def)             Requested size: 77.47403pt x 59.84001pt.
 
-<images/logos/UNI_Neuenburg.png, id=202, 267.8808pt x 170.5572pt>
+<images/logos/UNI_Neuenburg.png, id=211, 267.8808pt x 170.5572pt>
 File: images/logos/UNI_Neuenburg.png Graphic file (type png)
 
 <use images/logos/UNI_Neuenburg.png>
@@ -899,7 +899,7 @@ Package pdftex.def Info: images/logos/UNI_Neuenburg.png used on input line 281.
 
 (pdftex.def)             Requested size: 80.36485pt x 51.16754pt.
 
-<images/logos/UNI_Fribourg.png, id=203, 80.2197pt x 53.7207pt>
+<images/logos/UNI_Fribourg.png, id=212, 80.2197pt x 53.7207pt>
 File: images/logos/UNI_Fribourg.png Graphic file (type png)
 
 <use images/logos/UNI_Fribourg.png>
@@ -993,12 +993,13 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 10.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 11.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 12.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 13.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 14.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 15.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 16.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 17.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 18.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 20.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 23.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 19.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 21.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 24.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 25.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 26.
@@ -1013,7 +1014,7 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 30.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 31.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 32.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 33.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 37.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 34.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 38.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 39.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 40.
@@ -1028,11 +1029,12 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 48.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 49.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 50.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 51.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 54.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 52.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 55.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 56.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 57.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 58.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 59.
 )
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
@@ -1107,7 +1109,7 @@ Chapter 2.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 79.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 82.
-<images/typical-se.pdf, id=312, 845.1575pt x 597.23125pt>
+<images/typical-se.pdf, id=322, 845.1575pt x 597.23125pt>
 File: images/typical-se.pdf Graphic file (type pdf)
 
 <use images/typical-se.pdf>
@@ -1147,7 +1149,7 @@ Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
 Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
  line 103.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 103.
- <images/inverted-index.pdf, id=323, 845.1575pt x 597.23125pt>
+ <images/inverted-index.pdf, id=334, 845.1575pt x 597.23125pt>
 File: images/inverted-index.pdf Graphic file (type pdf)
 
 <use images/inverted-index.pdf>
@@ -1218,31 +1220,74 @@ Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
 Chapter 3.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
 0.6,0.6}' on input line 245.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 252.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 251.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 253.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 253.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 253.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 253.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 254.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 255.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 257.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 257.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 257.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 257.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 259.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 259.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 259.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 256.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 256.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 256.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 256.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 258.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 258.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 258.
 [13
 
 ]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 261.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 261.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 261.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 261.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 263.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 260.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 260.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 260.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 260.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 260.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 260.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 262.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 262.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 262.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 262.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 264.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 264.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 264.
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 264.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 264.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 264.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 266.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 268.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 266.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 266.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 266.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 266.
+
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 268.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 268.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 268.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 268.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 270.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 270.
@@ -1252,146 +1297,203 @@ Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 272.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 272.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 272.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 272.
+[14]
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 278.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 278.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 278.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
 Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 278.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 279.
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--280
-
- []
-
-[14] [15]
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 278.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 278.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 278.
+ [15]
 Chapter 4.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 283.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 288.
-<images/cs-components.pdf, id=531, 597.23125pt x 845.1575pt>
+0.6,0.6}' on input line 282.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 287.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 287.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 287.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 287.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 287.
+<images/cs-components.pdf, id=543, 597.23125pt x 845.1575pt>
 File: images/cs-components.pdf Graphic file (type pdf)
 
 <use images/cs-components.pdf>
-Package pdftex.def Info: images/cs-components.pdf used on input line 292.
+Package pdftex.def Info: images/cs-components.pdf used on input line 291.
 (pdftex.def)             Requested size: 226.95023pt x 229.25984pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 298.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 297.
  [16
 
 ]
-<images/cs-activity-diagram.pdf, id=539, 597.23125pt x 845.1575pt>
+<images/cs-activity-diagram.pdf, id=551, 597.23125pt x 845.1575pt>
 File: images/cs-activity-diagram.pdf Graphic file (type pdf)
 
 <use images/cs-activity-diagram.pdf>
-Package pdftex.def Info: images/cs-activity-diagram.pdf used on input line 302.
+Package pdftex.def Info: images/cs-activity-diagram.pdf used on input line 301.
 
 (pdftex.def)             Requested size: 298.61488pt x 294.54065pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 311.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 302.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 302.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 302.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 302.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 302.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 302.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 310.
 
-<images/parser.pdf, id=541, 845.1575pt x 597.23125pt>
+<images/parser.pdf, id=553, 845.1575pt x 597.23125pt>
 File: images/parser.pdf Graphic file (type pdf)
  <use images/parser.pdf>
-Package pdftex.def Info: images/parser.pdf used on input line 315.
+Package pdftex.def Info: images/parser.pdf used on input line 314.
 (pdftex.def)             Requested size: 422.57771pt x 85.21976pt.
 
-Overfull \hbox (4.32404pt too wide) in paragraph at lines 315--316
+Overfull \hbox (4.32404pt too wide) in paragraph at lines 314--315
  [][] 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 320.
 [17 <./images/cs-components.pdf>] [18 <./images/cs-activity-diagram.pdf> <./ima
 ges/parser.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 326.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 326.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 328.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 337.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 354.
- <images/template.pdf, id=697, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 325.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 325.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 325.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 325.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 325.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 325.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 325.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 325.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 327.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 327.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 327.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 327.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 327.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 336.
+Package xcolor Info: Setting color `{}{1 g 1 G}{gray}{1}' on input line 336.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 336.
+Package xcolor Info: Setting color `{}{0.5 0 0.5 rg 0.5 0 0.5 RG}{rgb}{0.5,0,0.
+5}' on input line 336.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 353.
+ <images/template.pdf, id=709, 845.1575pt x 597.23125pt>
 File: images/template.pdf Graphic file (type pdf)
 
 <use images/template.pdf>
-Package pdftex.def Info: images/template.pdf used on input line 358.
+Package pdftex.def Info: images/template.pdf used on input line 357.
 (pdftex.def)             Requested size: 421.73949pt x 358.3415pt.
 
-Overfull \hbox (3.48581pt too wide) in paragraph at lines 358--359
+Overfull \hbox (3.48581pt too wide) in paragraph at lines 357--358
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 363.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 362.
 [19] [20 <./images/template.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 365.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 384.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 384.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 364.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 383.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 383.
+ [21]
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 409.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 409.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 409.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 409.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 410.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 410.
-[21] <images/processing.pdf, id=734, 845.1575pt x 597.23125pt>
+<images/processing.pdf, id=746, 845.1575pt x 597.23125pt>
 File: images/processing.pdf Graphic file (type pdf)
 
 <use images/processing.pdf>
-Package pdftex.def Info: images/processing.pdf used on input line 414.
+Package pdftex.def Info: images/processing.pdf used on input line 413.
 (pdftex.def)             Requested size: 422.57771pt x 49.6539pt.
 
-Overfull \hbox (4.32404pt too wide) in paragraph at lines 414--415
+Overfull \hbox (4.32404pt too wide) in paragraph at lines 413--414
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 420.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 420.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 419.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 419.
 [22 <./images/processing.pdf>]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-
-<images/link.pdf, id=754, 845.1575pt x 597.23125pt>
+<images/link.pdf, id=765, 845.1575pt x 597.23125pt>
 File: images/link.pdf Graphic file (type pdf)
  <use images/link.pdf>
-Package pdftex.def Info: images/link.pdf used on input line 445.
+Package pdftex.def Info: images/link.pdf used on input line 444.
 (pdftex.def)             Requested size: 464.83806pt x 54.6196pt.
 
-Overfull \hbox (46.58438pt too wide) in paragraph at lines 445--446
+Overfull \hbox (46.58438pt too wide) in paragraph at lines 444--445
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 451.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 454.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 454.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 450.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 450.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 450.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 450.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 450.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 453.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 453.
 [23 <./images/link.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 459.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 459.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 459.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 459.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 459.
- <images/doc.pdf, id=778, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 458.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 458.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 458.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 458.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 458.
+ <images/doc.pdf, id=791, 845.1575pt x 597.23125pt>
 File: images/doc.pdf Graphic file (type pdf)
 
 <use images/doc.pdf>
-Package pdftex.def Info: images/doc.pdf used on input line 463.
+Package pdftex.def Info: images/doc.pdf used on input line 462.
 (pdftex.def)             Requested size: 169.0285pt x 102.37279pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 478.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 478.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 478.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 467.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 467.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 477.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 477.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 477.
  [24 <./images/doc.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 486--487
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 4
-89.
+88.
 Missing character: There is no ‚ in font pcrr7t!
 Missing character: There is no Ä in font pcrr7t!
 Missing character: There is no ú in font pcrr7t!
@@ -1417,172 +1519,174 @@ Missing character: There is no ‚ in font pcrr7t!
 Missing character: There is no Ä in font pcrr7t!
 Missing character: There is no ú in font pcrr7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-15.
+14.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 5
-15.
+14.
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 488--517
+Overfull \hbox (17.0pt too wide) in paragraph at lines 487--516
 []$[]$ 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 519.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 519.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 518.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 518.
+Package xcolor Info: Setting color `{}{0 0 1 rg 0 0 1 RG}{rgb}{0,0,1}' on input
+ line 518.
 [25]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 521.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 521.
- <images/solr.pdf, id=844, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 520.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 520.
+ <images/solr.pdf, id=856, 845.1575pt x 597.23125pt>
 File: images/solr.pdf Graphic file (type pdf)
  <use images/solr.pdf>
-Package pdftex.def Info: images/solr.pdf used on input line 525.
+Package pdftex.def Info: images/solr.pdf used on input line 524.
 (pdftex.def)             Requested size: 464.83806pt x 297.18008pt.
 
-Overfull \hbox (46.58438pt too wide) in paragraph at lines 525--526
+Overfull \hbox (46.58438pt too wide) in paragraph at lines 524--525
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 531.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 530.
 [26 <./images/solr.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 539.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 539.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 544.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 544.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 544.
- <images/struts.pdf, id=865, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 538.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 538.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 543.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 543.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 543.
+ <images/struts.pdf, id=877, 845.1575pt x 597.23125pt>
 File: images/struts.pdf Graphic file (type pdf)
 
 <use images/struts.pdf>
-Package pdftex.def Info: images/struts.pdf used on input line 548.
+Package pdftex.def Info: images/struts.pdf used on input line 547.
 (pdftex.def)             Requested size: 507.09842pt x 307.12617pt.
 
-Overfull \hbox (88.84474pt too wide) in paragraph at lines 548--549
+Overfull \hbox (88.84474pt too wide) in paragraph at lines 547--548
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 555.
-<images/cs-main-page.pdf, id=867, 1223.57124pt x 650.43pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 554.
+<images/cs-main-page.pdf, id=879, 1223.57124pt x 650.43pt>
 File: images/cs-main-page.pdf Graphic file (type pdf)
 
 <use images/cs-main-page.pdf>
-Package pdftex.def Info: images/cs-main-page.pdf used on input line 558.
+Package pdftex.def Info: images/cs-main-page.pdf used on input line 557.
 (pdftex.def)             Requested size: 489.41983pt x 260.16739pt.
 
-Overfull \hbox (71.16615pt too wide) in paragraph at lines 558--559
+Overfull \hbox (71.16615pt too wide) in paragraph at lines 557--558
 [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 563.
-<images/cs-view-citations.pdf, id=869, 1248.665pt x 708.6475pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 562.
+<images/cs-view-citations.pdf, id=881, 1248.665pt x 708.6475pt>
 File: images/cs-view-citations.pdf Graphic file (type pdf)
 
 <use images/cs-view-citations.pdf>
-Package pdftex.def Info: images/cs-view-citations.pdf used on input line 566.
+Package pdftex.def Info: images/cs-view-citations.pdf used on input line 565.
 (pdftex.def)             Requested size: 499.45715pt x 283.45398pt.
 
-Overfull \hbox (81.20348pt too wide) in paragraph at lines 566--567
+Overfull \hbox (81.20348pt too wide) in paragraph at lines 565--566
 [][] 
  []
 
 [27] [28 <./images/struts.pdf>] [29 <./images/cs-main-page.pdf>] [30 <./images/
 cs-view-citations.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 574.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 573.
 
-<images/cs-search-bibl.pdf, id=940, 1009.7725pt x 552.0625pt>
+<images/cs-search-bibl.pdf, id=952, 1009.7725pt x 552.0625pt>
 File: images/cs-search-bibl.pdf Graphic file (type pdf)
 
 <use images/cs-search-bibl.pdf>
-Package pdftex.def Info: images/cs-search-bibl.pdf used on input line 577.
+Package pdftex.def Info: images/cs-search-bibl.pdf used on input line 576.
 (pdftex.def)             Requested size: 403.90184pt x 220.82108pt.
  [31 <./images/cs-search-bibl.pdf>]
 Chapter 5.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 582.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 594.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 594.
+0.6,0.6}' on input line 581.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 593.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 593.
 [32
 
 ]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 597.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 621.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 621.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 596.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 620.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 620.
  [33] [34]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 666.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 666.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 671.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 671.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 665.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 665.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 670.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 670.
  [35] [36]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 706.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 706.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 755.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 755.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 755.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 755.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 755.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 705.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 705.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 754.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 754.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 754.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 754.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 754.
  [37]
-<images/boxplot-search-time.pdf, id=1022, 614.295pt x 794.97pt>
+<images/boxplot-search-time.pdf, id=1034, 614.295pt x 794.97pt>
 File: images/boxplot-search-time.pdf Graphic file (type pdf)
 
 <use images/boxplot-search-time.pdf>
-Package pdftex.def Info: images/boxplot-search-time.pdf used on input line 759.
+Package pdftex.def Info: images/boxplot-search-time.pdf used on input line 758.
 
 (pdftex.def)             Requested size: 368.57983pt x 289.19606pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 776.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 776.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 775.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 775.
 
-<images/num-queries.pdf, id=1025, 614.295pt x 794.97pt>
+<images/num-queries.pdf, id=1037, 614.295pt x 794.97pt>
 File: images/num-queries.pdf Graphic file (type pdf)
 
 <use images/num-queries.pdf>
-Package pdftex.def Info: images/num-queries.pdf used on input line 780.
+Package pdftex.def Info: images/num-queries.pdf used on input line 779.
 (pdftex.def)             Requested size: 368.57983pt x 289.19606pt.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 785.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 785.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 784.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 784.
  [38] [39 <./images/boxplot-search-time.pdf>]
 [40 <./images/num-queries.pdf>]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 808.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 808.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 807.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 807.
+Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
+ line 813.
 Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
  line 814.
 Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
  line 815.
 Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
  line 816.
-Package xcolor Info: Setting color `{}{1 0 0 rg 1 0 0 RG}{rgb}{1,0,0}' on input
- line 817.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 826.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 825.
 
-<images/summary.pdf, id=1067, 569.12625pt x 335.2525pt>
+<images/summary.pdf, id=1079, 569.12625pt x 335.2525pt>
 File: images/summary.pdf Graphic file (type pdf)
 
 <use images/summary.pdf>
-Package pdftex.def Info: images/summary.pdf used on input line 829.
+Package pdftex.def Info: images/summary.pdf used on input line 828.
 (pdftex.def)             Requested size: 398.38567pt x 234.67514pt.
  [41] [42 <./images/summary.pdf>] [43]
 Chapter 6.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 843.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 852.
+0.6,0.6}' on input line 842.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 851.
 [44
 
-] <images/no-ref-tag.pdf, id=1113, 845.1575pt x 597.23125pt>
+] <images/no-ref-tag.pdf, id=1125, 845.1575pt x 597.23125pt>
 File: images/no-ref-tag.pdf Graphic file (type pdf)
 
 <use images/no-ref-tag.pdf>
-Package pdftex.def Info: images/no-ref-tag.pdf used on input line 856.
+Package pdftex.def Info: images/no-ref-tag.pdf used on input line 855.
 (pdftex.def)             Requested size: 422.57771pt x 70.99341pt.
 
-Overfull \hbox (4.32404pt too wide) in paragraph at lines 856--857
+Overfull \hbox (4.32404pt too wide) in paragraph at lines 855--856
  [][] 
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 861.
-<images/code-snippet.pdf, id=1115, 845.1575pt x 597.23125pt>
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 860.
+<images/code-snippet.pdf, id=1127, 845.1575pt x 597.23125pt>
 File: images/code-snippet.pdf Graphic file (type pdf)
 
 <use images/code-snippet.pdf>
-Package pdftex.def Info: images/code-snippet.pdf used on input line 865.
+Package pdftex.def Info: images/code-snippet.pdf used on input line 864.
 (pdftex.def)             Requested size: 422.57771pt x 113.67245pt.
 
-Overfull \hbox (4.32404pt too wide) in paragraph at lines 865--866
+Overfull \hbox (4.32404pt too wide) in paragraph at lines 864--865
  [][] 
  []
 
@@ -1630,9 +1734,9 @@ opt . pdf ?
 ) [48]
 Appendix A.
 Package xcolor Info: Setting color `{}{0.6 0.6 0.6 rg 0.6 0.6 0.6 RG}{rgb}{0.6,
-0.6,0.6}' on input line 879.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 885.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 885.
+0.6,0.6}' on input line 878.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 884.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 884.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
@@ -1642,20 +1746,20 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 
 ]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
+97.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
-98.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 899.
+97.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 898.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
@@ -1665,10 +1769,10 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `pcr' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-00.
-Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-00.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
+99.
+Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 8
+99.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
@@ -1677,237 +1781,237 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-16.
+15.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-23.
+22.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-23.
+22.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-26.
+25.
 
-Overfull \hbox (2.94585pt too wide) in paragraph at lines 927--928
+Overfull \hbox (2.94585pt too wide) in paragraph at lines 926--927
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-28.
+27.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-28.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 929.
+27.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 928.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-49.
+48.
 [50]
-Overfull \hbox (2.94585pt too wide) in paragraph at lines 955--956
+Overfull \hbox (2.94585pt too wide) in paragraph at lines 954--955
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-60.
+59.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-60.
+59.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-74.
+73.
 
-Overfull \hbox (8.34584pt too wide) in paragraph at lines 975--976
+Overfull \hbox (8.34584pt too wide) in paragraph at lines 974--975
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [51]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-80.
+79.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 9
-80.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 982.
+79.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 981.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-007.
+006.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-012.
+011.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-012.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1014.
+011.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1013.
  [52]
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1033.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1033.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1035.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1032.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1032.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1034.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-039.
+038.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-041.
+040.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-041.
+040.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-044.
+043.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1045.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1044.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-046.
+045.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-046.
+045.
  [53]
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-049.
+048.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-051.
+050.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-051.
+050.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-054.
+053.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-056.
+055.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-056.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1057.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1057.
+055.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1056.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1056.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-061.
+060.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-063.
+062.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-063.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1072.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1072.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1072.
+062.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1071.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1071.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1071.
 
-Underfull \hbox (badness 1048) in paragraph at lines 1080--1080
+Underfull \hbox (badness 1048) in paragraph at lines 1079--1079
 []\OT1/ptm/m/n/10.95 (+20) Endpoint for pub-lish-ing
  []
 
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1092.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1092.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1091.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1091.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-094.
+093.
 [54]
 Missing character: There is no ¬ in font pcrr7t!
 Missing character: There is no ≠ in font pcrr7t!
@@ -1928,9 +2032,9 @@ Missing character: There is no ‚ in font pcrr7t!
 Missing character: There is no Ä in font pcrr7t!
 Missing character: There is no ì in font pcrr7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-096.
+095.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-096.
+095.
 Missing character: There is no ¬ in font ptmri7t!
 Missing character: There is no ≠ in font ptmri7t!
 Missing character: There is no ‚ in font ptmri7t!
@@ -1952,19 +2056,19 @@ Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no ê in font ptmri7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-099.
+098.
 Missing character: There is no ¬ in font pcrr7t!
 Missing character: There is no ≠ in font pcrr7t!
 Missing character: There is no ‚ in font pcrr7t!
@@ -1991,66 +2095,66 @@ Missing character: There is no ‚ in font pcrr7t!
 Missing character: There is no Ä in font pcrr7t!
 Missing character: There is no ê in font pcrr7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-101.
+100.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-101.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1105.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1105.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1105.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1120.
-Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1120.
+100.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1104.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1104.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1104.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1119.
+Package xcolor Info: Setting color `{}{0 g 0 G}{gray}{0}' on input line 1119.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-122.
+121.
 Missing character: There is no ¬ in font pcrr7t!
 Missing character: There is no ≠ in font pcrr7t!
 Missing character: There is no ‚ in font pcrr7t!
 Missing character: There is no Ä in font pcrr7t!
 Missing character: There is no ê in font pcrr7t!
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-124.
+123.
 Package xcolor Info: Setting color `{}{0.9 g 0.9 G}{gray}{0.9}' on input line 1
-124.
+123.
 Missing character: There is no ¬ in font ptmr7t!
 Missing character: There is no ≠ in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ê in font ptmr7t!
  [55]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1129.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1128.
  [56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1129.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1128.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1129.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1128.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1128.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F15F551F8E697C23710CCE12370B1B9E;3448.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1129.
+(rerunfilecheck)             Checksum: 324EA252B8F7ADFA746B0F7DBEEC68E0;3591.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1128.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 365 ({)
+### simple group (level 1) entered at line 364 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19085 strings out of 493117
- 322001 string characters out of 6135433
- 472828 words of memory out of 5000000
- 21639 multiletter control sequences out of 15000+600000
- 67318 words of font info for 263 fonts, out of 8000000 for 9000
+ 19127 strings out of 493117
+ 322565 string characters out of 6135433
+ 473002 words of memory out of 5000000
+ 21658 multiletter control sequences out of 15000+600000
+ 73188 words of font info for 284 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,51p,10456b,1838s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,51p,10456b,1837s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
@@ -2060,15 +2164,16 @@ fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 </usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texl
 ive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
-tmri8a.pfb>
-Output written on thesis.pdf (57 pages, 1069618 bytes).
+4/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (57 pages, 1086220 bytes).
 PDF statistics:
- 1418 PDF objects out of 1440 (max. 8388607)
- 1152 compressed objects within 12 object streams
- 302 named destinations out of 1000 (max. 500000)
- 40956 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1436 PDF objects out of 1440 (max. 8388607)
+ 1168 compressed objects within 12 object streams
+ 303 named destinations out of 1000 (max. 500000)
+ 44044 words of extra memory for PDF output out of 51595 (max. 10000000)
 
