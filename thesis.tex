@@ -88,7 +88,7 @@ Figure \ref{fig:web-search} illustrates a high level architecture of a standard 
 	
 \end{itemize} 
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.55, trim = 0mm 140mm 0mm 10mm,]{typical-se}
     \caption{A high-level architecture of a typical web search engine}
@@ -101,7 +101,7 @@ Web crawlers that fetch web pages with the content in the same domain are called
 
 \section{Inverted Index}
 Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid \del{linear }scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows\chg{ the basic}{an} example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each posting list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
     \caption{Example of an inverted index. Each term in a dictionary maps to a posting list consisting of document IDs, where this term occurs. Dictionary terms are sorted alphabetically and posting lists are sorted by document IDs}
@@ -286,7 +286,7 @@ Google Scholar is a freely accessible web search engine that makes full-text \ch
 
 The components of CiteWise\chg{ is}{are} shown\chg{ on}{in} Figure \ref{fig:cs}. There are three main operations performed by CiteWise: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for carrying out these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referring to the same article. 
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.38, trim = 0mm 65mm 0mm 20mm]{cs-components}
     \caption{Component diagram of CiteWise.}
@@ -296,7 +296,7 @@ The components of CiteWise\chg{ is}{are} shown\chg{ on}{in} Figure \ref{fig:cs}.
 
 The workflow of the system is shown on Figure \ref{fig:cs-activity-diagram}. The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into the text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consists of a citation, that should be indexed and an additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consists of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referring to the same source. Once the \emph{Parser} processed the PDF file it can proceed to the next paper if there is any left. When all papers are processed, user can make queries over \emph{Search Web App}.
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
     \caption{Activity diagram of CiteWise. \ho{I don't like this diagram. It does not bring enough information and it is not accurate. For instance, how is querying a step in the activity diagram? An activity diagram can represent just one use case and not the whole system features. Either split it in an approperiate way or remove it altogether}}
@@ -309,7 +309,7 @@ The next sections of this chapter describe the implementation of each component 
 
 It is practical to divide the work of the \emph{Parser} into two phases: \emph{PDF processing} and \emph{Document publishing}, as in Figure \ref{fig:parser}. The output of the \emph{PDF processing} phase is the input to the \emph{Documents publishing} phase. 
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 140mm 0mm 10mm]{parser}
     \caption{Parser workflow}
@@ -352,7 +352,7 @@ The keywords can be written in different formats, like using upper or lower case
 
 After breaking a document down into sections as shown in Figure \ref{fig:template}, the text is presented in one-column format. There are two aspects regarding this format. First, sentences can be split by new line symbols at the end of a line. Second, words can be split by dash symbol at the end of a line. We introduce a normalization step where new lines are substituted by white spaces and dashes are removed in the end of a line to obtain continuous text.
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
   	\centering
     \includegraphics[scale=0.6, trim = 50mm 0mm 0mm 0mm]{template}
     \caption{Sample text of the parsed scientific article. Keywords help to break the document into sections.}
@@ -408,7 +408,7 @@ Further we need to extract bibliographic links from the references section. For 
 
 The pipeline of PDF processing stages described above is depicted \chg{on}{in} Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referring to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 165mm 0mm 10mm]{processing}
     \caption{Pipeline of the PDF processing stage}
@@ -439,7 +439,7 @@ We try to recognize common patterns covering the majority of bibliographic links
 \end{center}
 \end{table}
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.55, trim = 0mm 165mm 0mm 10mm]{link}
     \caption{Common structure of a bibliographic link}
@@ -457,7 +457,7 @@ We are also interested in a solution that does not require reviewing all Solr do
 \paragraph{Publishing documents to Solr}
 The common way to interact with Solr is using REST-like API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ\footnote{\url{https://cwiki.apache.org/confluence/display/solr/Using+SolrJ}} client library for Java language. This library abstracts the interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.2, trim = 0mm 20mm 0mm 10mm]{doc}
     \caption{Document structure publishing to Solr}
@@ -519,7 +519,7 @@ We use Solr as an Indexer: a solution from Apache Software Foundation built on A
 
 Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed (see Appendix \ref{app:solr} for Solr installation and configuration).
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.55 , trim = 0mm 10mm 0mm 10mm]{solr}
     \caption{High level architecture of a Solr system}
@@ -542,7 +542,7 @@ The exact scoring formula with the description of all factors can be found on th
 \section{Web Search Interface}
 Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 20mm 0mm 10mm]{struts}
     \caption{Architecture overview of a web search application}
@@ -553,7 +553,7 @@ Web Search interface is a Java web application running in a servlet container. F
 
 The main page of CiteWise presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user sees a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available then user can open it using a link ``See pdf on SCG resources''.  
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-main-page}
     \caption{A screenshot of the main page of the CiteWise interface showing results for a statement query ``software testing is time-consuming''}
     \label{fig:cs-main-page}
@@ -561,7 +561,7 @@ The main page of CiteWise presents a simple search interface allowing user to se
 
 If a reference has a title recognizable by CiteWise then a user can see all citations referring to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
 
-   \begin{figure}[htp]
+   \begin{figure}[ht]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-view-citations}
     \caption{A screenshot of the main page of a CiteWise interface showing citations referring to the article with the recognizable title ``Software maintenance and evolution: a roadmap.''}
     \label{fig:cs-view-citations}
@@ -572,7 +572,7 @@ A user can take advantage of using enhanced search query syntax. The query synta
 \subsection{Search by Bibliography Page}
 Another feature provided by CiteWise is the possibility to search by bibliography entries. For example, a user can search by authors, title or publication venue. An example of a search by author is shown in Figure \ref{fig:cs-search-bibl}. A user sees a list of bibliographic entries with searched author name. If an entry has an extractable title then user can see citations from other papers referring to the entry.
 
-   \begin{figure}[htp]
+   \begin{figure}[ht]
     \includegraphics[scale=0.4]{cs-search-bibl}
     \caption{A screenshot of the `search by bibliography' page of a CiteWise interface illustrating a search for citations based on a meta-information query. Here a user searches for citations of scientific articles authored by Mircea Lungu.}
     \label{fig:cs-search-bibl}
@@ -586,19 +586,19 @@ Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover
 
 There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
 
-In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm.
+In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank \ho{reference here} algorithm.
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
-For evaluation experiments we used a dataset of scientific articles collected by SCG\footnote{\url{http://scgresources.unibe.ch/Literature/}} members over decades. The collection contains about 16000 scientific articles and covers various topics in Software Engineering and Programming Languages. The Google Scholar dataset is much larger that the data set used in our experiments, so we reduced the searching space to the domain of Software Engineering and Programming Languages. During the experiment all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
+For evaluation experiments we used a dataset of scientific articles collected by SCG\footnote{\url{http://scgresources.unibe.ch/Literature/}} members over decades.\ho{this is the second time you mention SCG without telling the reader what it is. Define the terms before using themt} The collection contains about 16000 scientific articles and covers various topics in\chg{ Software Engineering and Programming Languages}{computer science}. The Google Scholar dataset is much larger than the dataset used in our experiments, so we reduced the searching space to the domain of Software Engineering and Programming Languages. During the experiment, all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
 
 \subsection{Participants}
-We intentionally looked for experts in the domain of Software Engineering and Programming Languages that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) participated in experiments ( see Table \ref{tab:experts}).
+We intentionally looked for experts in the domain of Software Engineering and Programming Languages that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) participated in the experiments (see Table \ref{tab:experts}).
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{  c | c | c | c } 
  \hline
- \textbf{ID} & \textbf{Position} & \textbf{Domains of Interest} &\textbf{Years} \\ \hline
+ \textbf{ID} & \textbf{Position} & \textbf{Domains of Interest} &\textbf{Years\ho{of what?}} \\ \hline
  P1 & Professor researcher & Software Engineering and Programming Languages & 35\\
  P2 & PostDoc researcher & Software and Ecosystem Analysis & 11  \\ 
  P3 & PhD candidate & Software Quality & 2 \\   
@@ -617,7 +617,7 @@ We intentionally looked for experts in the domain of Software Engineering and Pr
 
 
 \subsection{Process}
-Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks are described in subsection Tasks \ref{sub:tasks}.  
+Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks are described in subsection \del{Tasks} \ref{sub:tasks}.  
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{  c | c | c  } 
@@ -647,22 +647,20 @@ During the experiment.
 \begin{enumerate}
 	\item We let the test subject read one cited sentence as well as the context of this sentence.
 	\item We ask the test subject to find a referred paper that proves the given claim using the given search engine (CiteWise or Google Scholar).
-	\item We repeat steps for four citations every time changing the used search engine. We used following procedure. In the first run of the Task 1a we asked the participant P1 to find a paper using CiteWise. Then, in the second run we asked P1 to complete the same task using Google Scholar and so on. We asked the participant P2 to use Google Scholar for the first run, CiteWise for the second run and so on. Thus, we alternated a search engine type for the first run and then alternated search engine types for all remaining runs respectively. 
+	\item We repeat steps for four citations every time changing the used search engine\del{. We used following procedure}. In the first run of the Task 1a we asked the participant P1 to find a paper using CiteWise. Then, in the second run we asked P1 to complete the same task using Google Scholar and so on. We asked the participant P2 to use Google Scholar for the first run, CiteWise for the second run and so on. Thus, we alternated a search engine type for the first run and then alternated search engine types for all remaining runs respectively. 
 \end{enumerate}
 
 During the execution of tasks, we observe the following:
 \begin{itemize}[noitemsep]
-	\item \emph{Search time}, time spent by participant to find a paper supporting the given cited text. 
+	\item \emph{Search time}, the time spent by participant to find a paper supporting the given cited text. 
 	\item \emph{Number of queries}, the amount of queries made by participant to find a reference.
 	\item \emph{Number of words in each query}, numbers of words in each query made by the test subject while searching.
-	\item \emph{Expert comments}, any comments made by the test subject during the task execution.
+	\item \emph{Expert\ho{DON'T USE THE WORD EXPERT} comments}, any comments made by the test subject during the task execution.
 \end{itemize}  
 
-\paragraph{Task 1b} Task 1b was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task 1a a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by test subject. Every participant received only one citation for this task. As for the previous task the citation was removed from CiteWise before the experiment. 
+\paragraph{Task 1b} Task 1b was given to the second group as an extra task. By conducting this task, we would like to know which search engine would the test subject use if it is not specified in the task description. As in Task 1a a test subject was also given a citation to find a reference to, but this time a search engine was not specified and a citation was taken from a paper not authored by \ins{the }test subject. Every participant received only one citation for this task. As for the previous task the citation was removed from CiteWise before the experiment. During Task 1b, we observed which search engine was used to find a reference. 
 
-During Task 1b, we observed which search engine was used to find a reference. 
-
-\paragraph{Task 2} In Task 2 we asked participants to compare two summaries generated with CiteWise and TextRank\cite{mihalcea2004textrank} algorithms. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use following procedure to conduct Task 2:
+\paragraph{Task 2} In Task 2 we asked participants to compare two summaries generated with CiteWise and TextRank\cite{mihalcea2004textrank} algorithms. The TextRank algorithm is a graph-based ranking algorithm for Natural Language Processing (NLP) \cite{mihalcea2004graph}. It extracts sentences from the text based on their importance. We use \ins{the }following procedure to conduct Task 2:
 \\Before the experiment.
 \begin{enumerate}
 	\item We ask every participant in advance to provide a paper that she thinks is important in her research field. 
@@ -679,7 +677,7 @@ During the experiment.
 \section{Questionnaires}
 
 \subsection{Pre-experiment Questionnaire}
-Before the beginning of the experiment we ask the test subjects to provide preliminary information by filling in a pre-experiment questionnaire. The goal of the pre-experiment questionnaire is to gather general statistics about the participants' experience in using various search engines. We ask the participants to fill in a form with following questions:
+Before the beginning of the experiment we ask the test subjects to provide preliminary information by filling in a pre-experiment questionnaire. The goal of the pre-experiment questionnaire is to gather general statistics about the participants' experience in using various search engines. We ask the participants to fill in a form with following questions:\ho{it would be nice to have a screenshot of the questionnaire itself here instead of this list}
 \begin{itemize}
 	\item What search engines do you usually use to find scientific literature?
 	\item How often do you use the listed search engines? (Possible answers: everyday, a few times per week, once a week or less)
@@ -687,7 +685,7 @@ Before the beginning of the experiment we ask the test subjects to provide preli
 \end{itemize} 
 
 \subsection{Debriefing interview}
-After completing Task 1a and Task 1b we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and CiteWise. During the interview the participants have chance to share their impression on using both search engines. Sample questions asked during the interview:
+After completing Task 1a and Task 1b we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and CiteWise. During the interview the participants have chance to share their impression on using both search engines. Sample questions asked during the interview:\ho{it's not worth it to have a list if you have only two items}
 \begin{itemize}
 	\item What did you like/dislike about using each search engine?
 	\item What difficulties did you have?
@@ -753,7 +751,7 @@ Four respondents answered positively on the question if they have ever used Cite
 \subsection{Results for Task 1a}  
 In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 2 times with CiteWise and 2 times with Google Schoalr. In overall, we made 18 measurements for CiteWise and 18 measurements for google Schoalr. Figure \ref{fig:boxplot-search-time} illustrates results for search time in Task 1a using boxplots \footnote{\url{http://en.wikipedia.org/wiki/Box_plot}}. Table \ref{tab:search-time} shows the mean and standard deviation of search times for both search engines. From Table \ref{tab:search-time} we observed that the average time to find a reference for a given citation is approximately 2.5 minutes. Participants were slightly faster with finding results using CiteWise. However, there is no statistically significant difference between search times of CiteWise and Google Scholar according to t-test with significance level p = 5\%. 
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 60mm 0mm 50mm,]{boxplot-search-time}
     \caption{Boxplot of search times in Task 1a for both search engines. The red band inside a box is a second quartile (the median). The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for search times.}
@@ -772,12 +770,12 @@ In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 
 \end{center}
 \end{table}
 
-Figure \ref{fig:boxplot-num-queries} illustrates results for number of queries in Task 1a using boxplots. It shows median and mean values for number of queries for both search engines. From Figure \ref{fig:boxplot-num-queries} we conclude that In 50\% of cases for CiteWise in Task 1a, participants found a supporting paper in less than 2 queries.   
+Figure \ref{fig:boxplot-num-queries} illustrates results for number of queries in Task 1a using boxplots. It shows median and mean values for number of queries for both search engines. From Figure \ref{fig:boxplot-num-queries} we conclude that in 50\% of cases for CiteWise in Task 1a, participants found a supporting paper in less than 2 queries.   
 
- \begin{figure}[htp]
+ \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.6, trim = 0mm 60mm 0mm 50mm,]{num-queries}
-    \caption{Boxplot of search times in Task 1a for both search engines. The red band inside a box is a second quartile (the median). The black band inside a box is a mean value. The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for number of queries.}
+    \caption{\chg{Boxplot of search times in Task 1a for both search engines.}{is it???} The red band inside a box is a second quartile (the median). The black band inside a box is a mean value. The bottom and top of the box are the first and third quartiles. The end of whiskers represent the minimum and maximum values for number of queries.}
     \label{fig:boxplot-num-queries}
   \end{figure}
 
@@ -794,12 +792,12 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
  CiteWise & 4.3 & 1.7\\
  Google Scholar & 4.2 & 1.2  \\     
 \end{tabular}
-\caption{The mean and standard deviation values for a number of queries and avearge number of words in a query in Task 1.}
+\caption{The mean and standard deviation values for a number of queries and avearge number of words in a query in Task 1.\ho{This table can be formatted better so there are only two rows: CiteWise and Scholar.}}
 \label{tab:search-query}
 \end{center}
 \end{table}
 
- During the experiments we noticed that participants were more familiar with Google Scholar search interface so participants spent some time exploring CiteWise interface. This could affect search time for CiteWise making it longer.
+During the experiments we noticed that participants were more familiar with Google Scholar search interface so participants spent some time exploring CiteWise interface. This could affect search time for CiteWise making it longer.
 
 We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that CiteWise shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
 
@@ -823,19 +821,19 @@ Task 1b was given to four participants. Table \ref{tab:se-any} shows in what sea
 \subsection{Results for Task 2}
 
 Results for Task 2 are shown in Figure \ref{fig:summaries}. It illustrates scores from 0 to 10 given by participants to summaries generated with TextRank and citation from CiteWise.  
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.7, trim = 0mm 0mm 0mm 0mm,]{summary}
     \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from CiteWise.}
     \label{fig:summaries}
   \end{figure}
-All participants except one (6 participants) gave better score to the summary composed by citations from CiteWise. We could not generate summaries for participants P4 and P6 since they did not provide us with papers. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consist of too general or not important for understanding a paper sentences. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations, saying in other words sentences in a summary are not ordered to make a story.       
+All participants except one (6 participants) gave better score to the summary composed by citations from CiteWise. We could not generate summaries for participants P4 and P6 since they did not provide us with papers. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consists of sentences either too general or not important for understanding the paper. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations\chg{, saying in }{. In }other words sentences in a summary are not ordered to make a story.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One expert opinion states that CiteWise is useful for discovering new works in the given domain. Participants admitted usefulness of following features of CiteWise: possibility to see citations with a context, possibility to search by bibliographic entries. 
+Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One expert\ho{!?!?!?} opinion states that CiteWise is useful for discovering new works in the given domain. Participants \chg{admitted}{appreciated} \del{usefulness of following features of CiteWise:} \ins{the} possibility to see citations with a context\chg{,}{ and the} possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
-In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. We noticed that in 50\% of cases participants found a supporting paper in CiteWise using only one query. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might be an alternative to Google Scholar. Indeed, when experts have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
+In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. We noticed that in 50\% of cases participants found a supporting paper in CiteWise using only one query. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might be an alternative to Google Scholar\ho{really?? I would say it complements scholar, not replacee it}. Indeed, when experts\ho{?!?!?!} have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
 
 The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
 
@@ -847,10 +845,10 @@ We evaluated our system by conducting user evaluation experiments. In the first 
 
 \section {Future Work}
 \label{cha:future-work}
-
+\ho{Future work is a separate chapter}
 One of the ways the CiteWise parser can be improved is finding cited sentences that do not contain any specific identifiers. Indeed the task is straightforward when a sentence contains square brackets, for example, `[34]' or `[Ali86]'. However, sometimes a link to bibliography can be composed only from the authors' names. In this case it becomes difficult to distinguish a citation from any other sentence (see Figure \ref{fig:no-ref-tag}).
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 150mm 0mm 10mm]{no-ref-tag}
     \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to bibliography composed from authors' names making it hard to distinguish a citation from any other sentences.} 
@@ -859,14 +857,14 @@ One of the ways the CiteWise parser can be improved is finding cited sentences t
 
 Another issue in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
 
-  \begin{figure}[htp]
+  \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 120mm 0mm 10mm]{code-snippet}
     \caption{An example of the code snippet from the article ``Modular Verification of Higher-Order Methods with Mandatory Calls Specified by Model Programs'' authored by Steve M. Shaner et al. The code snippet is wrongly considered as a citation and is matched to the first bibliographic entry.} 
     \label{fig:code-snippet}
   \end{figure}
   
-During the debriefing interviews two participants admitted that they would like to view a title of an article from witch a citation was extracted. A title of an article could be extracted using the information about the font of the text. Such feature can be implemented using PDF parsers that provide information about the font of the extracted text.  
+During the debriefing interviews two participants \chg{admitted}{pointed out} that they would like to view a title of an article from witch a citation was extracted. A title of an article could be extracted using the information about the font of the text. Such feature can be implemented using PDF parsers that provide information about the font of the extracted text.\ho{I thought this should be done in this work not in future work}  
 
 %END Doc
 %-------------------------------------------------------

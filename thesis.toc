@@ -18,14 +18,14 @@
 \contentsline {section}{\numberline {4.2}Parser}{17}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}PDF Processing}{17}{subsection.4.2.1}
 \contentsline {paragraph}{Processing bibliographic links}{22}{section*.3}
-\contentsline {subsection}{\numberline {4.2.2}Document Publishing}{23}{subsection.4.2.2}
-\contentsline {paragraph}{Publishing documents to Solr}{24}{section*.4}
+\contentsline {subsection}{\numberline {4.2.2}Document Publishing}{22}{subsection.4.2.2}
+\contentsline {paragraph}{Publishing documents to Solr}{23}{section*.4}
 \contentsline {paragraph}{Publishing documents to MongoDB}{24}{section*.5}
 \contentsline {section}{\numberline {4.3}Indexer}{25}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{27}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Solr Ranking Model}{26}{subsection.4.3.1}
 \contentsline {section}{\numberline {4.4}Web Search Interface}{27}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}CiteWise Main Page}{27}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{31}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Search by Bibliography Page}{27}{subsection.4.4.2}
 \contentsline {chapter}{\numberline {5}Evaluation}{32}{chapter.5}
 \contentsline {section}{\numberline {5.1}Experiment Setup}{33}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Data and Tools}{33}{subsection.5.1.1}
@@ -41,19 +41,19 @@
 \contentsline {subsection}{\numberline {5.2.3}Post-experiment Questionnaire}{37}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}Evaluation Results}{37}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Results for Task 1a}{37}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Results for Task 1b}{41}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{42}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Final Questionnaire}{42}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Results Summary}{43}{subsection.5.3.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{44}{chapter.6}
-\contentsline {section}{\numberline {6.1}Future Work}{44}{section.6.1}
-\contentsline {chapter}{\numberline {A}User Guide for CiteWise Deployment}{49}{appendix.A}
-\contentsline {section}{\numberline {A.1}Solr Installation}{49}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{50}{subsection.A.1.1}
-\contentsline {paragraph}{Defining Solr schema}{50}{section*.10}
-\contentsline {paragraph}{Configuring Solr Parameters}{52}{section*.11}
-\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{52}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}MongoDB Installation}{53}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{53}{subsection.A.2.1}
-\contentsline {section}{\numberline {A.3}Running the parser}{54}{section.A.3}
-\contentsline {section}{\numberline {A.4}Search Interface Deployment}{55}{section.A.4}
+\contentsline {subsection}{\numberline {5.3.2}Results for Task 1b}{39}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Results for Task 2}{40}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Final Questionnaire}{41}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Results Summary}{42}{subsection.5.3.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{43}{section.6.1}
+\contentsline {chapter}{\numberline {A}User Guide for CiteWise Deployment}{48}{appendix.A}
+\contentsline {section}{\numberline {A.1}Solr Installation}{48}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Solr Configuration}{49}{subsection.A.1.1}
+\contentsline {paragraph}{Defining Solr schema}{49}{section*.10}
+\contentsline {paragraph}{Configuring Solr Parameters}{51}{section*.11}
+\contentsline {subsection}{\numberline {A.1.2}Enhanced Solr Search Features}{51}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MongoDB Installation}{52}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}MongoDB configuration}{52}{subsection.A.2.1}
+\contentsline {section}{\numberline {A.3}Running the parser}{53}{section.A.3}
+\contentsline {section}{\numberline {A.4}Search Interface Deployment}{54}{section.A.4}
