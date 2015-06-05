@@ -1,55 +1,55 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
 Warning--entry type for "smith" isn't style-file defined
---line 277 of file thesis.bib
+--line 293 of file thesis.bib
 Warning--entry type for "use.solr.2" isn't style-file defined
---line 364 of file thesis.bib
+--line 380 of file thesis.bib
 Warning--entry type for "use.solr1" isn't style-file defined
---line 372 of file thesis.bib
+--line 388 of file thesis.bib
 Warning--empty booktitle in mihalcea2004textrank
 Warning--empty booktitle in Porter:1997:ASS:275537.275705
-You've used 30 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            699 strings with 10233 characters,
-and the built_in function-call counts, 10566 in all, are:
-= -- 1049
-> -- 451
+            710 strings with 10736 characters,
+and the built_in function-call counts, 11290 in all, are:
+= -- 1115
+> -- 497
 < -- 16
-+ -- 174
-- -- 144
-* -- 667
-:= -- 1677
-add.period$ -- 99
-call.type$ -- 30
-change.case$ -- 152
++ -- 192
+- -- 160
+* -- 721
+:= -- 1801
+add.period$ -- 105
+call.type$ -- 32
+change.case$ -- 166
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 445
-empty$ -- 890
-format.name$ -- 144
-if$ -- 2321
+cite$ -- 34
+duplicate$ -- 470
+empty$ -- 944
+format.name$ -- 160
+if$ -- 2467
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 26
-newline$ -- 151
-num.names$ -- 66
-pop$ -- 203
+int.to.str$ -- 32
+missing$ -- 28
+newline$ -- 161
+num.names$ -- 70
+pop$ -- 219
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 136
 quote$ -- 0
-skip$ -- 338
+skip$ -- 352
 stack$ -- 0
-substring$ -- 599
-swap$ -- 132
+substring$ -- 634
+swap$ -- 135
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 124
 warning$ -- 2
-while$ -- 104
-width$ -- 32
-write$ -- 335
+while$ -- 110
+width$ -- 34
+write$ -- 356
 (There were 5 warnings)

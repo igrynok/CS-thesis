@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{aberer2011sciencewise}
+K.~Aberer, A.~Boyarsky, Philippe Cudr{\'e}-Mauroux, Gianluca Demartini, and
+  O.~Ruchayskiy.
+\newblock Sciencewise: A web-based interactive semantic platform for scientific
+  collaboration.
+\newblock In {\em 10th International Semantic Web Conference (ISWC 2011-Demo),
+  Bonn, Germany}, 2011.
+
 \bibitem{marc1}
 Marc Bertin and Iana Atanassova.
 \newblock Semantic enrichment of scientific publications and metadata :
@@ -52,6 +60,12 @@ Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
 Eugene Garfield et~al.
 \newblock Science citation index-a new dimension in indexing.
 \newblock {\em Science}, 144(3619):649--654, 1964.
+
+\bibitem{ghafele2011driving}
+Roya Ghafele, Benjamin Gibert, and Paul DiGiammarino.
+\newblock Driving innovation through patent application review: The power of
+  crowdsourcing prior art search.
+\newblock {\em Journal of Intellectual Property Rights}, 16:303--308, 2011.
 
 \bibitem{Giles:1998:CAC:276675.276685}
 C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
