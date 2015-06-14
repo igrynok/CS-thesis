@@ -23,6 +23,11 @@ Marc Bertin and Iana Atanassova.
   of {\em Communications in Computer and Information Science}, pages 120--126.
   Springer International Publishing, 2014.
 
+\bibitem{M_automaticannotation}
+Marc Bertin, Jean-Pierre Descl{\'e}s, Brahim Djioua, and Yordan Krushkov.
+\newblock Automatic annotation in text for bibliometrics use.
+\newblock In {\em FLAIRS Conference}, pages 313--318, 2006.
+
 \bibitem{bradshaw}
 Shannon Bradshaw.
 \newblock Reference directed indexing: Redeeming relevance for subject search
@@ -45,7 +50,7 @@ Soumen Chakrabarti, Martin Van~den Berg, and Byron Dom.
 
 \bibitem{Councill08parscit:an}
 Isaac~G. Councill, C.~Lee Giles, and Min yen Kan.
-\newblock Parscit: An open-source crf reference string parsing package.
+\newblock Parscit: An open-source {CRF} reference string parsing package.
 \newblock In {\em International Language Resources and Evaluation}. European
   Language Resources Association, 2008.
 
@@ -58,7 +63,7 @@ Gaizka Garechana, Rosa Rio, Ernesto Cilleruelo, and Javier Gavilanes.
 
 \bibitem{garfield1964science}
 Eugene Garfield et~al.
-\newblock Science citation index-a new dimension in indexing.
+\newblock Science citation index --- a new dimension in indexing.
 \newblock {\em Science}, 144(3619):649--654, 1964.
 
 \bibitem{ghafele2011driving}
@@ -69,7 +74,7 @@ Roya Ghafele, Benjamin Gibert, and Paul DiGiammarino.
 
 \bibitem{Giles:1998:CAC:276675.276685}
 C.~Lee Giles, Kurt~D. Bollacker, and Steve Lawrence.
-\newblock Citeseer: An automatic citation indexing system.
+\newblock {CiteSeer: An Automatic Citation Indexing System}.
 \newblock In {\em Proceedings of the Third ACM Conference on Digital
   Libraries}, DL '98, pages 89--98, New York, NY, USA, 1998. ACM.
 
@@ -99,10 +104,6 @@ Ray~R Larson.
 Loet Leydesdorff, Stephen Carley, and Ismael Rafols.
 \newblock Global maps of science based on the new web-of-science categories.
 \newblock {\em CoRR}, abs/1202.1914, 2012.
-
-\bibitem{M_automaticannotation}
-Bertin M, Desclés~J. P, Djioua B, Krushkov Y, and Lalicc Umr.
-\newblock Automatic annotation in text for bibliometrics use.
 
 \bibitem{manning2008introduction}
 Christopher~D Manning, Prabhakar Raghavan, and Hinrich Sch{\"u}tze.
@@ -149,9 +150,9 @@ Enrique Ordu\~{n}a Malea, Juan~M. Ayll\'{o}n, Alberto Mart\'{\i}n-Mart\'{\i}n,
 
 \bibitem{Porter:1997:ASS:275537.275705}
 M.~F. Porter.
-\newblock Readings in information retrieval.
-\newblock chapter An Algorithm for Suffix Stripping, pages 313--316. Morgan
-  Kaufmann Publishers Inc., San Francisco, CA, USA, 1997.
+\newblock {\em Readings in Information Retrieval}, chapter An Algorithm for
+  Suffix Stripping, pages 313--316.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1997.
 
 \bibitem{prokofyev2012tag}
 Roman Prokofyev, Alexey Boyarsky, Oleg Ruchayskiy, Karl Aberer, Gianluca
@@ -170,7 +171,7 @@ Vahed Qazvinian and Dragomir~R. Radev.
 
 \bibitem{use.solr.2}
 Jonathan Rochkind.
-\newblock Thinking like solr — it’s not an rdbms.
+\newblock Thinking like {Solr} — it’s not an rdbms.
 \newblock
   https://bibwild.wordpress.com/2011/01/24/thinking-like-solr-its-not-an-rdbms/.
 
@@ -195,7 +196,7 @@ Linda~C. Smith.
 
 \bibitem{use.solr1}
 Solr Wiki.
-\newblock Why use solr?
+\newblock Why use {Solr}?
 \newblock http://wiki.apache.org/solr/WhyUseSolr.
 
 \end{thebibliography}

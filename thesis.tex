@@ -8,7 +8,7 @@
 \chapter*{\centering Abstract}
 \begin{quotation}
 \noindent 
-Nowadays the number of documents in the World Wide Web grows at extremely fast rate\footnote{\url{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}}. Tools that can facilitate information retrieval (IR) present a particular interest in the modern world. We believe that considering meta information helps to build enhanced search systems that can facilitate IR. Particularly, we target an IR task for scientific articles. We consider citations in scientific articles as important text blocks summarizing or judging previous scientific findings, assisting in creating new scientific work.
+Nowadays the number of documents in the World Wide Web grows at extremely fast rate\footnote{\url{http://googleblog.blogspot.ch/2008/07/we-knew-web-was-big.html}}. Tools that can facilitate information retrieval (IR) present a particular interest in the modern world. We believe that considering meta information helps us to build enhanced search systems that can facilitate IR. Particularly, we target an IR task for scientific articles. We consider citations in scientific articles to be important text blocks summarizing or judging previous scientific findings, assisting in creating new scientific work.
 
 We propose \emph{CiteWise}, a software system that automatically extracts, indexes and aggregates citations from collections of scientific articles in a PDF format. 
 
@@ -33,15 +33,16 @@ Secondly, we developed a citation aggregation feature to create automatic summar
 
 The increasing amount of research literature produced by the scientific community poses a number of challenges to the task of finding relevant prior art to newly written papers and filed patents. Thus, searching for prior related work becomes an extremely hard task for an individual or a small group of researchers, which has been studied for cases such as patent search~\cite{ghafele2011driving}. Other works~\cite{prokofyev2012tag} even claim that this will result in a ``fundamental phase transition in how scientific results are obtained, represented, used, communicated and attributed'', and propose their own system to organize and navigate scientific knowledge~\cite{aberer2011sciencewise}.
 
+This work focuses on the specific problem of finding relevant citations for claim statements.
 During the process of writing of a paper, one of the main difficulties is to validate proposed claims with the right citations.
 The claims are required in many situations to construct a valid argument, but only if supported by appropriate citations.
 %It is equally important to not overlook the citations that contradict the proposed claim, in order to
-Current solutions to the problem, such a Google Scholar, are typically based on keyword search, and thus do not work well for the case of finding relevant citations.
+Current solutions to the problem, such as full-text search engines, are typically based on keyword search, and thus do not always work well for the case of finding relevant citations.
 This happens due to the fact that they do not take document structure into account, i.e, that some sentences in a document are more likely to contain claims than others. Therefore, such systems return a large amount of irrelevant results.
-A more plausible option is to look at what other people used in their papers as references for their claims.
+A more suitable approach is to look at what other people used in their papers as references for their claims.
 In other words, if we have a previous paper using certain claims, we can see what citations the authors used to support those claims.
 
-We address the described problem by introducing CiteWise, a novel search engine for scientific literature based on citations. Our system is designed to parse scientific articles in PDF format. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we index citations extracted from articles.  We studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers. CiteWise provides a web search interface that supports the following use cases: 1) finding relevant citations based on statements and 2) searching for bibliographic entries using meta-information, such as author names and venues.
+We address the described problem by introducing CiteWise, a novel search engine for scientific literature based on citations. In contrast to ordinary information retrieval (IR) systems that index entire content of articles, we focus on indexing citations extracted from articles.  We study the structure of citations and design an algorithm that aggregates citations referring to the same source. We use the aggregation mechanism of CiteWise to generate automatic summaries of papers. CiteWise provides a web search interface that supports the following use cases: 1) finding relevant citations based on statements and 2) searching for bibliographic entries using meta-information, such as author names and venues.
 %\ho{Don't mention the second one. It is not important because it has been done before}\ai{I would like to keep the second use case for the purpose of fully describing the system. This might be not desirable for a scientific paper, but relevant for a Master Thesis.}. 
 Additionally users can look up all citations of a given article in other articles.
 
@@ -64,7 +65,7 @@ The rest of the paper structured as follows:
 	\item[\autoref{cha:introduction}] gives a high overview of the architecture of a typical web search engine. It describes the main steps to construct an inverted index.
 	\item[\autoref{cha:related-work}] surveys the research related to citations in scientific publications. It overviews two popular academic search engines: Google Scholar and CiteSeer.
 	\item[\autoref{cha:CS}] describes the design of CiteWise. It first shows overall architecture of the proposed system and then shows details of implementation of each component. 
-	\item[\autoref{cha:experiments}] describes user evaluation experiments and analyze the results.
+	\item[\autoref{cha:experiments}] describes user evaluation experiments and analyzes the results.
 	\item[\autoref{cha:conclusion}] concludes the work. 
 	\item[\autoref{cha:future-work}] describes potential future work.
 	\item[appendix] provides a user guide for the CiteWise deployment.
@@ -73,8 +74,9 @@ The rest of the paper structured as follows:
 
 \section{Glossary of Terms}
 \begin{description}
-	\item[Citation] is ``a reference to a published or unpublished source'' \footnote{\url{http://en.wikipedia.org/wiki/Citation}}. Consist of two parts: a cited text in the body of the article and a bibliographic link in the references section of the article. If it is not specified, by citation in this work we mean a cited text in the body of the article.
-	\item[Bibliographic link or bibliographic reference] is a bibliographic entry in the references section of the article associated with the cited text in the body of an article. 
+	\item[Citation] A \emph{citation} is a piece of text (usually a claim, within the body of an article), including a (bibliographic) \emph{link} to a \emph{bibliographic reference} (in a references section of the article), that identifies a \emph{source text} (another work) justifying that claim.
+	\item[Bibliographic link or link] \emph{Bibliographic link} is a link to a \emph{bibliographic reference}. It consists of a unique identifier of the \emph{bibliographic reference}, normally within square brackets (e.g. ``[23]'', ``[Giles97]''). 
+	\item[Bibliographic reference] is a bibliographic entry in a references section of the article identifying another work.
 	\item[Document] a broader term, having multiple meanings. In this work we can use a term \emph{document} to refer to a single file, i.e a PDF article. A \emph{document} term can be used to refer to a basic storage unit, i.e  basic storage unit of an Indexes storage or a MongoDB database.
 \end{description}
 
@@ -102,7 +104,7 @@ A Web Crawler is a program that browses the World Wide Web reading the content o
 Web crawlers that fetch web pages with the content in the same domain are called focused or topical crawlers \cite{chakrabarti1999focused}. An example of a focused crawler is an academic-focused crawler that crawls scientific articles. Such crawlers become components of focused search engines. Examples of popular academic search engines are Google Scholar\footnote{\url{https://scholar.google.ch/}} and CiteSeer\footnote{\url{http://citeseerx.ist.psu.edu/index}}. Chapter \ref{cha:related-work} gives an overview of these search engines.  
 
 \section{Inverted Index}
-Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows an example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often it records the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each posting list is sorted by document ID. Document ID is a unique number that can be assigned to a document when it is first encountered. 
+Search engines like CiteSeer or Google Scholar deal with a large collection of documents. The way to avoid scanning the text of all documents for each query is to \emph{index} them in advance. Thereby we are coming to the concept of \emph{inverted index}, which is a major concept in IR. The term \emph{inverted index} comes from the data structure storing a mapping from content, such as words or numbers, to the parts of a document where it occurs. Figure \ref{fig:inverted-index} shows an example of an inverted index. We have a dictionary of terms appearing in the documents. Each term maps to a list that records which documents the term occurs in. Each item in the list, conventionally named as \emph{posting}, records that a term appears in a document, often recording the position of the term in the document as well. The dictionary on Figure \ref{fig:inverted-index} has been sorted alphabetically and each posting list is sorted by document ID. A document ID is a unique number that can be assigned to a document when it is first encountered. 
   \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.35, trim = 0mm 30mm 0mm 10mm]{inverted-index}
@@ -117,19 +119,19 @@ The construction of the inverted index has the following steps:
 	\item Index documents by creating an inverted index, consisting of a dictionary with terms and postings.
 \end{enumerate}
 
-The first step of the index construction is obtaining a collection of documents. The goal here is to collect a set of documents containing textual data.
+Once all documents are collected (for example, by the crawler), one can begin to build an inverted index.
 %Consider, for example, a collection of documents in PDF format \brs{why? we are talking about traditional search engines}.
 %First, we need to correctly decode characters of the binary representation.
 %Next, we should determine a document unit. For example, it might be a chapter in a book, or a paragraph in a scientific article. 
 
-The next step is to break up each document into \emph{tokens}. Tokens can be thought of as the semantical units for processing. For example, it might be a word or a number. During tokenization, some characters, such as punctuation marks, can be thrown away. 
+We begin the index construction by breaking up each document into \emph{tokens}. Tokens can be thought of as the semantical units for processing. For example, it might be a word or a number. During tokenization, some characters, such as punctuation marks, can be thrown away. 
 An example of the tokenization process is shown below:
 
 \hspace{100pt}{Input: Sometimes, I forget things.}
 
 \hspace{100pt}{Output: \framebox{Sometimes} \framebox{I} \framebox{forget} \framebox{things}} \\
 
-The third step is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperation}. \emph{Token normalization} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalization is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. Common normalization rules are:
+The next step in the index construction is normalization. Consider an example of querying the word \emph{co-operation}. A user might also be interested in getting documents containing \emph{cooperation}. \emph{Token normalization} is a process of turning a token into a canonical form so matches can occur despite lexical differences in the character sequences. One way of token normalization is keeping relations between unnormalized tokens, which can be extended to manual constructed synonym lists, such as \emph{car} and \emph{automobile}. The most standard way of token normalization however is creating \emph{equivalence classes}. If tokens become identical after applying a set of rules then they are in the equivalence classes. Common normalization rules are:
 
 \begin{description}
 	\item[Stemming and Lemmatization] Words can be used in different grammatical forms. For instance, \emph{organize}, \emph{organizes}, \emph{organizing}. However in many cases it sounds reasonable for one of these words to return documents that contain other forms of the word. The goal of stemming and lemmatization is to reduce the form of the word to a common base form. 
@@ -144,13 +146,14 @@ The result of applying the rule to the sentence:
 
 \hspace{100pt}{three frogs are flying $\rightarrow$ three frog be fly}
 
-Stemming and lemmatization are closely related concepts however there is a difference. \emph{Lemmatization} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary, morphological analysis of a word and requires understanding the context of a word and language grammar. \emph{Stemming} however operates with a word without knowing its context and thereby can't distinguish that the same words have different meanings depending on the context. 
+
+Stemming and lemmatization are closely related concepts however there is a difference. \emph{Lemmatization} usually refers to finding a \emph{lemma}, common base of a word, with the help of a vocabulary and morphological analysis of a word. \emph{Lemmatization} may require understanding the context of a word and language grammar. \emph{Stemming} however refers to reducing inflected (or sometimes derived) words to their word \emph{stem}. The word's \emph{stem} is not necessarily identical to its \emph{lemma}. 
 
 Here is an example:
 
-\hspace{10pt}{ better $\rightarrow$ good }, can only be matched by lemmatization since it requires dictionary look-up
+\hspace{10pt}{better $\rightarrow$ good}, can only be matched by lemmatization since it requires dictionary look-up
 
-\hspace{10pt}{writing $\rightarrow$ write}, can be matched by both lemmatization and stemming
+\hspace{10pt}{picked $\rightarrow$ pick}, can be matched by both lemmatization and stemming
 
 \hspace{10pt}{meeting  $\rightarrow$ meeting (noun) or to meet (verb)}, can be matched only by lemmatization since it requires the word context 
 
@@ -235,14 +238,15 @@ Then it merges the same terms from the same document by folding two identical ad
 \end{center}
 \end{table}
 
+The described above index construction algorithm is an application of the MapReduce framework, a general architectural pattern for distributed computing\footnote{\url{https://en.wikipedia.org/wiki/MapReduce}}. Normally web search engines work with very large collections of documents and, therefore, use distributed indexing algorithms for the index construction.
 
 %%Since a term generally occurs in a number of documents, this data organization already reduces the storage requirements of the index. 
 
 \section{Dynamic Indexing}
-So far we assumed that document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents. A simple way to deal with dynamic collection is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
+So far we assumed that the document collection is static. However there are many cases when the collection can be updated, for example, by adding new documents, deleting or updating existing documents. A simple way to deal with dynamic collections is to reconstruct the inverted index from scratch. This might be acceptable if the changes made in the collection are small over time and the delay in making new documents searchable is not critical. However if one of the aforementioned conditions is violated, one might be interested in another more dynamic solution like keeping an auxiliary index. Thus we have a large main index and we keep an auxiliary index for changes. The auxiliary index is kept in memory. Every time a user makes a query the search runs over both indexes and results are merged. When the auxiliary index becomes too large it can be merged with the main index.
 
 \section{Retrieving Search Results}
-When a user makes a query it would be good to give her back a result document containing all terms in the query, so that terms are located close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such a window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Usually search systems hide the complexity querying from the user by introducing \emph{free text query parsers} so a user can make only one query.
+When a user makes a query he prefers to get a result document containing all query terms, so that the terms appear close to each other in the document. Consider an example of querying a phrase containing 4 terms. The part of the document that contains all terms is named a \emph{window}. The size of the window is measured in number of words. For instance the smallest window for 4-term query will be 4. Intuitively, smaller windows represent better results for users. Such a window can become one of the parameters ranking a document in the search result. If there is no document containing all 4 terms, a 3-term phrase can be queried. Search systems hide the complexity querying from the user by introducing \emph{free text query parsers} \cite{manning2008introduction}.
 
 \chapter {Related Work}
 \label{cha:related-work}
@@ -250,42 +254,42 @@ When a user makes a query it would be good to give her back a result document co
 \section{Citations In Scientific Publications}
 
 Citations are the subject of many interesting scientific studies. 
-Bradshaw \etal \cite{bradshaw} showed that citations provide many different perspectives on the same article. They believe that citation provide means to measure the relative impact of articles in a collection of scientific literature. In their work the authors improved the relevance of documents in the search engine results with a method called Reference Directed Indexing (RDI). RDI is based on a comparison of the terms authors use in reference to documents.
+Bradshaw \etal \cite{bradshaw} showed that citations provide many different perspectives on the same article. They believe that citations provide means to measure the relative impact of articles in a collection of scientific literature. In their work the authors improved the relevance of documents in the search engine results with a method called Reference Directed Indexing (RDI). RDI is based on a comparison of the terms authors use in reference to documents.
 
 Bertin and Atanassova \cite{marc1} \cite{autocit} and Bertin \etal \cite{M_automaticannotation} automatically extract citations and annotate them using a set of semantic categories. In \cite{M_automaticannotation} and \cite{marc1} they used linguistic approach, which used the contextual exploration method, to annotate
 automatically the text. In \cite{autocit} they proposed a hybrid method for the extraction and characterization of citations in scientific papers using machine learning combined with rule-based approaches. 
 
-There are several studies that used citations to evaluate science by introducing map of science. Map of science graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1} \cite{Klavans:2009:TCM:1527090.1527095} \cite{DBLP:journals/corr/abs-1202-1914} \cite{Small:1999:VSC:308915.308932}. 
+There are several studies that used citations to evaluate science by introducing a map of science. A map of science graphically reflects the structure, evolution and main contributors of a given scientific field \cite{map1} \cite{Klavans:2009:TCM:1527090.1527095} \cite{DBLP:journals/corr/abs-1202-1914} \cite{Small:1999:VSC:308915.308932}. 
 
-Kessler \cite{ASI:ASI5090140103} first used the concept of bibliographic coupling for document clustering. To build a cluster of similar documents Kessler used a similarity function based on the degree of bibliographic coupling. Bibliographic coupling is a number of citations two documents have in common. The idea was developed further by Small in co-citation analysis \cite{ASI:ASI4630240406}. Later co-citation analysis and bibliographic coupling was used by Larson \cite{larson1996bibliometrics} for measuring similarity of web pages.
+Kessler \cite{ASI:ASI5090140103} first used the concept of bibliographic coupling for document clustering. To build a cluster of similar documents Kessler used a similarity function based on the degree of bibliographic coupling. Bibliographic coupling is the number of bibliographic references two documents have in common. The idea was developed further by Small in co-citation analysis \cite{ASI:ASI4630240406}. Later co-citation analysis and bibliographic coupling was used by Larson \cite{larson1996bibliometrics} for measuring the similarity of web pages.
 
-Another approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. In work by Nakov \etal citations have been used to support automatic paraphrasing \cite{Nakov04citances:citation}. 
+Another approach is to use citations to build summaries of scientific publications. There are three categories of summaries proposed based on citations: an overview of a research area (multi-document summarization) \cite{Nanba:1999:TMS:1624312.1624351}, an impact summary (single document summary with citations from the scientific article itself) \cite{mei-zhai:2008:ACLMain} and a citation summary (multi- and single document summarization, in which citations from other papers are considered) \cite{Qazvinian:2008:SPS:1599081.1599168}. In work by Nakov \etal citations have been used to support automatic paraphrasing \cite{Nakov04citances:citation}. 
 
 An expert literature survey on citation analysis was made by Smith \cite{smith}, she reviewed hundred of scientific articles on this topic. 
 
 \section{Popular Academic Search Engines}
 \subsection{CiteSeer\textsuperscript{x}}
 
-CiteSeer\textsuperscript{x} is built on the concept of citation index. The concept of citation index was first introduced by Eugene Garfield in \cite{garfield1964science}. According to Eugene Garfield citations are bibliographic links or referrers linking scientific documents. In his work Eugene Garfield proposed an approach where citations between documents were manually cataloged and maintained so that a researcher can search through listings of citations traversing citation links either back through supporting literature or forward through the work of later researchers \cite{bradshaw2002reference}.
+CiteSeer\textsuperscript{x} is built on the concept of a citation index. The concept of citation index was first introduced by Eugene Garfield \cite{garfield1964science}. According to Eugene Garfield citations are bibliographic references linking scientific documents. In his work Eugene Garfield proposed an approach where citations between documents were manually cataloged and maintained so that a researcher can search through listings of citations traversing citation links either back through supporting literature or forward through the work of later researchers \cite{bradshaw2002reference}.
 
-Lawrence \etal automated this process in CiteSeer\textsuperscript{x} \footnote{CiteSeer, \url{http://citeseerx.ist.psu.edu/}} \cite{Giles:1998:CAC:276675.276685}, a Web-based information system that permits users to browse the citation links between documents as hyperlinks. CiteSeer\textsuperscript{x} automatically parses and indexes publicly available scientific articles found on the World Wide Web. 
+Lawrence \etal automated this process in CiteSeer\textsuperscript{x} \footnote{CiteSeer, \url{http://citeseerx.ist.psu.edu/}} \cite{Giles:1998:CAC:276675.276685}, a Web-based information system that permits users to browse the bibliographic references between documents as hyperlinks. CiteSeer\textsuperscript{x} automatically parses and indexes publicly available scientific articles found on the World Wide Web. 
 
-CiteSeer\textsuperscript{x} is built on top of the the open source infrastructure SeerSuite \footnote{SeerSuite, \url{http://citeseerx.sourceforge.net/}} and uses Apache Solr \footnote{Apache Solr. \url{http://lucene.apache.org/solr/}} search platform for indexing documents. It can extract meta information from papers such as title, authors, abstract, citations. The extraction methods are based on machine learning approaches such as ParseCit \cite{Councill08parscit:an}. 
+CiteSeer\textsuperscript{x} is built on top of the the open source infrastructure SeerSuite\footnote{SeerSuite, \url{http://citeseerx.sourceforge.net/}} and uses Apache Solr\footnote{Apache Solr. \url{http://lucene.apache.org/solr/}} search platform for indexing documents. It can extract meta information from papers such as the title, authors, the abstract and bibliographic references. The extraction methods are based on machine learning approaches such as ParseCit \cite{Councill08parscit:an}. 
 CiteSeer\textsuperscript{x} currently has over 4 million documents with nearly 4 million unique authors and 80 million citations. 
 
-CiteSeer\textsuperscript{x} indexes citations more precisely bibliographic links or referrers while in CiteWise we intend to index not only bibliographic links but also cited text in a body of a document. If by indexing bibliographic links CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in CiteWise we focus on simplifying retrieval of documents containing a text of interest.  
+CiteSeer\textsuperscript{x} indexes bibliographic references while in CiteWise we intend to index not only bibliographic references but also cited text in a body of a document. If by indexing bibliographic references CiteSeer\textsuperscript{x} mainly aims to simplify navigation between linked documents, in CiteWise we focus on simplifying retrieval of documents containing a text of interest.  
 
 \subsection{Google Scholar} 
-Google Scholar is a freely accessible web search engine that makes full-text and metadata indexing of scientific literature \footnote{Google Scholar, \url{http://scholar.google.ch/}}. Besides the simple search, Google Scholar proposes a unique ranking algorithm that ranks documents \emph{``the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature''} \footnote{\url{https://scholar.google.com/scholar/about.html}}. The ``Cited by" feature allows to view abstracts of articles citing the given article. The ``Related articles" feature shows the list of closely related articles. It is also possible to filter articles by author name or publication date. Google Scholar contains roughly 160 million of documents by May 2014 \cite{orduna2014size}.
+Google Scholar is a freely accessible web search engine that makes full-text and metadata indexing of scientific literature \footnote{Google Scholar, \url{http://scholar.google.ch/}}. Besides the simple search, Google Scholar proposes a unique ranking algorithm that ranks documents \emph{``the way researchers do, weighing the full text of each document, where it was published, who it was written by, as well as how often and how recently it has been cited in other scholarly literature''} \footnote{\url{https://scholar.google.com/scholar/about.html}}. The ``Cited by" feature allows one to view abstracts of articles citing the given article. The ``Related articles" feature shows the list of closely related articles. It is also possible to filter articles by author name or publication date. Google Scholar contains roughly 160 million documents by May 2014 \cite{orduna2014size}.
 
-Google Scholar is based on keyword search, and thus do not work well for the case of finding relevant citations. This happens due to the fact it does not take documents structure into account, i.e, that some sentences in a document are more likely to contain claims than others. Therefore, Google Scholar might return a large amount of irrelevant results for statement queries. 
+Google Scholar is based on keyword search, and thus does not work well for the case of finding relevant citations. This happens due to the fact that it does not take document structure into account, i.e, that some sentences in a document are more likely to contain claims than others. Therefore, Google Scholar might return a large number of irrelevant results for statement queries. 
 
 \chapter {CiteWise}
 \label{cha:CS}
 
 \section{System Overview}
 
-The components of CiteWise are shown in Figure \ref{fig:cs}. There are three main operations performed by CiteWise: parsing PDF files, indexing documents and querying the resulted indexes. Correspondingly, there are three major components responsible for carrying out these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referring to the same article. 
+The components of CiteWise are shown in Figure \ref{fig:cs}. CiteWise allows one to perform the three following main operations: parsing PDF files, indexing document collections and querying the resulting indexes. Correspondingly, there are three major components responsible for carrying out these operations: \emph{Parser}, \emph{Indexer} and \emph{Search Web App}. The system has two more components for storing data: \emph{Indexes Storage} and \emph{Meta Data Storage}. We use \emph{Indexes Storage} for storing indexes built on citations. This storage is very simple and was not designed to represent any relations in data structures. Moreover, it does not allow one to perform any sophisticated operations over the stored data. Therefore, we use \emph{Meta Data Storage} to represent complex data structures and perform sophisticated queries, like aggregating citations referring to the same article. 
 
   \begin{figure}[ht]
     \centering
@@ -296,11 +300,11 @@ The components of CiteWise are shown in Figure \ref{fig:cs}. There are three mai
 
 
 The workflow of the system is shown in Figure \ref{fig:cs-activity-diagram}. 
-The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into the text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consists of a citation, that should be indexed and an additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consists of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referring to the same source. Once the \emph{Parser} processed the PDF file it can proceed to the next paper if there is any left. When all papers are processed, user can make queries over \emph{Search Web App}.
+The first operation performed by the system is parsing. The \emph{Parser} converts a PDF file into text. Then it extracts meta information, like citations and references, from the textual representation of the file. Next it packages extracted information into data units corresponding to formats acceptable by \emph{Indexer} and \emph{Meta data storage}. A data unit publishable to the \emph{Indexer} consists of a citation that should be indexed and additional information related to this citation (citation context, a file URI, bibliographic references) that should be stored. A data unit publishable to the \emph{Meta data storage} consists of a citation, a source paper identifier and bibliographic references. We use \emph{Meta data storage} for aggregating citations referring to the same source. Once the \emph{Parser} has processed the PDF file it can proceed to the next paper if there are any left. When all papers are processed, the user can make queries with the \emph{Search Web App}.
 
   \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 20mm]{cs-activity-diagram}
+    \includegraphics[scale=0.5, trim = 0mm 70mm 0mm 21mm]{cs-activity-diagram}
     \caption{Activity diagram of CiteWise.}
     \label{fig:cs-activity-diagram}
   \end{figure}
@@ -319,14 +323,14 @@ It is practical to divide the work of the \emph{Parser} into two phases: \emph{P
   \end{figure}
 
 \subsection{PDF Processing}
-The main role of \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
-Parsing PDF-files from different sources is a very challenging task as there is a large number of scientific articles in different formats. 
+The main role of the \emph{PDF processing} phase is to parse scientific articles into text and extract citations and bibliographic references to create documents for publishing. 
+Parsing PDF files from different sources is a very challenging task due to the large variation in the structuring of article content. 
 %Besides that, there exist scientific articles written decades ago which can use different encoding algorithms\brs{not sure what this means, can you elaborate a bit?} from articles created recently. 
-Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the majority of the scientific article formats or at least the formats found in our collection of articles.  
+Thereby, building a universal parser is very hard in practice. In our case, we try to identify common patterns covering the structure of majority of the scientific articles or at least the articles found in our dataset.  
 
-The \emph{PDF processing} phase starts with recursively walking though the directory tree of the collection of PDF documents. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF-file separately. We use Apache PDFBox library\footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}}. The library extracts full text from PDF files, but without any hints on the initial structure of the article. In our case, to find citations and bibliographic references in text, we need to look them up in different parts of the article. We implemented an algorithm to break the PDF text into sections.
+The \emph{PDF processing} phase starts with recursively walking though the directory tree of the collection of PDF documents. While walking through the directory, the \emph{Parser} filters non-pdf files and parses and processes each PDF file separately. We use Apache PDFBox library\footnote{Apache PDFBox, \url{https://pdfbox.apache.org/}}. The library extracts full text from PDF files, but without any hints to the initial structure of the article. To find citations and bibliographic references in text, we search them in different parts of the article. Therefore, we implemented an algorithm to break the PDF text into sections.
 
-Generally, we are interested in identifying the body of documents where we can find citations and reference blocks where we can find bibliographic links. One way of finding these sections can be using keywords that might signify the beginning or the end of some sections. Based on those keywords, one can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed pdf-document with keywords. 
+Generally, we are interested in identifying the body of a document where we can find citations and the references section where we can find bibliographic references. One way of finding these sections can be using keywords that might signify the beginning or the end of some sections. Based on those keywords, one can extract different sections of a document. Figure \ref{fig:template} shows a sample text of a parsed PDF document with keywords. 
   
 One can notice the following characteristics of scientific articles:
 \begin{itemize}
@@ -361,9 +365,9 @@ After breaking a document down into sections as shown in Figure \ref{fig:templat
     \label{fig:template}
   \end{figure}
 
-As a result of the normalization step, we have a document divided into body and references sections. Before searching citations in the body of a document, we break the body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. Period not only indicates the end of a sentence but also can be encountered inside the sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end with a period, like the title of a section or an item of a list. We use Stanford CoreNLP library that employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
+As a result of the normalization step, we have a document divided into body and references sections. Before searching citations in the body of a document, we break the body into sentences. In general, breaking text into sentences is not an easy task. Consider a simple example with a period. A period not only indicates the end of a sentence but also can be encountered inside the sentence itself, like an item of a numbered list or a name of a scientist. Besides, not all sentences end with a period, like the title of a section or an item of a list. We use the Stanford CoreNLP library which employs natural language and machine learning techniques to extract sentences \cite{stanford.nlp}. 
 
-Next, we search for the citations in the body and for the bibliography links in the references section. When an author makes a citation she puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ ]) to make a link to a bibliographic reference in the sentence. Thus, we can identify citations by detecting square brackets in the text. After analyzing some set of articles we found multiple patterns in using square brackets for {citations, as shown in Table \ref{tab:citations}. 
+Next, we search for the citations in the body and for the bibliography references in the references section. When an author cites a work she puts a link to a bibliographic reference in the sentence. It is common to use square brackets ([ ]) to link to a bibliographic reference from the sentence. Thus, we can identify citations by detecting square brackets in the text. After analyzing some set of articles we found multiple patterns in using square brackets for citations, as shown in Table \ref{tab:citations}. 
 
 \begin{table}[ht]
 \begin{center}
@@ -381,8 +385,7 @@ Next, we search for the citations in the body and for the bibliography links in 
 \end{center}
 \end{table}
 
-
-Further we need to extract bibliographic links from the references section. For that we studied most common variants of composing the references sections. Table \ref{tab:references} summarises these findings. To extract bibliographic links we make a list of regular expressions matching one of those patterns listing in Table \ref{tab:references}. Extracting bibliographic links allows us to match citations with bibliographic links.
+We also need to extract bibliographic references from the references section. For that we studied most common variants of composing the references sections. Table \ref{tab:references} summarizes these findings. To extract bibliographic references we used a list of regular expressions matching the patterns listed in Table \ref{tab:references}. By parsing identifiers (e.g. numbers in square brackets) from bibliographic references we can match citations with bibliographic references using bibliographic links.
 
 \begin{table}[h]
 \begin{center}
@@ -403,22 +406,22 @@ Further we need to extract bibliographic links from the references section. For 
   \ldots \\
  \hline
 \end{tabular}
-\caption{Frequent patterns of writing bibliographic links in a references block}
+\caption{Frequent patterns of writing bibliographic references in a references section}
 \label{tab:references}
 \end{center}
 \end{table}
 
-The pipeline of PDF processing stages described above is shown in Figure \ref{fig:proc}. As seen from Figure \ref{fig:proc} to complete the processing stage we need to perform one more step: extracting titles from bibliographic links. The objective point of extracting titles from bibliographic links is to collect citations referring to the the same source (scientific article). In general case, different formats of bibliographic links can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic links citing the same paper is the paper's title.   
+The pipeline of the PDF processing stage described above is shown in Figure \ref{fig:proc}. The last step in the PDF processing stage is extracting titles from bibliographic references. The objective point of extracting titles from bibliographic references is to collect citations referring to the the same source (scientific article). In general case, different formats of bibliographic references can identify the same source or scientific article. For example, an article may have different editions, published in different journals in different years or simply different authors may use different style formatting. What we consider to be identical for all bibliographic references citing the same paper is the paper's title.   
 
   \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.5, trim = 0mm 165mm 0mm 10mm]{processing}
+    \includegraphics[scale=0.5, trim = 0mm 164mm 0mm 10mm]{processing}
     \caption{Pipeline of the PDF processing stage}
     \label{fig:proc}
   \end{figure} 
 
-\paragraph{Processing bibliographic links}
-We try to recognize common patterns covering the majority of bibliographic links. Table \ref{tab:bibl.links} shows some examples of bibliographic links. First,we noticed that if a bibliographic link contains some sort of quotation marks, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic links without quotes. Very often, a bibliographic link is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the link (see Figure \ref{fig:link}). We use Core NLP library to break a link into parts according to our view. In most of cases it is enough to take the second part of the bibliographic link to be a title.
+\paragraph{Processing bibliographic references}
+We try to recognize common patterns covering the majority of bibliographic references. Table \ref{tab:bibl.links} shows some examples of bibliographic references. First, we noticed that if a bibliographic reference contains some sort of quotation marks, for example, double quotes (``'') or single quotes (`'), then it is highly probable that a title is enclosed by these quotes. Then, we made some observations for bibliographic references without quotes. Very often, a bibliographic reference is structured as follows: it begins by listing the paper's authors, then the title, and then comes the rest of the reference (see Figure \ref{fig:link}). We use Core NLP library to break a reference into parts according to our view. In most of cases it is enough to take the second part of the bibliographic reference to be a title.
 
 \begin{table}[h]
 \begin{center}
@@ -436,7 +439,7 @@ We try to recognize common patterns covering the majority of bibliographic links
   \\
  \hline
 \end{tabular}
-\caption{Some examples of bibliographic links}
+\caption{Some examples of bibliographic references}
 \label{tab:bibl.links}
 \end{center}
 \end{table}
@@ -444,20 +447,23 @@ We try to recognize common patterns covering the majority of bibliographic links
   \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.55, trim = 0mm 165mm 0mm 10mm]{link}
-    \caption{Common structure of a bibliographic link}
+    \caption{Common structure of a bibliographic reference}
     \label{fig:link}
   \end{figure}     
 
 \subsection{Document Publishing}
-There are two systems where documents are published to: Solr and MongoDB. Solr corresponds to the Indexer component and MongoDB corresponds to the Meta Data Storage component in Figure \ref{fig:cs}. We use Solr for indexing citations and MongoDB for storing relations in meta-data. We aim to use MongoDB for aggregating citations referring to the same source paper.
+There are two systems where documents are published to: Solr and MongoDB. Solr corresponds to the Indexer and Indexes Storage components and MongoDB corresponds to the Meta Data Storage component in Figure \ref{fig:cs}. We use Solr for indexing citations and storing indexes. We use MongoDB for aggregating citations referring to the same source paper. 
 
+%We aim to use MongoDB for aggregating citations referring to the same source paper.
 %Solr uses NoSQL-like data storage \brs{this has no meaning. There is a bunch of different NoSQL DBs that are very different from each other, it's like saying ``my file format uses a NoXML like format''} , but actually it is even more limited than traditional NoSQL databases. 
 The data stored in Solr is very `flat', which means that Solr cannot store hierarchical data \cite{use.solr1}\cite{use.solr.2}. In our case, along with the references, we intend to store the title of the scientific article parsed from the reference string, so we can aggregate citations referring to the same scientific article. 
 %It should be noted that \ugh{citation itself can refer to multiple scientific articles}\brs{not sure what this means}. 
 We are also interested in a solution that does not require reviewing all Solr documents to find citations referring to the same scientific article as it will be too slow and will decrease the quality of the user experience. Thus we use an external storage solution that can keep the titles of scientific articles and all the citations referring to a specific article. As there are few relations in our data and we would like to have a scalable solution we decided to use MongoDB as an external storage.
 
 \paragraph{Publishing documents to Solr}
-The common way to interact with Solr is using REST-like API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used SolrJ\footnote{\url{https://cwiki.apache.org/confluence/display/solr/Using+SolrJ}} client library for Java language. This library abstracts the interaction with Solr into java objects instead of using typical XML request/response format. Basic Solr storage unit is called document and SolrJ has document abstraction implementation. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
+The common way to interact with Solr is using a REST API\footnote{\url{http://en.wikipedia.org/wiki/Representational_state_transfer}}. Solr provides client libraries for many programming languages to handle interactions with Solr's REST API. In our project we used the SolrJ\footnote{\url{https://cwiki.apache.org/confluence/display/solr/Using+SolrJ}} client library for Java language. 
+%This library abstracts the interaction with Solr into java objects instead of using typical XML request/response format. 
+The basic Solr storage unit is called document. For every detected citation we compose a document to publish. Figure \ref{fig:doc} represents a structure of documents we publish to Solr.
 
   \begin{figure}[ht]
     \centering
@@ -472,19 +478,19 @@ Every document representing one citation consists of the following fields:
   \item text: text of the citation that we want to index
   \item context: citation with a text framing it, we take 1 sentence before and 1 after the citation 
   \item path: URL of a document where citation was found
-  \item references: list of bibliographic links from references section matching this citation
+  \item references: list of bibliographic references from the references section matching this citation
 \end{itemize}
 
 \paragraph{Publishing documents to MongoDB} 
 MongoDB is a document-oriented NoSQL database that stores data in JSON-like documents with dynamic schema\footnote{MongoDB database, \url{http://www.mongodb.org/}}. To connect to the database we used a Java driver provided by MongoDB. Although MongoDB is a `schemaless' database we adhere to the JSON structure of the document shown in Listing \ref{lst:json}. 
-The json document consists of following fields:
+The JSON document consists of following fields:
 \begin{itemize}[noitemsep]
 	\item id: document id, field automatically assigned by MongoDB
 	\item title: title of a scientific article
 	\item citations: citations with its references of the scientific article identifying by title field 
 \end{itemize} 
 
-Every time we send a new citation with a paper title to MongoDB, we check if a document with the same title already exists. If so, we add a new citation to document, otherwise create a new document. \\
+Every time we send a new citation with a paper title to MongoDB, we check if a document with the same title already exists. If so, we add a new citation to the document, otherwise we create a new document. \\
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[label={lst:json}, caption={Sample document stored in MongoDB}]
@@ -517,19 +523,19 @@ Every time we send a new citation with a paper title to MongoDB, we check if a d
 \end{minipage}
 
 \section{Indexer}
-We use Solr as an Indexer: a solution from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities\footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public services that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
+We use Solr for indexing citations. Solr is a software from Apache Software Foundation built on Apache Lucene. Apache Lucene is an open source, IR library that provides indexing and full text search capabilities\footnote{Apache Lucene, \url{http://lucene.apache.org/core/}}. While web search engines focus on searching content on the Web, Solr is designed to search content on corporate networks of any form. Some of the public services that use Solr as a server are Instagram (photo and video sharing social network), Netflix (movie hosting service) and StubHub.com (public entertainment events ticket reseller). 
 
-Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed (see Appendix \ref{app:solr} for Solr installation and configuration).
+Figure \ref{fig:solr} illustrates a high level architecture of Solr. Solr is distributed as a Java web application that runs in any servlet container, for example, Tomcat or Jetty. It provides REST-like web services so external applications can make queries to Solr or index documents. Once the data is uploaded, it goes through a text analysis pipeline. In this stage, different preprocessing phases can be applied to remove duplicates in the data or some document-level operations prior to indexing, or to create multiple documents from a single one. Solr comes with a variety of query parser implementations responsible for parsing the queries passed by the end user as search strings. For example, \emph{TermQuery, BooleanQuery, PhraseQuery, PrefixQuery, RangeQuery, MultiTermQuery, FilteredQuery, SpanQuery} and others. Solr has xml configuration files (schema.xml and solrconfig.xml) to define the structure of the index and how fields will be represented and analyzed (see Appendix \ref{app:solr} for Solr installation and configuration).
 
   \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.55 , trim = 0mm 10mm 0mm 10mm]{solr}
-    \caption{High level architecture of a Solr system}
+    \caption{High level architecture of Solr}
     \label{fig:solr}
   \end{figure} 
 
-\subsection{Solr Ranking Model}
-Solr ranking model is based on the Lucene scoring algorithm, also known as a TF-IDF model \cite{manning2008introduction}. This model takes into consideration following factors:
+\subsection{Solr's Ranking Model}
+Solr's ranking model is based on the Lucene scoring algorithm, also known as a TF-IDF model \cite{manning2008introduction}. This model takes into consideration following factors:
 \begin{itemize}
 \item \textbf{tf} - term frequency, a frequency of the term in a document. The higher the term frequency, the higher a document score. 
 \item \textbf{idf} - inverse document frequency, an inverse frequency of the term in all documents. The rarer the term occurs in all documents, the higher its contribution to the document's score.  
@@ -542,7 +548,7 @@ The exact scoring formula with the description of all factors can be found on th
  %\cite{solr.config}
 
 \section{Web Search Interface}
-Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on MVC (model-view-controller) architectural pattern implemented with Struts framework\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with Solr via Solr REST API and with Mongo database via Java database connector.  
+Web Search interface is a Java web application running in a servlet container. Figure \ref{fig:mvc} shows an architecture of a web search application. The application is based on the MVC (model-view-controller) architectural pattern implemented with Struts\footnote{Struts framework, \url{https://struts.apache.org/}}. The application communicates with the Solr via Solr's REST API and with Mongo database via Java database connector.  
 
   \begin{figure}[ht]
     \centering
@@ -553,7 +559,7 @@ Web Search interface is a Java web application running in a servlet container. F
 
 \subsection{CiteWise Main Page}
 
-The main page of CiteWise presents a simple search interface allowing user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result a user sees a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available then user can open it using a link ``See pdf on SCG resources''.  
+The main page of CiteWise presents a simple search interface allowing the user to search for citations. Figure \ref{fig:cs-main-page} shows a sample response to the user query ``software testing is time-consuming''. As a result the user sees a list of documents matching the query. Each document has a citation with a list of bibliographic links supporting this citation. A user can click to ``Show context'' link to see a text surrounding the citation in the original paper. If the source paper is available then user can open it using a link ``See pdf on SCG resources''.  
 
   \begin{figure}[ht]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-main-page}
@@ -561,7 +567,7 @@ The main page of CiteWise presents a simple search interface allowing user to se
     \label{fig:cs-main-page}
   \end{figure}
 
-If a reference has a title recognizable by CiteWise then a user can see all citations referring to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. User can get more information on each citation by following a ``View details'' link.
+If a reference has a title recognizable by CiteWise then a user can see all citations referring to the paper from this reference by clicking on the button next to the reference. Figure \ref{fig:cs-view-citations} demonstrates this feature. A user can see all citations of the paper ``Software maintenance and evolution: a roadmap'' in a popover dialog. Users can get more information about each citation by following a ``View details'' link.
 
    \begin{figure}[ht]
     \includegraphics[scale=0.4, trim = 0mm 0mm 0mm 0mm]{cs-view-citations}
@@ -582,17 +588,13 @@ Another feature provided by CiteWise is the possibility to search by bibliograph
 
 \chapter {Evaluation}
 \label{cha:experiments}
-To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare CiteWise with: CiteSeerX and Google Scholar.
-
-Preparatory tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, in the first part of our experiments we compared CiteWise with Google Scholar. 
-
-There are many aspects on how two search engines might be compared. In our experiments we focused on efficiency and usability. By efficiency we imply how quickly users can find documents and by usability we imply simplicity of search interfaces and personal impression.
+To measure the effectiveness of CiteWise we conducted evaluation experiments comparing it with other search engines.  We had two main candidates to compare CiteWise with: CiteSeerX and Google Scholar. There are many aspects on how search engines might be compared. In our experiments we focused on comparing efficiency and usability of search engines. By efficiency we mean how quickly users can find documents and by usability we mean simplicity of search interfaces and personal impression. Preliminary tests showed that CiteSeerX is too slow in showing results. Moreover, users complained that resulting documents are not relevant. Too many results were from a different domain than Computer Science, like Biology or Physics.  Thus, in the first part of our experiments we compared CiteWise with Google Scholar. 
 
 In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank \cite{mihalcea2004textrank} algorithm.
 
 \section{Experiment Setup}
 \subsection{Data and Tools}
-For evaluation experiments we used a dataset of scientific articles collected by members of Software Composition Group (SCG)\footnote{\url{http://scgresources.unibe.ch/Literature/}} over decades. The collection contains about 16000 scientific articles and covers various topics in computer science. The Google Scholar dataset is much larger than the dataset used in our experiments, so we reduced the searching space to the domain of Software Engineering and Programming Languages. During the experiment, all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
+For evaluation experiments we used a dataset of scientific articles collected by members of the Software Composition Group (SCG)\footnote{\url{http://scgresources.unibe.ch/Literature/}} over decades. The collection contains about 16000 scientific articles and covers various topics in computer science. The Google Scholar dataset is much larger than the dataset used in our experiments, so we reduced the search space to the domain of Software Engineering and Programming Languages. During the experiment, all participants were provided with a laptop (MacBook Air, OS X version 10.10.3) and their actions were recorded with a screen casting application (QuickTime Player).
 
 \subsection{Participants}
 We intentionally looked for experts in the domain of Software Engineering and Programming Languages that can participate in experiments. Nine experts with different experiences (7 PhD candidates, 1 postdoctoral researcher, 1 professor) participated in the experiments (see Table \ref{tab:experts}).
@@ -619,7 +621,7 @@ We intentionally looked for experts in the domain of Software Engineering and Pr
 
 
 \subsection{Process}
-Participants were split into two groups. All experiments were conducted in two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks are described in subsection \ref{sub:tasks}.  
+Participants were split into two groups. All experiments were conducted over two days and each day was dedicated to one group. Both groups were asked to perform the same tasks. However the second group was asked to do one more additional task (see Table \ref{tab:groups}). The idea of giving an additional task to the second group came after conducting experiments with the first group on the first day. Time given to complete each task was limited to 5 minutes. All tasks are described in subsection \ref{sub:tasks}.  
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{  c | c | c  } 
@@ -634,11 +636,11 @@ Participants were split into two groups. All experiments were conducted in two d
 \end{center}
 \end{table}
 
-Each experiment was setup to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce the participant to: 1) user interfaces of both CiteWise and Google Scholar, 2) standard syntax query common to both search engines. Every task in the experiment was orally explained to the participant.
+Each experiment was set up to last for approximately 45 minutes and each experiment involved only one participant. An experiment starts with a short training session, where we introduce the participant to: 1) user interfaces of both CiteWise and Google Scholar, 2) standard syntax query common to both search engines. Every task in the experiment was orally explained to the participant.
 
 \subsection{Tasks}
 \label{sub:tasks}
-\paragraph{Task 1a} As a first task, a participant was asked to find a reference to a claim from one of his papers written in the past using CiteWise or Google Scholar. We specified the type of the search engine in the beginning of the task. A test subject can read the cited sentence as well as the context of this sentence but is not aware of the referred source paper. The task is to find a paper that proves the given citation. We use following procedure to conduct Task 1a:
+\paragraph{Task 1a} As a first task, a participant was asked to find a reference to a claim from one of his papers written in the past using CiteWise or Google Scholar. We specified the type of the search engine in the beginning of the task. A test subject can read the cited sentence as well as the context of this sentence but is not aware of the referred source paper. The task is to find a paper that proves the given claim. We use following procedure to conduct Task 1a:
 \\Before the experiment.
 \begin{enumerate}
 	\item We look for a paper published by the test subject.
@@ -673,7 +675,7 @@ During the execution of tasks, we observe the following:
 During the experiment.
 \begin{enumerate}
 	\item We let the test subject read two summaries.
-	\item We ask test subjects to access quality of summaries by giving a score from 0 to 10.
+	\item We ask test subjects to assess the quality of summaries by giving a score from 0 to 10.
 \end{enumerate}
 
 \section{Questionnaires}
@@ -695,14 +697,14 @@ Before the beginning of the experiment we ask the test subjects to provide preli
 %\end{itemize} 
 
 \subsection{Debriefing interview}
-After completing Task 1a and Task 1b we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and CiteWise. During the interview the participants have chance to share their impression on using both search engines. Sample questions asked during the interview: 1) What did you like/dislike about using each search engine? and 2) What difficulties did you have?
+After completing Task 1a and Task 1b we conduct a semi-structured interview with participants, that lasts approximately 5 minutes. The main goal of the debriefing interview is to get an immediate feedback on using Google Scholar and CiteWise. During the interview the participants have the chance to share their impression on using both search engines. Sample questions asked during the interview: 1) What did you like/dislike about using each search engine? and 2) What difficulties did you have?
 
 \subsection{Post-experiment Questionnaire}
 Right after the experiment we ask the participant to fill in a post-experiment questionnaire. The main goal of the post-experiment questionnaire is to gather further feedback on using CiteWise and Google Scholar. We ask the participants to fill in a form with following questions: 1) Has the experiments changed your opinion on the two search engines? and 2) Would you consider using one of these search engines?
 
 \section{Evaluation Results}
 
-The pre-experiment questionnaire showed that almost all participants (8 experts) use Google Scholar to find scientific literature. Some participants mentioned that they use IEEE Explorer, ACM digital library and DBLP as well (see Table \ref{tab:q1_1}). Half of the respondents (4 participants) use search engines daily, 2 respondents use search engines a few times per week (see Table \ref{tab:q1_2}).
+The pre-experiment questionnaire showed that almost all participants (8 experts) use Google Scholar to find scientific literature. Some participants mentioned that they use IEEE Xplore, ACM digital library and DBLP as well (see Table \ref{tab:q1_1}). Half of the respondents (4 participants) use search engines daily, 2 respondents use search engines a few times per week (see Table \ref{tab:q1_2}).
 
 \begin{table}[ht]
 \begin{center}
@@ -751,7 +753,7 @@ The pre-experiment questionnaire showed that almost all participants (8 experts)
 Four respondents answered positively on the question if they have ever used CiteWise. However all of them mentioned that they used CiteWise only a few times.
 
 \subsection{Results for Task 1a}  
-In Task 1a we measured search time. Each participant perofrmed Task 1a 4 times: 2 times with CiteWise and 2 times with Google Schoalr. In overall, we made 18 measurements for CiteWise and 18 measurements for google Schoalr. Figure \ref{fig:boxplot-search-time} illustrates results for search time in Task 1a using boxplots \footnote{\url{http://en.wikipedia.org/wiki/Box_plot}}. Table \ref{tab:search-time} shows the mean and standard deviation of search times for both search engines. From Table \ref{tab:search-time} we observed that the average time to find a reference for a given citation is approximately 2.5 minutes. Participants were slightly faster with finding results using CiteWise. However, there is no statistically significant difference between search times of CiteWise and Google Scholar according to t-test with significance level p = 5\%. 
+In Task 1a we measured search time. Each participant performed Task 1a 4 times: 2 times with CiteWise and 2 times with Google Scholar. In overall, we made 18 measurements for CiteWise and 18 measurements for Google Scholar. Figure \ref{fig:boxplot-search-time} illustrates results for search time in Task 1a using boxplots \footnote{\url{http://en.wikipedia.org/wiki/Box_plot}}. Table \ref{tab:search-time} shows the mean and standard deviation of search times for both search engines. From Table \ref{tab:search-time} we observed that the average time to find a reference for a given citation is approximately 2.5 minutes. Participants were slightly faster with finding results using CiteWise. However, there is no statistically significant difference between search times of CiteWise and Google Scholar according to t-test with significance level p = 5\%. 
 
   \begin{figure}[ht]
     \centering
@@ -781,7 +783,7 @@ Figure \ref{fig:boxplot-num-queries} illustrates results for number of queries i
     \label{fig:boxplot-num-queries}
   \end{figure}
 
-Table \ref{tab:search-query} shows average values and standard deviations for number of queries made by participants to find references and average number of words in queries. We did not see any significant differences in a number of queries and average number of words in a query between two search engines. From Table \ref{tab:search-query} we concluded that in average participants made 2-3 queries before finding a referred paper and that the average number of words in a query was 4.
+Table \ref{tab:search-query} shows average values and standard deviations for number of queries made by participants to find references and average number of words in queries. We did not see any significant differences in a number of queries and average number of words in a query between two search engines. From Table \ref{tab:search-query} we concluded that on average participants made 2-3 queries before finding a referred paper and that the average number of words in a query was 4.
 
  \begin{table}[ht]
 \begin{center}
@@ -799,12 +801,12 @@ Table \ref{tab:search-query} shows average values and standard deviations for nu
 \end{center}
 \end{table}
 
-During the experiments we noticed that participants were more familiar with Google Scholar search interface so participants spent some time exploring CiteWise interface. This could affect search time for CiteWise making it longer.
+During the experiments we noticed that participants were more familiar with Google Scholar's search interface so participants spent some time exploring the CiteWise interface. This could affect search time for CiteWise making it longer.
 
 We also noted that the way search engines present results is an important factor of the search engine usability. For example, most of the participants admitted that they like that CiteWise shows the exact place from the article where match was found. In contrast, Google Scholar shows a title of the article and a beginning of the abstract, so it is not clear where the match was found. In this case participants had to open the article and make a manual search over the text.  
 
 \subsection{Results for Task 1b}
-Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a supporting paper was found and the order in which a participant used search engines. For example, the participant P6 first searched for a paper in CiteWise, then he switched to Google Scholar and finally he switched to CiteWise where he found the result paper. From Table \ref{tab:se-any} we concluded that all participants found a supporting paper using CiteWise. Meantime three of participants used both search engines and one participant did not use Google Scholar at all. 
+Task 1b was given to four participants. Table \ref{tab:se-any} shows in what search engine a supporting paper was found and the order in which a participant used search engines. For example, the participant P6 first searched for a paper in CiteWise, then he switched to Google Scholar and finally he switched to CiteWise where he found the result paper. From Table \ref{tab:se-any} we concluded that all participants found a supporting paper using CiteWise. Meanwhile three of participants used both search engines and one participant did not use Google Scholar at all. 
 
 \begin{table}[ht]
 \begin{center}
@@ -829,21 +831,21 @@ Results for Task 2 are shown in Figure \ref{fig:summaries}. It illustrates score
     \caption{Scores from 0 to 10 given by participants in Task 2 to the summaries generated with TextRank and citations from CiteWise.}
     \label{fig:summaries}
   \end{figure}
-All participants except one (6 participants) gave better score to the summary composed by citations from CiteWise. We could not generate summaries for participants P4 and P6 since they did not provide us with papers. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consists of sentences either too general or not important for understanding the paper. According to participants opinion, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations. In other words sentences in a summary are not ordered to make a story.       
+All participants except one (6 participants) gave better scores to the summary composed by citations from CiteWise. We could not generate summaries for participants P4 and P6 since they did not provide us with papers. According to t-test with a significance level p = 5\% there is a significant difference between scores given to summaries generated with TextRank and CiteWise. Participants noted that a summary generated with TextRank consists of sentences either too general or not important for understanding the paper. According to participants' opinions, the summary composed with citations tends to contain sentences more relevant for understanding the summarized paper. However, sometimes cited sentences rephrase each other expressing the same idea. Also, compared to TextRank there is no natural flow in the summary from citations. In other words sentences in a summary are not ordered to make a story.       
 
 \subsection{Final Questionnaire}
-Final questionnaire show that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to opinion of two participants CiteWise is more appropriate to search for a related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One participant opinion states that CiteWise is useful for discovering new works in the given domain. Participants appreciated the possibility to see citations with a context and the possibility to search by bibliographic entries. 
+The final questionnaire shows that all participants answered positively when they were asked whether they are willing to continue to use CiteWise. Some participants specified that they will use Google Scholar and CiteWise for different purposes. According to the opinion of two participants CiteWise is more appropriate to search for related work on the given topic. Others (5 participants) think that CiteWise is good to prove claims while writing a scientific paper. One participant opinion states that CiteWise is useful for discovering new works in the given domain. Participants appreciated the possibility to see citations with a context and the possibility to search by bibliographic entries. 
 
 \subsection{Results Summary}
 In our evaluation experiments we compared CiteWise with Google Scholar. During the experiments we collected statistics on search time, number of queries and average number of words in queries. The results show that CiteWise performs slightly better for mean value of search time, but there is no statistically significant difference among search engines. We noticed that in 50\% of cases participants found a supporting paper in CiteWise using only one query. Overall, given that Google Scholar is one of the most popular academic search engines, CiteWise might complement Google Scholar. Indeed, when participants have a possibility to choose between two search engines, all participants succeeded in the task accomplishment using CiteWise.
 
-The results for summaries comparison show that summary generated with citations give better description of a paper. Automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting number of citations. 
+The results for the comparison show that summaries generated with citations give a better description of a paper. The automatic citation aggregation feature of CiteWise could be used to generate summaries or even judge the importance of a paper, for example, by counting the number of citations. 
 
 \chapter {Conclusion}
 \label{cha:conclusion}
-In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented CiteWise which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers.
+In this work we address the problem of IR for scientific articles. We believe that considering meta-information helps us to build enhanced search systems. We particularly focused on citations considering them as important text blocks. We designed and implemented CiteWise which automatically extracts and indexes citations from scientific articles in PDF format. Moreover we studied the structure of citations and built an algorithm that aggregates citations referring to the same source. We used this feature of CiteWise to generate automatic summaries of papers.
 
-We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with a popular academic search engine Google Scholar. We observed how fast users in finding results using both search engines. Our results showed that CiteWise performs equal or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that CiteWise gives a better description of scientific articles according to participant's opinion.        
+We evaluated our system by conducting user evaluation experiments. In the first part of our experiments, we compared our system with the popular academic search engine, Google Scholar. We observed how fast users are in finding results using both search engines. Our results showed that CiteWise performs equal to or better than Google Scholar. In the second part of our experiments, we used an aggregation feature of CiteWise to build summaries of scientific articles. We compared those summaries with summaries built using a TextRank algorithm. Our results showed that CiteWise gives a better description of scientific articles according to participant's opinion.        
 
 \chapter {Future Work}
 \label{cha:future-work}
@@ -852,11 +854,11 @@ One of the ways the CiteWise parser can be improved is finding cited sentences t
   \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5, trim = 0mm 150mm 0mm 10mm]{no-ref-tag}
-    \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to bibliography composed from authors' names making it hard to distinguish a citation from any other sentences.} 
+    \caption{An example of citations from the article ``Learning Abound: Quickly When Irrelevant Attributes A New Linear-threshold Algorithm'' authored by Nick Littlestone. In both sentences a link to a bibliographic reference composed from authors' names makes it hard to distinguish a citation from any other sentences.} 
     \label{fig:no-ref-tag}
   \end{figure} 
 
-Another issue in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguishing a snippet of source code from the natural text. 
+Another issue in using square brackets as citation identifiers arises when square brackets are used not as links to bibliography. For example, a parser might mix up an array in a code snippet with a link to bibliography (see Figure \ref{fig:code-snippet}). Usage of code snippets are common in computer science literature so it would be nice to have a method to distinguish a snippet of source code from natural text. 
 
   \begin{figure}[ht]
     \centering
@@ -881,7 +883,7 @@ Another issue in using square brackets as citation identifiers arises when squar
 \label{app:solr}
 
 Solr installation requires JDK and any servlet container to be installed on the server machine. Here we describe the configuration of Solr for Apache Tomcat container.
-We need to download Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, \url{http://lucene.apache.org/solr/}}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
+We need to download the Solr distribution that can be found on the official Solr home page \footnote{Apache Solr, \url{http://lucene.apache.org/solr/}}. Solr is distributed as an archive. After unzipping the archive, the extracts have following directories:
 
 \begin{itemize}
 	\item \textbf{contrib/} - directory containing extra libraries to Solr, such as Data Import Handler, MapReduce, Apache UIMA, Velocity Template, and so on.
@@ -911,7 +913,7 @@ The Solr home directory contains configuration files and index-related data. It 
 
 Configuring Solr instance requires defining a Solr schema and configuring Solr parameters.
 \paragraph{Defining Solr schema}
-Solr schema is defined in the schema.xml file placed in the conf/ directory of the Solr home directory. Solr distribution comes with a sample schema file that can be changed for the needs of the project. The schema file defines the structure of the index, including fields and field types. The basic overall structure of the schema file is:
+A Solr schema is defined in the schema.xml file placed in the conf/ directory of the Solr home directory. The Solr distribution comes with a sample schema file that can be changed for the needs of the project. The schema file defines the structure of the index, including fields and field types. The basic overall structure of the schema file is:
 \begin{lstlisting}[language=XML]
 	<schema>
 	  <types>
@@ -986,7 +988,7 @@ Other elements in the Solr schema file listed in Table \ref{tab:fields.others}:
  \hline
  Name & Description \\  \hline
  uniqueKey & specifies which field in documents is a unique identifier of a document, should be used if you ever update a document in the index\\ \hline
- copyField & used to copy field's value from one field to another \\ \hline
+ copyField & used to copy a field value from one field to another \\ \hline
 \end{tabular}
 \caption{Description of some elements in schema.xml}
 \label{tab:fields.others}
@@ -1034,7 +1036,7 @@ MongoDB is a NoSQL document-oriented database. Data in MongoDB is stored in JSON
 To install MonogoDB follow instruction on the official web site \url{http://docs.mongodb.org/manual/installation/}. 
 
 \subsection{MongoDB configuration}
-Once MonogDB is downloaded, it is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
+Once the MonogDB distribution the is downloaded, it is very easy to set up a database server. All we need to start the MongoDB server is to type \emph{mongod} command. In our case we would like to specify database location with --dbpath parameter and default listening port:
 \begin{lstlisting}[language=Bash]
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272
 \end{lstlisting}
@@ -1044,19 +1046,19 @@ MongoDB provides REST API. To enable REST API use parameter --rest:
 	> mongod --dbpath /home/aliya/mongodb2 --port 27272 --rest true
 \end{lstlisting}
 
-The simple way to communicate with theD MongoDB server is to use the MongoDB shell, in our case we specify --port parameter to connect to our instance of MongoDB:
+The simple way to communicate with the MongoDB server is to use the MongoDB shell, in our case we specify --port parameter to connect to our instance of MongoDB:
 \begin{lstlisting}[language=Bash]
 	> mongo --port 27272
 \end{lstlisting}
 
-Compared to relational databases MongoDB operates with terms collection, which is equivalent to table, and document, which is equivalent to record in relational databases. MongoDB does not require creating databases and collections explicitly. Databases and collections can be created while starting to use MongoDB. To see list of databases or collections, type show dbs in mongo shell:
+Compared to relational databases MongoDB operates with a collection, which is equivalent to a table, and a document, which is equivalent to a record in relational databases. MongoDB does not require creating databases and collections explicitly. Databases and collections can be created while starting to use MongoDB. To see list of databases or collections, type show dbs in mongo shell:
  \begin{lstlisting}[language=Bash]
 	> show dbs
 \end{lstlisting}
-MongoDB shell allows to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site \footnote{MongoDB database, \url{http://www.mongodb.org/}}. 
+MongoDB shell allows one to make queries, updates, deletes on collections, get various statistics on data and server usage, and manipulate with data with map-reduce interface, full documentation can be found on the official web site\footnote{MongoDB database, \url{http://www.mongodb.org/}}. 
 
 \section{Running the parser}
-Before running the parser Solr web application should be deployed on the Tomcat web server and MongoDB instance should be run. One should use Java version 7 or above to run the parser. Get the parser distribution:
+Before running the parser the Solr web application should be deployed on the Tomcat web server and the MongoDB instance should be run. One should use Java version 7 or above to run the parser. Get the parser distribution:
 \begin{lstlisting}[language=Bash]
 	> git clone git@scg.unibe.ch:citation-search-engine
 \end{lstlisting}
@@ -1068,7 +1070,7 @@ The cloned directory consists of three modules:
 \item \textbf{citation\_search\_web} - a web application for searching citations.
 \end{itemize}
 
-All files related to the parser are located in the \emph{citation\_search} directory. The \emph{citation\_search} directory has a standard Maven project layout \footnote{\href{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}{Apache Maven, https://maven.apache.org}}. Go to the resources \emph{parser.properties} according to your development environment. Table \ref{tab:parser-properties} describes properties of a \emph{parser.properties} file with sample values.
+All files related to the parser are located in the \emph{citation\_search} directory. The \emph{citation\_search} directory has a standard Maven project layout\footnote{\href{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}{Apache Maven, https://maven.apache.org}}. Go to the resources \emph{parser.properties} according to your development environment. Table \ref{tab:parser-properties} describes properties of a \emph{parser.properties} file with sample values.
 
 \begin{table}[ht]
 \begin{center}
@@ -1076,7 +1078,7 @@ All files related to the parser are located in the \emph{citation\_search} direc
  \hline
  \textbf{Property} & \textbf{Description} & \textbf{Sample value} \\  \hline
 solr.url.citations & Endpoint for publishing citations. & http://localhost:8088/solr/collection1/\\ \hline
-solr.url.bibliography & Endpoint for publishing bibliographic links. & http://localhost:8088/solr/collection2/  \\  \hline
+solr.url.bibliography & Endpoint for publishing bibliographic references. & http://localhost:8088/solr/collection2/  \\  \hline
 db.host & MongoDB host server IP address. & 127.0.0.1  \\  \hline 
 db.port & MongoDB listening port. & 27272  \\  \hline
 db.name & MongoDB database name. & CS  \\  \hline 
@@ -1088,7 +1090,7 @@ pdfs.path & Location of pdf files. & /home/aliya/Library  \\  \hline
 \end{center}
 \end{table}
 
-One can change default logging properties for Log4j \footnote{Apache Log4j, \url{http://logging.apache.org/log4j/2.x/}} library in a \emph{logj4.properties} file.
+One can change default logging properties for the Log4j library in a \emph{logj4.properties} file.
 Once property files are configured, build a jar file executing following command from the directory containing a \emph{pom.xml} file:
 \begin{lstlisting}[language=Bash]
 	> mvn assembly:assembly -­‐DdescriptorId=jar-­‐with-­‐dependencies –DskipTests
@@ -1109,7 +1111,7 @@ All web application related web files are located in a \emph{citation\_search\_w
  \hline
  \textbf{Property} & \textbf{Description} & \textbf{Sample value} \\  \hline
 solr.url.citations & Endpoint for querying citations. & http://localhost:8088/solr/collection1/\\ \hline
-solr.url.bibliography & Endpoint for querying bibliographic links. & http://localhost:8088/solr/collection2/  \\  \hline
+solr.url.bibliography & Endpoint for querying bibliographic references. & http://localhost:8088/solr/collection2/  \\  \hline
 \end{tabular}
 \caption{Explanation of properties of a \emph{search.properties} file.}
 \label{tab:search-properties}

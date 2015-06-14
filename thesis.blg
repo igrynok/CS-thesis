@@ -4,52 +4,52 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
 Warning--entry type for "smith" isn't style-file defined
---line 293 of file thesis.bib
+--line 295 of file thesis.bib
 Warning--entry type for "use.solr.2" isn't style-file defined
---line 380 of file thesis.bib
+--line 382 of file thesis.bib
 Warning--entry type for "use.solr1" isn't style-file defined
---line 388 of file thesis.bib
+--line 390 of file thesis.bib
 Warning--empty booktitle in mihalcea2004textrank
-Warning--empty booktitle in Porter:1997:ASS:275537.275705
+Warning--can't use both author and editor fields in Porter:1997:ASS:275537.275705
 You've used 32 entries,
             2118 wiz_defined-function locations,
-            710 strings with 10736 characters,
-and the built_in function-call counts, 11290 in all, are:
-= -- 1115
-> -- 497
-< -- 16
-+ -- 192
-- -- 160
-* -- 721
-:= -- 1801
+            713 strings with 10790 characters,
+and the built_in function-call counts, 11467 in all, are:
+= -- 1136
+> -- 492
+< -- 17
++ -- 190
+- -- 158
+* -- 734
+:= -- 1816
 add.period$ -- 105
 call.type$ -- 32
-change.case$ -- 166
+change.case$ -- 164
 chr.to.int$ -- 0
 cite$ -- 34
-duplicate$ -- 470
-empty$ -- 944
-format.name$ -- 160
-if$ -- 2467
+duplicate$ -- 485
+empty$ -- 962
+format.name$ -- 158
+if$ -- 2514
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 28
-newline$ -- 161
+missing$ -- 30
+newline$ -- 162
 num.names$ -- 70
-pop$ -- 219
+pop$ -- 217
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 135
 quote$ -- 0
-skip$ -- 352
+skip$ -- 362
 stack$ -- 0
-substring$ -- 634
-swap$ -- 135
-text.length$ -- 16
+substring$ -- 666
+swap$ -- 147
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
+type$ -- 122
 warning$ -- 2
-while$ -- 110
+while$ -- 113
 width$ -- 34
-write$ -- 356
+write$ -- 360
 (There were 5 warnings)
